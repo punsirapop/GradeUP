@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class characterCon : MonoBehaviour
@@ -17,19 +15,16 @@ public class characterCon : MonoBehaviour
     private float _Bulletforce = 20f;
     [SerializeField] private float _movespeed = 5f;
 
-    // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         _movement.x = Input.GetAxisRaw("Horizontal");
         _movement.y = Input.GetAxisRaw("Vertical");
         _mousepos = cam.ScreenToWorldPoint(Input.mousePosition);
-
 
         if (Input.GetButtonDown("Fire1"))
         {
@@ -51,6 +46,17 @@ public class characterCon : MonoBehaviour
         GameObject bull = Instantiate(_bullet, _firepoint.position, _firepoint.rotation);
         Rigidbody2D rb = bull.GetComponent<Rigidbody2D>();
         rb.AddForce(_firepoint.up * _Bulletforce, ForceMode2D.Impulse);
+
+        /*for subclass
+         * 
+        GameObject bull2 = Instantiate(_bullet, _firepoint.position, _firepoint.rotation);
+        Rigidbody2D rb2 = bull2.GetComponent<Rigidbody2D>();
+        rb2.AddForce((Quaternion.Euler(0, 0, -15.5f) * _firepoint.up) * _Bulletforce, ForceMode2D.Impulse);
+
+        GameObject bull = Instantiate(_bullet, _firepoint.position, _firepoint.rotation);
+        Rigidbody2D rb = bull.GetComponent<Rigidbody2D>();
+        rb.AddForce((Quaternion.Euler(0, 0, 15.5f) * _firepoint.up) * _Bulletforce, ForceMode2D.Impulse);*/
+
     }
 
 
