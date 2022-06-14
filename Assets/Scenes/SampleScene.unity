@@ -461,6 +461,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcc5fd3e68e9f3a44a51e2554a2160af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  subclass: 0
   aspd: 10
   hitRange: {fileID: 1653041648}
   hitPunch: {fileID: 622666229397312050, guid: 21f745abaaf348c44a47d112c14f661f, type: 3}

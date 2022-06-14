@@ -5,74 +5,113 @@ using UnityEngine;
 public class CollideCheck : MonoBehaviour
 {
     SpriteRenderer currentColor;
+    GameObject player;
+    PlayerController subclass;
+    float angle, knockSpeed;
+    List<Color> colorList = new List<Color>();
     void Start()
     {
+        // Get subclass
+        player = GameObject.Find("Player");
+        subclass = player.GetComponent<PlayerController>();
         currentColor = GetComponent<SpriteRenderer>();
+        // Set colors
+        colorList.Add(Color.red);
+        colorList.Add(Color.yellow);
+        colorList.Add(Color.blue);
     }
+
     void OnTriggerEnter2D(Collider2D collision)
     {
+        // On hit - compare color of attack
         if (collision.CompareTag("Hit"))
         {
             Debug.Log("Hit!");
+            List<Color> colors = new List<Color>();
             Color newColor = collision.GetComponent<SpriteRenderer>().color;
-            if (currentColor.color.Equals(Color.red))
+
+            // If attack is from Art
+            if(colorList.Contains(newColor))
             {
-                if (newColor.Equals(Color.red))
+                if(subclass.subclass == 1)
                 {
-                    currentColor.color = Color.black;
-                    Debug.Log("RED");
+                    colors.Add(newColor);
+                    colors.Add(newColor);
                 }
-                else if (newColor.Equals(Color.yellow))
+                else
                 {
-                    currentColor.color = Color.black;
-                    Debug.Log("ORANG");
+                    colors.Add(currentColor.color);
+                    colors.Add(newColor);
                 }
-                else if (newColor.Equals(Color.blue))
-                {
-                    currentColor.color = Color.black;
-                    Debug.Log("PUPEL");
-                }
+                MixColor(colors);
             }
-            else if (currentColor.color.Equals(Color.yellow))
-            {
-                if (newColor.Equals(Color.red))
-                {
-                    currentColor.color = Color.black;
-                    Debug.Log("ORANG");
-                }
-                else if (newColor.Equals(Color.yellow))
-                {
-                    currentColor.color = Color.black;
-                    Debug.Log("YELLO");
-                }
-                else if (newColor.Equals(Color.blue))
-                {
-                    currentColor.color = Color.black;
-                    Debug.Log("GREN");
-                }
-            }
-            else if (currentColor.color.Equals(Color.blue))
-            {
-                if (newColor.Equals(Color.red))
-                {
-                    currentColor.color = Color.black;
-                    Debug.Log("PUPEL");
-                }
-                else if (newColor.Equals(Color.yellow))
-                {
-                    currentColor.color = Color.black;
-                    Debug.Log("GREN");
-                }
-                else if (newColor.Equals(Color.blue))
-                {
-                    currentColor.color = Color.black;
-                    Debug.Log("BLU");
-                }
-            }
+            // If knockback - calculate angle and set initial speed
             else
             {
-                currentColor.color = newColor;
+                angle = Mathf.Atan2(collision.transform.root.position.y - transform.position.y,
+                    collision.transform.root.position.x - transform.position.x) * Mathf.Rad2Deg;
+                knockSpeed = .75f;
+                StartCoroutine(Knockback());
             }
         }
+    }
+
+    void MixColor(List<Color> colors)
+    {
+        // Mix same color
+        if (colors[0].Equals(colors[1]))
+        {
+            if (colors.Contains(Color.red))
+            {
+                Debug.Log("RED");
+            }
+            else if (colors.Contains(Color.yellow))
+            {
+                Debug.Log("YELLO");
+            }
+            else if (colors.Contains(Color.blue))
+            {
+                Debug.Log("BLU");
+            }
+        }
+        // Mix different color
+        else
+        {
+            if (colors.Contains(Color.red) && colors.Contains(Color.yellow))
+            {
+                Debug.Log("ORANG");
+            }
+            else if (colors.Contains(Color.red) && colors.Contains(Color.blue))
+            {
+                Debug.Log("PUPEL");
+            }
+            else if (colors.Contains(Color.yellow) && colors.Contains(Color.blue))
+            {
+                Debug.Log("GWEEN");
+            }
+            // Mix failed
+            else
+            {
+                currentColor.color = colors[1];
+            }
+        }
+        // Reset color if mix success
+        if (!colors[0].Equals(Color.black))
+        {
+            currentColor.color = Color.black;
+        }
+    }
+
+    IEnumerator Knockback()
+    {
+        // move with negative acceleration
+        while (knockSpeed > 0)
+        {
+            transform.position = Vector2.Lerp(transform.position,
+                transform.position + Quaternion.AngleAxis(angle, Vector3.forward) * new Vector2(-1f, 0f), knockSpeed);
+            knockSpeed /= 1.3f;
+            yield return new WaitForFixedUpdate();
+        }
+        yield break;
     }
 }
