@@ -1,17 +1,17 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class bullet : MonoBehaviour
 {
     private Rigidbody2D rb;
-    public int bullet_mode;
-
     [SerializeField] PhysicsMaterial2D bounceMat;
+
+    //for testing
+    [SerializeField] private int bullet_mode;
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-        if(bullet_mode == 0)
+        if (bullet_mode == 0)
         {
 
         }
@@ -19,6 +19,7 @@ public class bullet : MonoBehaviour
         {
             rb.sharedMaterial = bounceMat;
         }
+        StartCoroutine(BulletDestroy());
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -30,5 +31,10 @@ public class bullet : MonoBehaviour
                 Destroy(this.gameObject);
             }
         }
+    }
+    private IEnumerator BulletDestroy()
+    {
+        yield return new WaitForSeconds(5f);
+        Destroy(this.gameObject);
     }
 }

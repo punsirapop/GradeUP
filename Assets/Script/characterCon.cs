@@ -2,18 +2,18 @@ using UnityEngine;
 
 public class characterCon : MonoBehaviour
 {
-    [SerializeField] private Rigidbody2D rb;
-    [SerializeField] private Rigidbody2D firepoint;
-    [SerializeField] private Camera cam;
+    [SerializeField] protected Rigidbody2D rb;
+    [SerializeField] protected Rigidbody2D firepoint;
+    [SerializeField] protected Camera cam;
 
-    [SerializeField] private Transform _firepoint;
-    [SerializeField] private GameObject _bullet;
+    [SerializeField] protected Transform _firepoint;
+    [SerializeField] protected GameObject _bullet;
 
     private Vector2 _movement;
     private Vector2 _mousepos;
 
-    private float _Bulletforce = 20f;
-    [SerializeField] private float _movespeed = 5f;
+    protected float _Bulletforce = 20f;
+    [SerializeField] protected float _movespeed = 5f;
 
     void Start()
     {
@@ -22,14 +22,7 @@ public class characterCon : MonoBehaviour
 
     void Update()
     {
-        _movement.x = Input.GetAxisRaw("Horizontal");
-        _movement.y = Input.GetAxisRaw("Vertical");
-        _mousepos = cam.ScreenToWorldPoint(Input.mousePosition);
 
-        if (Input.GetButtonDown("Fire1"))
-        {
-            SpawnBullet();
-        }
     }
 
     private void FixedUpdate()
@@ -41,23 +34,10 @@ public class characterCon : MonoBehaviour
         firepoint.rotation = angle;
     }
 
-    private void SpawnBullet()
+    protected void UpdatePosition()
     {
-        GameObject bull = Instantiate(_bullet, _firepoint.position, _firepoint.rotation);
-        Rigidbody2D rb = bull.GetComponent<Rigidbody2D>();
-        rb.AddForce(_firepoint.up * _Bulletforce, ForceMode2D.Impulse);
-
-        /*for subclass
-         * 
-        GameObject bull2 = Instantiate(_bullet, _firepoint.position, _firepoint.rotation);
-        Rigidbody2D rb2 = bull2.GetComponent<Rigidbody2D>();
-        rb2.AddForce((Quaternion.Euler(0, 0, -15.5f) * _firepoint.up) * _Bulletforce, ForceMode2D.Impulse);
-
-        GameObject bull = Instantiate(_bullet, _firepoint.position, _firepoint.rotation);
-        Rigidbody2D rb = bull.GetComponent<Rigidbody2D>();
-        rb.AddForce((Quaternion.Euler(0, 0, 15.5f) * _firepoint.up) * _Bulletforce, ForceMode2D.Impulse);*/
-
+        _movement.x = Input.GetAxisRaw("Horizontal");
+        _movement.y = Input.GetAxisRaw("Vertical");
+        _mousepos = cam.ScreenToWorldPoint(Input.mousePosition);
     }
-
-
 }
