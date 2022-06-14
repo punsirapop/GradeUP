@@ -15,9 +15,9 @@ public class characterCon : MonoBehaviour
     protected float _Bulletforce = 20f;
     [SerializeField] protected float _movespeed = 5f;
 
-    void Start()
+    void Awake()
     {
-        rb = GetComponent<Rigidbody2D>();
+        rb = this.GetComponent<Rigidbody2D>();
     }
 
     void Update()

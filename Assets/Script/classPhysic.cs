@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class class_physic : characterCon
+public class classPhysic : characterCon
 {
     [SerializeField] private int ActiveSubClass = 0;
     void Update()
