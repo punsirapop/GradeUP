@@ -6,14 +6,14 @@ public class CollideCheck : MonoBehaviour
 {
     SpriteRenderer currentColor;
     GameObject player;
-    PlayerController subclass;
+    PlayerController playerController;
     float angle, knockSpeed;
     List<Color> colorList = new List<Color>();
     void Start()
     {
         // Get subclass
         player = GameObject.Find("Player");
-        subclass = player.GetComponent<PlayerController>();
+        playerController = player.GetComponent<PlayerController>();
         currentColor = GetComponent<SpriteRenderer>();
         // Set colors
         colorList.Add(Color.red);
@@ -33,7 +33,7 @@ public class CollideCheck : MonoBehaviour
             // If attack is from Art
             if(colorList.Contains(newColor))
             {
-                if(subclass.subclass == 1)
+                if(classArt.subclass == 1)
                 {
                     colors.Add(newColor);
                     colors.Add(newColor);
