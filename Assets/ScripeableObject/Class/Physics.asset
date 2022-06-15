@@ -15,5 +15,5 @@ MonoBehaviour:
   _ClassName: Physics
   _HP: 100
   _Actack: 25
-  _ActackSpeed: 5
+  _ActackSpeed: 10
   _Speed: 5

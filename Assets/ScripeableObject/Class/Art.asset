@@ -15,5 +15,5 @@ MonoBehaviour:
   _ClassName: Art
   _HP: 80
   _Actack: 50
-  _ActackSpeed: 7
+  _ActackSpeed: 14
   _Speed: 7

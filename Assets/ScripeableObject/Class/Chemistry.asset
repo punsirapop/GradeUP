@@ -15,5 +15,5 @@ MonoBehaviour:
   _ClassName: Chemistry
   _HP: 100
   _Actack: 80
-  _ActackSpeed: 3
+  _ActackSpeed: 6
   _Speed: 6

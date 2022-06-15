@@ -15,5 +15,5 @@ MonoBehaviour:
   _ClassName: PE
   _HP: 200
   _Actack: 70
-  _ActackSpeed: 4
+  _ActackSpeed: 8
   _Speed: 3
