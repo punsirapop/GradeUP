@@ -5,14 +5,28 @@ using UnityEngine;
 public class CollideCheck : MonoBehaviour
 {
     [SerializeField] Rigidbody2D rb;
-
+    [SerializeField] GameObject player;
     SpriteRenderer sr;
+    int playerClass;
     float angle, knockSpeed;
     List<Color> colorList = new List<Color>();
     void Start()
     {
-        // Get color
-        sr = GetComponent<SpriteRenderer>();
+        if (player.GetComponent<classArt>().isActiveAndEnabled)
+        {
+            playerClass = 0;
+        }
+        else if (player.GetComponent<classLng>().isActiveAndEnabled)
+        {
+            playerClass = 1;
+        }
+        else if (player.GetComponent<classPE>().isActiveAndEnabled)
+        {
+            playerClass = 2;
+        }
+
+            // Get color
+            sr = GetComponent<SpriteRenderer>();
         // Set colors
         colorList.Add(Color.red);
         colorList.Add(Color.yellow);
@@ -29,7 +43,7 @@ public class CollideCheck : MonoBehaviour
             Color newColor = collision.GetComponent<SpriteRenderer>().color;
 
             // If attack is from Art
-            if(colorList.Contains(newColor))
+            if(playerClass == 0 && colorList.Contains(newColor))
             {
                 if(classArt.subclass == 1)
                 {
@@ -44,7 +58,7 @@ public class CollideCheck : MonoBehaviour
                 MixColor(colors);
             }
             // If knockback - calculate angle and set initial speed
-            else
+            else if(playerClass == 2)
             {
                 knockSpeed = .1f;
                 StartCoroutine(Knockback(collision));
