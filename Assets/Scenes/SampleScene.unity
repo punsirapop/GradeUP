@@ -498,10 +498,11 @@ GameObject:
   - component: {fileID: 1050747443}
   - component: {fileID: 1050747442}
   - component: {fileID: 1050747446}
+  - component: {fileID: 1050747447}
   - component: {fileID: 1050747445}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -516,7 +517,7 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -618,7 +619,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1050747439}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 775b3daec67ea5e4b9bb191171d1d83e, type: 3}
   m_Name: 
@@ -631,6 +632,27 @@ MonoBehaviour:
   _movespeed: 5
   aspd: 10
   bullets: {fileID: 969719805}
+  hitSwing: {fileID: 711672648239661606, guid: c667cb0bfb968f64bace6a86af7f98ba, type: 3}
+--- !u!114 &1050747447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1050747439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d97ad43164a6a54baf37eba73d9724e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 1050747445}
+  firepoint: {fileID: 1653041651}
+  cam: {fileID: 519420031}
+  _firepoint: {fileID: 1855260598}
+  _bullet: {fileID: 119853610757680610, guid: 18a81c1be2f721c49a1e6982dea5e544, type: 3}
+  _movespeed: 5
+  aspd: 10
+  hitPunch: {fileID: 622666229397312050, guid: 21f745abaaf348c44a47d112c14f661f, type: 3}
   hitSwing: {fileID: 711672648239661606, guid: c667cb0bfb968f64bace6a86af7f98ba, type: 3}
 --- !u!4 &1119799009 stripped
 Transform:

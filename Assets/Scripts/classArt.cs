@@ -12,11 +12,6 @@ public class classArt : PlayerController
     bool isAttacking = false, isShooting = false;
 
     readonly object attackLock = new object();
-    void Start()
-    {
-
-    }
-
 
     void Update()
     {

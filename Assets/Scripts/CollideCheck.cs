@@ -4,17 +4,15 @@ using UnityEngine;
 
 public class CollideCheck : MonoBehaviour
 {
-    SpriteRenderer currentColor;
-    GameObject player;
-    PlayerController playerController;
+    [SerializeField] Rigidbody2D rb;
+
+    SpriteRenderer sr;
     float angle, knockSpeed;
     List<Color> colorList = new List<Color>();
     void Start()
     {
-        // Get subclass
-        player = GameObject.Find("Player");
-        playerController = player.GetComponent<PlayerController>();
-        currentColor = GetComponent<SpriteRenderer>();
+        // Get color
+        sr = GetComponent<SpriteRenderer>();
         // Set colors
         colorList.Add(Color.red);
         colorList.Add(Color.yellow);
@@ -40,7 +38,7 @@ public class CollideCheck : MonoBehaviour
                 }
                 else
                 {
-                    colors.Add(currentColor.color);
+                    colors.Add(sr.color);
                     colors.Add(newColor);
                 }
                 MixColor(colors);
@@ -48,11 +46,14 @@ public class CollideCheck : MonoBehaviour
             // If knockback - calculate angle and set initial speed
             else
             {
-                angle = Mathf.Atan2(collision.transform.root.position.y - transform.position.y,
-                    collision.transform.root.position.x - transform.position.x) * Mathf.Rad2Deg;
-                knockSpeed = .75f;
-                StartCoroutine(Knockback());
+                knockSpeed = .1f;
+                StartCoroutine(Knockback(collision));
             }
+        }
+        else if (collision.CompareTag("Player"))
+        {
+            knockSpeed = .1f;
+            StartCoroutine(Knockback(collision));
         }
     }
 
@@ -92,24 +93,26 @@ public class CollideCheck : MonoBehaviour
             // Mix failed
             else
             {
-                currentColor.color = colors[1];
+                sr.color = colors[1];
             }
         }
         // Reset color if mix success
         if (!colors[0].Equals(Color.black))
         {
-            currentColor.color = Color.black;
+            sr.color = Color.black;
         }
     }
 
-    IEnumerator Knockback()
+    IEnumerator Knockback(Collider2D collision)
     {
+        angle = Mathf.Atan2(collision.transform.root.position.y - transform.position.y,
+            collision.transform.root.position.x - transform.position.x) * Mathf.Rad2Deg;
         // move with negative acceleration
         while (knockSpeed > 0)
         {
             transform.position = Vector2.Lerp(transform.position,
                 transform.position + Quaternion.AngleAxis(angle, Vector3.forward) * new Vector2(-1f, 0f), knockSpeed);
-            knockSpeed /= 1.3f;
+            knockSpeed /= 1.05f;
             yield return new WaitForFixedUpdate();
         }
         yield break;
