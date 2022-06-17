@@ -76,11 +76,13 @@ public class CollideCheck : MonoBehaviour
             }
         }
         // If collide with player
+        /*
         else if (collision.CompareTag("Player"))
         {
             knockSpeed = .1f;
             StartCoroutine(Knockback(collision));
         }
+        */
     }
 
     void MixColor(List<Color> colors)
@@ -144,6 +146,7 @@ public class CollideCheck : MonoBehaviour
         yield break;
     }
     
+    // Check if get hit by whole camera attack (Lng subclass #3)
     void LNGClass3Attacked()
     {
         Debug.Log("Called - " + transform.position);
