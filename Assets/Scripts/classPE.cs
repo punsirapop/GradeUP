@@ -36,25 +36,25 @@ public class classPE : PlayerController
                 switch (subclass)
                 {
                     case 0:
-                        StartCoroutine(Punch0());
+                        StartCoroutine(Attack0());
                         break;
                     case 1:
-                        StartCoroutine(Punch1());
+                        StartCoroutine(Attack1());
                         break;
                     case 2:
-                        StartCoroutine(Punch2());
+                        StartCoroutine(Attack2());
                         break;
                     case 3:
-                        StartCoroutine(Punch3());
+                        StartCoroutine(Attack3());
                         break;
                 }
-                Debug.Log("Punched");
+                Debug.Log("Attacked");
             }
         }
     }
 
     // normal attack
-    IEnumerator Punch0()
+    IEnumerator Attack0()
     {
         if (isAttacking)
         {
@@ -72,7 +72,7 @@ public class classPE : PlayerController
     }
 
     // charged punch
-    IEnumerator Punch1()
+    IEnumerator Attack1()
     {
         if (isAttacking)
         {
@@ -114,7 +114,7 @@ public class classPE : PlayerController
     }
 
     // speed punch
-    IEnumerator Punch2()
+    IEnumerator Attack2()
     {
         if (isAttacking)
         {
@@ -129,7 +129,7 @@ public class classPE : PlayerController
     }
 
     // baseball swing + knockback
-    IEnumerator Punch3()
+    IEnumerator Attack3()
     {
         if (isAttacking)
         {

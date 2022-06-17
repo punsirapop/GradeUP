@@ -4,14 +4,15 @@ using UnityEngine;
 
 public class CollideCheck : MonoBehaviour
 {
-    [SerializeField] Rigidbody2D rb;
-    [SerializeField] GameObject player;
+    GameObject player;
     SpriteRenderer sr;
     int playerClass;
     float angle, knockSpeed;
     List<Color> colorList = new List<Color>();
     void Start()
     {
+        player = GameObject.Find("Player");
+        // Get player's class
         if (player.GetComponent<classArt>().isActiveAndEnabled)
         {
             playerClass = 0;
@@ -25,45 +26,46 @@ public class CollideCheck : MonoBehaviour
             playerClass = 2;
         }
 
-            // Get color
-            sr = GetComponent<SpriteRenderer>();
-        // Set colors
-        colorList.Add(Color.red);
-        colorList.Add(Color.yellow);
-        colorList.Add(Color.blue);
+        sr = GetComponent<SpriteRenderer>();
     }
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        // On hit - compare color of attack
+        // On hit - check class of attack
         if (collision.CompareTag("Hit"))
         {
-            Debug.Log("Hit!");
             List<Color> colors = new List<Color>();
             Color newColor = collision.GetComponent<SpriteRenderer>().color;
 
-            // If attack is from Art
-            if(playerClass == 0 && colorList.Contains(newColor))
+            Debug.Log("Hit!");
+
+            switch (playerClass)
             {
-                if(classArt.subclass == 1)
-                {
-                    colors.Add(newColor);
-                    colors.Add(newColor);
-                }
-                else
-                {
-                    colors.Add(sr.color);
-                    colors.Add(newColor);
-                }
-                MixColor(colors);
-            }
-            // If knockback - calculate angle and set initial speed
-            else if(playerClass == 2)
-            {
-                knockSpeed = .1f;
-                StartCoroutine(Knockback(collision));
+                // If attack is from Art - mixin' colors
+                case 0:
+                    if(classArt.subclass == 1)
+                    {
+                        colors.Add(newColor);
+                        colors.Add(newColor);
+                    }
+                    else
+                    {
+                        colors.Add(sr.color);
+                        colors.Add(newColor);
+                    }
+                    MixColor(colors);
+                    break;
+                // If attack is from Lng - hit
+                case 1:
+                    break;
+                // If attack is from PE - knockback
+                case 2:
+                    knockSpeed = .1f;
+                    StartCoroutine(Knockback(collision));
+                    break;
             }
         }
+        // If collide with player
         else if (collision.CompareTag("Player"))
         {
             knockSpeed = .1f;

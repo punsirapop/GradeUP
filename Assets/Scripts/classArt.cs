@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class classArt : PlayerController
 {
-    public static int subclass = 3;
+    public static int subclass = 0;
     public float aspd = 10f;
 
-    [SerializeField] GameObject bullets, hitSwing;
+    [SerializeField] GameObject bullets, hitSwing, hitPunch;
 
     bool isAttacking = false, isShooting = false;
 
@@ -32,25 +32,25 @@ public class classArt : PlayerController
                 switch (subclass)
                 {
                     case 0:
-                        StartCoroutine(Swing0());
+                        StartCoroutine(Attack0());
                         break;
                     case 1:
-                        StartCoroutine(Swing1());
+                        StartCoroutine(Attack1());
                         break;
                     case 2:
-                        StartCoroutine(Swing2());
+                        StartCoroutine(Attack2());
                         break;
                     case 3:
-                        StartCoroutine(Swing3());
+                        StartCoroutine(Attack3());
                         break;
                 }
-                Debug.Log("Swung");
+                Debug.Log("Attacked");
             }
         }
     }
 
     // normal attack
-    IEnumerator Swing0()
+    IEnumerator Attack0()
     {
         GameObject hitBox = Instantiate(hitSwing, _firepoint.position, _firepoint.rotation, firepoint.transform);
         // Randomize color of attack
@@ -85,14 +85,14 @@ public class classArt : PlayerController
     }
 
     // Swing but not proc color
-    IEnumerator Swing1()
+    IEnumerator Attack1()
     {
-        StartCoroutine(Swing0());
+        StartCoroutine(Attack0());
         yield break;
     }
 
     // Paintball gun
-    IEnumerator Swing2()
+    IEnumerator Attack2()
     {
         isShooting = true;
         GameObject hitBox = Instantiate(_bullet, _firepoint.position, _firepoint.rotation, bullets.transform);
@@ -118,7 +118,7 @@ public class classArt : PlayerController
     }
     
     // Dash through enemy
-    IEnumerator Swing3()
+    IEnumerator Attack3()
     {
         GameObject hitMaxRange = Instantiate(hitSwing, _firepoint.position, _firepoint.rotation, firepoint.transform);
         hitMaxRange.tag = "Untagged";
@@ -126,7 +126,8 @@ public class classArt : PlayerController
         hitMaxRange.transform.SetParent(null);
         Destroy(hitMaxRange.GetComponent<SpriteRenderer>());
         float spd = 5f;
-        GameObject hitBox = Instantiate(hitSwing, _firepoint.position, _firepoint.rotation, firepoint.transform);
+        GameObject hitBox = Instantiate(hitPunch, _firepoint.position,
+            Quaternion.AngleAxis(90f, Vector3.forward) * _firepoint.rotation, firepoint.transform);
         int color = Random.Range(0, 3);
         switch (color)
         {
