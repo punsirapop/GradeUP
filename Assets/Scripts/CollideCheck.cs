@@ -4,55 +4,73 @@ using UnityEngine;
 
 public class CollideCheck : MonoBehaviour
 {
-    SpriteRenderer currentColor;
     GameObject player;
-    PlayerController subclass;
+    SpriteRenderer sr;
+    int playerClass;
     float angle, knockSpeed;
     List<Color> colorList = new List<Color>();
     void Start()
     {
-        // Get subclass
-        player = GameObject.Find("Player");
-        //subclass = player.GetComponent<PlayerController>();
-        currentColor = GetComponent<SpriteRenderer>();
-        // Set colors
-        colorList.Add(Color.red);
-        colorList.Add(Color.yellow);
-        colorList.Add(Color.blue);
+        player = GameObject.FindGameObjectWithTag("Player");
+        // Get player's class
+        /*if (player.GetComponent<classArt>().isActiveAndEnabled)
+        {
+            playerClass = 0;
+        }
+        else if (player.GetComponent<classLng>().isActiveAndEnabled)
+        {
+            playerClass = 1;
+        }
+        else */
+        if (player.GetComponent<classPE>().isActiveAndEnabled)
+        {
+            playerClass = 2;
+        }
+
+        sr = GetComponent<SpriteRenderer>();
     }
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        // On hit - compare color of attack
+        // On hit - check class of attack
         if (collision.CompareTag("Hit"))
         {
-            Debug.Log("Hit!");
             List<Color> colors = new List<Color>();
             Color newColor = collision.GetComponent<SpriteRenderer>().color;
 
-            // If attack is from Art
-            if(colorList.Contains(newColor))
+            Debug.Log("Hit!");
+
+            switch (playerClass)
             {
-                if(subclass.subclass == 1)
-                {
-                    colors.Add(newColor);
-                    colors.Add(newColor);
-                }
-                else
-                {
-                    colors.Add(currentColor.color);
-                    colors.Add(newColor);
-                }
-                MixColor(colors);
+                // If attack is from Art - mixin' colors
+                case 0:
+                    /*if(classArt.subclass == 1)
+                    {
+                        colors.Add(newColor);
+                        colors.Add(newColor);
+                    }
+                    else
+                    {
+                        colors.Add(sr.color);
+                        colors.Add(newColor);
+                    }
+                    MixColor(colors);*/
+                    break;
+                // If attack is from Lng - hit
+                case 1:
+                    break;
+                // If attack is from PE - knockback
+                case 2:
+                    knockSpeed = .1f;
+                    StartCoroutine(Knockback(collision));
+                    break;
             }
-            // If knockback - calculate angle and set initial speed
-            else
-            {
-                angle = Mathf.Atan2(collision.transform.root.position.y - transform.position.y,
-                    collision.transform.root.position.x - transform.position.x) * Mathf.Rad2Deg;
-                knockSpeed = .75f;
-                StartCoroutine(Knockback());
-            }
+        }
+        // If collide with player
+        else if (collision.CompareTag("Player"))
+        {
+            knockSpeed = .1f;
+            StartCoroutine(Knockback(collision));
         }
     }
 
@@ -92,24 +110,26 @@ public class CollideCheck : MonoBehaviour
             // Mix failed
             else
             {
-                currentColor.color = colors[1];
+                sr.color = colors[1];
             }
         }
         // Reset color if mix success
         if (!colors[0].Equals(Color.black))
         {
-            currentColor.color = Color.black;
+            sr.color = Color.black;
         }
     }
 
-    IEnumerator Knockback()
+    IEnumerator Knockback(Collider2D collision)
     {
+        angle = Mathf.Atan2(collision.transform.root.position.y - transform.position.y,
+            collision.transform.root.position.x - transform.position.x) * Mathf.Rad2Deg;
         // move with negative acceleration
         while (knockSpeed > 0)
         {
             transform.position = Vector2.Lerp(transform.position,
                 transform.position + Quaternion.AngleAxis(angle, Vector3.forward) * new Vector2(-1f, 0f), knockSpeed);
-            knockSpeed /= 1.3f;
+            knockSpeed /= 1.05f;
             yield return new WaitForFixedUpdate();
         }
         yield break;

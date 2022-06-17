@@ -5,15 +5,11 @@ public class classPE : characterCon
 {
     [SerializeField]
     float aspd;
-    readonly object clickLock = new object();
     public int subclass;
-    bool isAttacking = false;
-    void Start()
-    {
+    [SerializeField] GameObject hitPunch, hitSwing;
+    bool isAttacking = false ,isCharging = false;
+    readonly object clickLock = new object();
 
-    }
-
-    // Update is called once per frame
     void Update()
     {
         if (!isAttacking && Input.GetButtonDown("Fire1"))
@@ -30,23 +26,23 @@ public class classPE : characterCon
             switch (subclass)
             {
                 case 0:
-                    StartCoroutine(Punch0());
+                    StartCoroutine(NormalPunch());
                     break;
                 case 1:
-                    //StartCoroutine(Punch1());
+                    StartCoroutine(ChargePunch());
                     break;
                 case 2:
-                    //StartCoroutine(Punch2());
+                    StartCoroutine(SpeedPunch());
                     break;
                 case 3:
-                    //StartCoroutine(Punch3());
+                    StartCoroutine(SwingAtk());
                     break;
             }
             Debug.Log("Punched");
 
         }
     }
-    IEnumerator Punch0()
+    IEnumerator NormalPunch()
     {
         if (isAttacking)
         {
@@ -62,6 +58,81 @@ public class classPE : characterCon
             isAttacking = false;
         }
     }
+    IEnumerator ChargePunch()
+    {
+        if (isAttacking)
+        {
+            // Initiate charging sequence
+            isCharging = true;
+            // Generate charge destination indicator
+            GameObject hitMaxRange = Instantiate(hitSwing, _firepoint.position, _firepoint.rotation, firepoint.transform);
+            hitMaxRange.tag = "Untagged";
+            while (Input.GetMouseButton(0))
+            {
+                // Keep extending indicator until set position
+                if (Vector2.Distance(transform.position, hitMaxRange.transform.position) < 5f)
+                {
+                    hitMaxRange.transform.position += _firepoint.rotation * new Vector2(0f, .05f);
+                }
+                yield return new WaitForFixedUpdate();
+            }
+            hitMaxRange.transform.SetParent(null);
+            // End charging sequence
+            isCharging = false;
+            // Set dash speed
+            float spd = 5f;
+            // Generate hitbox
+            GameObject hitBox = Instantiate(hitPunch, _firepoint.position,
+                Quaternion.AngleAxis(90f, Vector3.forward) * _firepoint.rotation, firepoint.transform);
+            // Dash player until reaching destination
+            while (Vector2.Distance(transform.position, hitMaxRange.transform.position) > .05f)
+            {
+                transform.position = Vector2.Lerp(transform.position, hitMaxRange.transform.position, Time.deltaTime * spd);
+                yield return new WaitForFixedUpdate();
+            }
+            Destroy(hitMaxRange);
+            Destroy(hitBox);
+            // Set reload time
+            float punchTime = 5 / (2 * aspd);
+            yield return new WaitForSeconds(punchTime);
+            isAttacking = false;
+        }
+    }
+    IEnumerator SpeedPunch()
+    {   //will Change aSpd and will use NormalPunch() instead
+        if (isAttacking)
+        {
+            GameObject hitBox = Instantiate(hitPunch, _firepoint.position, _firepoint.rotation, firepoint.transform);
+            rb.velocity = Vector2.zero;
+            float punchTime = 5 / (2 * aspd * 3);
+            yield return new WaitForSeconds(punchTime);
+            Destroy(hitBox);
+            yield return new WaitForSeconds(punchTime);
+            isAttacking = false;
+        }
+    }
+    IEnumerator SwingAtk()
+    {
+        if (isAttacking)
+        {
+            GameObject hitBox = Instantiate(hitPunch, _firepoint.position, _firepoint.rotation, firepoint.transform);
+            rb.velocity = Vector2.zero;
+            // Set swing angle, start range, and time
+            float swingAngle = -90f, swingRange = 180, swingTime = 5 / (2 * aspd);
+            // Move hitbox in circular motion within swing time limit
+            for (float time = 0; time < swingTime; time += Time.deltaTime)
+            {
+                hitBox.transform.position = transform.position + _firepoint.rotation *
+                    Quaternion.AngleAxis(swingAngle, Vector3.forward) * new Vector3(0f, 2f);
+                hitBox.transform.rotation = _firepoint.rotation * Quaternion.AngleAxis(swingAngle, Vector3.forward);
+                swingAngle += swingRange * Time.deltaTime / swingTime;
+                yield return new WaitForSeconds(Time.deltaTime);
+            }
+            Destroy(hitBox);
+            yield return new WaitForSeconds(swingTime);
+            isAttacking = false;
+        }
+    }
     protected override void FixedUpdate()
     {
         if (!isAttacking)
@@ -71,6 +142,10 @@ public class classPE : characterCon
         }
         else
         {
+            if (isCharging)
+            {
+                _mousepos = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+            }
             rb.velocity = Vector2.zero;
         }
 
