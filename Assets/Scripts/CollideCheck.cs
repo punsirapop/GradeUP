@@ -34,6 +34,11 @@ public class CollideCheck : MonoBehaviour
         classLng.class3Attack += LNGClass3Attacked;
     }
 
+    void OnDestroy()
+    {
+        classLng.class3Attack -= LNGClass3Attacked;
+    }
+
     void OnTriggerEnter2D(Collider2D collision)
     {
         // On hit - check class of attack
@@ -142,7 +147,7 @@ public class CollideCheck : MonoBehaviour
     void LNGClass3Attacked()
     {
         Debug.Log("Called - " + transform.position);
-        if (GetComponent<SpriteRenderer>().isVisible)
+        if (gameObject.GetComponent<SpriteRenderer>().isVisible)
         {
             Debug.Log("Whole map Hit! - " + transform.position);
         }

@@ -85,7 +85,7 @@ public class classLng : PlayerController
             hitboxes.Add(hitBox);
         }
 
-        // Swing
+        // Spin
         float swingAngle = 0f;
         float swingTime = 5 / aspd;
         for (float time = 0; time < swingTime; time += Time.deltaTime)
