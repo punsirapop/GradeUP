@@ -18,13 +18,8 @@ public class characterCon : MonoBehaviour
     void Awake()
     {
         rb = this.GetComponent<Rigidbody2D>();
+        cam = Camera.FindObjectOfType<Camera>();
     }
-
-    void Update()
-    {
-
-    }
-
     protected virtual void FixedUpdate()
     {
         GetPosition();

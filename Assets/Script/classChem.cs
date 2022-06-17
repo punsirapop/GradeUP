@@ -4,10 +4,6 @@ using UnityEngine;
 
 public class classChem : characterCon
 {
-    void Start()
-    {
-        
-    }
     void Update()
     {
         UpdatePosition();
