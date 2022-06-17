@@ -1,15 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 
 public class classLng : PlayerController
 {
-    public static int subclass = 2;
+    public static int subclass = 3;
     public float aspd = 10f;
-
+    
     [SerializeField] GameObject bullets, hitWave, hitSwing;
-    [SerializeField] UnityEvent attack;
+    [SerializeField] CollideCheck collideCheck;
+
+    public delegate void Attack();
+    public static Attack class3Attack;
 
     bool isAttacking = false, isShooting = false;
 
@@ -109,7 +111,11 @@ public class classLng : PlayerController
 
     IEnumerator Attack3()
     {
-        attack.Invoke();
+        Debug.Log("Attack3 Invoked");
+        class3Attack?.Invoke();
+        float punchTime = 5 / aspd;
+        yield return new WaitForSeconds(punchTime);
+        isAttacking = false;
         yield break;
     }
 }

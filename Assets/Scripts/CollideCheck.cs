@@ -8,7 +8,7 @@ public class CollideCheck : MonoBehaviour
     SpriteRenderer sr;
     int playerClass;
     float angle, knockSpeed;
-    List<Color> colorList = new List<Color>();
+
     void Start()
     {
         player = GameObject.Find("Player");
@@ -27,6 +27,11 @@ public class CollideCheck : MonoBehaviour
         }
 
         sr = GetComponent<SpriteRenderer>();
+    }
+
+    void OnEnable()
+    {
+        classLng.class3Attack += LNGClass3Attacked;
     }
 
     void OnTriggerEnter2D(Collider2D collision)
@@ -132,5 +137,14 @@ public class CollideCheck : MonoBehaviour
             yield return new WaitForFixedUpdate();
         }
         yield break;
+    }
+    
+    void LNGClass3Attacked()
+    {
+        Debug.Log("Called - " + transform.position);
+        if (GetComponent<SpriteRenderer>().isVisible)
+        {
+            Debug.Log("Whole map Hit! - " + transform.position);
+        }
     }
 }
