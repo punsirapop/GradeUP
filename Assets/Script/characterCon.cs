@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class characterCon : MonoBehaviour
+public class characterCon : StatusManager
 {
     [SerializeField] protected Rigidbody2D rb;
     [SerializeField] protected Rigidbody2D firepoint;
@@ -13,7 +13,7 @@ public class characterCon : MonoBehaviour
     protected Vector2 _mousepos;
 
     protected float _Bulletforce = 20f;
-    [SerializeField] protected float _movespeed = 5f;
+    //[SerializeField] protected float _movespeed = 5f;
 
     void Awake()
     {
