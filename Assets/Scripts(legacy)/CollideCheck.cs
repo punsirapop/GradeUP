@@ -11,13 +11,11 @@ public class CollideCheck : MonoBehaviour
     List<Color> colorList = new List<Color>();
     void Start()
     {
+        sr = GetComponent<SpriteRenderer>();
         player = GameObject.FindGameObjectWithTag("Player");
         // Get player's class
-        /*if (player.GetComponent<classArt>().isActiveAndEnabled)
-        {
-            playerClass = 0;
-        }
-        else if (player.GetComponent<classLng>().isActiveAndEnabled)
+
+        /*else if (player.GetComponent<classLng>().isActiveAndEnabled)
         {
             playerClass = 1;
         }
@@ -26,8 +24,10 @@ public class CollideCheck : MonoBehaviour
         {
             playerClass = 2;
         }
-
-        sr = GetComponent<SpriteRenderer>();
+        else if (player.GetComponent<ClassArt>().isActiveAndEnabled)
+        {
+            playerClass = 0;
+        }
     }
 
     void OnTriggerEnter2D(Collider2D collision)
@@ -44,7 +44,7 @@ public class CollideCheck : MonoBehaviour
             {
                 // If attack is from Art - mixin' colors
                 case 0:
-                    /*if(classArt.subclass == 1)
+                    if(ClassArt.subclass == 1)
                     {
                         colors.Add(newColor);
                         colors.Add(newColor);
@@ -54,7 +54,7 @@ public class CollideCheck : MonoBehaviour
                         colors.Add(sr.color);
                         colors.Add(newColor);
                     }
-                    MixColor(colors);*/
+                    MixColor(colors);
                     break;
                 // If attack is from Lng - hit
                 case 1:

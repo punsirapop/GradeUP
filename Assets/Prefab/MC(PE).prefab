@@ -175,12 +175,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f30d8dc6878a9054cbcc4d618ce99ca2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ClassStatus: {fileID: 11400000, guid: 2e8340e2a8594b14f9c44d75c34b88f7, type: 2}
+  Atk: 0
+  HP: 0
+  Atk_Speed: 0
+  _movespeed: 15
+  Art: 0
   rb: {fileID: 0}
   firepoint: {fileID: 2500779849550607289}
   cam: {fileID: 0}
   _firepoint: {fileID: 2500779850666082348}
   _bullet: {fileID: 622666229397312050, guid: 21f745abaaf348c44a47d112c14f661f, type: 3}
-  _movespeed: 5
   aspd: 8
   subclass: 0
   hitPunch: {fileID: 622666229397312050, guid: 21f745abaaf348c44a47d112c14f661f, type: 3}
@@ -192,7 +197,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2500779849898784211}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
   m_Name: 
@@ -211,7 +216,7 @@ MonoBehaviour:
   - {x: 0.5481763, y: -0.4600997, z: 0}
   m_ShapePathHash: -1077883583
   m_Mesh: {fileID: 0}
-  m_InstanceId: 48940
+  m_InstanceId: -79212
 --- !u!1 &2500779850666082349
 GameObject:
   m_ObjectHideFlags: 0

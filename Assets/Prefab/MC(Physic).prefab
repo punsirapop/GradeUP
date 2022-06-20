@@ -100,12 +100,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03862e5862317b14bafc4749cc3ffd86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ClassStatus: {fileID: 11400000, guid: d3c3676855573834197bdda9aa5ab75e, type: 2}
+  Atk: 0
+  HP: 0
+  Atk_Speed: 0
+  _movespeed: 5
+  Art: 0
   rb: {fileID: 0}
   firepoint: {fileID: 5446525841694112701}
   cam: {fileID: 0}
   _firepoint: {fileID: 5446525841694112700}
   _bullet: {fileID: 728747090168759146, guid: 8fcebc2969634c146803345a7df69c5d, type: 3}
-  _movespeed: 5
   ActiveSubClass: 1
 --- !u!61 &5446525841424581745
 BoxCollider2D:

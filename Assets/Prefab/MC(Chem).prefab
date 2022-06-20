@@ -72,7 +72,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4983925195361858553
 Transform:
   m_ObjectHideFlags: 0
@@ -200,9 +200,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1514208d405c0e46ad12566f04f0cb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ClassStatus: {fileID: 11400000, guid: bc08270ec5f76fc4a9311012f9d8521f, type: 2}
+  Atk: 0
+  HP: 0
+  Atk_Speed: 0
+  _movespeed: 5
+  Art: 0
   rb: {fileID: 0}
   firepoint: {fileID: 4983925195045959580}
   cam: {fileID: 0}
   _firepoint: {fileID: 4983925195045959581}
   _bullet: {fileID: 728747090168759146, guid: bc6cd18080126744791cc085b66c5d4e, type: 3}
-  _movespeed: 5
