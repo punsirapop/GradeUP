@@ -66,14 +66,13 @@ GameObject:
   - component: {fileID: 2500779849898784208}
   - component: {fileID: 2500779849898784209}
   - component: {fileID: 2500779849898784210}
-  - component: {fileID: 1946214882}
   m_Layer: 0
   m_Name: MC(PE)
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2500779849898784215
 Transform:
   m_ObjectHideFlags: 0
@@ -176,47 +175,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ClassStatus: {fileID: 11400000, guid: 2e8340e2a8594b14f9c44d75c34b88f7, type: 2}
-  Atk: 0
-  HP: 0
-  Atk_Speed: 0
-  _movespeed: 15
-  Art: 0
   rb: {fileID: 0}
   firepoint: {fileID: 2500779849550607289}
   cam: {fileID: 0}
   _firepoint: {fileID: 2500779850666082348}
-  _bullet: {fileID: 622666229397312050, guid: 21f745abaaf348c44a47d112c14f661f, type: 3}
   aspd: 8
   subclass: 0
   hitPunch: {fileID: 622666229397312050, guid: 21f745abaaf348c44a47d112c14f661f, type: 3}
   hitSwing: {fileID: 711672648239661606, guid: c667cb0bfb968f64bace6a86af7f98ba, type: 3}
---- !u!114 &1946214882
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2500779849898784211}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_ShadowGroup: 0
-  m_ComponentVersion: 1
-  m_HasRenderer: 1
-  m_UseRendererSilhouette: 1
-  m_CastsShadows: 1
-  m_SelfShadows: 1
-  m_ApplyToSortingLayers: 00000000
-  m_ShapePath:
-  - {x: 0.47214842, y: 0.5243119, z: 0}
-  - {x: -0.5, y: 0.5, z: 0}
-  - {x: -0.5190065, y: -0.48911762, z: 0}
-  - {x: 0.5481763, y: -0.4600997, z: 0}
-  m_ShapePathHash: -1077883583
-  m_Mesh: {fileID: 0}
-  m_InstanceId: -79212
+  _bullet: {fileID: 622666229397312050, guid: 21f745abaaf348c44a47d112c14f661f, type: 3}
 --- !u!1 &2500779850666082349
 GameObject:
   m_ObjectHideFlags: 0

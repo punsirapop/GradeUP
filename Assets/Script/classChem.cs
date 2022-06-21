@@ -1,9 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class classChem : characterCon
 {
+    [SerializeField] protected GameObject _bullet;
+
+    public delegate void SetbulletDelegate(Vector3 position);
+    public SetbulletDelegate Setbullet;
     void Update()
     {
         UpdatePosition();
@@ -12,13 +14,13 @@ public class classChem : characterCon
             SpawnBullet();
         }
     }
-
     private void SpawnBullet() //normal atk
     {
 
         GameObject bull = Instantiate(_bullet, _firepoint.position, _firepoint.rotation);
         Rigidbody2D rb = bull.GetComponent<Rigidbody2D>();
         rb.AddForce(_firepoint.up * _Bulletforce, ForceMode2D.Impulse);
+        Setbullet(_mousepos);
     }
     private void ChangeSubClass(int ID) //for Change Sub-Class 
     {

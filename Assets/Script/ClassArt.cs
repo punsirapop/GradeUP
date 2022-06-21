@@ -9,7 +9,7 @@ public class ClassArt : characterCon
     public float aspd = 10f;
 
     [SerializeField] GameObject hitSwing, hitPunch;
-
+    [SerializeField] protected GameObject _bullet;
     bool isAttacking = false, isShooting = false;
 
     readonly object attackLock = new object();

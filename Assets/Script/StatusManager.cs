@@ -6,11 +6,11 @@ public class StatusManager : MonoBehaviour
 {
     //status
     [SerializeField] classSO ClassStatus;
-    public float Atk;
-    public float HP;
-    public float Atk_Speed;
-    public float _movespeed;
-    public int Art;
+    protected float Atk;
+    protected float HP;
+    protected float Atk_Speed;
+    protected float _movespeed;
+    protected int Art;
 
     private void Start()
     {

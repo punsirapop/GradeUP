@@ -7,13 +7,12 @@ public class characterCon : StatusManager
     [SerializeField] protected Camera cam;
 
     [SerializeField] protected Transform _firepoint;
-    [SerializeField] protected GameObject _bullet;
+    //[SerializeField] protected GameObject _bullet;
 
     protected Vector2 _movement;
     protected Vector2 _mousepos;
 
     protected float _Bulletforce = 20f;
-    //[SerializeField] protected float _movespeed = 5f;
 
     void Awake()
     {

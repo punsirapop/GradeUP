@@ -9,6 +9,7 @@ public class classPE : characterCon
     [SerializeField] GameObject hitPunch, hitSwing;
     bool isAttacking = false ,isCharging = false;
     readonly object clickLock = new object();
+    [SerializeField] protected GameObject _bullet;
 
     void Update()
     {
@@ -122,9 +123,8 @@ public class classPE : characterCon
             // Move hitbox in circular motion within swing time limit
             for (float time = 0; time < swingTime; time += Time.deltaTime)
             {
-                hitBox.transform.position = transform.position + _firepoint.rotation *
-                    Quaternion.AngleAxis(swingAngle, Vector3.forward) * new Vector3(0f, 2f);
-                hitBox.transform.rotation = _firepoint.rotation * Quaternion.AngleAxis(swingAngle, Vector3.forward);
+                hitBox.transform.SetPositionAndRotation(transform.position + _firepoint.rotation *
+                    Quaternion.AngleAxis(swingAngle, Vector3.forward) * new Vector3(0f, 2f), _firepoint.rotation * Quaternion.AngleAxis(swingAngle, Vector3.forward));
                 swingAngle += swingRange * Time.deltaTime / swingTime;
                 yield return new WaitForSeconds(Time.deltaTime);
             }
