@@ -67,11 +67,13 @@ public class CollideCheck : MonoBehaviour
             }
         }
         // If collide with player
+        /*
         else if (collision.CompareTag("Player"))
         {
             knockSpeed = .1f;
             StartCoroutine(Knockback(collision));
         }
+        */
     }
 
     void MixColor(List<Color> colors)

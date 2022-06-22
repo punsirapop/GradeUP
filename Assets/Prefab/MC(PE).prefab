@@ -175,12 +175,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ClassStatus: {fileID: 11400000, guid: 2e8340e2a8594b14f9c44d75c34b88f7, type: 2}
+  Atk: 0
+  HP: 0
+  Atk_Speed: 0
+  _movespeed: 0
+  Art: 0
   rb: {fileID: 0}
   firepoint: {fileID: 2500779849550607289}
   cam: {fileID: 0}
   _firepoint: {fileID: 2500779850666082348}
   aspd: 8
-  subclass: 0
+  subclass: 3
   hitPunch: {fileID: 622666229397312050, guid: 21f745abaaf348c44a47d112c14f661f, type: 3}
   hitSwing: {fileID: 711672648239661606, guid: c667cb0bfb968f64bace6a86af7f98ba, type: 3}
   _bullet: {fileID: 622666229397312050, guid: 21f745abaaf348c44a47d112c14f661f, type: 3}

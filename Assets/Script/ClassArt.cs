@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class ClassArt : characterCon
 {
-    public static int subclass = 1;
+    public static int subclass = 0;
     public float aspd = 10f;
 
     [SerializeField] GameObject hitSwing, hitPunch;
