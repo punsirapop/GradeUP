@@ -148,11 +148,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ClassStatus: {fileID: 11400000, guid: d3c3676855573834197bdda9aa5ab75e, type: 2}
+  Atk: 0
+  HP: 0
+  Atk_Speed: 0
+  _movespeed: 0
+  Art: 0
   rb: {fileID: 0}
   firepoint: {fileID: 5446525841694112701}
   cam: {fileID: 0}
   _firepoint: {fileID: 5446525841694112700}
-  ActiveSubClass: 3
+  ActiveSubClass: 0
   _bullet:
   - {fileID: 728747090168759146, guid: 8fcebc2969634c146803345a7df69c5d, type: 3}
   - {fileID: 728747090168759146, guid: 150915e48f7369f4895009990995e058, type: 3}

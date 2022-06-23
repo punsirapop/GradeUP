@@ -8,6 +8,15 @@ public class classPhysic : characterCon
 
     private GameObject _selectBullet;
     private bool isAttacking = false ;
+
+    private void OnEnable()
+    {
+        FindObjectOfType<DebugUI>().ChangeSubClass += ChangeSubClass;
+    }
+    private void OnDisable()
+    {
+        FindObjectOfType<DebugUI>().ChangeSubClass -= ChangeSubClass;
+    }
     void Update()
     {
         UpdatePosition();
@@ -67,6 +76,7 @@ public class classPhysic : characterCon
 
             case 2: //+atk speed
                 ActiveSubClass = 2;
+                Atk_Speed += 2;
                 break;
 
             case 3: //bounce bullet

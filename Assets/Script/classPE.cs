@@ -3,14 +3,19 @@ using UnityEngine;
 
 public class classPE : characterCon
 {
-    [SerializeField]
-    float aspd;
-    public int subclass;
     [SerializeField] GameObject hitPunch, hitSwing;
     bool isAttacking = false ,isCharging = false;
     readonly object clickLock = new object();
     [SerializeField] protected GameObject _bullet;
-
+    private int ActiveSubClass = 0;
+    private void OnEnable()
+    {
+        FindObjectOfType<DebugUI>().ChangeSubClass += ChangeSubClass;
+    }
+    private void OnDisable()
+    {
+        FindObjectOfType<DebugUI>().ChangeSubClass -= ChangeSubClass;
+    }
     void Update()
     {
         if (!isAttacking && Input.GetButtonDown("Fire1"))
@@ -24,7 +29,7 @@ public class classPE : characterCon
         lock (clickLock)
         {
             isAttacking = true;
-            switch (subclass)
+            switch (ActiveSubClass)
             {
                 case 0:
                     StartCoroutine(NormalPunch());
@@ -52,7 +57,7 @@ public class classPE : characterCon
             // Forced stop moving
             rb.velocity = Vector2.zero;
             // Set reload time
-            float punchTime = 5 / (2 * aspd);
+            float punchTime = 5 / (2 * Atk_Speed);
             yield return new WaitForSeconds(punchTime);
             Destroy(hitBox);
             yield return new WaitForSeconds(punchTime);
@@ -94,7 +99,7 @@ public class classPE : characterCon
             Destroy(hitMaxRange);
             Destroy(hitBox);
             // Set reload time
-            float punchTime = 5 / (2 * aspd);
+            float punchTime = 5 / (2 * Atk_Speed);
             yield return new WaitForSeconds(punchTime);
             isAttacking = false;
         }
@@ -105,7 +110,7 @@ public class classPE : characterCon
         {
             GameObject hitBox = Instantiate(hitPunch, _firepoint.position, _firepoint.rotation, firepoint.transform);
             rb.velocity = Vector2.zero;
-            float punchTime = 5 / (2 * aspd * 3);
+            float punchTime = 5 / (2 * Atk_Speed * 3);
             yield return new WaitForSeconds(punchTime);
             Destroy(hitBox);
             yield return new WaitForSeconds(punchTime);
@@ -119,7 +124,7 @@ public class classPE : characterCon
             GameObject hitBox = Instantiate(hitPunch, _firepoint.position, _firepoint.rotation, firepoint.transform);
             rb.velocity = Vector2.zero;
             // Set swing angle, start range, and time
-            float swingAngle = -90f, swingRange = 180, swingTime = 5 / (2 * aspd);
+            float swingAngle = -90f, swingRange = 180, swingTime = 5 / (2 * Atk_Speed);
             // Move hitbox in circular motion within swing time limit
             for (float time = 0; time < swingTime; time += Time.deltaTime)
             {
@@ -155,15 +160,19 @@ public class classPE : characterCon
         switch (ID)
         {
             case 0: //default
+                ActiveSubClass = 0;
                 break;
 
-            case 1: //
+            case 1: //Explotion
+                ActiveSubClass = 1;
                 break;
 
-            case 2: //
+            case 2: //Posion
+                ActiveSubClass = 2;
                 break;
 
-            case 3: //
+            case 3: //Burn
+                ActiveSubClass = 3;
                 break;
 
             default:

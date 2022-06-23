@@ -72,7 +72,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4983925195361858553
 Transform:
   m_ObjectHideFlags: 0
@@ -211,3 +211,4 @@ MonoBehaviour:
   cam: {fileID: 0}
   _firepoint: {fileID: 4983925195045959581}
   _bullet: {fileID: 728747090168759146, guid: bc6cd18080126744791cc085b66c5d4e, type: 3}
+  ActiveSubClass: 0

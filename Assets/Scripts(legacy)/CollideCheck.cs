@@ -44,7 +44,7 @@ public class CollideCheck : MonoBehaviour
             {
                 // If attack is from Art - mixin' colors
                 case 0:
-                    if(ClassArt.subclass == 1)
+                    if(ClassArt.ActiveSubClass == 1)
                     {
                         colors.Add(newColor);
                         colors.Add(newColor);
