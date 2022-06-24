@@ -5,9 +5,7 @@ public class characterCon : StatusManager
     [SerializeField] protected Rigidbody2D rb;
     [SerializeField] protected Rigidbody2D firepoint;
     [SerializeField] protected Camera cam;
-
     [SerializeField] protected Transform _firepoint;
-    //[SerializeField] protected GameObject _bullet;
 
     protected Vector2 _movement;
     protected Vector2 _mousepos;
@@ -34,8 +32,8 @@ public class characterCon : StatusManager
 
     protected void UpdatePosition()
     {
-        rb.MovePosition(rb.position + (_movement * _movespeed * Time.fixedDeltaTime));
-        firepoint.MovePosition(rb.position + (_movement * _movespeed * Time.fixedDeltaTime));
+        rb.MovePosition(rb.position + (_movement * MoveSpeed * Time.deltaTime));
+        firepoint.MovePosition(rb.position + (_movement * MoveSpeed * Time.deltaTime));
         Vector2 lookdir = _mousepos - rb.position;
         float angle = Mathf.Atan2(lookdir.y, lookdir.x) * Mathf.Rad2Deg - 90f;
         firepoint.rotation = angle;

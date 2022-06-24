@@ -72,7 +72,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4983925195361858553
 Transform:
   m_ObjectHideFlags: 0
@@ -204,7 +204,7 @@ MonoBehaviour:
   Atk: 0
   HP: 0
   Atk_Speed: 0
-  _movespeed: 0
+  MoveSpeed: 0
   Art: 0
   rb: {fileID: 0}
   firepoint: {fileID: 4983925195045959580}

@@ -1170,7 +1170,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4621294064056916071, guid: cefedf57542a5774dbba880e8f420967, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4621294064056916076, guid: cefedf57542a5774dbba880e8f420967, type: 3}
       propertyPath: m_RootOrder
@@ -1836,7 +1836,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.014853656}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1847,7 +1847,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1, y: 0.9702927}
   m_EdgeRadius: 0
 --- !u!1 &1325329875
 GameObject:
@@ -2738,10 +2738,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: MC(Chem)
       objectReference: {fileID: 0}
-    - target: {fileID: 4983925195361858548, guid: 4f21419708c421a469bfa6df9971e1fc, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4983925195361858553, guid: 4f21419708c421a469bfa6df9971e1fc, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -2863,7 +2859,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2500779849898784211, guid: d60a2a6545ec306479b7f6e2b67aaf01, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2500779849898784215, guid: d60a2a6545ec306479b7f6e2b67aaf01, type: 3}
       propertyPath: m_RootOrder

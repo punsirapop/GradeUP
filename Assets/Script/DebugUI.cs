@@ -23,7 +23,7 @@ public class DebugUI : MonoBehaviour
         _Atk = FindObjectOfType<StatusManager>().Atk;
         _HP = FindObjectOfType<StatusManager>().HP;
         _Atk_Speed = FindObjectOfType<StatusManager>().Atk_Speed;
-        _Movespeed = FindObjectOfType<StatusManager>()._movespeed;
+        _Movespeed = FindObjectOfType<StatusManager>().MoveSpeed;
 
         Atk.SetText("Atk : " + _Atk);
         HP.SetText("HP : " + _HP);
@@ -34,11 +34,9 @@ public class DebugUI : MonoBehaviour
         {
             if(Panal.activeInHierarchy == false)
             {
+
                 Panal.SetActive(true);
-            }
-            else
-            {
-                Panal.SetActive(false);
+                Time.timeScale = 0;
             }
         }
     }
@@ -46,6 +44,8 @@ public class DebugUI : MonoBehaviour
     public void ChangeClass(int SubClass)
     {
         ChangeSubClass?.Invoke(SubClass);
+        Panal.SetActive(false);
+        Time.timeScale = 1;
     }
 
 }
