@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70318db053443954384aa30606db891b, type: 3}
   m_Name: Chemistry
   m_EditorClassIdentifier: 
-  _ClassName: Chemistry
-  _HP: 100
-  _Actack: 80
-  _ActackSpeed: 6
-  _Speed: 6
+  _className: Chemistry
+  _hp: 100
+  _atk: 80
+  _aspd: 3
+  _spd: 6

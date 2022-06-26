@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70318db053443954384aa30606db891b, type: 3}
   m_Name: Physics
   m_EditorClassIdentifier: 
-  _ClassName: Physics
-  _HP: 100
-  _Actack: 25
-  _ActackSpeed: 10
-  _Speed: 5
+  _className: Physics
+  _hp: 100
+  _atk: 25
+  _aspd: 5
+  _spd: 5

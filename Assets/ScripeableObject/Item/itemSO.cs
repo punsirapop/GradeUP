@@ -12,15 +12,15 @@ public class itemSO : ScriptableObject
     [SerializeField] private GameObject _itemObject;
     public GameObject ItemObject => _itemObject;
 
-    [SerializeField] private float _HP;
-    public float HP => _HP;
+    [SerializeField] private float _hp;
+    public float hp => _hp;
 
-    [SerializeField] private float _actack;
-    public float Actack => _actack;
+    [SerializeField] private float _atk;
+    public float atk => _atk;
 
-    [SerializeField] private float _actackSpeed;
-    public float ActackSpeed => _actackSpeed;
+    [SerializeField] private float _spd;
+    public float spd => _spd;
 
-    [SerializeField] private float _speed;
-    public float Speed => _speed;
+    [SerializeField] private float _aspd;
+    public float aspd => _aspd;
 }

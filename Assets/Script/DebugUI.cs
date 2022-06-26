@@ -16,10 +16,10 @@ public class DebugUI : MonoBehaviour
     private float _Movespeed;
     void Update()
     {
-        _Atk = FindObjectOfType<StatusManager>().Atk;
-        _HP = FindObjectOfType<StatusManager>().HP;
-        _Atk_Speed = FindObjectOfType<StatusManager>().Atk_Speed;
-        _Movespeed = FindObjectOfType<StatusManager>()._movespeed;
+        _Atk = FindObjectOfType<StatusManager>().atk;
+        _HP = FindObjectOfType<StatusManager>().hp;
+        _Atk_Speed = FindObjectOfType<StatusManager>().aspd;
+        _Movespeed = FindObjectOfType<StatusManager>().spd;
 
         Atk.SetText("Atk : " + _Atk);
         HP.SetText("HP : " + _HP);

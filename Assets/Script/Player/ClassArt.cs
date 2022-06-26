@@ -6,17 +6,17 @@ using UnityEngine;
 public class ClassArt : characterCon
 {
     public static int subclass = 0;
-    public float aspd = 10f;
 
     [SerializeField] GameObject hitSwing, hitPunch;
     [SerializeField] protected GameObject _bullet;
+    
     bool isAttacking = false, isShooting = false;
 
     readonly object attackLock = new object();
 
     void Update()
     {
-        if (!isAttacking && Input.GetButtonDown("Fire1"))
+        if (!isAttacking && Input.GetButtonDown("Fire1") && !PauseMenu.paused)
         {
             Actack();
         }

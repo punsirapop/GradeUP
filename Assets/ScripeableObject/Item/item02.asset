@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4ccd23382c872e549b60cd7ab376e5f9, type: 3}
-  m_Name: Item01
+  m_Name: item02
   m_EditorClassIdentifier: 
-  _itemName: Ruler
-  _itemObject: {fileID: 753608527262756306, guid: 543668a01714ead48bcdbdc6aa1918dd, type: 3}
+  _itemName: Shoes
+  _itemObject: {fileID: 753608527262756306, guid: fef5fbd59e5c99a4d991dd312fa28997, type: 3}
   _hp: 0
-  _atk: 5
-  _spd: 0
+  _atk: 0
+  _spd: 1
   _aspd: 0

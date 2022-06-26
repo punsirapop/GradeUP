@@ -3,8 +3,6 @@ using UnityEngine;
 
 public class classPE : characterCon
 {
-    [SerializeField]
-    float aspd;
     public int subclass;
     [SerializeField] GameObject hitPunch, hitSwing;
     bool isAttacking = false ,isCharging = false;

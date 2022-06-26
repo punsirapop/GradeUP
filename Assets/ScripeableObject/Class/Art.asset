@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70318db053443954384aa30606db891b, type: 3}
   m_Name: Art
   m_EditorClassIdentifier: 
-  _ClassName: Art
-  _HP: 80
-  _Actack: 50
-  _ActackSpeed: 14
-  _Speed: 7
+  _className: Art
+  _hp: 80
+  _atk: 50
+  _aspd: 7
+  _spd: 7

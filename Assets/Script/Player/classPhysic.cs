@@ -50,7 +50,7 @@ public class classPhysic : characterCon
 
     IEnumerator OnCooldown()
     {
-        float Cooldown = 5 / (2 * Atk_Speed);
+        float Cooldown = 5 / (2 * aspd);
         yield return new WaitForSeconds(Cooldown);
         isAttacking = false;
     }

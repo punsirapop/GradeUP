@@ -21,8 +21,11 @@ public class characterCon : StatusManager
     }
     protected virtual void FixedUpdate()
     {
-        GetPosition();
-        UpdatePosition();
+        if (!PauseMenu.paused)
+        {
+            GetPosition();
+            UpdatePosition();
+        }
     }
 
     protected void GetPosition()
@@ -34,8 +37,8 @@ public class characterCon : StatusManager
 
     protected void UpdatePosition()
     {
-        rb.MovePosition(rb.position + (_movement * _movespeed * Time.fixedDeltaTime));
-        firepoint.MovePosition(rb.position + (_movement * _movespeed * Time.fixedDeltaTime));
+        rb.MovePosition(rb.position + (_movement * spd * Time.fixedDeltaTime));
+        firepoint.MovePosition(rb.position + (_movement * spd * Time.fixedDeltaTime));
         Vector2 lookdir = _mousepos - rb.position;
         float angle = Mathf.Atan2(lookdir.y, lookdir.x) * Mathf.Rad2Deg - 90f;
         firepoint.rotation = angle;
