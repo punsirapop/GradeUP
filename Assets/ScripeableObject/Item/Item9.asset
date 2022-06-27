@@ -10,11 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4ccd23382c872e549b60cd7ab376e5f9, type: 3}
-  m_Name: Item01
+  m_Name: Item9
   m_EditorClassIdentifier: 
-  _itemName: Test1
+  _itemName: socks
   _itemObject: {fileID: 0}
-  _HP: 5
-  _actack: 0
-  _actackSpeed: 0
-  _speed: 2
+  _HP: 30
+  _attack: 0
+  _attackSpeed: 0
+  _speed: 1
+  _isPassive: 1
