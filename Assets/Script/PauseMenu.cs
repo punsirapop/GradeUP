@@ -8,7 +8,7 @@ using System;
 public class PauseMenu : MonoBehaviour
 {
     public static bool paused = false;
-    public static event Action<itemSO> OnDrop;
+    public static event Action<int> OnDrop;
 
     [SerializeField] GameObject pauseMenuUI;
     PlayerManager playerManager;
@@ -19,6 +19,7 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] List<TextMeshProUGUI> _status;
     [SerializeField] List<TextMeshProUGUI> _inventoryName;
     [SerializeField] List<Image> _inventoryImage;
+    [SerializeField] List<GameObject> _inventoryActive;
     [SerializeField] protected List<Button> _inventoryButton;
 
     [SerializeField] GameObject dropMenuUI;
@@ -26,6 +27,7 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] TextMeshProUGUI _itemDropName;
 
     itemSO _itemDrop;
+    int _inventoryIndex = -1;
 
     void Start()
     {
@@ -82,14 +84,16 @@ public class PauseMenu : MonoBehaviour
     public void OnItemPress(Button button)
     {
         dropMenuUI.SetActive(true);
-        _itemDrop = InventoryManager.inventory[_inventoryButton.IndexOf(button)];
+        _inventoryIndex = _inventoryButton.IndexOf(button);
+        _itemDrop = InventoryManager.inventory[_inventoryIndex];
         _itemDropName.SetText(_itemDrop.ItemName);
         _itemDropImage.sprite = _itemDrop.ItemObject.GetComponent<SpriteRenderer>().sprite;
     }
 
     public void OnDropAccept()
     {
-        OnDrop?.Invoke(_itemDrop);
+        OnDrop?.Invoke(_inventoryIndex);
+        _inventoryIndex = -1;
         _itemDrop = null;
     }
 }

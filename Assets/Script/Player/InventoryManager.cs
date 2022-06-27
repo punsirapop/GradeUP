@@ -9,7 +9,7 @@ public class InventoryManager : MonoBehaviour
     public static event Action<GameObject> OnCollect;
     public static List<itemSO> inventory = new List<itemSO>();
     public static int maxSlot = 5;
-    int _activeItem = -1;
+    int _activeItemIndex = -1;
 
     private void Start()
     {
@@ -33,8 +33,8 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
-    void DropItem(itemSO item)
+    void DropItem(int index)
     {
-        inventory.Remove(item);
+        inventory.RemoveAt(index);
     }
 }

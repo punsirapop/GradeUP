@@ -12,6 +12,9 @@ public class itemSO : ScriptableObject
     [SerializeField] private GameObject _itemObject;
     public GameObject ItemObject => _itemObject;
 
+    [SerializeField] private bool _isActivable;
+    public bool isActivable => _isActivable;
+
     [SerializeField] private float _hp;
     public float hp => _hp;
 

@@ -45,8 +45,9 @@ public class StatusManager : MonoBehaviour
         _aspd += item.aspd;
     }
 
-    void RemoveItemStat(itemSO item)
+    void RemoveItemStat(int index)
     {
+        itemSO item = InventoryManager.inventory[index];
         _atk -= item.atk;
         _hp -= item.hp;
         _spd -= item.spd;
