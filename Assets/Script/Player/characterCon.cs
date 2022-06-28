@@ -9,6 +9,8 @@ public class characterCon : StatusManager
     [SerializeField] protected Transform _firepoint;
     //[SerializeField] protected GameObject _bullet;
 
+    [SerializeField] Animator animator;
+
     protected Vector2 _movement;
     protected Vector2 _mousepos;
 
@@ -33,7 +35,14 @@ public class characterCon : StatusManager
         _movement.x = Input.GetAxisRaw("Horizontal");
         _movement.y = Input.GetAxisRaw("Vertical");
         _mousepos = cam.ScreenToWorldPoint(Input.mousePosition);
+
+
+        animator.SetFloat("horizontal", _movement.x);
+        animator.SetFloat("vertical", _movement.y);
+        animator.SetFloat("speed", _movement.sqrMagnitude);
     }
+
+
 
     protected void UpdatePosition()
     {
