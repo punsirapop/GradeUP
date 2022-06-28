@@ -5,7 +5,6 @@ public class classChem : characterCon
 {
     [SerializeField] protected GameObject _bullet;
     [SerializeField] private int ActiveSubClass = 0;
-    //[SerializeField] private GameObject[] _bullet;
 
     public delegate void SetbulletDelegate(Vector3 position);
     public SetbulletDelegate Setbullet;
