@@ -1491,10 +1491,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5446525841694112699, guid: 1987565f9c4b6b14b9f861fbd6924ccb, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1987565f9c4b6b14b9f861fbd6924ccb, type: 3}
 --- !u!1 &1069738707
@@ -2478,8 +2474,8 @@ MonoBehaviour:
   firepoint: {fileID: 1212183629}
   cam: {fileID: 0}
   _firepoint: {fileID: 1795562470}
-  ActiveSubClass: 0
   hitWave: {fileID: 7476790988011050064, guid: 0cc9ced89cc278340bfad3deee8ec2d5, type: 3}
+  hitBullet: {fileID: 711672648239661606, guid: c667cb0bfb968f64bace6a86af7f98ba, type: 3}
 --- !u!1 &1588979201
 GameObject:
   m_ObjectHideFlags: 0
@@ -2954,6 +2950,10 @@ PrefabInstance:
     - target: {fileID: 4983925195361858548, guid: 4f21419708c421a469bfa6df9971e1fc, type: 3}
       propertyPath: m_Name
       value: MC(Chem)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4983925195361858548, guid: 4f21419708c421a469bfa6df9971e1fc, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4983925195361858553, guid: 4f21419708c421a469bfa6df9971e1fc, type: 3}
       propertyPath: m_RootOrder
