@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class WaveController : MonoBehaviour
 {
-    GameObject player;
+    //GameObject player;
     float angle;
 
     void Start()
     {
-        player = GameObject.Find("Player");
-        angle = Mathf.Atan2(player.transform.position.y - transform.position.y,
-            player.transform.position.x - transform.position.x) * Mathf.Rad2Deg;
+        //player = GameObject.Find("Player");
         StartCoroutine(DelayDestroy());
+        //angle = Mathf.Atan2(player.transform.position.y - transform.position.y,
+            //player.transform.position.x - transform.position.x) * Mathf.Rad2Deg;
     }
 
     void FixedUpdate()
@@ -22,7 +22,7 @@ public class WaveController : MonoBehaviour
         {
             scale = 1.06f;
         }
-        transform.position += Quaternion.AngleAxis(angle, Vector3.forward) * new Vector2(-.1f, 0f);
+        transform.position += Quaternion.AngleAxis(angle, Vector3.forward) * new Vector2(0, 0f);
         transform.localScale *= new Vector2(scale, scale);
     }
     /*
@@ -37,7 +37,7 @@ public class WaveController : MonoBehaviour
 
     IEnumerator DelayDestroy()
     {
-        float delay = .5f;
+        float delay = .7f;
         if(classLng.subclass == 1)
         {
             delay = .6f;

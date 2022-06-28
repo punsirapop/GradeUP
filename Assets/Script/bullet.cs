@@ -16,11 +16,11 @@ public class bullet : MonoBehaviour
         StartCoroutine(BulletDestroy());
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collider)
     {
         if (bounceMat == null)
         {
-            if (collision.gameObject.CompareTag("Wall"))
+            if (collider.gameObject.CompareTag("Wall"))
             {
                 Destroy(this.gameObject);
             }

@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 6459729915660704495}
   - component: {fileID: 2176146301627252370}
   - component: {fileID: 7062781981166389383}
-  - component: {fileID: -8549059941803117890}
+  - component: {fileID: 6879868735830523619}
   m_Layer: 6
-  m_Name: Bullet(Bounce)
-  m_TagString: Hit
+  m_Name: ChemBullet 1
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 1, g: 0.645283, b: 0.9030605, a: 1}
+  m_Color: {r: 0.86880887, g: 1, b: 0.5415094, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -124,7 +124,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!114 &-8549059941803117890
+--- !u!114 &6879868735830523619
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -133,7 +133,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 728747090168759146}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ccd06ac57c341f429a019d630dd680e, type: 3}
+  m_Script: {fileID: 11500000, guid: e4a13961d7dc75f48a655ebfd53a0989, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bounceMat: {fileID: 6200000, guid: 7dc9ee38b80fbff4bbb34be5d0a21e8e, type: 2}
+  areaDamage: {fileID: 3092292300859954781, guid: 4afa17c7261daa742a871d99fbb02a97, type: 3}
+  Hitarea: {fileID: 301867632180063515, guid: e2a3128a3b980964fa51b9664b08bf26, type: 3}
+  Target: {fileID: 0}
