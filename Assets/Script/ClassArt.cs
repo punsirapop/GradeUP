@@ -40,7 +40,7 @@ public class ClassArt : characterCon
                     StartCoroutine(NormalAttack());
                     break;
                 case 1:
-                    StartCoroutine(Attack1());
+                    StartCoroutine(NormalAttack());
                     break;
                 case 2:
                     StartCoroutine(PaintballGun());
@@ -86,12 +86,6 @@ public class ClassArt : characterCon
         isAttacking = false;
         yield break;
     }
-
-    IEnumerator Attack1()
-    {
-        StartCoroutine(NormalAttack());
-        yield break;
-    }
     IEnumerator PaintballGun()
     {
         isShooting = true;
@@ -113,10 +107,8 @@ public class ClassArt : characterCon
                 bull.GetComponent<SpriteRenderer>().color = Color.blue;
                 break;
         }
-        float punchTime = 5 / (2 * Atk_Speed);
-        yield return new WaitForSeconds(punchTime);
+        StartCoroutine(OnCooldown());
         isShooting = false;
-        isAttacking = false;
         yield break;
     }
     IEnumerator DashAttack()
@@ -150,10 +142,14 @@ public class ClassArt : characterCon
         Destroy(hitMaxRange);
         Destroy(hitBox);
         rb.velocity = Vector2.zero;
-        float punchTime = 5 / (2 * Atk_Speed);
-        yield return new WaitForSeconds(punchTime);
-        isAttacking = false;
+        StartCoroutine(OnCooldown());
         yield break;
+    }
+    IEnumerator OnCooldown()
+    {
+        float Cooldown = 5 / (2 * Atk_Speed);
+        yield return new WaitForSeconds(Cooldown);
+        isAttacking = false;
     }
     protected override void FixedUpdate()
     {

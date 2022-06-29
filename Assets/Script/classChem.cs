@@ -3,8 +3,9 @@ using UnityEngine;
 
 public class classChem : characterCon
 {
-    [SerializeField] protected GameObject _bullet;
+    [SerializeField] private GameObject[] _bullet;
     [SerializeField] private int ActiveSubClass = 0;
+    private GameObject _selectBullet;
 
     public delegate void SetbulletDelegate(Vector3 position);
     public SetbulletDelegate Setbullet;
@@ -13,6 +14,7 @@ public class classChem : characterCon
     private void OnEnable()
     {
         FindObjectOfType<DebugUI>().ChangeSubClass += ChangeSubClass;
+        _selectBullet = _bullet[0];
     }
     private void OnDisable()
     {
@@ -28,11 +30,12 @@ public class classChem : characterCon
     }
     private void SpawnBullet() //normal atk
     {
-
-        GameObject bull = Instantiate(_bullet, _firepoint.position, _firepoint.rotation);
+        isAttacking = true;
+        GameObject bull = Instantiate(_selectBullet, _firepoint.position, _firepoint.rotation);
         Rigidbody2D rb = bull.GetComponent<Rigidbody2D>();
         rb.AddForce(_firepoint.up * _Bulletforce, ForceMode2D.Impulse);
         Setbullet?.Invoke(_mousepos);
+        StartCoroutine(OnCooldown());
     }
     IEnumerator OnCooldown()
     {
@@ -50,14 +53,17 @@ public class classChem : characterCon
 
             case 1: //Explotion
                 ActiveSubClass = 1;
+                _selectBullet = _bullet[1];
                 break;
 
             case 2: //Posion
                 ActiveSubClass = 2;
+                _selectBullet = _bullet[2];
                 break;
 
             case 3: //Burn
                 ActiveSubClass = 3;
+                _selectBullet = _bullet[3];
                 break;
 
             default:

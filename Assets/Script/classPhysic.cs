@@ -13,10 +13,10 @@ public class classPhysic : characterCon
     {
         FindObjectOfType<DebugUI>().ChangeSubClass += ChangeSubClass;
     }
-    /*private void OnDisable()
+    private void OnDisable()
     {
         FindObjectOfType<DebugUI>().ChangeSubClass -= ChangeSubClass;
-    }*/
+    }
     void Update()
     {
         UpdatePosition();

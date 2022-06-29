@@ -99,9 +99,7 @@ public class classPE : characterCon
             Destroy(hitMaxRange);
             Destroy(hitBox);
             // Set reload time
-            float punchTime = 5 / (2 * Atk_Speed);
-            yield return new WaitForSeconds(punchTime);
-            isAttacking = false;
+            StartCoroutine(OnCooldown());
         }
     }
     IEnumerator SpeedPunch()
@@ -134,10 +132,16 @@ public class classPE : characterCon
                 yield return new WaitForSeconds(Time.deltaTime);
             }
             Destroy(hitBox);
-            yield return new WaitForSeconds(swingTime);
-            isAttacking = false;
+            StartCoroutine(OnCooldown());
         }
     }
+    IEnumerator OnCooldown()
+    {
+        float Cooldown = 5 / (2 * Atk_Speed);
+        yield return new WaitForSeconds(Cooldown);
+        isAttacking = false;
+    }
+
     protected override void FixedUpdate()
     {
         if (!isAttacking)

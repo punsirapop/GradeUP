@@ -136,6 +136,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4a13961d7dc75f48a655ebfd53a0989, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  areaDamage: {fileID: 3092292300859954781, guid: 4afa17c7261daa742a871d99fbb02a97, type: 3}
+  areaDamage: {fileID: 3092292300859954781, guid: 5a81090923eeb664b8d76bd7b8a30e69, type: 3}
   Hitarea: {fileID: 301867632180063515, guid: e2a3128a3b980964fa51b9664b08bf26, type: 3}
   Target: {fileID: 0}
