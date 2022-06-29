@@ -15,18 +15,11 @@ public class StatusManager : MonoBehaviour
     private void Start()
     {
         this.MoveSpeed = ClassStatus.Speed;
-        this.Atk = ClassStatus.Actack;
+        this.Atk = ClassStatus.Attack;
         this.HP = ClassStatus.HP;
-        this.Atk_Speed = ClassStatus.ActackSpeed;
+        this.Atk_Speed = ClassStatus.AttackSpeed;
         //Art = ClassStatus.Speed;
     }
 
     //update stat
-    private void AddStat (int HP, int ATK, int  Aspd ,int Spd)
-    {
-        this.MoveSpeed += ClassStatus.Speed;
-        this.Atk += ClassStatus.Actack;
-        this.HP += ClassStatus.HP;
-        this.Atk_Speed += ClassStatus.ActackSpeed;
-    }
 }

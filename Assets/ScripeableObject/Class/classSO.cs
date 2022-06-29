@@ -12,11 +12,11 @@ public class classSO : ScriptableObject
     [SerializeField] private float _HP;
     public float HP => _HP;
 
-    [SerializeField] private float _Actack;
-    public float Actack => _Actack;
+    [SerializeField] private float _Attack;
+    public float Attack => _Attack;
 
-    [SerializeField] private float _ActackSpeed;
-    public float ActackSpeed => _ActackSpeed;
+    [SerializeField] private float _AttackSpeed;
+    public float AttackSpeed => _AttackSpeed;
 
     [SerializeField] private float _Speed;
     public float Speed => _Speed;
