@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/TestMeleeV2.unity
-    guid: a4c5d2c6086792049870f4ab2744c7a1
+    path: Assets/Scenes/TestClass.unity
+    guid: 8b3f80b6727e7194397e8d6f382951f6
   m_configObjects: {}

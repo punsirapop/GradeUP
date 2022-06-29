@@ -5,15 +5,22 @@ using UnityEngine;
 
 public class ClassArt : characterCon
 {
-    public static int subclass = 1;
-    public float aspd = 10f;
-
+    
     [SerializeField] GameObject hitSwing, hitPunch;
-
+    [SerializeField] protected GameObject _bullet;
     bool isAttacking = false, isShooting = false;
 
     readonly object attackLock = new object();
 
+    public static int ActiveSubClass = 0;
+    private void OnEnable()
+    {
+        FindObjectOfType<DebugUI>().ChangeSubClass += ChangeSubClass;
+    }
+    private void OnDisable()
+    {
+        FindObjectOfType<DebugUI>().ChangeSubClass -= ChangeSubClass;
+    }
     void Update()
     {
         if (!isAttacking && Input.GetButtonDown("Fire1"))
@@ -27,13 +34,13 @@ public class ClassArt : characterCon
         lock (attackLock)
         {
             isAttacking = true;
-            switch (subclass)
+            switch (ActiveSubClass)
             {
                 case 0:
                     StartCoroutine(NormalAttack());
                     break;
                 case 1:
-                    StartCoroutine(Attack1());
+                    StartCoroutine(NormalAttack());
                     break;
                 case 2:
                     StartCoroutine(PaintballGun());
@@ -66,7 +73,7 @@ public class ClassArt : characterCon
         rb.velocity = Vector2.zero;
         // Swing
         float swingAngle = 0f;
-        float swingTime = 5 / (2 * aspd);
+        float swingTime = 5 / (2 * Atk_Speed);
         for (float time = 0; time < swingTime; time += Time.deltaTime)
         {
             hitBox.transform.position = transform.position + _firepoint.rotation *
@@ -77,12 +84,6 @@ public class ClassArt : characterCon
         Destroy(hitBox);
         yield return new WaitForSeconds(swingTime);
         isAttacking = false;
-        yield break;
-    }
-
-    IEnumerator Attack1()
-    {
-        StartCoroutine(NormalAttack());
         yield break;
     }
     IEnumerator PaintballGun()
@@ -106,10 +107,8 @@ public class ClassArt : characterCon
                 bull.GetComponent<SpriteRenderer>().color = Color.blue;
                 break;
         }
-        float punchTime = 5 / (2 * aspd);
-        yield return new WaitForSeconds(punchTime);
+        StartCoroutine(OnCooldown());
         isShooting = false;
-        isAttacking = false;
         yield break;
     }
     IEnumerator DashAttack()
@@ -143,10 +142,14 @@ public class ClassArt : characterCon
         Destroy(hitMaxRange);
         Destroy(hitBox);
         rb.velocity = Vector2.zero;
-        float punchTime = 5 / (2 * aspd);
-        yield return new WaitForSeconds(punchTime);
-        isAttacking = false;
+        StartCoroutine(OnCooldown());
         yield break;
+    }
+    IEnumerator OnCooldown()
+    {
+        float Cooldown = 5 / (2 * Atk_Speed);
+        yield return new WaitForSeconds(Cooldown);
+        isAttacking = false;
     }
     protected override void FixedUpdate()
     {
@@ -166,15 +169,19 @@ public class ClassArt : characterCon
         switch (ID)
         {
             case 0: //default
+                ActiveSubClass = 0;
                 break;
 
-            case 1: //
+            case 1: //Explotion
+                ActiveSubClass = 1;
                 break;
 
-            case 2: //
+            case 2: //Posion
+                ActiveSubClass = 2;
                 break;
 
-            case 3: //
+            case 3: //Burn
+                ActiveSubClass = 3;
                 break;
 
             default:
