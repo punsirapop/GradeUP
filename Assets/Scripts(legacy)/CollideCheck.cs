@@ -15,17 +15,22 @@ public class CollideCheck : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         // Get player's class
 
-        if (player.TryGetComponent(out classPE classPE) == true)
+        if (player.TryGetComponent(out ClassArt classArt) == true)
         {
-            playerClass = 2;
+            playerClass = 0;
         }
         else if (player.TryGetComponent(out ClassLng classLng) == true)
         {
             playerClass = 1;
+            classLng.Screenhit += ScreenHit;
         }
-        else if (player.TryGetComponent(out ClassArt classArt) == true)
+        else if (player.TryGetComponent(out classPE classPE) == true)
         {
-            playerClass = 0;
+            playerClass = 2;
+        }
+        else
+        {
+            playerClass = 3;
         }
     }
 
@@ -43,7 +48,7 @@ public class CollideCheck : MonoBehaviour
                 case 0:
                     List<Color> colors = new List<Color>();
                     Color newColor = collision.GetComponent<SpriteRenderer>().color;
-                    if(ClassArt.ActiveSubClass == 1)
+                    if (ClassArt.ActiveSubClass == 1)
                     {
                         colors.Add(newColor);
                         colors.Add(newColor);
@@ -57,7 +62,6 @@ public class CollideCheck : MonoBehaviour
                     break;
                 // If attack is from Lng - hit
                 case 1:
-                    Debug.Log("case1");
                     break;
                 // If attack is from PE - knockback
                 case 2:
@@ -135,5 +139,14 @@ public class CollideCheck : MonoBehaviour
             yield return new WaitForFixedUpdate();
         }
         yield break;
+    }
+
+    private void ScreenHit()
+    {
+        Debug.Log("Called - " + transform.position);
+        if (gameObject.GetComponent<SpriteRenderer>().isVisible)
+        {
+            Debug.Log("Get Attack by ScreenATK");
+        }
     }
 }

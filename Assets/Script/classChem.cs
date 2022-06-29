@@ -32,7 +32,7 @@ public class classChem : characterCon
         GameObject bull = Instantiate(_bullet, _firepoint.position, _firepoint.rotation);
         Rigidbody2D rb = bull.GetComponent<Rigidbody2D>();
         rb.AddForce(_firepoint.up * _Bulletforce, ForceMode2D.Impulse);
-        Setbullet(_mousepos);
+        Setbullet?.Invoke(_mousepos);
     }
     IEnumerator OnCooldown()
     {

@@ -5,10 +5,22 @@ using UnityEngine;
 
 public class ClassLng : characterCon
 {
-    [SerializeField] public static int ActiveSubClass = 2;
+    [SerializeField] public static int ActiveSubClass = 0;
     [SerializeField] GameObject hitWave , hitBullet;
     bool isAttacking = false, isShooting = false;
     readonly object attackLock = new object();
+
+    public delegate void ScreenHitDelegate();
+    public ScreenHitDelegate Screenhit;
+
+    private void OnEnable()
+    {
+        FindObjectOfType<DebugUI>().ChangeSubClass += ChangeSubClass;
+    }
+    private void OnDisable()
+    {
+        FindObjectOfType<DebugUI>().ChangeSubClass -= ChangeSubClass;
+    }
     void Update()
     {
         if (Input.GetButtonDown("Fire1") && !isAttacking)
@@ -26,22 +38,24 @@ public class ClassLng : characterCon
             switch (ActiveSubClass)
             {
                 case 0:
-                    StartCoroutine(Attack0());
+                    StartCoroutine(NormalAttack());
                     break;
                 case 1:
-                    StartCoroutine(Attack0());
+                    StartCoroutine(NormalAttack());
                     break;
                 case 2:
-                    StartCoroutine(Attack2());
+                    StartCoroutine(OrbitAttack());
                     break;
                 case 3:
-                    //StartCoroutine(Attack3());
+                    StartCoroutine(ScreenAttack());
                     break;
             }
             Debug.Log("Attacked");
         }
     }
-    IEnumerator Attack0()
+
+
+    IEnumerator NormalAttack()
     {
         isShooting = true;
         GameObject hitBox = Instantiate(hitWave, _firepoint.position,
@@ -52,7 +66,7 @@ public class ClassLng : characterCon
         isAttacking = false;
         yield break;
     }
-    IEnumerator Attack2()
+    IEnumerator OrbitAttack()
     {
         List<GameObject> hitboxes = new List<GameObject>();
 
@@ -61,7 +75,7 @@ public class ClassLng : characterCon
         {
             Vector3 position = Quaternion.AngleAxis(i * 360 / 6, Vector3.forward) * _firepoint.position;
             Quaternion rotation = Quaternion.AngleAxis(i * 360 / 6, Vector3.forward);
-            GameObject hitBox = Instantiate(hitBullet, position, rotation, _firepoint.transform);
+            GameObject hitBox = Instantiate(hitBullet, position, rotation);
             hitboxes.Add(hitBox);
         }
 
@@ -87,6 +101,12 @@ public class ClassLng : characterCon
         isShooting = false;
         isAttacking = false;
         yield break;
+    }
+    IEnumerator ScreenAttack()
+    {
+        Screenhit?.Invoke();
+        yield return new WaitForSeconds(0.01f);
+        isAttacking = false;
     }
 
     protected override void FixedUpdate()
