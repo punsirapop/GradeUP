@@ -13,10 +13,6 @@ public class classPhysic : characterCon
     {
         FindObjectOfType<DebugUI>().ChangeSubClass += ChangeSubClass;
     }
-    private void OnDisable()
-    {
-        FindObjectOfType<DebugUI>().ChangeSubClass -= ChangeSubClass;
-    }
     void Update()
     {
         UpdatePosition();
@@ -86,5 +82,6 @@ public class classPhysic : characterCon
             default:
                 break;
         }
+        //FindObjectOfType<DebugUI>().ChangeSubClass -= ChangeSubClass; //when debug finish remove plz comment  
     }
 }

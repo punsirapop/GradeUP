@@ -9,6 +9,13 @@ public class CollideCheck : MonoBehaviour
     int playerClass;
     float angle, knockSpeed;
     List<Color> colorList = new List<Color>();
+    private void OnDestroy()
+    {
+        if (player.TryGetComponent(out ClassLng classLng) == true)
+        {
+            classLng.Screenhit -= ScreenHit;
+        }
+    }
     void Start()
     {
         sr = GetComponent<SpriteRenderer>();
@@ -60,10 +67,8 @@ public class CollideCheck : MonoBehaviour
                     }
                     MixColor(colors);
                     break;
-                // If attack is from Lng - hit
                 case 1:
                     break;
-                // If attack is from PE - knockback
                 case 2:
                     knockSpeed = .1f;
                     StartCoroutine(Knockback(collision));

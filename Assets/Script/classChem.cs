@@ -16,10 +16,6 @@ public class classChem : characterCon
         FindObjectOfType<DebugUI>().ChangeSubClass += ChangeSubClass;
         _selectBullet = _bullet[0];
     }
-    private void OnDisable()
-    {
-        FindObjectOfType<DebugUI>().ChangeSubClass -= ChangeSubClass;
-    }
     void Update()
     {
         UpdatePosition();
@@ -69,5 +65,6 @@ public class classChem : characterCon
             default:
                 break;
         }
+        //FindObjectOfType<DebugUI>().ChangeSubClass -= ChangeSubClass; //when debug finish remove plz comment  
     }
 }

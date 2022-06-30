@@ -17,10 +17,6 @@ public class ClassLng : characterCon
     {
         FindObjectOfType<DebugUI>().ChangeSubClass += ChangeSubClass;
     }
-    private void OnDisable()
-    {
-        FindObjectOfType<DebugUI>().ChangeSubClass -= ChangeSubClass;
-    }
     void Update()
     {
         if (Input.GetButtonDown("Fire1") && !isAttacking)
@@ -144,6 +140,6 @@ public class ClassLng : characterCon
             default:
                 break;
         }
+        //FindObjectOfType<DebugUI>().ChangeSubClass -= ChangeSubClass; //when debug finish remove plz comment  
     }
-
 }

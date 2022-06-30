@@ -12,10 +12,6 @@ public class classPE : characterCon
     {
         FindObjectOfType<DebugUI>().ChangeSubClass += ChangeSubClass;
     }
-    private void OnDisable()
-    {
-        FindObjectOfType<DebugUI>().ChangeSubClass -= ChangeSubClass;
-    }
     void Update()
     {
         if (!isAttacking && Input.GetButtonDown("Fire1"))
@@ -182,5 +178,6 @@ public class classPE : characterCon
             default:
                 break;
         }
+        //FindObjectOfType<DebugUI>().ChangeSubClass -= ChangeSubClass; //when debug finish remove plz comment  
     }
 }
