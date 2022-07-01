@@ -183,6 +183,6 @@ public class ClassArt : characterCon
             default:
                 break;
         }
-        //FindObjectOfType<DebugUI>().ChangeSubClass -= ChangeSubClass; //when debug finish remove plz comment  
+        //FindObjectOfType<DebugUI>().ChangeSubClass -= ChangeSubClass; //when debug finish remove comment plz   
     }
 }

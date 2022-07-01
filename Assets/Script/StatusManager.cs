@@ -6,22 +6,43 @@ public class StatusManager : MonoBehaviour
 {
     //status public for Debug only
     [SerializeField] classSO ClassStatus;
-    public float Atk,HP,Atk_Speed,MoveSpeed,Art;
-    //public float HP;
-    //public float Atk_Speed;
-    //public float MoveSpeed;
-    //public int Art;
+    public float Atk, HP, Atk_Speed, MoveSpeed, Art;
 
-    //public int Atk_p, HP_p, Atk_Speed_p, MoveSpeed_p;
+    private int Atk_base, HP_base, Atk_Speed_base, MoveSpeed_base;
+    private int Atk_p, HP_p, Atk_Speed_p, MoveSpeed_p;
+    private int Atk_f, HP_f, Atk_Speed_f, MoveSpeed_f;
     private void Start()
     {
-        this.MoveSpeed = ClassStatus.Speed;
-        this.Atk = ClassStatus.Attack;
         this.HP = ClassStatus.HP;
+        this.Atk = ClassStatus.Attack;
         this.Atk_Speed = ClassStatus.AttackSpeed;
+        this.MoveSpeed = ClassStatus.Speed;
         //Art = ClassStatus.Speed;
     }
 
-    //update stat
+    private void AddPercentBonus(int hp, int atk , int atk_speed, int speed) //Add bonus %
+    {
+        HP_p += hp;
+        Atk_p += atk;
+        Atk_Speed_p += atk_speed;
+        MoveSpeed_p += speed;
+        UpdateStat();
+    }
 
+     private void AddFlatBonus(int hp, int atk, int atk_speed, int speed) //Add bonus flat 
+    {
+        HP_f += hp;
+        Atk_f += atk;
+        Atk_Speed_f += atk_speed;
+        MoveSpeed_f += speed;
+        UpdateStat();
+    }
+
+    private void UpdateStat() //Calculate&Update Final Stat
+    {
+        HP = (HP_base + HP_f) * HP_p / 100;
+        Atk = (Atk_base + Atk_f) * Atk_p / 100;
+        Atk_Speed = (Atk_Speed_base + Atk_Speed_f) * Atk_Speed_p / 100;
+        MoveSpeed = (MoveSpeed_base + MoveSpeed_f) * MoveSpeed_p / 100;
+    }
 }

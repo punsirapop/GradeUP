@@ -8,12 +8,12 @@ public class CollideCheck : MonoBehaviour
     SpriteRenderer sr;
     int playerClass;
     float angle, knockSpeed;
-    List<Color> colorList = new List<Color>();
+    //List<Color> colorList = new List<Color>();
     private void OnDestroy()
     {
-        if (player.TryGetComponent(out ClassLng classLng) == true)
+        if (playerClass == 1)
         {
-            classLng.Screenhit -= ScreenHit;
+            player.GetComponent<ClassLng>().Screenhit -= ScreenHit;
         }
     }
     void Start()
