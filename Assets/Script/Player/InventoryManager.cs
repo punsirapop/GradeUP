@@ -6,15 +6,12 @@ using System;
 
 public class InventoryManager : MonoBehaviour
 {
-    public static event Action<GameObject> OnCollect;
+    public static event Action OnCollect;
     public static List<itemSO> inventory = new List<itemSO>();
     public static int maxSlot = 5;
-    int _activeItemIndex = -1;
+    // int _activeItemIndex = -1;
 
-    private void Start()
-    {
-        PauseMenu.OnDrop += DropItem;
-    }
+    public static int money = 0;
 
     void OnTriggerEnter2D(Collider2D collision)
     {
@@ -23,7 +20,8 @@ public class InventoryManager : MonoBehaviour
             Debug.Log("Calling Actions...");
             if (inventory.Count < maxSlot)
             {
-                OnCollect?.Invoke(collision.gameObject);
+                inventory.Add(collision.GetComponent<ItemHandler>().item);
+                OnCollect?.Invoke();
                 Destroy(collision.gameObject);
             }
             else
@@ -32,9 +30,10 @@ public class InventoryManager : MonoBehaviour
             }
         }
     }
-
+    /*
     void DropItem(int index)
     {
         inventory.RemoveAt(index);
     }
+    */
 }

@@ -69,6 +69,13 @@ AnimationClip:
     path: eye
     classID: 212
     script: {fileID: 0}
+  - curve:
+    - time: 0
+      value: {fileID: 21300000, guid: 0b2452b4b50f08a4fa219df2110055e0, type: 3}
+    attribute: m_Sprite
+    path: hair
+    classID: 212
+    script: {fileID: 0}
   m_SampleRate: 12
   m_WrapMode: 0
   m_Bounds:
@@ -91,6 +98,13 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     - serializedVersion: 2
+      path: 2633457945
+      attribute: 0
+      script: {fileID: 0}
+      typeID: 212
+      customType: 23
+      isPPtrCurve: 1
+    - serializedVersion: 2
       path: 1920501681
       attribute: 1
       script: {fileID: 0}
@@ -106,6 +120,7 @@ AnimationClip:
     - {fileID: 21300000, guid: 6e852a2a0c14d3e4dafd71cde552f207, type: 3}
     - {fileID: 21300000, guid: 0eeaf29cc9ae46f4d884a348dcfc3f03, type: 3}
     - {fileID: 21300000, guid: 0eeaf29cc9ae46f4d884a348dcfc3f03, type: 3}
+    - {fileID: 21300000, guid: 0b2452b4b50f08a4fa219df2110055e0, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}

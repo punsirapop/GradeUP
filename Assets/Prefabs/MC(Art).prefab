@@ -98,13 +98,15 @@ GameObject:
   - component: {fileID: 4621294064056916066}
   - component: {fileID: 4621294064056916065}
   - component: {fileID: 4621294064056916064}
+  - component: {fileID: 3530847521445452143}
+  - component: {fileID: 1054969992960718145}
   m_Layer: 0
   m_Name: MC(Art)
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4621294064056916076
 Transform:
   m_ObjectHideFlags: 0
@@ -232,17 +234,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47cf06d657952ff4e867f1bad59720e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ClassStatus: {fileID: 11400000, guid: 7b0e6efbc0646e746b40b23b99f3426d, type: 2}
-  Atk: 0
-  HP: 0
-  Atk_Speed: 0
-  _movespeed: 5
-  Art: 0
+  playerClass: {fileID: 11400000, guid: 7b0e6efbc0646e746b40b23b99f3426d, type: 2}
   rb: {fileID: 4621294064056916066}
   firepoint: {fileID: 4621294062634954677}
   cam: {fileID: 0}
   _firepoint: {fileID: 4621294063399071058}
-  _bullet: {fileID: 728747090168759146, guid: 8fcebc2969634c146803345a7df69c5d, type: 3}
-  aspd: 10
   hitSwing: {fileID: 711672648239661606, guid: c667cb0bfb968f64bace6a86af7f98ba, type: 3}
   hitPunch: {fileID: 622666229397312050, guid: 21f745abaaf348c44a47d112c14f661f, type: 3}
+  _bullet: {fileID: 728747090168759146, guid: 8fcebc2969634c146803345a7df69c5d, type: 3}
+--- !u!114 &3530847521445452143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4621294064056916071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe80c2c4da06fb14d8a5ad0afdee77be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1054969992960718145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4621294064056916071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30b982d2d7b147e4f9cc55eb193197a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

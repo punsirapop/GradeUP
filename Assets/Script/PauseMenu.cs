@@ -8,7 +8,7 @@ using System;
 public class PauseMenu : MonoBehaviour
 {
     public static bool paused = false;
-    public static event Action<int> OnDrop;
+    public static event Action OnDrop;
 
     [SerializeField] GameObject pauseMenuUI;
     PlayerManager playerManager;
@@ -92,7 +92,8 @@ public class PauseMenu : MonoBehaviour
 
     public void OnDropAccept()
     {
-        OnDrop?.Invoke(_inventoryIndex);
+        InventoryManager.inventory.RemoveAt(_inventoryIndex);
+        OnDrop?.Invoke();
         _inventoryIndex = -1;
         _itemDrop = null;
     }
