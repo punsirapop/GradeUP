@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Item14
   m_EditorClassIdentifier: 
   _itemName: Sheet
-  _itemObject: {fileID: 0}
+  _itemObject: {fileID: 1014371742887573360, guid: e4e8b32db74dfa34284d28263b6e3670, type: 3}
   _HP: 30
   _attack: 3
   _attackSpeed: 2

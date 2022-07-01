@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Item12
   m_EditorClassIdentifier: 
   _itemName: Card
-  _itemObject: {fileID: 0}
+  _itemObject: {fileID: 4497213297742470480, guid: 0d20d6166c61b5f4dbf4f078114bf68f, type: 3}
   _HP: 0
   _attack: 15
   _attackSpeed: 0

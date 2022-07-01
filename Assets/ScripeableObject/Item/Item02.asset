@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Item02
   m_EditorClassIdentifier: 
   _itemName: JellyRuler
-  _itemObject: {fileID: 0}
+  _itemObject: {fileID: 2028020812789829728, guid: f0795111fe8f68b4a9fe5648050e2b4d, type: 3}
   _HP: 0
   _attack: 15
   _attackSpeed: 0

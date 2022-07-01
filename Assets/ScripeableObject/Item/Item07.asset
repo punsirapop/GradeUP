@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Item07
   m_EditorClassIdentifier: 
   _itemName: Pencil
-  _itemObject: {fileID: 0}
+  _itemObject: {fileID: 6675780558584661976, guid: 3e2d4434cb504c14085517f5001e83ad, type: 3}
   _HP: 0
   _attack: 1
   _attackSpeed: 0

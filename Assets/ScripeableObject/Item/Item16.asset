@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Item16
   m_EditorClassIdentifier: 
   _itemName: Wallet
-  _itemObject: {fileID: 0}
+  _itemObject: {fileID: 6933700760278424398, guid: de69ed4f72f5e354cba4fc7e4f49930f, type: 3}
   _HP: 0
   _attack: 0
   _attackSpeed: 0

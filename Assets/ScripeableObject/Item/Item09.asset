@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Item09
   m_EditorClassIdentifier: 
   _itemName: Socks
-  _itemObject: {fileID: 0}
+  _itemObject: {fileID: 4144105572453842199, guid: 37b84734b31b976408396e0da7e6ce98, type: 3}
   _HP: 30
   _attack: 0
   _attackSpeed: 0

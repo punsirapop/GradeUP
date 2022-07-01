@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Item04
   m_EditorClassIdentifier: 
   _itemName: Hoodie
-  _itemObject: {fileID: 0}
+  _itemObject: {fileID: 8877413924536279441, guid: 28ab162dd62f34f48b51ce548e64c0df, type: 3}
   _HP: 50
   _attack: 0
   _attackSpeed: 0

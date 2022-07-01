@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Item23
   m_EditorClassIdentifier: 
   _itemName: Pillow
-  _itemObject: {fileID: 0}
+  _itemObject: {fileID: 5610301704149684810, guid: 976956f4b627b9b448781b220686560f, type: 3}
   _HP: 0
   _attack: 0
   _attackSpeed: 0

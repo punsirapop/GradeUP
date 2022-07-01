@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Item15
   m_EditorClassIdentifier: 
   _itemName: Backpack
-  _itemObject: {fileID: 0}
+  _itemObject: {fileID: 8982340801345939444, guid: 51d82947e4cabd843bebe5766a9df226, type: 3}
   _HP: 0
   _attack: 0
   _attackSpeed: 0

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Item03
   m_EditorClassIdentifier: 
   _itemName: Jacket
-  _itemObject: {fileID: 0}
+  _itemObject: {fileID: 1409788481540816703, guid: e205c1890a9e58d48b0bf8260dcad5c0, type: 3}
   _HP: 20
   _attack: 0
   _attackSpeed: 0

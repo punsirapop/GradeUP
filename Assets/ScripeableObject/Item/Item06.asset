@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Item06
   m_EditorClassIdentifier: 
   _itemName: EnhancedShoes
-  _itemObject: {fileID: 0}
+  _itemObject: {fileID: 2962042781290076619, guid: f2bd4d054c7a4744da7aad67f17eaede, type: 3}
   _HP: 0
   _attack: 0
   _attackSpeed: 0

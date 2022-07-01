@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Item11
   m_EditorClassIdentifier: 
   _itemName: Belt
-  _itemObject: {fileID: 0}
+  _itemObject: {fileID: 8964066887695039386, guid: 858c946d6ae23264aae112a41804af97, type: 3}
   _HP: 0
   _attack: 5
   _attackSpeed: 0

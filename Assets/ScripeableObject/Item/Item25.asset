@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Item25
   m_EditorClassIdentifier: 
   _itemName: Limecandy
-  _itemObject: {fileID: 0}
+  _itemObject: {fileID: 2982246230639295655, guid: c148ca3fbcb352b4c89ac5b503972766, type: 3}
   _HP: 0
   _attack: 0
   _attackSpeed: 0

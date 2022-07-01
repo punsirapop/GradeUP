@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Item22
   m_EditorClassIdentifier: 
   _itemName: Waterbottle
-  _itemObject: {fileID: 0}
+  _itemObject: {fileID: 7874892004941400764, guid: 67991e500bd38f740bfdecc3e7af2c51, type: 3}
   _HP: 0
   _attack: 0
   _attackSpeed: 0

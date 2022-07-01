@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Item05
   m_EditorClassIdentifier: 
   _itemName: Shoes
-  _itemObject: {fileID: 0}
+  _itemObject: {fileID: 9113192024216490116, guid: cce90c10c56341449b201a2e72a68fc4, type: 3}
   _HP: 0
   _attack: 0
   _attackSpeed: 0

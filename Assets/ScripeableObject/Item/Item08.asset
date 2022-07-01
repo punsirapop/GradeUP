@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Item08
   m_EditorClassIdentifier: 
   _itemName: Pen
-  _itemObject: {fileID: 0}
+  _itemObject: {fileID: 7729844923543076615, guid: 473886cfe1a06a14a9737cb0a7ac45e4, type: 3}
   _HP: 0
   _attack: 0
   _attackSpeed: 3

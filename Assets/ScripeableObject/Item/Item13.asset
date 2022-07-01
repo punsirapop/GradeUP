@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Item13
   m_EditorClassIdentifier: 
   _itemName: SmartPhone
-  _itemObject: {fileID: 0}
+  _itemObject: {fileID: 6800238216477856030, guid: b805097d534d5e141b3b8d4095e62ae1, type: 3}
   _HP: 30
   _attack: 3
   _attackSpeed: 2

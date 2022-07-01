@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: Item01
   m_EditorClassIdentifier: 
   _itemName: WoodenRuler
-  _itemObject: {fileID: 0}
+  _itemObject: {fileID: 499849985756607057, guid: 97f61e8cfca847c4b9c9cb2f80e4d7c0, type: 3}
   _HP: 0
   _attack: 5
   _attackSpeed: 0
   _speed: 0
+  _isActive: 0
