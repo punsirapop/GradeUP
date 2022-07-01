@@ -51,11 +51,6 @@ public class StatusManager : MonoBehaviour
         _spdBase = playerClass.spd;
     }
 
-    public void AddReward()
-    {
-
-    }
-
     public void UpdateStat()
     {
         Debug.Log("Updating status...");

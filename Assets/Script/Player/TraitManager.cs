@@ -177,7 +177,7 @@ public class TraitManager : MonoBehaviour
         System.Random percent = new System.Random();
         if (percent.Next(0, 100) < 17)
         {
-            // enter rage mode
+            StartCoroutine(Rage());
         }
     }
 
@@ -207,7 +207,9 @@ public class TraitManager : MonoBehaviour
         System.Random percent = new System.Random();
         if (percent.Next(0, 100) < 17)
         {
-            // drop random item
+            int itemIndex = percent.Next(0, InventoryManager.inventory.Count);
+            // if item isn't undroppable item (glass, evohaler)
+            InventoryManager.inventory.RemoveAt(itemIndex);
         }
     }
 
@@ -215,7 +217,6 @@ public class TraitManager : MonoBehaviour
     // 25% chance to get blurred when damaged
     void Trait12()
     {
-        // give glasses
         System.Random percent = new System.Random();
         if (percent.Next(0, 100) < 25)
         {
@@ -237,11 +238,19 @@ public class TraitManager : MonoBehaviour
     // 17% chance to unable to attack
     void Trait14()
     {
-        // give evohaler
         System.Random percent = new System.Random();
         if (percent.Next(0, 100) < 17)
         {
             // unable to attack
         }
+    }
+
+    IEnumerator Rage()
+    {
+        TraitStat traitRage = new TraitStat(-1, 50, 50, 50, 50);
+        traitStats.Add(traitRage);
+        yield return new WaitForSeconds(3);
+        traitStats.Remove(traitRage);
+        yield break;
     }
 }
