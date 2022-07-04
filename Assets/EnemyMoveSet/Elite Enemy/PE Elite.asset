@@ -1,0 +1,588 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-9142773797956653507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ba77ef582206c04fa972103305cc3ff, type: 3}
+  m_Name: MeleeAttack
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 46dd8949b3896d043bace2e4d4a35b51
+  position: {x: 457, y: 396.80002}
+  blackboard:
+    moveToPosition: {x: 0, y: 0}
+    index: 0
+    nextSkillIndex: -1
+    lastSkillIndex: -1
+    condition: 0
+    indexList: 
+    targetPosition: {x: 0, y: 0}
+  description: 
+  drawGizmos: 0
+  attackAreaPrefab: {fileID: 2211216140542991120, guid: 57205e83336351f4aa660a1c0d5e7dd0, type: 3}
+  attackDuration: 2
+  delayAttack: 0.8
+  extraRange: 4
+  attackAngle: 0
+  isEnemyAttackPlayerDirection: 0
+  isEnemyAttackShortestAxis: 0
+  isEnemyAttackOnlyXAxis: 0
+  isEnemyAttackOnlyYAxis: 0
+  isEnemyAttackBothAxis: 0
+  isEnemyAttack4Direction: 1
+  isEnemyAttack4Angle: 0
+--- !u!114 &-7144307152014934529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2932073b8a6c3b34391576c45d359457, type: 3}
+  m_Name: Parallel
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 9dd1193f8f7219a49991443a730d6b05
+  position: {x: -133.60022, y: 263.20004}
+  blackboard:
+    moveToPosition: {x: 0, y: 0}
+    index: 0
+    nextSkillIndex: -1
+    lastSkillIndex: -1
+    condition: 0
+    indexList: 
+    targetPosition: {x: 0, y: 0}
+  description: 
+  drawGizmos: 0
+  children:
+  - {fileID: 4420509780349253442}
+  - {fileID: -585267977501545105}
+  - {fileID: 6432354612153873096}
+--- !u!114 &-7132982639385750584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4489e3e257543504c8fc9f891246af6c, type: 3}
+  m_Name: MoveInDirection
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: f96218c0063ad034a904c6135319692f
+  position: {x: 610.6, y: 102.399994}
+  blackboard:
+    moveToPosition: {x: 0, y: 0}
+    index: 0
+    nextSkillIndex: -1
+    lastSkillIndex: -1
+    condition: 0
+    indexList: 
+    targetPosition: {x: 0, y: 0}
+  description: 
+  drawGizmos: 0
+  speed: 3
+  duration: 0.5
+  isRandomDirection: 1
+  direction: {x: 1, y: 0}
+--- !u!114 &-3013004837233046973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2932073b8a6c3b34391576c45d359457, type: 3}
+  m_Name: Parallel
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 1646fe4a01f6845468150860c1f8d8f5
+  position: {x: 403.40002, y: 263.19998}
+  blackboard:
+    moveToPosition: {x: 0, y: 0}
+    index: 0
+    nextSkillIndex: -1
+    lastSkillIndex: -1
+    condition: 0
+    indexList: 
+    targetPosition: {x: 0, y: 0}
+  description: 
+  drawGizmos: 0
+  children:
+  - {fileID: -1414362407261421964}
+  - {fileID: -9142773797956653507}
+  - {fileID: 7900412017700884201}
+--- !u!114 &-2625246915512762436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61431bba79d7d7843b82bf1de71703f5, type: 3}
+  m_Name: Sequencer
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 82cee1d2917e9c8429a909a91ed0cbc6
+  position: {x: -25.400024, y: 102.399994}
+  blackboard:
+    moveToPosition: {x: 0, y: 0}
+    index: 0
+    nextSkillIndex: -1
+    lastSkillIndex: -1
+    condition: 0
+    indexList: 
+    targetPosition: {x: 0, y: 0}
+  description: 
+  drawGizmos: 0
+  children:
+  - {fileID: -2271060752313006360}
+  - {fileID: -7144307152014934529}
+--- !u!114 &-2271060752313006360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df9e411f4095d0a44acd9a25323f5e73, type: 3}
+  m_Name: Log
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 8b5e1567fb026084196fd786a2da4579
+  position: {x: -304.80023, y: 263.20004}
+  blackboard:
+    moveToPosition: {x: 0, y: 0}
+    index: 0
+    nextSkillIndex: -1
+    lastSkillIndex: -1
+    condition: 0
+    indexList: 
+    targetPosition: {x: 0, y: 0}
+  description: 
+  drawGizmos: 0
+  message: AttackXdirection
+--- !u!114 &-1414362407261421964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ba77ef582206c04fa972103305cc3ff, type: 3}
+  m_Name: MeleeAttack
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 899d51a243fdf474aaff34bfe3e8dbdf
+  position: {x: 295.40002, y: 396.80002}
+  blackboard:
+    moveToPosition: {x: 0, y: 0}
+    index: 0
+    nextSkillIndex: -1
+    lastSkillIndex: -1
+    condition: 0
+    indexList: 
+    targetPosition: {x: 0, y: 0}
+  description: 
+  drawGizmos: 0
+  attackAreaPrefab: {fileID: 2211216140542991120, guid: 57205e83336351f4aa660a1c0d5e7dd0, type: 3}
+  attackDuration: 2
+  delayAttack: 0.4
+  extraRange: 2
+  attackAngle: 0
+  isEnemyAttackPlayerDirection: 0
+  isEnemyAttackShortestAxis: 0
+  isEnemyAttackOnlyXAxis: 0
+  isEnemyAttackOnlyYAxis: 0
+  isEnemyAttackBothAxis: 0
+  isEnemyAttack4Direction: 1
+  isEnemyAttack4Angle: 0
+--- !u!114 &-585267977501545105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ba77ef582206c04fa972103305cc3ff, type: 3}
+  m_Name: MeleeAttack
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 4e6d5c97dfb374b4dbb6937a67310eab
+  position: {x: -37.60019, y: 395.19995}
+  blackboard:
+    moveToPosition: {x: 0, y: 0}
+    index: 0
+    nextSkillIndex: -1
+    lastSkillIndex: -1
+    condition: 0
+    indexList: 
+    targetPosition: {x: 0, y: 0}
+  description: 
+  drawGizmos: 0
+  attackAreaPrefab: {fileID: 2211216140542991120, guid: 57205e83336351f4aa660a1c0d5e7dd0, type: 3}
+  attackDuration: 2
+  delayAttack: 0.8
+  extraRange: 3.5
+  attackAngle: 45
+  isEnemyAttackPlayerDirection: 0
+  isEnemyAttackShortestAxis: 0
+  isEnemyAttackOnlyXAxis: 0
+  isEnemyAttackOnlyYAxis: 0
+  isEnemyAttackBothAxis: 0
+  isEnemyAttack4Direction: 0
+  isEnemyAttack4Angle: 1
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d285eb63c2cdd74180de7cfceaa96ad, type: 3}
+  m_Name: PE Elite
+  m_EditorClassIdentifier: 
+  rootNode: {fileID: 3841555932035184516}
+  treeState: 0
+  nodes:
+  - {fileID: 3841555932035184516}
+  - {fileID: 6082450699956334868}
+  - {fileID: 6872636280850530412}
+  - {fileID: 466984506068694548}
+  - {fileID: 5501957506244173219}
+  - {fileID: -1414362407261421964}
+  - {fileID: -9142773797956653507}
+  - {fileID: 7900412017700884201}
+  - {fileID: -3013004837233046973}
+  - {fileID: 7368877671057306830}
+  - {fileID: -2625246915512762436}
+  - {fileID: -7144307152014934529}
+  - {fileID: 4420509780349253442}
+  - {fileID: -585267977501545105}
+  - {fileID: 6432354612153873096}
+  - {fileID: -2271060752313006360}
+  - {fileID: -7132982639385750584}
+  blackboard:
+    moveToPosition: {x: 0, y: 0}
+    index: 0
+    nextSkillIndex: -1
+    lastSkillIndex: -1
+    condition: 0
+    indexList: 
+    targetPosition: {x: 0, y: 0}
+--- !u!114 &466984506068694548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a5134d9de14153468b48928d3e7359a, type: 3}
+  m_Name: Wait
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 143e9703fd4f4524cba1c308db851309
+  position: {x: 176, y: 103.20001}
+  blackboard:
+    moveToPosition: {x: 0, y: 0}
+    index: 0
+    nextSkillIndex: -1
+    lastSkillIndex: -1
+    condition: 0
+    indexList: 
+    targetPosition: {x: 0, y: 0}
+  description: 
+  drawGizmos: 0
+  duration: 1
+--- !u!114 &3841555932035184516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 163c147d123e4a945b688eddc64e3ea5, type: 3}
+  m_Name: RootNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 00ad2704805e901459a83ca2e3d9b5e2
+  position: {x: 17, y: -260.672}
+  blackboard:
+    moveToPosition: {x: 0, y: 0}
+    index: 0
+    nextSkillIndex: -1
+    lastSkillIndex: -1
+    condition: 0
+    indexList: 
+    targetPosition: {x: 0, y: 0}
+  description: 
+  drawGizmos: 0
+  child: {fileID: 6082450699956334868}
+--- !u!114 &4420509780349253442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ba77ef582206c04fa972103305cc3ff, type: 3}
+  m_Name: MeleeAttack
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: eb63b5eb92a5a6948b388747fafe7f6b
+  position: {x: -197.60016, y: 396.8}
+  blackboard:
+    moveToPosition: {x: 0, y: 0}
+    index: 0
+    nextSkillIndex: -1
+    lastSkillIndex: -1
+    condition: 0
+    indexList: 
+    targetPosition: {x: 0, y: 0}
+  description: 
+  drawGizmos: 0
+  attackAreaPrefab: {fileID: 2211216140542991120, guid: 57205e83336351f4aa660a1c0d5e7dd0, type: 3}
+  attackDuration: 2
+  delayAttack: 0.4
+  extraRange: 2
+  attackAngle: 45
+  isEnemyAttackPlayerDirection: 0
+  isEnemyAttackShortestAxis: 0
+  isEnemyAttackOnlyXAxis: 0
+  isEnemyAttackOnlyYAxis: 0
+  isEnemyAttackBothAxis: 0
+  isEnemyAttack4Direction: 0
+  isEnemyAttack4Angle: 1
+--- !u!114 &5501957506244173219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f002d1eb4518ee04f872f6470e6ba294, type: 3}
+  m_Name: MoveToPlayer
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: ae0d87f362c40634096537e2aea9845d
+  position: {x: -218.4, y: 102.39999}
+  blackboard:
+    moveToPosition: {x: 0, y: 0}
+    index: 0
+    nextSkillIndex: -1
+    lastSkillIndex: -1
+    condition: 0
+    indexList: 
+    targetPosition: {x: 0, y: 0}
+  description: 
+  drawGizmos: 0
+  speed: 3
+  stoppingDistance: 2
+  acceleration: 40
+--- !u!114 &6082450699956334868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afb5496e8cd973748a10b3e3ef436ebd, type: 3}
+  m_Name: Repeat
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: a89fb02906e7297489c5940ab2c092aa
+  position: {x: 16.799988, y: -139.6}
+  blackboard:
+    moveToPosition: {x: 0, y: 0}
+    index: 0
+    nextSkillIndex: -1
+    lastSkillIndex: -1
+    condition: 0
+    indexList: 
+    targetPosition: {x: 0, y: 0}
+  description: 
+  drawGizmos: 0
+  child: {fileID: 6872636280850530412}
+  restartOnSuccess: 1
+  restartOnFailure: 0
+--- !u!114 &6432354612153873096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ba77ef582206c04fa972103305cc3ff, type: 3}
+  m_Name: MeleeAttack
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 05ec32306a623e94595177b995ff06c2
+  position: {x: 123.99994, y: 395.19995}
+  blackboard:
+    moveToPosition: {x: 0, y: 0}
+    index: 0
+    nextSkillIndex: -1
+    lastSkillIndex: -1
+    condition: 0
+    indexList: 
+    targetPosition: {x: 0, y: 0}
+  description: 
+  drawGizmos: 0
+  attackAreaPrefab: {fileID: 2211216140542991120, guid: 57205e83336351f4aa660a1c0d5e7dd0, type: 3}
+  attackDuration: 2
+  delayAttack: 1.2
+  extraRange: 5
+  attackAngle: 45
+  isEnemyAttackPlayerDirection: 0
+  isEnemyAttackShortestAxis: 0
+  isEnemyAttackOnlyXAxis: 0
+  isEnemyAttackOnlyYAxis: 0
+  isEnemyAttackBothAxis: 0
+  isEnemyAttack4Direction: 0
+  isEnemyAttack4Angle: 1
+--- !u!114 &6872636280850530412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61431bba79d7d7843b82bf1de71703f5, type: 3}
+  m_Name: Sequencer
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 016bbf874223eea46a434c68396be80d
+  position: {x: 16.799988, y: -23}
+  blackboard:
+    moveToPosition: {x: 0, y: 0}
+    index: 0
+    nextSkillIndex: -1
+    lastSkillIndex: -1
+    condition: 0
+    indexList: 
+    targetPosition: {x: 0, y: 0}
+  description: 
+  drawGizmos: 0
+  children:
+  - {fileID: 5501957506244173219}
+  - {fileID: -2625246915512762436}
+  - {fileID: 466984506068694548}
+  - {fileID: 7368877671057306830}
+  - {fileID: -7132982639385750584}
+--- !u!114 &7368877671057306830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61431bba79d7d7843b82bf1de71703f5, type: 3}
+  m_Name: Sequencer
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: e46896f7d295c974bb68ff24abe448f9
+  position: {x: 391.20007, y: 102.399994}
+  blackboard:
+    moveToPosition: {x: 0, y: 0}
+    index: 0
+    nextSkillIndex: -1
+    lastSkillIndex: -1
+    condition: 0
+    indexList: 
+    targetPosition: {x: 0, y: 0}
+  description: 
+  drawGizmos: 0
+  children:
+  - {fileID: -3013004837233046973}
+--- !u!114 &7900412017700884201
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ba77ef582206c04fa972103305cc3ff, type: 3}
+  m_Name: MeleeAttack
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 606c6d6945cd75a41a89bed50bada717
+  position: {x: 617.80005, y: 395.19998}
+  blackboard:
+    moveToPosition: {x: 0, y: 0}
+    index: 0
+    nextSkillIndex: -1
+    lastSkillIndex: -1
+    condition: 0
+    indexList: 
+    targetPosition: {x: 0, y: 0}
+  description: 
+  drawGizmos: 0
+  attackAreaPrefab: {fileID: 2211216140542991120, guid: 57205e83336351f4aa660a1c0d5e7dd0, type: 3}
+  attackDuration: 2
+  delayAttack: 1.2
+  extraRange: 6
+  attackAngle: 0
+  isEnemyAttackPlayerDirection: 0
+  isEnemyAttackShortestAxis: 0
+  isEnemyAttackOnlyXAxis: 0
+  isEnemyAttackOnlyYAxis: 0
+  isEnemyAttackBothAxis: 0
+  isEnemyAttack4Direction: 1
+  isEnemyAttack4Angle: 0

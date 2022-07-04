@@ -1,0 +1,259 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-5820181031681735947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 163c147d123e4a945b688eddc64e3ea5, type: 3}
+  m_Name: RootNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 9e34c70eb860783449ccd3451f9ba348
+  position: {x: -40.799988, y: -347.936}
+  blackboard:
+    moveToPosition: {x: 0, y: 0}
+    index: 0
+    nextSkillIndex: -1
+    lastSkillIndex: -1
+    condition: 0
+    indexList: 
+  description: 
+  drawGizmos: 0
+  child: {fileID: 8825192354973985960}
+--- !u!114 &-2558493401968130318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61431bba79d7d7843b82bf1de71703f5, type: 3}
+  m_Name: Sequencer
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 6a9a91e0ab374864aa6497d5ad817273
+  position: {x: -40, y: -101.19998}
+  blackboard:
+    moveToPosition: {x: 0, y: 0}
+    index: 0
+    nextSkillIndex: -1
+    lastSkillIndex: -1
+    condition: 0
+    indexList: 
+  description: 
+  drawGizmos: 0
+  children:
+  - {fileID: 1669339186674116119}
+  - {fileID: 2237048538656045806}
+  - {fileID: -2394252241500229051}
+  - {fileID: -2008562926764092063}
+  - {fileID: 588350924715034586}
+--- !u!114 &-2394252241500229051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a5134d9de14153468b48928d3e7359a, type: 3}
+  m_Name: Wait
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 78aecf7e13376124f9727f7678141dc3
+  position: {x: 76.60004, y: 82.399994}
+  blackboard:
+    moveToPosition: {x: 0, y: 0}
+    index: 0
+    nextSkillIndex: -1
+    lastSkillIndex: -1
+    condition: 0
+    indexList: 
+  description: 
+  drawGizmos: 0
+  duration: 0.3
+--- !u!114 &-2008562926764092063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ba77ef582206c04fa972103305cc3ff, type: 3}
+  m_Name: MeleeAttack
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 29c2e0f90fb72f742b3e09070cc1705c
+  position: {x: 244, y: 82.399994}
+  blackboard:
+    moveToPosition: {x: 0, y: 0}
+    index: 0
+    nextSkillIndex: -1
+    lastSkillIndex: -1
+    condition: 0
+    indexList: 
+  description: 
+  drawGizmos: 0
+  attackAreaPrefab: {fileID: 2211216140542991120, guid: 57205e83336351f4aa660a1c0d5e7dd0, type: 3}
+  attackDuration: 1
+  delayAttack: 0
+  extraRange: 0
+  attackAngle: 0
+  isEnemyAttackPlayerDirection: 1
+  isEnemyAttackShortestAxis: 0
+  isEnemyAttackOnlyXAxis: 0
+  isEnemyAttackOnlyYAxis: 0
+  isEnemyAttackBothAxis: 0
+  isEnemyAttack4Direction: 0
+  isEnemyAttack4Angle: 0
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d285eb63c2cdd74180de7cfceaa96ad, type: 3}
+  m_Name: Regulator
+  m_EditorClassIdentifier: 
+  rootNode: {fileID: -5820181031681735947}
+  treeState: 0
+  nodes:
+  - {fileID: -5820181031681735947}
+  - {fileID: 1669339186674116119}
+  - {fileID: 8825192354973985960}
+  - {fileID: -2558493401968130318}
+  - {fileID: 2237048538656045806}
+  - {fileID: -2008562926764092063}
+  - {fileID: -2394252241500229051}
+  - {fileID: 588350924715034586}
+  blackboard:
+    moveToPosition: {x: 0, y: 0}
+    index: 0
+    nextSkillIndex: -1
+    lastSkillIndex: -1
+    condition: 0
+    indexList: 
+--- !u!114 &588350924715034586
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8589c585565632343b9a4fbb13f51d61, type: 3}
+  m_Name: SuicideAttack
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 23455e749c7bd924f8e7068a30a616b6
+  position: {x: 415.2, y: 83.20001}
+  blackboard:
+    moveToPosition: {x: 0, y: 0}
+    index: 0
+    nextSkillIndex: -1
+    lastSkillIndex: -1
+    condition: 0
+    indexList: 
+  description: 
+  drawGizmos: 0
+--- !u!114 &1669339186674116119
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a5134d9de14153468b48928d3e7359a, type: 3}
+  m_Name: Wait
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: ca552147f7d3991478e6506e5a0e3606
+  position: {x: -272.2, y: 82.84003}
+  blackboard:
+    moveToPosition: {x: 0, y: 0}
+    index: 0
+    nextSkillIndex: -1
+    lastSkillIndex: -1
+    condition: 0
+    indexList: 
+  description: 
+  drawGizmos: 0
+  duration: 1
+--- !u!114 &2237048538656045806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f002d1eb4518ee04f872f6470e6ba294, type: 3}
+  m_Name: MoveToPlayer
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 698bc414cbd6a1a458c39a73f72580f7
+  position: {x: -90.79999, y: 81.599976}
+  blackboard:
+    moveToPosition: {x: 0, y: 0}
+    index: 0
+    nextSkillIndex: -1
+    lastSkillIndex: -1
+    condition: 0
+    indexList: 
+  description: 
+  drawGizmos: 0
+  speed: 4
+  stoppingDistance: 1
+  acceleration: 40
+--- !u!114 &8825192354973985960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afb5496e8cd973748a10b3e3ef436ebd, type: 3}
+  m_Name: Repeat
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 7026192b56b98e849ab2f2bbea12098c
+  position: {x: -40.799988, y: -230.4}
+  blackboard:
+    moveToPosition: {x: 0, y: 0}
+    index: 0
+    nextSkillIndex: -1
+    lastSkillIndex: -1
+    condition: 0
+    indexList: 
+  description: 
+  drawGizmos: 0
+  child: {fileID: -2558493401968130318}
+  restartOnSuccess: 1
+  restartOnFailure: 0
