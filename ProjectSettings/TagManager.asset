@@ -7,6 +7,7 @@ TagManager:
   - Wall
   - Hit
   - Item
+  - Trait
   layers:
   - Default
   - TransparentFX

@@ -43,9 +43,9 @@ public class TraitManager : MonoBehaviour
     public static List<int> Traits = new List<int>();
     public static List<TraitStat> traitStats = new List<TraitStat>();
 
+    // placeholder
     public static event Action OnEnterRoom;
     public static event Action OnLeaveRoom;
-    public static event Action OnCollect;
     public static event Action OnAttack;
     public static event Action OnDamaged;
     public static event Action OnUseItem;
@@ -53,6 +53,8 @@ public class TraitManager : MonoBehaviour
     public static event Action OnSpendMoney;
     public static event Action OnGetRewardStat;
     public static event Action OnHeal;
+
+    public static event Action OnCollect;
 
     void OnTriggerEnter2D(Collider2D collision)
     {
@@ -63,6 +65,7 @@ public class TraitManager : MonoBehaviour
             {
                 Debug.Log("Trait " + traitIndex + " : get");
                 AddTrait(traitIndex);
+                OnCollect?.Invoke();
                 Destroy(collision.gameObject);
             }
             else

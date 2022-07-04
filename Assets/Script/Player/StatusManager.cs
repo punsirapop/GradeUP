@@ -44,6 +44,7 @@ public class StatusManager : MonoBehaviour
     {
         InventoryManager.OnCollect += UpdateStat;
         PauseMenu.OnDrop += UpdateStat;
+        TraitManager.OnCollect += UpdateStat;
         _className = playerClass.className;
         _atkBase = playerClass.atk;
         _hpBase = playerClass.hp;
@@ -51,7 +52,7 @@ public class StatusManager : MonoBehaviour
         _spdBase = playerClass.spd;
     }
 
-    public void UpdateStat()
+    void UpdateStat()
     {
         Debug.Log("Updating status...");
 
@@ -82,10 +83,10 @@ public class StatusManager : MonoBehaviour
 
         foreach (TraitStat trait in TraitManager.traitStats)
         {
-            _atkItem += trait.atk;
-            _hpItem += trait.hp;
-            _aspdItem += trait.aspd;
-            _spdItem += trait.spd;
+            _atkTrait += trait.atk;
+            _hpTrait += trait.hp;
+            _aspdTrait += trait.aspd;
+            _spdTrait += trait.spd;
         }
 
         _atkTrait *= (_atkBase + _atkReward) / 100;
