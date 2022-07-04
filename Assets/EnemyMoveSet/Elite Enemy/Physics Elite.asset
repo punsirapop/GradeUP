@@ -58,6 +58,7 @@ MonoBehaviour:
   children:
   - {fileID: -9184675124992417256}
   - {fileID: 7432107571028997414}
+  - {fileID: -6511787126086203784}
   - {fileID: 633226688749393546}
   - {fileID: 395270008795464094}
   - {fileID: -231439577767577164}
@@ -261,7 +262,7 @@ MonoBehaviour:
   description: 
   drawGizmos: 0
   duration: 2
-  laserPrefab: {fileID: 2211216140542991120, guid: 57205e83336351f4aa660a1c0d5e7dd0, type: 3}
+  laserPrefab: {fileID: 6416795819457785689, guid: b95b82e0015f2dc4b8c0b1a942c667e0, type: 3}
 --- !u!114 &633226688749393546
 MonoBehaviour:
   m_ObjectHideFlags: 0

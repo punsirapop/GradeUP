@@ -109,7 +109,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -210,5 +210,8 @@ MonoBehaviour:
   firepoint: {fileID: 4983925195045959580}
   cam: {fileID: 0}
   _firepoint: {fileID: 4983925195045959581}
-  _bullet: {fileID: 728747090168759146, guid: bc6cd18080126744791cc085b66c5d4e, type: 3}
+  _bullet:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   ActiveSubClass: 0

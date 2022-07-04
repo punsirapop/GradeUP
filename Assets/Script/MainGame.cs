@@ -5,7 +5,7 @@ using UnityEngine;
 public class MainGame : MonoBehaviour
 {
     public static MainGame instance;
-    public PlayerController playerController;
+    public characterCon playerController;
 
     private void Awake()
     {

@@ -9,7 +9,7 @@ public class MoveToNextRoom : MonoBehaviour
     private Vector2 moveToPosition;
     private Vector3 cameraPosition;
 
-    public PlayerController playerController;
+    public characterCon playerController;
     public GameObject player;
     public new Transform camera;
     public LevelLoader levelLoader;
@@ -18,7 +18,7 @@ public class MoveToNextRoom : MonoBehaviour
 
     private void Awake()
     {
-        playerController = player.GetComponent<PlayerController>();
+        playerController = player.GetComponent<characterCon>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

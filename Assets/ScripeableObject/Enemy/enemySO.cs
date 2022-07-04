@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-[CreateAssetMenu(menuName = "EnamyStat")]
-public class enamySO : ScriptableObject
+[CreateAssetMenu(menuName = "EnemyStat")]
+public class enemySO : ScriptableObject
 {
-    [SerializeField] private string _enamyName;
-    public string EnamyName => _enamyName;
+    [SerializeField] private string _enemyName;
+    public string EnemyName => _enemyName;
 
     [SerializeField] private float _HP;
     public float HP => _HP;
