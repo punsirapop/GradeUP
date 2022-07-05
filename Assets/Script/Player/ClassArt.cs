@@ -15,7 +15,7 @@ public class ClassArt : characterCon
     public static int ActiveSubClass = 0;
     private void OnEnable()
     {
-        FindObjectOfType<DebugUI>().ChangeSubClass += ChangeSubClass;
+        // FindObjectOfType<DebugUI>().ChangeSubClass += ChangeSubClass;
     }
     void Update()
     {

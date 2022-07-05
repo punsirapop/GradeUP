@@ -207,6 +207,7 @@ MonoBehaviour:
   Atk_Speed: 0
   MoveSpeed: 0
   Art: 0
+  moveable: {fileID: 0}
   rb: {fileID: 0}
   firepoint: {fileID: 2500779849550607289}
   cam: {fileID: 0}

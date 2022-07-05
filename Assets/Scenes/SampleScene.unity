@@ -1509,7 +1509,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xPosition: 0
   yPosition: 0
-  playerController: {fileID: 1201494905}
+  playerController: {fileID: 0}
   player: {fileID: 1201494904}
   camera: {fileID: 519420032}
   levelLoader: {fileID: 1585812671}
@@ -1743,7 +1743,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xPosition: 0
   yPosition: 0
-  playerController: {fileID: 1201494905}
+  playerController: {fileID: 0}
   player: {fileID: 1201494904}
   camera: {fileID: 519420032}
   levelLoader: {fileID: 1585812671}
@@ -14127,7 +14127,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xPosition: 0
   yPosition: -13
-  playerController: {fileID: 1201494905}
+  playerController: {fileID: 0}
   player: {fileID: 1201494904}
   camera: {fileID: 519420032}
   levelLoader: {fileID: 1585812671}

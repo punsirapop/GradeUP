@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class characterCon : StatusManager
 {
+    public MoveToNextRoom moveable;
+
     [SerializeField] protected Rigidbody2D rb;
     [SerializeField] protected Rigidbody2D firepoint;
     [SerializeField] protected Camera cam;
