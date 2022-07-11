@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 17410b9035f004c448141fdd058e54b2
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - poisonPrefab: {instanceID: 0}
+  - poisonPoolPrefab: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

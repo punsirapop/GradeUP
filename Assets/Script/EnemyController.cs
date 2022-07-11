@@ -6,6 +6,10 @@ public class EnemyController : MonoBehaviour
 {
     private float maxHealth;
     private float currentHealth;
+
+    bool isVisible;
+    Coroutine countDownVisibleCoroutine;
+
     void Start()
     {
         currentHealth = maxHealth;
@@ -40,5 +44,34 @@ public class EnemyController : MonoBehaviour
     public void SetEnemyHealth(float setHealth)
     {
         currentHealth = setHealth;
+    }
+
+    // [BOSSCHEM]
+    public void SetVisible(bool visible, float time = 0)
+    {
+        Debug.Log("Invisible!");
+        foreach (Component child in transform)
+        {
+            SpriteRenderer sprite = child.GetComponent<SpriteRenderer>();
+            if (sprite != null)
+            {
+                sprite.enabled = visible;
+            }
+        }
+
+        if (!visible)
+        {
+            if (countDownVisibleCoroutine != null)
+            {
+                StopCoroutine(countDownVisibleCoroutine);
+            }
+            countDownVisibleCoroutine = StartCoroutine(CountdownToVisible(time));
+        }
+    }
+
+    IEnumerator CountdownToVisible(float time)
+    {
+        yield return new WaitForSeconds(time);
+        SetVisible(true);
     }
 }

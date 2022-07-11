@@ -23,6 +23,7 @@ MonoBehaviour:
     lastSkillIndex: -1
     condition: 0
     indexList: 
+    targetPosition: {x: 0, y: 0}
   description: 
   drawGizmos: 0
   duration: 2
@@ -49,6 +50,7 @@ MonoBehaviour:
     lastSkillIndex: -1
     condition: 0
     indexList: 
+    targetPosition: {x: 0, y: 0}
   description: 
   drawGizmos: 0
   rotateDegree: 90
@@ -87,6 +89,7 @@ MonoBehaviour:
     lastSkillIndex: 0
     condition: 1
     indexList: 
+    targetPosition: {x: 0, y: 0}
 --- !u!114 &25920005157942327
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -110,6 +113,7 @@ MonoBehaviour:
     lastSkillIndex: -1
     condition: 0
     indexList: 
+    targetPosition: {x: 0, y: 0}
   description: 
   drawGizmos: 0
   rotateDegree: 0
@@ -137,6 +141,7 @@ MonoBehaviour:
     lastSkillIndex: 0
     condition: 0
     indexList: 
+    targetPosition: {x: 0, y: 0}
   description: 
   drawGizmos: 0
   child: {fileID: 8604312380617992141}
@@ -163,6 +168,7 @@ MonoBehaviour:
     lastSkillIndex: 0
     condition: 0
     indexList: 
+    targetPosition: {x: 0, y: 0}
   description: 
   drawGizmos: 0
   selectIndex: 1
@@ -189,6 +195,7 @@ MonoBehaviour:
     lastSkillIndex: 0
     condition: 0
     indexList: 
+    targetPosition: {x: 0, y: 0}
   description: 
   drawGizmos: 0
   children:
@@ -217,6 +224,7 @@ MonoBehaviour:
     lastSkillIndex: 0
     condition: 0
     indexList: 
+    targetPosition: {x: 0, y: 0}
   description: 
   drawGizmos: 0
   message: Attack
@@ -243,6 +251,7 @@ MonoBehaviour:
     lastSkillIndex: 0
     condition: 0
     indexList: 
+    targetPosition: {x: 0, y: 0}
   description: 
   drawGizmos: 0
   selectIndex: 1
@@ -269,6 +278,7 @@ MonoBehaviour:
     lastSkillIndex: 0
     condition: 0
     indexList: 
+    targetPosition: {x: 0, y: 0}
   description: 
   drawGizmos: 0
   message: Skill
@@ -295,6 +305,7 @@ MonoBehaviour:
     lastSkillIndex: 0
     condition: 0
     indexList: 
+    targetPosition: {x: 0, y: 0}
   description: 
   drawGizmos: 0
   children:
@@ -324,6 +335,7 @@ MonoBehaviour:
     lastSkillIndex: 0
     condition: 0
     indexList: 
+    targetPosition: {x: 0, y: 0}
   description: 
   drawGizmos: 0
   children:
@@ -352,6 +364,7 @@ MonoBehaviour:
     lastSkillIndex: 0
     condition: 0
     indexList: 
+    targetPosition: {x: 0, y: 0}
   description: 
   drawGizmos: 0
   child: {fileID: 6312464699797486289}
