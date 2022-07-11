@@ -66,6 +66,7 @@ public class BossChemNormal : ActionNode
 
     private void SpawnPoisonPool()
     {
+        Debug.Log(poison);
         GameObject poisonPool = Instantiate(poisonPoolPrefab, poisonPoolPos, Quaternion.identity);
         FinishPosionPool(poisonPool);
     }

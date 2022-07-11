@@ -43,10 +43,11 @@ public class BossChemSkill1 : ActionNode
 
     private void SmokePowerAttack()
     {
+        enemyPos = new Vector2(enemy.position.x, enemy.position.y);
+        
         distanceX = enemyPos.x - playerPos.x;
         distanceY = enemyPos.y - playerPos.y;
-
-        enemyPos = new Vector2(enemy.position.x, enemy.position.y);
+        
         float angle = Mathf.Atan2(distanceY, distanceX) * Mathf.Rad2Deg - 90f * -1;
         Quaternion enemyAngle = Quaternion.AngleAxis(angle, Vector3.forward);
         

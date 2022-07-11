@@ -18,18 +18,8 @@ public class BossChemUltimate : ActionNode
     protected override void OnStart() {
 
         // MoveToPosition();
-        ClearPoisonPool();
         SpawnPoisonFill();
         startTime = Time.time;
-    }
-
-    private void ClearPoisonPool()
-    {
-        PoisonPool[] pools = FindObjectsOfType<PoisonPool>();
-        foreach (PoisonPool pool in pools)
-        {
-            Destroy(pool);
-        }
     }
 
     protected override void OnStop() {
@@ -37,18 +27,18 @@ public class BossChemUltimate : ActionNode
 
     protected override State OnUpdate() {
         // if (FindObjectOfType<PoisonFill>() != null) return State.Success;
-
-        // if ((Vector2) context.transform.position == spawnUltimatePosition)
+        // Debug.Log($"{context.transform.position} and {spawnUltimatePosition}");
+        // if (Vector2.Distance(context.transform.position, spawnUltimatePosition) <= context.agent.stoppingDistance)
         // {
-        //     SpawnPoisonFill();
-        //     return State.Success;
+            // SpawnPoisonFill();
+            return State.Success;
         // }
-        return State.Success;
+        // return State.Running;
     }
 
     private void MoveToPosition()
     {
-        context.gameObject.GetComponent<NavMeshAgent>().SetDestination(spawnUltimatePosition);
+        context.agent.SetDestination(spawnUltimatePosition);
     }
 
     private void SpawnPoisonFill()
