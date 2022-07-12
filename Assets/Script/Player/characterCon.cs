@@ -1,8 +1,14 @@
+using System;
 using UnityEngine;
 
 public class characterCon : StatusManager
 {
     public MoveToNextRoom moveable;
+
+    public static bool isIFramed = false;
+
+    public static event Action<GameObject> OnCollectItem;
+    public static event Action<GameObject> OnHit;
 
     [SerializeField] protected Rigidbody2D rb;
     [SerializeField] protected Rigidbody2D firepoint;
@@ -39,5 +45,21 @@ public class characterCon : StatusManager
         Vector2 lookdir = _mousepos - rb.position;
         float angle = Mathf.Atan2(lookdir.y, lookdir.x) * Mathf.Rad2Deg - 90f;
         firepoint.rotation = angle;
+    }
+
+    protected void OnTriggerStay2D(Collider2D collision)
+    {
+        switch (collision.tag)
+        {
+            case "Item":
+                OnCollectItem?.Invoke(collision.gameObject);
+                break;
+            case "EnemyAttack":
+                if (!isIFramed)
+                {
+                    OnHit?.Invoke(collision.gameObject);
+                }
+                break;
+        }
     }
 }

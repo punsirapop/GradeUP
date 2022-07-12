@@ -7,6 +7,9 @@ public class MeleeAttack : ActionNode
 {
     [Header("Attack Area Object")]
     public GameObject attackAreaPrefab;
+    //******************************
+    public enemySO attackOwnerStat;
+    //******************************
     
     [Header("Attack Setting")]
     public float attackDuration = 1;
@@ -147,6 +150,9 @@ public class MeleeAttack : ActionNode
     private void Attack(Vector2 attackPos, Quaternion enemyAngle)
     {
         GameObject attackArea = Instantiate(attackAreaPrefab, attackPos, enemyAngle);
+        //*************************************************************************
+        attackArea.GetComponent<AttackHandler>().attackOwner = attackOwnerStat;
+        //*************************************************************************
         FinishAttack(attackArea);
     }
 

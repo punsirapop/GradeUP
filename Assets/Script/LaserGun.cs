@@ -1,9 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
-public class LaserGun : MonoBehaviour
+//*************************************
+public class LaserGun : AttackHandler
+//*************************************
 {
+    public static event Action<GameObject> OnLaserHit;
+
     GameObject player;
     LineRenderer lr;
     float playerDistance;
@@ -14,12 +19,7 @@ public class LaserGun : MonoBehaviour
     {
         lr = GetComponent<LineRenderer>();
         //Debug.Log("lr = " + lr);
-        player = GameObject.Find("Player");
-    }
-
-    void Update()
-    {
-
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     void FixedUpdate()
@@ -36,18 +36,21 @@ public class LaserGun : MonoBehaviour
         lr.SetPosition(0, new Vector3(0f, 0f, -1f));
         lr.SetPosition(1, new Vector3(0, 100, -1f));
         
-        
-            if (hit.collider.CompareTag("Player"))
+        if (hit.collider.CompareTag("Player"))
+        {
+            playerDistance = hit.distance;
+            lr.SetPosition(1, Vector3.up * playerDistance);
+            //***********************************************************************
+            if (string.Equals(name, "LaserGun(Clone)") && !characterCon.isIFramed)
             {
-                playerDistance = hit.distance;
-                lr.SetPosition(1, Vector3.up * playerDistance);
+                OnLaserHit?.Invoke(gameObject);
             }
-
-            else if (hit.collider.CompareTag("Wall"))
-            {
-                wallDistance = hit.distance;
-                lr.SetPosition(1, Vector3.up * wallDistance);
-
-            }        
+            //***********************************************************************
+        }
+        else if (hit.collider.CompareTag("Wall"))
+        {
+            wallDistance = hit.distance;
+            lr.SetPosition(1, Vector3.up * wallDistance);
+        }        
     }
 }

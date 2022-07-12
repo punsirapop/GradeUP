@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 3557058661428746442}
   - component: {fileID: 3557058661428746437}
   - component: {fileID: 3557058661428746441}
+  - component: {fileID: -1489031138300869997}
   m_Layer: 3
   m_Name: MC(Lng)
   m_TagString: Player
@@ -107,7 +108,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -191,6 +192,21 @@ MonoBehaviour:
   _firepoint: {fileID: 3557058661064618180}
   hitWave: {fileID: 7476790988011050064, guid: 0cc9ced89cc278340bfad3deee8ec2d5, type: 3}
   hitBullet: {fileID: 711672648239661606, guid: c667cb0bfb968f64bace6a86af7f98ba, type: 3}
+--- !u!114 &-1489031138300869997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3557058661428746436}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e9629bddacc282488f1a14b598214cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  statusManager: {fileID: 0}
+  hpDisplay: {fileID: 0}
+  deadDisplay: {fileID: 0}
 --- !u!1 &3557058661614215017
 GameObject:
   m_ObjectHideFlags: 0

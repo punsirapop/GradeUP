@@ -13,7 +13,7 @@ public class classChem : characterCon
     private bool isAttacking = false;
     private void OnEnable()
     {
-        FindObjectOfType<DebugUI>().ChangeSubClass += ChangeSubClass;
+        // FindObjectOfType<DebugUI>().ChangeSubClass += ChangeSubClass;
         _selectBullet = _bullet[0];
     }
     void Update()

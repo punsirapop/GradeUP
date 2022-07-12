@@ -13,14 +13,7 @@ public class HealthSystem : MonoBehaviour
 
     protected void GetDamage(float _damage)
     {
-        if (Current_HP - _damage > 0)
-        {
-            this.Current_HP -= _damage;
-        }
-        else
-        {
-            Debug.Log("You died");
-        }
+        this.Current_HP -= _damage;
     }
     protected void GetHeal(float amount)
     {

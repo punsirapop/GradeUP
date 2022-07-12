@@ -97,6 +97,7 @@ GameObject:
   - component: {fileID: 2698141629128264877}
   - component: {fileID: 2698141629128264874}
   - component: {fileID: 2698141629128264875}
+  - component: {fileID: -3685260554315490367}
   m_Layer: 0
   m_Name: Ruler
   m_TagString: Untagged
@@ -132,7 +133,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49e1e7abdef39a64ba62aab0adbf7499, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 0}
 --- !u!114 &2698141629128264877
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -181,3 +181,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tree: {fileID: 11400000, guid: 35f1fa69fb8bb3b4a93edffebc63a446, type: 2}
+--- !u!114 &-3685260554315490367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2698141629128264872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8403d23affb5dd5428acdaf286f1d161, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyStat: {fileID: 11400000, guid: c2eaa2ba53ba2094f8643fbe8a87dd71, type: 2}

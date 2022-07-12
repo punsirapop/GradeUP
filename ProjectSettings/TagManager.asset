@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - Wall
+  - Enemy
+  - Hit
+  - NoHit
+  - Item
+  - EnemyAttack
   layers:
   - Default
   - TransparentFX

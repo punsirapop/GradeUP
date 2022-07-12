@@ -7,6 +7,9 @@ public class RangeAttack : ActionNode
 {
     [Header("Attack Bullet")]
     public GameObject bulletPrefab;
+    //********************************
+    public enemySO attackOwnerStat;
+    //********************************
 
     [Header("Attack Setting")]
     public float attackDuration = 1;
@@ -88,6 +91,9 @@ public class RangeAttack : ActionNode
     {
         GameObject bullet = Instantiate(bulletPrefab, attackPos, enemyAngle);
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
+        //*******************************************************************
+        bullet.GetComponent<AttackHandler>().attackOwner = attackOwnerStat;
+        //*******************************************************************
         rb.AddForce(rb.transform.up * bulletForce, ForceMode2D.Impulse);
         FinishAttack(bullet);
     }

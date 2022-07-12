@@ -98,6 +98,7 @@ GameObject:
   - component: {fileID: 867267399639455431}
   - component: {fileID: 867267399639455424}
   - component: {fileID: 867267399639455425}
+  - component: {fileID: 6388512884979560700}
   m_Layer: 0
   m_Name: Eraser
   m_TagString: Untagged
@@ -133,7 +134,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49e1e7abdef39a64ba62aab0adbf7499, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 0}
 --- !u!114 &867267399639455430
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -203,3 +203,16 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &6388512884979560700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 867267399639455426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8403d23affb5dd5428acdaf286f1d161, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyStat: {fileID: 11400000, guid: 60fe517f1c30abe42b14e0bf5e56f8c6, type: 2}

@@ -259,6 +259,7 @@ MonoBehaviour:
   description: 
   drawGizmos: 0
   bulletPrefab: {fileID: 2211216140542991120, guid: 57205e83336351f4aa660a1c0d5e7dd0, type: 3}
+  attackOwnerStat: {fileID: 11400000, guid: e06d6f2a7c83a1b4ba8f754fcb95b45b, type: 2}
   attackDuration: 1
   bulletDuration: 3
   bulletForce: 10

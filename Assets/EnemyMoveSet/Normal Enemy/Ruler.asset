@@ -171,6 +171,7 @@ MonoBehaviour:
   description: 
   drawGizmos: 0
   attackAreaPrefab: {fileID: 2211216140542991120, guid: 57205e83336351f4aa660a1c0d5e7dd0, type: 3}
+  attackOwnerStat: {fileID: 11400000, guid: c2eaa2ba53ba2094f8643fbe8a87dd71, type: 2}
   attackDuration: 1
   delayAttack: 0.5
   extraRange: 0.8

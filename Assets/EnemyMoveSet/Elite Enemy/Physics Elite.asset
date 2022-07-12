@@ -90,6 +90,7 @@ MonoBehaviour:
   drawGizmos: 0
   duration: 2
   laserPrefab: {fileID: 8234417435184129007, guid: 169b49607daf5964e8ccf6051df6086d, type: 3}
+  attackOwnerStat: {fileID: 11400000, guid: 4d91ba67a9c2a624ba6be56ace7e661c, type: 2}
 --- !u!114 &-6511787126086203784
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -250,7 +251,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: d75d92af17fdac242accb1b7603ab9f3
-  position: {x: 420.13577, y: 142.39995}
+  position: {x: 420.00003, y: 141.99998}
   blackboard:
     moveToPosition: {x: 0, y: 0}
     index: 0
@@ -263,6 +264,7 @@ MonoBehaviour:
   drawGizmos: 0
   duration: 2
   laserPrefab: {fileID: 6416795819457785689, guid: b95b82e0015f2dc4b8c0b1a942c667e0, type: 3}
+  attackOwnerStat: {fileID: 11400000, guid: 4d91ba67a9c2a624ba6be56ace7e661c, type: 2}
 --- !u!114 &633226688749393546
 MonoBehaviour:
   m_ObjectHideFlags: 0

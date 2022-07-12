@@ -6,30 +6,26 @@ using System;
 
 public class InventoryManager : MonoBehaviour
 {
-    public static event Action<GameObject> OnCollect;
     public static List<itemSO> inventory = new List<itemSO>();
     public static int maxSlot = 5;
     int _activeItemIndex = -1;
 
-    private void Start()
+    private void Awake()
     {
-        PauseMenu.OnDrop += DropItem;
+        characterCon.OnCollectItem += CollectItem;
     }
 
-    void OnTriggerEnter2D(Collider2D collision)
+    void CollectItem(GameObject itemHolder)
     {
-        if (collision.CompareTag("Item"))
+        if (inventory.Count < maxSlot)
         {
-            Debug.Log("Calling Actions...");
-            if (inventory.Count < maxSlot)
-            {
-                OnCollect?.Invoke(collision.gameObject);
-                Destroy(collision.gameObject);
-            }
-            else
-            {
-                Debug.Log("Inventory Full");
-            }
+            inventory.Add(itemHolder.GetComponent<ItemScript>().ItemStat);
+            Destroy(itemHolder);
+            Debug.Log("Inventory Count: " + inventory.Count);
+        }
+        else
+        {
+            Debug.Log("Inventory Full: " + inventory.Count);
         }
     }
 

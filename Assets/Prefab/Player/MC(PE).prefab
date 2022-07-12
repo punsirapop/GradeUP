@@ -67,6 +67,7 @@ GameObject:
   - component: {fileID: 2500779849898784209}
   - component: {fileID: 1491247472}
   - component: {fileID: 2500779849898784210}
+  - component: {fileID: 7685707155377946783}
   m_Layer: 3
   m_Name: MC(PE)
   m_TagString: Player
@@ -130,7 +131,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0.1278139, g: 1, b: 0.069811285, a: 1}
   m_FlipX: 0
@@ -215,6 +216,21 @@ MonoBehaviour:
   hitPunch: {fileID: 622666229397312050, guid: 21f745abaaf348c44a47d112c14f661f, type: 3}
   hitSwing: {fileID: 711672648239661606, guid: c667cb0bfb968f64bace6a86af7f98ba, type: 3}
   _bullet: {fileID: 622666229397312050, guid: 21f745abaaf348c44a47d112c14f661f, type: 3}
+--- !u!114 &7685707155377946783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2500779849898784211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e9629bddacc282488f1a14b598214cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  statusManager: {fileID: 0}
+  hpDisplay: {fileID: 0}
+  deadDisplay: {fileID: 0}
 --- !u!1 &2500779850666082349
 GameObject:
   m_ObjectHideFlags: 0

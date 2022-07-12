@@ -23,6 +23,7 @@ MonoBehaviour:
     lastSkillIndex: -1
     condition: 0
     indexList: 
+    targetPosition: {x: 0, y: 0}
   description: 
   drawGizmos: 0
   speed: 2
@@ -56,6 +57,7 @@ MonoBehaviour:
     lastSkillIndex: -1
     condition: 0
     indexList: 
+    targetPosition: {x: 0, y: 0}
   description: 
   drawGizmos: 0
   duration: 0.1
@@ -82,6 +84,7 @@ MonoBehaviour:
     lastSkillIndex: -1
     condition: 0
     indexList: 
+    targetPosition: {x: 0, y: 0}
   description: 
   drawGizmos: 0
   speed: 2
@@ -110,6 +113,7 @@ MonoBehaviour:
     lastSkillIndex: -1
     condition: 0
     indexList: 
+    targetPosition: {x: 0, y: 0}
   description: 
   drawGizmos: 0
   child: {fileID: 6570835468604741663}
@@ -138,6 +142,7 @@ MonoBehaviour:
     lastSkillIndex: -1
     condition: 0
     indexList: 
+    targetPosition: {x: 0, y: 0}
   description: 
   drawGizmos: 0
   duration: 0.1
@@ -164,9 +169,11 @@ MonoBehaviour:
     lastSkillIndex: -1
     condition: 0
     indexList: 
+    targetPosition: {x: 0, y: 0}
   description: 
   drawGizmos: 0
   bulletPrefab: {fileID: 2211216140542991120, guid: 57205e83336351f4aa660a1c0d5e7dd0, type: 3}
+  attackOwnerStat: {fileID: 11400000, guid: 60fe517f1c30abe42b14e0bf5e56f8c6, type: 2}
   attackDuration: 0.1
   bulletDuration: 1.5
   bulletForce: 10
@@ -204,6 +211,7 @@ MonoBehaviour:
     lastSkillIndex: -1
     condition: 0
     indexList: 
+    targetPosition: {x: 0, y: 0}
 --- !u!114 &876910804886075854
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -227,6 +235,7 @@ MonoBehaviour:
     lastSkillIndex: -1
     condition: 0
     indexList: 
+    targetPosition: {x: 0, y: 0}
   description: 
   drawGizmos: 0
   child: {fileID: -3889206435015693246}
@@ -253,6 +262,7 @@ MonoBehaviour:
     lastSkillIndex: -1
     condition: 0
     indexList: 
+    targetPosition: {x: 0, y: 0}
   description: 
   drawGizmos: 0
   speed: 15
@@ -282,6 +292,7 @@ MonoBehaviour:
     lastSkillIndex: -1
     condition: 0
     indexList: 
+    targetPosition: {x: 0, y: 0}
   description: 
   drawGizmos: 0
   children:
@@ -310,6 +321,7 @@ MonoBehaviour:
     lastSkillIndex: -1
     condition: 0
     indexList: 
+    targetPosition: {x: 0, y: 0}
   description: 
   drawGizmos: 0
   children:

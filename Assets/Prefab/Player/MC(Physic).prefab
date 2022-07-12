@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5446525841424581745}
   - component: {fileID: 5446525841424581744}
   - component: {fileID: 5446525841424581749}
+  - component: {fileID: -3406692714826512319}
   m_Layer: 3
   m_Name: MC(Physic)
   m_TagString: Player
@@ -76,7 +77,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 0.40943396, b: 0.40943396, a: 1}
   m_FlipX: 0
@@ -162,6 +163,21 @@ MonoBehaviour:
   _bullet:
   - {fileID: 728747090168759146, guid: 8fcebc2969634c146803345a7df69c5d, type: 3}
   - {fileID: 728747090168759146, guid: 150915e48f7369f4895009990995e058, type: 3}
+--- !u!114 &-3406692714826512319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5446525841424581711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e9629bddacc282488f1a14b598214cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  statusManager: {fileID: 0}
+  hpDisplay: {fileID: 0}
+  deadDisplay: {fileID: 0}
 --- !u!1 &5446525841694112699
 GameObject:
   m_ObjectHideFlags: 0

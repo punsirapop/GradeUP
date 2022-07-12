@@ -11,5 +11,7 @@ public class MainGame : MonoBehaviour
     {
        if(instance != null) Destroy(this);
        else instance = this;
+
+        playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<characterCon>();
     }
 }

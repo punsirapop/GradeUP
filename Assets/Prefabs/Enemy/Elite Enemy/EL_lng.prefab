@@ -183,7 +183,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49e1e7abdef39a64ba62aab0adbf7499, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 0}
 --- !u!114 &6661400662668759091
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -264,6 +263,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ball (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 6653247127765555861, guid: 4b8264c7fd7d97049ad5f54cba296094, type: 3}
+      propertyPath: attackOwner
+      value: 
+      objectReference: {fileID: 11400000, guid: ceeb169cb07751c40a4f2cab8697f864, type: 2}
     - target: {fileID: 7762289802903481724, guid: 4b8264c7fd7d97049ad5f54cba296094, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -351,6 +354,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ball (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 6653247127765555861, guid: 4b8264c7fd7d97049ad5f54cba296094, type: 3}
+      propertyPath: attackOwner
+      value: 
+      objectReference: {fileID: 11400000, guid: ceeb169cb07751c40a4f2cab8697f864, type: 2}
     - target: {fileID: 7762289802903481724, guid: 4b8264c7fd7d97049ad5f54cba296094, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -438,6 +445,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ball
       objectReference: {fileID: 0}
+    - target: {fileID: 6653247127765555861, guid: 4b8264c7fd7d97049ad5f54cba296094, type: 3}
+      propertyPath: attackOwner
+      value: 
+      objectReference: {fileID: 11400000, guid: ceeb169cb07751c40a4f2cab8697f864, type: 2}
     - target: {fileID: 7762289802903481724, guid: 4b8264c7fd7d97049ad5f54cba296094, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -525,6 +536,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ball (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6653247127765555861, guid: 4b8264c7fd7d97049ad5f54cba296094, type: 3}
+      propertyPath: attackOwner
+      value: 
+      objectReference: {fileID: 11400000, guid: ceeb169cb07751c40a4f2cab8697f864, type: 2}
     - target: {fileID: 7762289802903481724, guid: 4b8264c7fd7d97049ad5f54cba296094, type: 3}
       propertyPath: m_RootOrder
       value: 1

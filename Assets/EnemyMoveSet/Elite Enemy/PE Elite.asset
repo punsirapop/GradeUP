@@ -27,6 +27,7 @@ MonoBehaviour:
   description: 
   drawGizmos: 0
   attackAreaPrefab: {fileID: 2211216140542991120, guid: 57205e83336351f4aa660a1c0d5e7dd0, type: 3}
+  attackOwnerStat: {fileID: 11400000, guid: 6fdc608cd22d5ba4cb32969dedf3719f, type: 2}
   attackDuration: 2
   delayAttack: 0.8
   extraRange: 4
@@ -211,6 +212,7 @@ MonoBehaviour:
   description: 
   drawGizmos: 0
   attackAreaPrefab: {fileID: 2211216140542991120, guid: 57205e83336351f4aa660a1c0d5e7dd0, type: 3}
+  attackOwnerStat: {fileID: 11400000, guid: 6fdc608cd22d5ba4cb32969dedf3719f, type: 2}
   attackDuration: 2
   delayAttack: 0.4
   extraRange: 2
@@ -249,6 +251,7 @@ MonoBehaviour:
   description: 
   drawGizmos: 0
   attackAreaPrefab: {fileID: 2211216140542991120, guid: 57205e83336351f4aa660a1c0d5e7dd0, type: 3}
+  attackOwnerStat: {fileID: 11400000, guid: 6fdc608cd22d5ba4cb32969dedf3719f, type: 2}
   attackDuration: 2
   delayAttack: 0.8
   extraRange: 3.5
@@ -381,6 +384,7 @@ MonoBehaviour:
   description: 
   drawGizmos: 0
   attackAreaPrefab: {fileID: 2211216140542991120, guid: 57205e83336351f4aa660a1c0d5e7dd0, type: 3}
+  attackOwnerStat: {fileID: 11400000, guid: 6fdc608cd22d5ba4cb32969dedf3719f, type: 2}
   attackDuration: 2
   delayAttack: 0.4
   extraRange: 2
@@ -477,6 +481,7 @@ MonoBehaviour:
   description: 
   drawGizmos: 0
   attackAreaPrefab: {fileID: 2211216140542991120, guid: 57205e83336351f4aa660a1c0d5e7dd0, type: 3}
+  attackOwnerStat: {fileID: 11400000, guid: 6fdc608cd22d5ba4cb32969dedf3719f, type: 2}
   attackDuration: 2
   delayAttack: 1.2
   extraRange: 5
@@ -575,6 +580,7 @@ MonoBehaviour:
   description: 
   drawGizmos: 0
   attackAreaPrefab: {fileID: 2211216140542991120, guid: 57205e83336351f4aa660a1c0d5e7dd0, type: 3}
+  attackOwnerStat: {fileID: 11400000, guid: 6fdc608cd22d5ba4cb32969dedf3719f, type: 2}
   attackDuration: 2
   delayAttack: 1.2
   extraRange: 6

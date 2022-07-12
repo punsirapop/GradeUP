@@ -18,6 +18,12 @@ MonoBehaviour:
   position: {x: -398.6, y: 84.79999}
   blackboard:
     moveToPosition: {x: 0, y: 0}
+    index: 0
+    nextSkillIndex: -1
+    lastSkillIndex: -1
+    condition: 0
+    indexList: 
+    targetPosition: {x: 0, y: 0}
   description: 
   drawGizmos: 0
   message: Wait !
@@ -39,6 +45,12 @@ MonoBehaviour:
   position: {x: 8, y: 84.79999}
   blackboard:
     moveToPosition: {x: 0, y: 0}
+    index: 0
+    nextSkillIndex: -1
+    lastSkillIndex: -1
+    condition: 0
+    indexList: 
+    targetPosition: {x: 0, y: 0}
   description: 
   drawGizmos: 0
   speed: 3
@@ -68,6 +80,12 @@ MonoBehaviour:
   - {fileID: -4800650260627900179}
   blackboard:
     moveToPosition: {x: 0, y: 0}
+    index: 0
+    nextSkillIndex: -1
+    lastSkillIndex: -1
+    condition: 0
+    indexList: 
+    targetPosition: {x: 0, y: 0}
 --- !u!114 &4270011831862181214
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -86,6 +104,12 @@ MonoBehaviour:
   position: {x: 8, y: -71.79999}
   blackboard:
     moveToPosition: {x: 0, y: 0}
+    index: 0
+    nextSkillIndex: -1
+    lastSkillIndex: -1
+    condition: 0
+    indexList: 
+    targetPosition: {x: 0, y: 0}
   description: 
   drawGizmos: 0
   children:
@@ -111,6 +135,12 @@ MonoBehaviour:
   position: {x: -200.0975, y: 84.79999}
   blackboard:
     moveToPosition: {x: 0, y: 0}
+    index: 0
+    nextSkillIndex: -1
+    lastSkillIndex: -1
+    condition: 0
+    indexList: 
+    targetPosition: {x: 0, y: 0}
   description: 
   drawGizmos: 0
   duration: 2
@@ -132,6 +162,12 @@ MonoBehaviour:
   position: {x: 8, y: -206}
   blackboard:
     moveToPosition: {x: 0, y: 0}
+    index: 0
+    nextSkillIndex: -1
+    lastSkillIndex: -1
+    condition: 0
+    indexList: 
+    targetPosition: {x: 0, y: 0}
   description: 
   drawGizmos: 0
   child: {fileID: 4270011831862181214}
@@ -155,6 +191,12 @@ MonoBehaviour:
   position: {x: 8, y: -333.80002}
   blackboard:
     moveToPosition: {x: 0, y: 0}
+    index: 0
+    nextSkillIndex: -1
+    lastSkillIndex: -1
+    condition: 0
+    indexList: 
+    targetPosition: {x: 0, y: 0}
   description: 
   drawGizmos: 0
   child: {fileID: 6773326939131308429}
@@ -176,15 +218,23 @@ MonoBehaviour:
   position: {x: 217.59998, y: 84.79996}
   blackboard:
     moveToPosition: {x: 0, y: 0}
+    index: 0
+    nextSkillIndex: -1
+    lastSkillIndex: -1
+    condition: 0
+    indexList: 
+    targetPosition: {x: 0, y: 0}
   description: 
   drawGizmos: 0
   attackAreaPrefab: {fileID: 2211216140542991120, guid: 57205e83336351f4aa660a1c0d5e7dd0, type: 3}
   attackDuration: 1
   delayAttack: 0
   extraRange: 0
+  attackAngle: 0
   isEnemyAttackPlayerDirection: 1
   isEnemyAttackShortestAxis: 0
   isEnemyAttackOnlyXAxis: 0
   isEnemyAttackOnlyYAxis: 0
   isEnemyAttackBothAxis: 0
   isEnemyAttack4Direction: 0
+  isEnemyAttack4Angle: 0

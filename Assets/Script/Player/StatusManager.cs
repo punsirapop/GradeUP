@@ -11,7 +11,7 @@ public class StatusManager : MonoBehaviour
     private int Atk_base, HP_base, Atk_Speed_base, MoveSpeed_base;
     private int Atk_p, HP_p, Atk_Speed_p, MoveSpeed_p;
     private int Atk_f, HP_f, Atk_Speed_f, MoveSpeed_f;
-    private void Start()
+    private void Awake()
     {
         this.HP = ClassStatus.HP;
         this.Atk = ClassStatus.Attack;

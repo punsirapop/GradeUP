@@ -14,7 +14,7 @@ public class EnemyPhysics : MonoBehaviour
     {
         lr = GetComponent<LineRenderer>();
         Debug.Log("lr = " + lr);
-        player = GameObject.Find("Player");
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame
