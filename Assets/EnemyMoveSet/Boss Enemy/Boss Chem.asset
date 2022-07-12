@@ -919,8 +919,6 @@ MonoBehaviour:
   direction: {x: 0, y: 0}
   positionX: 1.5
   positionY: 18
-  destination: {x: 1.5, y: 18}
-  destinationDistance: Infinity
 --- !u!114 &8180405803392355401
 MonoBehaviour:
   m_ObjectHideFlags: 0

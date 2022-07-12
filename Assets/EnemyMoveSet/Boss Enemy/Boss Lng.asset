@@ -15,7 +15,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 7a78d1d8f5ed6b744b6a33c7724ba6e4
-  position: {x: 105.36262, y: 347.84177}
+  position: {x: -49, y: 480}
   blackboard:
     moveToPosition: {x: 0, y: 0}
     index: 0
@@ -27,6 +27,35 @@ MonoBehaviour:
   description: Skill 1
   drawGizmos: 0
   message: Skill 1
+--- !u!114 &-8638566594750192728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61431bba79d7d7843b82bf1de71703f5, type: 3}
+  m_Name: Sequencer
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 846d5994a8a344e4bbdd7723987cfbdb
+  position: {x: 269, y: -65}
+  blackboard:
+    moveToPosition: {x: 0, y: 0}
+    index: 0
+    nextSkillIndex: -1
+    lastSkillIndex: -1
+    condition: 0
+    indexList: 
+    targetPosition: {x: 0, y: 0}
+  description: 
+  drawGizmos: 0
+  children:
+  - {fileID: 2587783782075355337}
+  - {fileID: 6508298229064595945}
 --- !u!114 &-7928127265710068826
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53,7 +82,7 @@ MonoBehaviour:
     targetPosition: {x: 0, y: 0}
   description: 
   drawGizmos: 0
-  child: {fileID: -4250381767891245586}
+  child: {fileID: -8638566594750192728}
   restartOnSuccess: 1
   restartOnFailure: 0
 --- !u!114 &-7180277042310611630
@@ -98,7 +127,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: ba0c77b814c955849ba11207f05f0568
-  position: {x: 344.4, y: 219.19998}
+  position: {x: 749.4771, y: 217.99998}
   blackboard:
     moveToPosition: {x: 0, y: 0}
     index: 0
@@ -110,36 +139,7 @@ MonoBehaviour:
   description: 
   drawGizmos: 0
   children:
-  - {fileID: -4073744438995356906}
-  - {fileID: -3170532698126147210}
---- !u!114 &-5226924658981886348
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 598f51f40a0325543a4fb526f9709908, type: 3}
-  m_Name: Condition
-  m_EditorClassIdentifier: 
-  state: 0
-  started: 0
-  guid: de848a27dfb4b36468bc0eb4bf338a89
-  position: {x: 913.19995, y: 345.60004}
-  blackboard:
-    moveToPosition: {x: 0, y: 0}
-    index: 0
-    nextSkillIndex: -1
-    lastSkillIndex: -1
-    condition: 0
-    indexList: 
-    targetPosition: {x: 0, y: 0}
-  description: 
-  drawGizmos: 0
-  normalAttackNumber: 0
-  numberOfSkill: 0
+  - {fileID: -270232913987378367}
 --- !u!114 &-4250381767891245586
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -174,7 +174,7 @@ MonoBehaviour:
   - {fileID: -7034846273964254470}
   - {fileID: 8626184142422042549}
   - {fileID: 935848876090485269}
---- !u!114 &-4123654990525464170
+--- !u!114 &-3310398867210853460
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -183,13 +183,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 598f51f40a0325543a4fb526f9709908, type: 3}
-  m_Name: Condition
+  m_Script: {fileID: 11500000, guid: 61431bba79d7d7843b82bf1de71703f5, type: 3}
+  m_Name: Sequencer
   m_EditorClassIdentifier: 
   state: 0
   started: 0
-  guid: 475bca23161e465489ccc7e7605a7e62
-  position: {x: 591.76263, y: 347.04178}
+  guid: 6d7d1d0e65f986c4a8089133f4f3f887
+  position: {x: 250.99995, y: 347.99997}
   blackboard:
     moveToPosition: {x: 0, y: 0}
     index: 0
@@ -200,36 +200,10 @@ MonoBehaviour:
     targetPosition: {x: 0, y: 0}
   description: 
   drawGizmos: 0
-  normalAttackNumber: 0
-  numberOfSkill: 0
---- !u!114 &-4073744438995356906
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 598f51f40a0325543a4fb526f9709908, type: 3}
-  m_Name: Condition
-  m_EditorClassIdentifier: 
-  state: 0
-  started: 0
-  guid: f964b7c18923bc74d96c76f844f8e860
-  position: {x: 274.16257, y: 347.84177}
-  blackboard:
-    moveToPosition: {x: 0, y: 0}
-    index: 0
-    nextSkillIndex: -1
-    lastSkillIndex: -1
-    condition: 0
-    indexList: 
-    targetPosition: {x: 0, y: 0}
-  description: 
-  drawGizmos: 0
-  normalAttackNumber: 0
-  numberOfSkill: 0
+  children:
+  - {fileID: -9157069718685157011}
+  - {fileID: 6919736831021092526}
+  - {fileID: 4247517106493035007}
 --- !u!114 &-3170532698126147210
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -245,7 +219,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 14a53cf41e17e874d9195e4d505c923f
-  position: {x: 424.56256, y: 347.84177}
+  position: {x: 530, y: 480}
   blackboard:
     moveToPosition: {x: 0, y: 0}
     index: 0
@@ -257,6 +231,33 @@ MonoBehaviour:
   description: Skill 2
   drawGizmos: 0
   message: Skill 2
+--- !u!114 &-2620651042774103243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a5134d9de14153468b48928d3e7359a, type: 3}
+  m_Name: Wait
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 691456a8766b2eb41a66054f006b5762
+  position: {x: -236, y: 480}
+  blackboard:
+    moveToPosition: {x: 0, y: 0}
+    index: 0
+    nextSkillIndex: -1
+    lastSkillIndex: -1
+    condition: 0
+    indexList: 
+    targetPosition: {x: 0, y: 0}
+  description: 
+  drawGizmos: 0
+  duration: 1
 --- !u!114 &-1556431890835350302
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -283,9 +284,9 @@ MonoBehaviour:
     targetPosition: {x: 0, y: 0}
   description: 
   drawGizmos: 0
-  normalAttackNumber: 0
-  numberOfSkill: 0
---- !u!114 &-943765586685181459
+  normalAttackNumber: 1
+  numberOfSkill: 2
+--- !u!114 &-1521498162914085383
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -294,13 +295,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 598f51f40a0325543a4fb526f9709908, type: 3}
-  m_Name: Condition
+  m_Script: {fileID: 11500000, guid: 61431bba79d7d7843b82bf1de71703f5, type: 3}
+  m_Name: Sequencer
   m_EditorClassIdentifier: 
   state: 0
   started: 0
-  guid: 35aab29cf2c251c459425ab5e383172f
-  position: {x: -45.03738, y: 347.84177}
+  guid: d54db34687b7001408cd1e25f489ae3b
+  position: {x: -236, y: 348}
   blackboard:
     moveToPosition: {x: 0, y: 0}
     index: 0
@@ -311,8 +312,38 @@ MonoBehaviour:
     targetPosition: {x: 0, y: 0}
   description: 
   drawGizmos: 0
-  normalAttackNumber: 0
-  numberOfSkill: 0
+  children:
+  - {fileID: 3395179072076269944}
+  - {fileID: 9051998335375377889}
+  - {fileID: 9217027531536228061}
+  - {fileID: -2620651042774103243}
+--- !u!114 &-270232913987378367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbc290b8ae3a92246a392a11ce9c4ff9, type: 3}
+  m_Name: CheckCondition
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 6598a1db49e1e4544a62a7c2e959d156
+  position: {x: 680.47705, y: 347}
+  blackboard:
+    moveToPosition: {x: 0, y: 0}
+    index: 0
+    nextSkillIndex: -1
+    lastSkillIndex: -1
+    condition: 0
+    indexList: 
+    targetPosition: {x: 0, y: 0}
+  description: 
+  drawGizmos: 0
+  selectIndex: 1
 --- !u!114 &-158221469440388454
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -340,7 +371,36 @@ MonoBehaviour:
   description: 
   drawGizmos: 0
   children:
-  - {fileID: 3395179072076269944}
+  - {fileID: -1521498162914085383}
+--- !u!114 &-7147794280506181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f002d1eb4518ee04f872f6470e6ba294, type: 3}
+  m_Name: MoveToPlayer
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: de0bdc2223042574181b37eae215383c
+  position: {x: 680, y: 480}
+  blackboard:
+    moveToPosition: {x: 0, y: 0}
+    index: 0
+    nextSkillIndex: -1
+    lastSkillIndex: -1
+    condition: 0
+    indexList: 
+    targetPosition: {x: 0, y: 0}
+  description: 
+  drawGizmos: 0
+  speed: 3
+  stoppingDistance: 3.5
+  acceleration: 40
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -367,14 +427,27 @@ MonoBehaviour:
   - {fileID: 935848876090485269}
   - {fileID: 8626184142422042549}
   - {fileID: 3395179072076269944}
-  - {fileID: -943765586685181459}
   - {fileID: -9157069718685157011}
-  - {fileID: -4073744438995356906}
   - {fileID: -3170532698126147210}
-  - {fileID: -4123654990525464170}
   - {fileID: 4469635631147371817}
-  - {fileID: -5226924658981886348}
   - {fileID: 5806269735711604663}
+  - {fileID: -1521498162914085383}
+  - {fileID: 9051998335375377889}
+  - {fileID: 9217027531536228061}
+  - {fileID: -2620651042774103243}
+  - {fileID: 2073520584131946149}
+  - {fileID: -3310398867210853460}
+  - {fileID: 4247517106493035007}
+  - {fileID: -270232913987378367}
+  - {fileID: 368763525222395227}
+  - {fileID: 3130984474924204390}
+  - {fileID: 6919736831021092526}
+  - {fileID: -8638566594750192728}
+  - {fileID: 2587783782075355337}
+  - {fileID: 6508298229064595945}
+  - {fileID: 144037697818560565}
+  - {fileID: -7147794280506181}
+  - {fileID: 7672468370554673688}
   blackboard:
     moveToPosition: {x: 0, y: 0}
     index: 0
@@ -383,6 +456,65 @@ MonoBehaviour:
     condition: 0
     indexList: 
     targetPosition: {x: 0, y: 0}
+--- !u!114 &144037697818560565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 372b8766ffc4e2147b178428e6e7f661, type: 3}
+  m_Name: RangeAttack
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: ba53af9ffecbdd14fb7cfaf830732fd3
+  position: {x: 830, y: 579.76}
+  blackboard:
+    moveToPosition: {x: 0, y: 0}
+    index: 0
+    nextSkillIndex: -1
+    lastSkillIndex: -1
+    condition: 0
+    indexList: 
+    targetPosition: {x: 0, y: 0}
+  description: 
+  drawGizmos: 0
+  bulletPrefab: {fileID: 1777577076798816941, guid: 81d745b00429b154c88c93a56df7b5a0, type: 3}
+  attackDuration: 1
+  bulletDuration: 1.5
+  bulletForce: 5
+  isAttackManyDirection: 1
+  maxDirection: 8
+--- !u!114 &368763525222395227
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbc290b8ae3a92246a392a11ce9c4ff9, type: 3}
+  m_Name: CheckCondition
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 1d09d67601fd650458ad948ca66b17e5
+  position: {x: 1072.2666, y: 344.99994}
+  blackboard:
+    moveToPosition: {x: 0, y: 0}
+    index: 0
+    nextSkillIndex: -1
+    lastSkillIndex: -1
+    condition: 0
+    indexList: 
+    targetPosition: {x: 0, y: 0}
+  description: 
+  drawGizmos: 0
+  selectIndex: 2
 --- !u!114 &935848876090485269
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -398,7 +530,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 63198cbde98291e4ebd0a674e8a7bb95
-  position: {x: 987.80005, y: 217.6}
+  position: {x: 1468.2666, y: 216.99998}
   blackboard:
     moveToPosition: {x: 0, y: 0}
     index: 0
@@ -410,8 +542,89 @@ MonoBehaviour:
   description: 
   drawGizmos: 0
   children:
-  - {fileID: -5226924658981886348}
+  - {fileID: 3130984474924204390}
   - {fileID: 5806269735711604663}
+--- !u!114 &2073520584131946149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbc290b8ae3a92246a392a11ce9c4ff9, type: 3}
+  m_Name: CheckCondition
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 10355359ab0fada4dac78ba2e1eec20b
+  position: {x: 82.99992, y: 349.99994}
+  blackboard:
+    moveToPosition: {x: 0, y: 0}
+    index: 0
+    nextSkillIndex: -1
+    lastSkillIndex: -1
+    condition: 0
+    indexList: 
+    targetPosition: {x: 0, y: 0}
+  description: 
+  drawGizmos: 0
+  selectIndex: 0
+--- !u!114 &2587783782075355337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a5134d9de14153468b48928d3e7359a, type: 3}
+  m_Name: Wait
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 5f318e789817eb94daf8cbc1390f41c0
+  position: {x: 194, y: 38}
+  blackboard:
+    moveToPosition: {x: 0, y: 0}
+    index: 0
+    nextSkillIndex: -1
+    lastSkillIndex: -1
+    condition: 0
+    indexList: 
+    targetPosition: {x: 0, y: 0}
+  description: 
+  drawGizmos: 0
+  duration: 1
+--- !u!114 &3130984474924204390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbc290b8ae3a92246a392a11ce9c4ff9, type: 3}
+  m_Name: CheckCondition
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 6ba41400726307042936be3c9b3da81c
+  position: {x: 1393.2666, y: 344.99994}
+  blackboard:
+    moveToPosition: {x: 0, y: 0}
+    index: 0
+    nextSkillIndex: -1
+    lastSkillIndex: -1
+    condition: 0
+    indexList: 
+    targetPosition: {x: 0, y: 0}
+  description: 
+  drawGizmos: 0
+  selectIndex: 3
 --- !u!114 &3395179072076269944
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -427,7 +640,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: b221fab8f4e7693498f4abc576f0c82a
-  position: {x: -236.00002, y: 346.4}
+  position: {x: -686, y: 480}
   blackboard:
     moveToPosition: {x: 0, y: 0}
     index: 0
@@ -439,6 +652,35 @@ MonoBehaviour:
   description: Normal Attack
   drawGizmos: 0
   message: Normal Attack
+--- !u!114 &4247517106493035007
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea1ef89f776c60d4ea0408c33f472da5, type: 3}
+  m_Name: BossLngSkill1
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: e173f1978cc11434abc01966e6c99d45
+  position: {x: 251, y: 480}
+  blackboard:
+    moveToPosition: {x: 0, y: 0}
+    index: 0
+    nextSkillIndex: -1
+    lastSkillIndex: -1
+    condition: 0
+    indexList: 
+    targetPosition: {x: 0, y: 0}
+  description: 
+  drawGizmos: 0
+  muscleStrongPrefab: {fileID: 1985175884344350366, guid: 9e393eb7929d445499d43943634428a5, type: 3}
+  attackTimes: 6
+  skillDurationForTimes: 2
 --- !u!114 &4469635631147371817
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -454,7 +696,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 9a56345806e1748409554f904d02fcfd
-  position: {x: 742.16254, y: 347.04178}
+  position: {x: 1222.2666, y: 345.99994}
   blackboard:
     moveToPosition: {x: 0, y: 0}
     index: 0
@@ -508,7 +750,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 107634d353492824bbec81a2bad32fab
-  position: {x: 1063.2, y: 345.6001}
+  position: {x: 1543.2666, y: 344.99994}
   blackboard:
     moveToPosition: {x: 0, y: 0}
     index: 0
@@ -520,6 +762,97 @@ MonoBehaviour:
   description: Ultimate Skill
   drawGizmos: 0
   message: Ultimate Skill
+--- !u!114 &6508298229064595945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61431bba79d7d7843b82bf1de71703f5, type: 3}
+  m_Name: Sequencer
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 5e7fa44c232e4e54e82b945466c4fc98
+  position: {x: 830, y: 350}
+  blackboard:
+    moveToPosition: {x: 0, y: 0}
+    index: 0
+    nextSkillIndex: -1
+    lastSkillIndex: -1
+    condition: 0
+    indexList: 
+    targetPosition: {x: 0, y: 0}
+  description: 
+  drawGizmos: 0
+  children:
+  - {fileID: -3170532698126147210}
+  - {fileID: -7147794280506181}
+  - {fileID: 7672468370554673688}
+--- !u!114 &6919736831021092526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f002d1eb4518ee04f872f6470e6ba294, type: 3}
+  m_Name: MoveToPlayer
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: c3353a1b1e587da49a5189e17d065ba5
+  position: {x: 101, y: 480}
+  blackboard:
+    moveToPosition: {x: 0, y: 0}
+    index: 0
+    nextSkillIndex: -1
+    lastSkillIndex: -1
+    condition: 0
+    indexList: 
+    targetPosition: {x: 0, y: 0}
+  description: 
+  drawGizmos: 0
+  speed: 3
+  stoppingDistance: 3
+  acceleration: 40
+--- !u!114 &7672468370554673688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94cd159244c5da944a08a25478643418, type: 3}
+  m_Name: BossLngSkill2
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: a49b7b45cf4aee94990096842b93b417
+  position: {x: 830, y: 480}
+  blackboard:
+    moveToPosition: {x: 0, y: 0}
+    index: 0
+    nextSkillIndex: -1
+    lastSkillIndex: -1
+    condition: 0
+    indexList: 
+    targetPosition: {x: 0, y: 0}
+  description: 
+  drawGizmos: 0
+  bulletPrefab: {fileID: 1777577076798816941, guid: 81d745b00429b154c88c93a56df7b5a0, type: 3}
+  charShootDuration: 1.5
+  charShootForce: 5
+  maxCharShootTimes: 3
+  maxDirection: 8
+  turnSpeed: 90
 --- !u!114 &8626184142422042549
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -535,7 +868,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 3af397ba86a6a98439b73acb307ef488
-  position: {x: 662.08606, y: 217.60002}
+  position: {x: 1142.2667, y: 216.99998}
   blackboard:
     moveToPosition: {x: 0, y: 0}
     index: 0
@@ -547,7 +880,7 @@ MonoBehaviour:
   description: 
   drawGizmos: 0
   children:
-  - {fileID: -4123654990525464170}
+  - {fileID: 368763525222395227}
   - {fileID: 4469635631147371817}
 --- !u!114 &9038756188275031635
 MonoBehaviour:
@@ -564,7 +897,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: e1eb76eb0c82b6c4aa781562441d43a2
-  position: {x: 25.59998, y: 217.59999}
+  position: {x: 157.99988, y: 218.00002}
   blackboard:
     moveToPosition: {x: 0, y: 0}
     index: 0
@@ -576,5 +909,63 @@ MonoBehaviour:
   description: 
   drawGizmos: 0
   children:
-  - {fileID: -943765586685181459}
-  - {fileID: -9157069718685157011}
+  - {fileID: 2073520584131946149}
+  - {fileID: -3310398867210853460}
+--- !u!114 &9051998335375377889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4489e3e257543504c8fc9f891246af6c, type: 3}
+  m_Name: MoveInDirection
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 1608b7a9e4c22f943923172459c400fb
+  position: {x: -536, y: 480}
+  blackboard:
+    moveToPosition: {x: 0, y: 0}
+    index: 0
+    nextSkillIndex: -1
+    lastSkillIndex: -1
+    condition: 0
+    indexList: 
+    targetPosition: {x: 0, y: 0}
+  description: 
+  drawGizmos: 0
+  speed: 5
+  duration: 1
+  isRandomDirection: 1
+  direction: {x: 0, y: 0}
+--- !u!114 &9217027531536228061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 149d2fb2c355961419b26d668e3958e4, type: 3}
+  m_Name: BossLngNormal
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: a4c6c82ee859c464dad6e75459005582
+  position: {x: -386, y: 480}
+  blackboard:
+    moveToPosition: {x: 0, y: 0}
+    index: 0
+    nextSkillIndex: -1
+    lastSkillIndex: -1
+    condition: 0
+    indexList: 
+    targetPosition: {x: 0, y: 0}
+  description: 
+  drawGizmos: 0
+  spawnSpeakerLouds: {fileID: 0}
+  skillDuration: 2
