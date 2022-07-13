@@ -1,26 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class ItemScript : MonoBehaviour
 {
     [SerializeField] itemSO ItemStat;
-    public float HP,Atk, Atk_Speed, MoveSpeed, Art;
+    public int HP,Atk, Atk_Speed, MoveSpeed, Art;
 
-    public delegate void AddStatDelegate(int hp, int atk, int atk_speed, int speed);
-    public AddStatDelegate AddStat;
+    //public delegate void AddStatDelegate(int hp, int atk, int atk_speed, int speed);
+    //public AddStatDelegate AddStat;
     void Start()
     {
-        this.HP = ItemStat.HP;
-        this.Atk = ItemStat.Attack;
-        this.Atk_Speed = ItemStat.AttackSpeed;
-        this.MoveSpeed = ItemStat.Speed;
+        
+        this.HP = (int)ItemStat.HP;
+        this.Atk = (int)ItemStat.Attack;
+        this.Atk_Speed = (int)ItemStat.AttackSpeed;
+        this.MoveSpeed = (int)ItemStat.Speed;
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.CompareTag("Player"))
         {
             Debug.Log("GetITEM");
+            collision.GetComponent<StatusManager>().AddFlatBonus(HP, Atk, Atk_Speed, MoveSpeed);
+            //AddStat.Invoke(HP,Atk,Atk_Speed,MoveSpeed);
             Destroy(this.gameObject);
         }
     }
