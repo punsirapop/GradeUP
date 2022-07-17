@@ -4,6 +4,28 @@ using UnityEngine;
 using System;
 using TMPro;
 
+/*
+struct Poison
+{
+    enemySO attackOwner;
+    public enemySO AttackOwner => attackOwner;
+
+    int duration;
+    public int Duration => duration;
+
+    public Poison(enemySO AttackOwner, int Duration)
+    {
+        attackOwner = AttackOwner;
+        duration = Duration;
+    }
+
+    public void Countdown()
+    {
+        duration--;
+    }
+}
+*/
+
 public class PlayerHealth : HealthSystem
 {
     public static event Action OnPlayerDeath;
@@ -13,9 +35,14 @@ public class PlayerHealth : HealthSystem
     [SerializeField] StatusManager statusManager;
     [SerializeField] TextMeshProUGUI hpDisplay;
     [SerializeField] GameObject deadDisplay;
+
+    // List<Poison> poisonStack = new List<Poison>();
+    int poisonStack = 0;
+
     void Start()
     {
         characterCon.OnHit += IsHit;
+        characterCon.OnPoisoned += IsPoisoned;
         LaserGun.OnLaserHit += IsHit;
 
         max_HP = statusManager.HP;
@@ -27,6 +54,22 @@ public class PlayerHealth : HealthSystem
     void Update()
     {
         hpDisplay.SetText(Current_HP + " / " + max_HP);
+
+        /*
+        if(poisonStack.Count > 0)
+        {
+            Debug.Log("Got Poisoned!");
+            StartCoroutine(EnablePoison());
+
+            foreach (Poison poison in poisonStack)
+            {
+                if(poison.Duration <= 0)
+                {
+                    poisonStack.Remove(poison);
+                }
+            }
+        }
+        */
         
         if (Current_HP <= 0)
         {
@@ -52,6 +95,23 @@ public class PlayerHealth : HealthSystem
         GetDamage(damage);
         Debug.Log("Get attacked by " + enemy.EnemyName + " - " + damage);
         StartCoroutine(IFrame());
+    }
+
+    void IsPoisoned(GameObject enemyAttack)
+    {
+        enemy = enemyAttack.GetComponent<AttackHandler>().attackOwner;
+        poisonStack++;
+        StartCoroutine(GetOvertimeDamage(enemy.Attack, 4));
+        StartCoroutine(ReducePoisonStack(4));
+        StartCoroutine(IFrame());
+        Debug.Log(poisonStack);
+    }
+
+    IEnumerator ReducePoisonStack(int duration)
+    {
+        yield return new WaitForSeconds(duration);
+        poisonStack--;
+        Debug.Log(poisonStack);
     }
 
     IEnumerator IFrame()

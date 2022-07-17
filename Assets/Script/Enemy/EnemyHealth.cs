@@ -51,6 +51,7 @@ public class EnemyHealth : HealthSystem
             case "PlayerPoison":
                 Debug.Log("Enemy got Poison!");
                 StartCoroutine(GetOvertimeDamage(playerStatusManager.Atk/4, 4));
+                Debug.Log("HP Left: " + Current_HP + " / " + max_HP);
                 break;
             case "PlayerFire":
                 Debug.Log("Enemy got Burnt!");

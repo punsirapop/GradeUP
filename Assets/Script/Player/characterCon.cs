@@ -9,6 +9,7 @@ public class characterCon : StatusManager
 
     public static event Action<GameObject> OnCollectItem;
     public static event Action<GameObject> OnHit;
+    public static event Action<GameObject> OnPoisoned;
 
     [SerializeField] protected Rigidbody2D rb;
     [SerializeField] protected Rigidbody2D firepoint;
@@ -49,23 +50,28 @@ public class characterCon : StatusManager
 
     protected void OnTriggerStay2D(Collider2D collision)
     {
-        switch (collision.tag)
+        if (collision.CompareTag("Item"))
         {
-            case "Item":
-                OnCollectItem?.Invoke(collision.gameObject);
-                break;
-            case "EnemyAttack":
-                if (!isIFramed)
-                {
+            Debug.Log("Got Item");
+            OnCollectItem?.Invoke(collision.gameObject);
+        }
+        else if (!isIFramed)
+        {
+            switch (collision.tag)
+            {
+                case "EnemyAttack":
+                    Debug.Log("Got Hit");
                     OnHit?.Invoke(collision.gameObject);
-                }
-                break;
-            case "Enemy":
-                if (!isIFramed)
-                {
+                    break;
+                case "Enemy":
+                    Debug.Log("Got Hit");
                     OnHit?.Invoke(collision.gameObject);
-                }
-                break;
+                    break;
+                case "EnemyPoison":
+                    Debug.Log("Got Poisoned");
+                    OnPoisoned?.Invoke(collision.gameObject);
+                    break;
+            }
         }
     }
 }
