@@ -8,15 +8,15 @@ public class EnemyHealth : HealthSystem
     public enemySO enemyStat;
 
     StatusManager playerStatusManager;
+    SpriteRenderer spriteRenderer;
 
     bool isBurnt = false, isBurning = false;
-
-    int i = 0;
 
     readonly object burnLock = new object();
 
     void Start()
     {
+        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         playerStatusManager = GameObject.FindGameObjectWithTag("Player").GetComponent<StatusManager>();
         max_HP = enemyStat.HP;
         Current_HP = max_HP;
@@ -57,6 +57,21 @@ public class EnemyHealth : HealthSystem
                 Debug.Log("Enemy got Burnt!");
                 isBurnt = true;
                 break;
+            case "Art":
+                List<Color> colors = new List<Color>();
+                Color newColor = collision.GetComponent<SpriteRenderer>().color;
+                if (ClassArt.ActiveSubClass == 1)
+                {
+                    colors.Add(newColor);
+                    colors.Add(newColor);
+                }
+                else
+                {
+                    colors.Add(spriteRenderer.color);
+                    colors.Add(newColor);
+                }
+                MixColor(colors);
+                break;
         }
     }
 
@@ -75,5 +90,51 @@ public class EnemyHealth : HealthSystem
         Debug.Log("HP Left: " + Current_HP + " / " + max_HP);
         yield return new WaitForSeconds(1);
         isBurning = false;
+    }
+
+    void MixColor(List<Color> colors)
+    {
+        // Mix same color
+        if (colors[0].Equals(colors[1]))
+        {
+            if (colors.Contains(Color.red))
+            {
+                Debug.Log("WED");
+            }
+            else if (colors.Contains(Color.yellow))
+            {
+                Debug.Log("YELLO");
+            }
+            else if (colors.Contains(Color.blue))
+            {
+                Debug.Log("BLU");
+            }
+        }
+        // Mix different color
+        else
+        {
+            if (colors.Contains(Color.red) && colors.Contains(Color.yellow))
+            {
+                Debug.Log("ORANG");
+            }
+            else if (colors.Contains(Color.red) && colors.Contains(Color.blue))
+            {
+                Debug.Log("PUPEL");
+            }
+            else if (colors.Contains(Color.yellow) && colors.Contains(Color.blue))
+            {
+                Debug.Log("GWEEN");
+            }
+            // Mix failed
+            else
+            {
+                spriteRenderer.color = colors[1];
+            }
+        }
+        // Reset color if mix success
+        if (!colors[0].Equals(Color.white))
+        {
+            spriteRenderer.color = Color.white;
+        }
     }
 }

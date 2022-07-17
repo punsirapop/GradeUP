@@ -13,8 +13,9 @@ public class classPE : characterCon
         InitializeStats();
         // FindObjectOfType<DebugUI>().ChangeSubClass += ChangeSubClass;
     }
-    void Update()
+    protected override void Update()
     {
+        base.Update();
         if (!isAttacking && Input.GetButtonDown("Fire1"))
         {
             Punch();

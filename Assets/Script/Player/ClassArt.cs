@@ -17,8 +17,9 @@ public class ClassArt : characterCon
         InitializeStats();
         // FindObjectOfType<DebugUI>().ChangeSubClass += ChangeSubClass;
     }
-    void Update()
+    protected override void Update()
     {
+        base.Update();
         if (!isAttacking && Input.GetButtonDown("Fire1"))
         {
             Actack();
@@ -52,6 +53,7 @@ public class ClassArt : characterCon
     IEnumerator NormalAttack()
     {
         GameObject hitBox = Instantiate(hitSwing, _firepoint.position, _firepoint.rotation, firepoint.transform);
+        hitBox.tag = "Art";
         // Randomize color of attack
         int color = UnityEngine.Random.Range(0, 3);
         switch (color)
@@ -86,6 +88,7 @@ public class ClassArt : characterCon
     {
         isShooting = true;
         GameObject bull = Instantiate(_bullet, _firepoint.position, _firepoint.rotation);
+        bull.tag = "Art";
         Rigidbody2D rb = bull.GetComponent<Rigidbody2D>();
         rb.AddForce(_firepoint.up * _Bulletforce, ForceMode2D.Impulse);
         //GameObject hitBox = Instantiate(_bullet, _firepoint.position, _firepoint.rotation, bullets.transform);
@@ -117,6 +120,7 @@ public class ClassArt : characterCon
         float spd = 5f;
         GameObject hitBox = Instantiate(hitPunch, _firepoint.position,
             Quaternion.AngleAxis(90f, Vector3.forward) * _firepoint.rotation, firepoint.transform);
+        hitBox.tag = "Art";
         int color = UnityEngine.Random.Range(0, 3);
         switch (color)
         {
@@ -158,7 +162,6 @@ public class ClassArt : characterCon
         {
             rb.velocity = Vector2.zero;
         }
-
     }
     private void ChangeSubClass(int ID) //for Change Sub-Class 
     {

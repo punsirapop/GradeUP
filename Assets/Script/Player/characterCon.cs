@@ -10,6 +10,9 @@ public class characterCon : StatusManager
     public static event Action<GameObject> OnCollectItem;
     public static event Action<GameObject> OnHit;
     public static event Action<GameObject> OnPoisoned;
+    public static event Action<GameObject> OnNearNPC;
+    public static event Action<GameObject> OnLeaveNPC;
+    public static event Action OnInteractNPC;
 
     [SerializeField] protected Rigidbody2D rb;
     [SerializeField] protected Rigidbody2D firepoint;
@@ -25,6 +28,15 @@ public class characterCon : StatusManager
     {
         rb = this.GetComponent<Rigidbody2D>();
         cam = Camera.FindObjectOfType<Camera>();
+    }
+
+    protected virtual void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            Debug.Log("Pressed E");
+            OnInteractNPC?.Invoke();
+        }
     }
     protected virtual void FixedUpdate()
     {
@@ -55,6 +67,10 @@ public class characterCon : StatusManager
             Debug.Log("Got Item");
             OnCollectItem?.Invoke(collision.gameObject);
         }
+        else if (collision.CompareTag("NPC"))
+        {
+            OnNearNPC?.Invoke(collision.gameObject);
+        }
         else if (!isIFramed)
         {
             switch (collision.tag)
@@ -72,6 +88,14 @@ public class characterCon : StatusManager
                     OnPoisoned?.Invoke(collision.gameObject);
                     break;
             }
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("NPC"))
+        {
+            OnLeaveNPC?.Invoke(collision.gameObject);
         }
     }
 }

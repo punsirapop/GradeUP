@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _enemyName: Elite Chem
   _HP: 900
-  _attack: 10
+  _attack: 1
   _attackSpeed: 3
   _speed: 6

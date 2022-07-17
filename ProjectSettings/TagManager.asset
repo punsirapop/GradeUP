@@ -12,6 +12,9 @@ TagManager:
   - EnemyAttack
   - PlayerFire
   - PlayerPoison
+  - EnemyPoison
+  - Art
+  - NPC
   layers:
   - Default
   - TransparentFX

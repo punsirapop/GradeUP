@@ -14,8 +14,9 @@ public class classPhysic : characterCon
         InitializeStats();
         // FindObjectOfType<DebugUI>().ChangeSubClass += ChangeSubClass;
     }
-    void Update()
+    protected override void Update()
     {
+        base.Update();
         UpdatePosition();
         if (Input.GetButtonDown("Fire1") && !isAttacking)
         {

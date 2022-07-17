@@ -100,18 +100,19 @@ public class PlayerHealth : HealthSystem
     void IsPoisoned(GameObject enemyAttack)
     {
         enemy = enemyAttack.GetComponent<AttackHandler>().attackOwner;
+        float damage = enemy.Attack;
+        Debug.Log("Get poisoned by " + enemy.EnemyName + " - " + damage + " ("+ poisonStack + ")");
         poisonStack++;
-        StartCoroutine(GetOvertimeDamage(enemy.Attack, 4));
+        StartCoroutine(GetOvertimeDamage(damage, 4));
         StartCoroutine(ReducePoisonStack(4));
         StartCoroutine(IFrame());
-        Debug.Log(poisonStack);
     }
 
     IEnumerator ReducePoisonStack(int duration)
     {
         yield return new WaitForSeconds(duration);
         poisonStack--;
-        Debug.Log(poisonStack);
+        Debug.Log("Remaining poison - " + poisonStack);
     }
 
     IEnumerator IFrame()

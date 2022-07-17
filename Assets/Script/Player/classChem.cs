@@ -20,8 +20,9 @@ public class classChem : characterCon
         // *************************
         // _selectBullet = _bullet[0];
     }
-    void Update()
+    protected override void Update()
     {
+        base.Update();
         UpdatePosition();
         if (Input.GetButtonDown("Fire1") && !isAttacking)
         {
