@@ -60,6 +60,12 @@ public class characterCon : StatusManager
                     OnHit?.Invoke(collision.gameObject);
                 }
                 break;
+            case "Enemy":
+                if (!isIFramed)
+                {
+                    OnHit?.Invoke(collision.gameObject);
+                }
+                break;
         }
     }
 }

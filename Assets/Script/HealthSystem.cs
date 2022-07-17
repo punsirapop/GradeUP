@@ -24,6 +24,7 @@ public class HealthSystem : MonoBehaviour
         for (int i = 1; i <= time; i++)
         {
             GetDamage(_damage);
+            Debug.Log("HP Left: " + Current_HP + " / " + max_HP);
             yield return new WaitForSeconds(1f);
         }
     }

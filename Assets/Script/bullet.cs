@@ -18,7 +18,11 @@ public class bullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        if (bounceMat == null)
+        if (collider.CompareTag("Enemy"))
+        {
+            Destroy(gameObject);
+        }
+        else if (bounceMat == null)
         {
             if (collider.gameObject.CompareTag("Wall"))
             {
@@ -27,14 +31,15 @@ public class bullet : MonoBehaviour
         }
     }
 
+    /*
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-
             Destroy(this.gameObject);
         }
     }
+    */
 
     private IEnumerator BulletDestroy()
     {

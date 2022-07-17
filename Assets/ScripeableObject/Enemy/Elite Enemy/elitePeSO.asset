@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: elitePeSO
   m_EditorClassIdentifier: 
   _enemyName: Elite PE
-  _HP: 0
-  _attack: 0
-  _attackSpeed: 0
-  _speed: 0
+  _HP: 1500
+  _attack: 100
+  _attackSpeed: 4
+  _speed: 3

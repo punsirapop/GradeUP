@@ -8,6 +8,8 @@ public class PlayerHealth : HealthSystem
 {
     public static event Action OnPlayerDeath;
 
+    enemySO enemy;
+
     [SerializeField] StatusManager statusManager;
     [SerializeField] TextMeshProUGUI hpDisplay;
     [SerializeField] GameObject deadDisplay;
@@ -25,7 +27,7 @@ public class PlayerHealth : HealthSystem
     void Update()
     {
         hpDisplay.SetText(Current_HP + " / " + max_HP);
-
+        
         if (Current_HP <= 0)
         {
             OnPlayerDeath?.Invoke();
@@ -37,7 +39,15 @@ public class PlayerHealth : HealthSystem
 
     void IsHit(GameObject enemyAttack)
     {
-        enemySO enemy = enemyAttack.GetComponent<AttackHandler>().attackOwner;
+        try
+        {
+            enemy = enemyAttack.GetComponent<AttackHandler>().attackOwner;
+        }
+        catch (Exception)
+        {
+            enemy = enemyAttack.GetComponent<EnemyHealth>().enemyStat;
+        }
+
         float damage = enemy.Attack;
         GetDamage(damage);
         Debug.Log("Get attacked by " + enemy.EnemyName + " - " + damage);

@@ -5,13 +5,13 @@ using UnityEngine;
 public class StatusManager : MonoBehaviour
 {
     //status public for Debug only
-    [SerializeField] classSO ClassStatus;
+    [SerializeField] public classSO ClassStatus;
     public float Atk, HP, Atk_Speed, MoveSpeed, Art;
 
     private int Atk_base, HP_base, Atk_Speed_base, MoveSpeed_base;
     private int Atk_p, HP_p, Atk_Speed_p, MoveSpeed_p;
     private int Atk_f, HP_f, Atk_Speed_f, MoveSpeed_f;
-    private void Awake()
+    protected void InitializeStats()
     {
         this.HP = ClassStatus.HP;
         this.Atk = ClassStatus.Attack;

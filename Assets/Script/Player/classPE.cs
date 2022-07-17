@@ -10,7 +10,8 @@ public class classPE : characterCon
     private int ActiveSubClass = 0;
     private void OnEnable()
     {
-        FindObjectOfType<DebugUI>().ChangeSubClass += ChangeSubClass;
+        InitializeStats();
+        // FindObjectOfType<DebugUI>().ChangeSubClass += ChangeSubClass;
     }
     void Update()
     {

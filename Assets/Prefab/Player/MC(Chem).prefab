@@ -213,9 +213,9 @@ MonoBehaviour:
   cam: {fileID: 0}
   _firepoint: {fileID: 4983925195045959581}
   _bullet:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 728747090168759146, guid: 1e212f729e2765840ba39e2e6b9732fb, type: 3}
+  - {fileID: 728747090168759146, guid: 99933126d65c4254cb4ff4deb51c6c7b, type: 3}
+  - {fileID: 728747090168759146, guid: 9b46ea489a2e68e4a96e2897e06fef34, type: 3}
   ActiveSubClass: 0
 --- !u!114 &-4905953190601364352
 MonoBehaviour:

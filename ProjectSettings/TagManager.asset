@@ -10,6 +10,8 @@ TagManager:
   - NoHit
   - Item
   - EnemyAttack
+  - PlayerFire
+  - PlayerPoison
   layers:
   - Default
   - TransparentFX

@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class ClassArt : characterCon
 {
-    
     [SerializeField] GameObject hitSwing, hitPunch;
     [SerializeField] protected GameObject _bullet;
     bool isAttacking = false, isShooting = false;
@@ -15,6 +14,7 @@ public class ClassArt : characterCon
     public static int ActiveSubClass = 0;
     private void OnEnable()
     {
+        InitializeStats();
         // FindObjectOfType<DebugUI>().ChangeSubClass += ChangeSubClass;
     }
     void Update()

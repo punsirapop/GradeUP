@@ -15,7 +15,8 @@ public class ClassLng : characterCon
 
     private void OnEnable()
     {
-        FindObjectOfType<DebugUI>().ChangeSubClass += ChangeSubClass;
+        InitializeStats();
+        // FindObjectOfType<DebugUI>().ChangeSubClass += ChangeSubClass;
     }
     void Update()
     {
