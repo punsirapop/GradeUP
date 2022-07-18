@@ -7,8 +7,14 @@ public class EnemyController : MonoBehaviour
     private float maxHealth;
     private float currentHealth;
 
+    // [BOSSCHEM]
     bool isVisible;
     Coroutine countDownVisibleCoroutine;
+
+    // [BOSSLNG]
+    bool isShieldBreak;
+    float maxShieldHealth;
+    [SerializeField] float shiledHealth;
 
     void Start()
     {
@@ -18,7 +24,11 @@ public class EnemyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        // [BOSSLNG]
+        // if (!isShieldBreak)
+        // {
+        //     AttackShield();
+        // }
     }
 
     public void TakeDamage(float damage)
@@ -73,5 +83,33 @@ public class EnemyController : MonoBehaviour
     {
         yield return new WaitForSeconds(time);
         SetVisible(true);
+    }
+
+    // [BOSSLNG]
+    public bool GetIsShieldBreak()
+    {
+        return isShieldBreak;
+    }
+
+    public void CreateShield(float maxShieldHealth)
+    {
+        this.maxShieldHealth = maxShieldHealth;
+        shiledHealth = maxShieldHealth;
+        isShieldBreak = false;
+    }
+
+    public void AttackShield()
+    {
+        // Debug
+        AttackShield(maxShieldHealth);
+    }
+
+    private void AttackShield(float damage)
+    {
+        shiledHealth -= damage;
+        if (shiledHealth <= 0)
+        {
+            isShieldBreak = true;
+        }
     }
 }

@@ -15,7 +15,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 7a78d1d8f5ed6b744b6a33c7724ba6e4
-  position: {x: -49, y: 480}
+  position: {x: -47, y: 472}
   blackboard:
     moveToPosition: {x: 0, y: 0}
     index: 0
@@ -24,6 +24,8 @@ MonoBehaviour:
     condition: 0
     indexList: 
     targetPosition: {x: 0, y: 0}
+    centerPosition: {x: 0, y: 0}
+    scaleToFillMap: {x: 0, y: 0}
   description: Skill 1
   drawGizmos: 0
   message: Skill 1
@@ -42,7 +44,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 846d5994a8a344e4bbdd7723987cfbdb
-  position: {x: 269, y: -65}
+  position: {x: 269.00003, y: -76.99995}
   blackboard:
     moveToPosition: {x: 0, y: 0}
     index: 0
@@ -51,11 +53,14 @@ MonoBehaviour:
     condition: 0
     indexList: 
     targetPosition: {x: 0, y: 0}
+    centerPosition: {x: 0, y: 0}
+    scaleToFillMap: {x: 0, y: 0}
   description: 
   drawGizmos: 0
   children:
   - {fileID: 2587783782075355337}
-  - {fileID: 6508298229064595945}
+  - {fileID: -3310398867210853460}
+  - {fileID: 4794630958826029421}
 --- !u!114 &-7928127265710068826
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -80,6 +85,8 @@ MonoBehaviour:
     condition: 0
     indexList: 
     targetPosition: {x: 0, y: 0}
+    centerPosition: {x: 0, y: 0}
+    scaleToFillMap: {x: 0, y: 0}
   description: 
   drawGizmos: 0
   child: {fileID: -8638566594750192728}
@@ -109,6 +116,8 @@ MonoBehaviour:
     condition: 0
     indexList: 
     targetPosition: {x: 0, y: 0}
+    centerPosition: {x: 0, y: 0}
+    scaleToFillMap: {x: 0, y: 0}
   description: 
   drawGizmos: 0
   child: {fileID: -7928127265710068826}
@@ -127,7 +136,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: ba0c77b814c955849ba11207f05f0568
-  position: {x: 749.4771, y: 217.99998}
+  position: {x: 663.1925, y: 218}
   blackboard:
     moveToPosition: {x: 0, y: 0}
     index: 0
@@ -136,10 +145,13 @@ MonoBehaviour:
     condition: 0
     indexList: 
     targetPosition: {x: 0, y: 0}
+    centerPosition: {x: 0, y: 0}
+    scaleToFillMap: {x: 0, y: 0}
   description: 
   drawGizmos: 0
   children:
   - {fileID: -270232913987378367}
+  - {fileID: 6508298229064595945}
 --- !u!114 &-4250381767891245586
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -164,6 +176,8 @@ MonoBehaviour:
     condition: 0
     indexList: 
     targetPosition: {x: 0, y: 0}
+    centerPosition: {x: 0, y: 0}
+    scaleToFillMap: {x: 0, y: 0}
   description: 
   drawGizmos: 0
   children:
@@ -174,6 +188,76 @@ MonoBehaviour:
   - {fileID: -7034846273964254470}
   - {fileID: 8626184142422042549}
   - {fileID: 935848876090485269}
+--- !u!114 &-4139813362660295530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14be428d8d46522408af8b4f7cad0fb4, type: 3}
+  m_Name: BossLngSkill3
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: b3c1a223d32e2ce47ba852c228c2b151
+  position: {x: 1224, y: 472.00003}
+  blackboard:
+    moveToPosition: {x: 0, y: 0}
+    index: 0
+    nextSkillIndex: -1
+    lastSkillIndex: -1
+    condition: 0
+    indexList: 
+    targetPosition: {x: 0, y: 0}
+    centerPosition: {x: 0, y: 0}
+    scaleToFillMap: {x: 0, y: 0}
+  description: 
+  drawGizmos: 0
+  words:
+  - stupid
+  - lazy
+  - bad
+  - noise
+  - fxck
+  isMaxChar: 0
+  maxChar: 5
+  isRandomChar: 0
+  charAlphabetPrefab: {fileID: 5910788074828056905, guid: 86d03c65468aee6438811573e99b1830, type: 3}
+  spaceCharAlphabet: 2
+  alphabetSprites:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  bossMove: 1
+  charFallForce: 10
+  charFallDuration: 2
+  nextCharObject: {fileID: 0}
 --- !u!114 &-3310398867210853460
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -198,11 +282,13 @@ MonoBehaviour:
     condition: 0
     indexList: 
     targetPosition: {x: 0, y: 0}
+    centerPosition: {x: 0, y: 0}
+    scaleToFillMap: {x: 0, y: 0}
   description: 
   drawGizmos: 0
   children:
   - {fileID: -9157069718685157011}
-  - {fileID: 6919736831021092526}
+  - {fileID: -2760733363902988679}
   - {fileID: 4247517106493035007}
 --- !u!114 &-3170532698126147210
 MonoBehaviour:
@@ -219,7 +305,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 14a53cf41e17e874d9195e4d505c923f
-  position: {x: 530, y: 480}
+  position: {x: 446, y: 472}
   blackboard:
     moveToPosition: {x: 0, y: 0}
     index: 0
@@ -228,9 +314,134 @@ MonoBehaviour:
     condition: 0
     indexList: 
     targetPosition: {x: 0, y: 0}
+    centerPosition: {x: 0, y: 0}
+    scaleToFillMap: {x: 0, y: 0}
   description: Skill 2
   drawGizmos: 0
   message: Skill 2
+--- !u!114 &-3031346029857116412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f28172f79770314b9535646716fce84, type: 3}
+  m_Name: MoveToPosition
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: c64acf8452f5ddf459af740f09c5faab
+  position: {x: 1074, y: 472}
+  blackboard:
+    moveToPosition: {x: 0, y: 0}
+    index: 0
+    nextSkillIndex: -1
+    lastSkillIndex: -1
+    condition: 0
+    indexList: 
+    targetPosition: {x: 0, y: 0}
+    centerPosition: {x: 0, y: 0}
+    scaleToFillMap: {x: 0, y: 0}
+  description: 
+  drawGizmos: 1
+  speed: 10
+  direction: {x: 0, y: 0}
+  positionX: 1.5
+  positionY: 23
+--- !u!114 &-2760733363902988679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f28172f79770314b9535646716fce84, type: 3}
+  m_Name: MoveToPosition
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 7836c47a08293fe4e865716dda015f87
+  position: {x: 103, y: 472.00006}
+  blackboard:
+    moveToPosition: {x: 0, y: 0}
+    index: 0
+    nextSkillIndex: -1
+    lastSkillIndex: -1
+    condition: 0
+    indexList: 
+    targetPosition: {x: 0, y: 0}
+    centerPosition: {x: 0, y: 0}
+    scaleToFillMap: {x: 0, y: 0}
+  description: 
+  drawGizmos: 0
+  speed: 5
+  direction: {x: 0, y: 0}
+  positionX: 1.5
+  positionY: 18
+--- !u!114 &-2722302024867910491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d423dcb8fdc8e2f47bb3ca30f7344fed, type: 3}
+  m_Name: BossLngUltimate
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 609855195d522954593730d97cd2a1c1
+  position: {x: 1681, y: 470}
+  blackboard:
+    moveToPosition: {x: 0, y: 0}
+    index: 0
+    nextSkillIndex: -1
+    lastSkillIndex: -1
+    condition: 0
+    indexList: 
+    targetPosition: {x: 0, y: 0}
+    centerPosition: {x: 0, y: 0}
+    scaleToFillMap: {x: 0, y: 0}
+  description: 
+  drawGizmos: 0
+  shieldShockPrefab: {fileID: 1688041323595218319, guid: a892ad78c79fc0b4aa5f8fcf606fece9, type: 3}
+  alphabetPrefabs:
+  - {fileID: 1024129804138162860, guid: a4010d0936b8ad846bcd6db2c955613f, type: 3}
+  - {fileID: 1024129804138162860, guid: de4357bc4f0dc0a4688898881620af85, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  delayAttack: 2
+  maxShieldHealth: 100
+  skillDuration: 10
 --- !u!114 &-2620651042774103243
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -246,7 +457,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 691456a8766b2eb41a66054f006b5762
-  position: {x: -236, y: 480}
+  position: {x: -234, y: 472}
   blackboard:
     moveToPosition: {x: 0, y: 0}
     index: 0
@@ -255,6 +466,8 @@ MonoBehaviour:
     condition: 0
     indexList: 
     targetPosition: {x: 0, y: 0}
+    centerPosition: {x: 0, y: 0}
+    scaleToFillMap: {x: 0, y: 0}
   description: 
   drawGizmos: 0
   duration: 1
@@ -282,10 +495,12 @@ MonoBehaviour:
     condition: 0
     indexList: 
     targetPosition: {x: 0, y: 0}
+    centerPosition: {x: 0, y: 0}
+    scaleToFillMap: {x: 0, y: 0}
   description: 
   drawGizmos: 0
   normalAttackNumber: 1
-  numberOfSkill: 2
+  numberOfSkill: 4
 --- !u!114 &-1521498162914085383
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -310,6 +525,8 @@ MonoBehaviour:
     condition: 0
     indexList: 
     targetPosition: {x: 0, y: 0}
+    centerPosition: {x: 0, y: 0}
+    scaleToFillMap: {x: 0, y: 0}
   description: 
   drawGizmos: 0
   children:
@@ -332,7 +549,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 6598a1db49e1e4544a62a7c2e959d156
-  position: {x: 680.47705, y: 347}
+  position: {x: 594.1925, y: 347.00003}
   blackboard:
     moveToPosition: {x: 0, y: 0}
     index: 0
@@ -341,6 +558,8 @@ MonoBehaviour:
     condition: 0
     indexList: 
     targetPosition: {x: 0, y: 0}
+    centerPosition: {x: 0, y: 0}
+    scaleToFillMap: {x: 0, y: 0}
   description: 
   drawGizmos: 0
   selectIndex: 1
@@ -368,6 +587,8 @@ MonoBehaviour:
     condition: 0
     indexList: 
     targetPosition: {x: 0, y: 0}
+    centerPosition: {x: 0, y: 0}
+    scaleToFillMap: {x: 0, y: 0}
   description: 
   drawGizmos: 0
   children:
@@ -387,7 +608,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: de0bdc2223042574181b37eae215383c
-  position: {x: 680, y: 480}
+  position: {x: 596, y: 472}
   blackboard:
     moveToPosition: {x: 0, y: 0}
     index: 0
@@ -396,6 +617,8 @@ MonoBehaviour:
     condition: 0
     indexList: 
     targetPosition: {x: 0, y: 0}
+    centerPosition: {x: 0, y: 0}
+    scaleToFillMap: {x: 0, y: 0}
   description: 
   drawGizmos: 0
   speed: 3
@@ -441,13 +664,19 @@ MonoBehaviour:
   - {fileID: -270232913987378367}
   - {fileID: 368763525222395227}
   - {fileID: 3130984474924204390}
-  - {fileID: 6919736831021092526}
   - {fileID: -8638566594750192728}
   - {fileID: 2587783782075355337}
   - {fileID: 6508298229064595945}
-  - {fileID: 144037697818560565}
   - {fileID: -7147794280506181}
   - {fileID: 7672468370554673688}
+  - {fileID: 2185302168895360409}
+  - {fileID: -3031346029857116412}
+  - {fileID: -4139813362660295530}
+  - {fileID: 4794630958826029421}
+  - {fileID: 2289155202032629423}
+  - {fileID: -2722302024867910491}
+  - {fileID: 3249911898600020120}
+  - {fileID: -2760733363902988679}
   blackboard:
     moveToPosition: {x: 0, y: 0}
     index: 0
@@ -456,38 +685,8 @@ MonoBehaviour:
     condition: 0
     indexList: 
     targetPosition: {x: 0, y: 0}
---- !u!114 &144037697818560565
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 372b8766ffc4e2147b178428e6e7f661, type: 3}
-  m_Name: RangeAttack
-  m_EditorClassIdentifier: 
-  state: 0
-  started: 0
-  guid: ba53af9ffecbdd14fb7cfaf830732fd3
-  position: {x: 830, y: 579.76}
-  blackboard:
-    moveToPosition: {x: 0, y: 0}
-    index: 0
-    nextSkillIndex: -1
-    lastSkillIndex: -1
-    condition: 0
-    indexList: 
-    targetPosition: {x: 0, y: 0}
-  description: 
-  drawGizmos: 0
-  bulletPrefab: {fileID: 1777577076798816941, guid: 81d745b00429b154c88c93a56df7b5a0, type: 3}
-  attackDuration: 1
-  bulletDuration: 1.5
-  bulletForce: 5
-  isAttackManyDirection: 1
-  maxDirection: 8
+    centerPosition: {x: 1.5, y: 18}
+    scaleToFillMap: {x: 13, y: 12}
 --- !u!114 &368763525222395227
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -512,6 +711,8 @@ MonoBehaviour:
     condition: 0
     indexList: 
     targetPosition: {x: 0, y: 0}
+    centerPosition: {x: 0, y: 0}
+    scaleToFillMap: {x: 0, y: 0}
   description: 
   drawGizmos: 0
   selectIndex: 2
@@ -530,7 +731,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 63198cbde98291e4ebd0a674e8a7bb95
-  position: {x: 1468.2666, y: 216.99998}
+  position: {x: 1606, y: 217}
   blackboard:
     moveToPosition: {x: 0, y: 0}
     index: 0
@@ -539,11 +740,13 @@ MonoBehaviour:
     condition: 0
     indexList: 
     targetPosition: {x: 0, y: 0}
+    centerPosition: {x: 0, y: 0}
+    scaleToFillMap: {x: 0, y: 0}
   description: 
   drawGizmos: 0
   children:
   - {fileID: 3130984474924204390}
-  - {fileID: 5806269735711604663}
+  - {fileID: 2289155202032629423}
 --- !u!114 &2073520584131946149
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -568,9 +771,75 @@ MonoBehaviour:
     condition: 0
     indexList: 
     targetPosition: {x: 0, y: 0}
+    centerPosition: {x: 0, y: 0}
+    scaleToFillMap: {x: 0, y: 0}
   description: 
   drawGizmos: 0
   selectIndex: 0
+--- !u!114 &2185302168895360409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61431bba79d7d7843b82bf1de71703f5, type: 3}
+  m_Name: Sequencer
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: ba9fafa3e4aa43343981abe6b108da44
+  position: {x: 1222, y: 347}
+  blackboard:
+    moveToPosition: {x: 0, y: 0}
+    index: 0
+    nextSkillIndex: -1
+    lastSkillIndex: -1
+    condition: 0
+    indexList: 
+    targetPosition: {x: 0, y: 0}
+    centerPosition: {x: 0, y: 0}
+    scaleToFillMap: {x: 0, y: 0}
+  description: 
+  drawGizmos: 0
+  children:
+  - {fileID: 4469635631147371817}
+  - {fileID: -3031346029857116412}
+  - {fileID: -4139813362660295530}
+--- !u!114 &2289155202032629423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61431bba79d7d7843b82bf1de71703f5, type: 3}
+  m_Name: Sequencer
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 046931ff3ea62b24795a7912e4347ab1
+  position: {x: 1681, y: 345}
+  blackboard:
+    moveToPosition: {x: 0, y: 0}
+    index: 0
+    nextSkillIndex: -1
+    lastSkillIndex: -1
+    condition: 0
+    indexList: 
+    targetPosition: {x: 0, y: 0}
+    centerPosition: {x: 0, y: 0}
+    scaleToFillMap: {x: 0, y: 0}
+  description: 
+  drawGizmos: 0
+  children:
+  - {fileID: 5806269735711604663}
+  - {fileID: 3249911898600020120}
+  - {fileID: -2722302024867910491}
 --- !u!114 &2587783782075355337
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -586,7 +855,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 5f318e789817eb94daf8cbc1390f41c0
-  position: {x: 194, y: 38}
+  position: {x: 194, y: 55}
   blackboard:
     moveToPosition: {x: 0, y: 0}
     index: 0
@@ -595,9 +864,11 @@ MonoBehaviour:
     condition: 0
     indexList: 
     targetPosition: {x: 0, y: 0}
+    centerPosition: {x: 0, y: 0}
+    scaleToFillMap: {x: 0, y: 0}
   description: 
   drawGizmos: 0
-  duration: 1
+  duration: 2
 --- !u!114 &3130984474924204390
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -613,7 +884,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 6ba41400726307042936be3c9b3da81c
-  position: {x: 1393.2666, y: 344.99994}
+  position: {x: 1531, y: 345}
   blackboard:
     moveToPosition: {x: 0, y: 0}
     index: 0
@@ -622,9 +893,43 @@ MonoBehaviour:
     condition: 0
     indexList: 
     targetPosition: {x: 0, y: 0}
+    centerPosition: {x: 0, y: 0}
+    scaleToFillMap: {x: 0, y: 0}
   description: 
   drawGizmos: 0
   selectIndex: 3
+--- !u!114 &3249911898600020120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f28172f79770314b9535646716fce84, type: 3}
+  m_Name: MoveToPosition
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: f2d7c956bb68dde40b5e7b612b29a162
+  position: {x: 1531, y: 470}
+  blackboard:
+    moveToPosition: {x: 0, y: 0}
+    index: 0
+    nextSkillIndex: -1
+    lastSkillIndex: -1
+    condition: 0
+    indexList: 
+    targetPosition: {x: 0, y: 0}
+    centerPosition: {x: 0, y: 0}
+    scaleToFillMap: {x: 0, y: 0}
+  description: 
+  drawGizmos: 0
+  speed: 5
+  direction: {x: 0, y: 0}
+  positionX: 7
+  positionY: 18
 --- !u!114 &3395179072076269944
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -640,7 +945,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: b221fab8f4e7693498f4abc576f0c82a
-  position: {x: -686, y: 480}
+  position: {x: -684, y: 472}
   blackboard:
     moveToPosition: {x: 0, y: 0}
     index: 0
@@ -649,6 +954,8 @@ MonoBehaviour:
     condition: 0
     indexList: 
     targetPosition: {x: 0, y: 0}
+    centerPosition: {x: 0, y: 0}
+    scaleToFillMap: {x: 0, y: 0}
   description: Normal Attack
   drawGizmos: 0
   message: Normal Attack
@@ -667,7 +974,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: e173f1978cc11434abc01966e6c99d45
-  position: {x: 251, y: 480}
+  position: {x: 253, y: 472}
   blackboard:
     moveToPosition: {x: 0, y: 0}
     index: 0
@@ -676,11 +983,15 @@ MonoBehaviour:
     condition: 0
     indexList: 
     targetPosition: {x: 0, y: 0}
+    centerPosition: {x: 0, y: 0}
+    scaleToFillMap: {x: 0, y: 0}
   description: 
   drawGizmos: 0
   muscleStrongPrefab: {fileID: 1985175884344350366, guid: 9e393eb7929d445499d43943634428a5, type: 3}
   attackTimes: 6
-  skillDurationForTimes: 2
+  ringCount: 6
+  scaleRing: 1
+  skillDurationForStomp: 3
 --- !u!114 &4469635631147371817
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -696,7 +1007,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 9a56345806e1748409554f904d02fcfd
-  position: {x: 1222.2666, y: 345.99994}
+  position: {x: 924, y: 472}
   blackboard:
     moveToPosition: {x: 0, y: 0}
     index: 0
@@ -705,9 +1016,43 @@ MonoBehaviour:
     condition: 0
     indexList: 
     targetPosition: {x: 0, y: 0}
+    centerPosition: {x: 0, y: 0}
+    scaleToFillMap: {x: 0, y: 0}
   description: Skill 3
   drawGizmos: 0
   message: Skill 3
+--- !u!114 &4794630958826029421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f28172f79770314b9535646716fce84, type: 3}
+  m_Name: MoveToPosition
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 26aa89d0f4240df418ef5dfe53a7744a
+  position: {x: 344, y: 55}
+  blackboard:
+    moveToPosition: {x: 0, y: 0}
+    index: 0
+    nextSkillIndex: -1
+    lastSkillIndex: -1
+    condition: 0
+    indexList: 
+    targetPosition: {x: 0, y: 0}
+    centerPosition: {x: 0, y: 0}
+    scaleToFillMap: {x: 0, y: 0}
+  description: 
+  drawGizmos: 0
+  speed: 10
+  direction: {x: 0, y: 0}
+  positionX: 7
+  positionY: 13
 --- !u!114 &5287422978685225662
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -732,6 +1077,8 @@ MonoBehaviour:
     condition: 0
     indexList: 
     targetPosition: {x: 0, y: 0}
+    centerPosition: {x: 0, y: 0}
+    scaleToFillMap: {x: 0, y: 0}
   description: 
   drawGizmos: 0
   duration: 1
@@ -750,7 +1097,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 107634d353492824bbec81a2bad32fab
-  position: {x: 1543.2666, y: 344.99994}
+  position: {x: 1381, y: 470}
   blackboard:
     moveToPosition: {x: 0, y: 0}
     index: 0
@@ -759,6 +1106,8 @@ MonoBehaviour:
     condition: 0
     indexList: 
     targetPosition: {x: 0, y: 0}
+    centerPosition: {x: 0, y: 0}
+    scaleToFillMap: {x: 0, y: 0}
   description: Ultimate Skill
   drawGizmos: 0
   message: Ultimate Skill
@@ -777,7 +1126,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 5e7fa44c232e4e54e82b945466c4fc98
-  position: {x: 830, y: 350}
+  position: {x: 744.19257, y: 350.00003}
   blackboard:
     moveToPosition: {x: 0, y: 0}
     index: 0
@@ -786,41 +1135,14 @@ MonoBehaviour:
     condition: 0
     indexList: 
     targetPosition: {x: 0, y: 0}
+    centerPosition: {x: 0, y: 0}
+    scaleToFillMap: {x: 0, y: 0}
   description: 
   drawGizmos: 0
   children:
   - {fileID: -3170532698126147210}
   - {fileID: -7147794280506181}
   - {fileID: 7672468370554673688}
---- !u!114 &6919736831021092526
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f002d1eb4518ee04f872f6470e6ba294, type: 3}
-  m_Name: MoveToPlayer
-  m_EditorClassIdentifier: 
-  state: 0
-  started: 0
-  guid: c3353a1b1e587da49a5189e17d065ba5
-  position: {x: 101, y: 480}
-  blackboard:
-    moveToPosition: {x: 0, y: 0}
-    index: 0
-    nextSkillIndex: -1
-    lastSkillIndex: -1
-    condition: 0
-    indexList: 
-    targetPosition: {x: 0, y: 0}
-  description: 
-  drawGizmos: 0
-  speed: 3
-  stoppingDistance: 3
-  acceleration: 40
 --- !u!114 &7672468370554673688
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -836,7 +1158,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: a49b7b45cf4aee94990096842b93b417
-  position: {x: 830, y: 480}
+  position: {x: 746, y: 472}
   blackboard:
     moveToPosition: {x: 0, y: 0}
     index: 0
@@ -845,6 +1167,8 @@ MonoBehaviour:
     condition: 0
     indexList: 
     targetPosition: {x: 0, y: 0}
+    centerPosition: {x: 0, y: 0}
+    scaleToFillMap: {x: 0, y: 0}
   description: 
   drawGizmos: 0
   bulletPrefab: {fileID: 1777577076798816941, guid: 81d745b00429b154c88c93a56df7b5a0, type: 3}
@@ -877,11 +1201,13 @@ MonoBehaviour:
     condition: 0
     indexList: 
     targetPosition: {x: 0, y: 0}
+    centerPosition: {x: 0, y: 0}
+    scaleToFillMap: {x: 0, y: 0}
   description: 
   drawGizmos: 0
   children:
   - {fileID: 368763525222395227}
-  - {fileID: 4469635631147371817}
+  - {fileID: 2185302168895360409}
 --- !u!114 &9038756188275031635
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -906,11 +1232,12 @@ MonoBehaviour:
     condition: 0
     indexList: 
     targetPosition: {x: 0, y: 0}
+    centerPosition: {x: 0, y: 0}
+    scaleToFillMap: {x: 0, y: 0}
   description: 
   drawGizmos: 0
   children:
   - {fileID: 2073520584131946149}
-  - {fileID: -3310398867210853460}
 --- !u!114 &9051998335375377889
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -926,7 +1253,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 1608b7a9e4c22f943923172459c400fb
-  position: {x: -536, y: 480}
+  position: {x: -534, y: 472}
   blackboard:
     moveToPosition: {x: 0, y: 0}
     index: 0
@@ -935,6 +1262,8 @@ MonoBehaviour:
     condition: 0
     indexList: 
     targetPosition: {x: 0, y: 0}
+    centerPosition: {x: 0, y: 0}
+    scaleToFillMap: {x: 0, y: 0}
   description: 
   drawGizmos: 0
   speed: 5
@@ -956,7 +1285,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: a4c6c82ee859c464dad6e75459005582
-  position: {x: -386, y: 480}
+  position: {x: -384, y: 472}
   blackboard:
     moveToPosition: {x: 0, y: 0}
     index: 0
@@ -965,6 +1294,8 @@ MonoBehaviour:
     condition: 0
     indexList: 
     targetPosition: {x: 0, y: 0}
+    centerPosition: {x: 0, y: 0}
+    scaleToFillMap: {x: 0, y: 0}
   description: 
   drawGizmos: 0
   spawnSpeakerLouds: {fileID: 0}

@@ -21,5 +21,8 @@ namespace TheKiwiCoder {
 
         public Vector2 targetPosition;
 
+        // [BOSSCHEM, LNG]
+        public Vector2 centerPosition;
+        public Vector2 scaleToFillMap;
     }
 }

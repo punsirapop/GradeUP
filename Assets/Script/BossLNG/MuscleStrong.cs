@@ -7,31 +7,43 @@ public class MuscleStrong : MonoBehaviour
 {
     [SerializeField] GameObject ringFloorPrefab;
     
+    float scaleRing;
     float durationForTimes;
-    float attackTimes;
+    float ringCount;
 
     void Start()
     {
         
     }
 
-    public void Setup(float attackTimes, float durationForTimes)
+    public void Setup(float scaleRing, float ringCount, float durationForTimes)
     {
-        this.attackTimes = attackTimes;
+        this.scaleRing = scaleRing;
+        this.ringCount = ringCount;
         this.durationForTimes = durationForTimes;
 
         // Debug.Log(durationForTimes);
-        StartCoroutine(SpawnRingsFloor());
+        SpawnRingsFloor();
+        // StartCoroutine(SpawnRingsFloor());
     }
 
-    IEnumerator SpawnRingsFloor()
+    // IEnumerator SpawnRingsFloor()
+    // {
+    //     for (int i = 0; i < attackTimes; i++)
+    //     {
+    //         GameObject ringFloor = Instantiate(ringFloorPrefab, transform);
+    //         ringFloor.GetComponent<RingFloor>().Setup(durationForTimes, i);
+    //         yield return new WaitForSeconds(durationForTimes / 3);
+    //         Destroy(ringFloor.gameObject,  (durationForTimes / 3) * (attackTimes - i));
+    //     }
+    // }
+
+    void SpawnRingsFloor()
     {
-        for (int i = 0; i < attackTimes; i++)
+        for (int i = 0; i < ringCount; i++)
         {
             GameObject ringFloor = Instantiate(ringFloorPrefab, transform);
-            ringFloor.GetComponent<RingFloor>().Setup(durationForTimes, i);
-            yield return new WaitForSeconds(durationForTimes / 3);
-            Destroy(ringFloor.gameObject,  (durationForTimes / 3) * (attackTimes - i));
+            ringFloor.GetComponent<RingFloor>().Setup(((scaleRing + 1) * ringCount) - (scaleRing*(i+1)), durationForTimes);
         }
     }
 }

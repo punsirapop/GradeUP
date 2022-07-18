@@ -1685,6 +1685,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 783025585, guid: c266ac3d155a1ba4ab66543bb90d1954, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9163507261244064275, guid: c266ac3d155a1ba4ab66543bb90d1954, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -1732,6 +1736,14 @@ PrefabInstance:
     - target: {fileID: 9163507261244064281, guid: c266ac3d155a1ba4ab66543bb90d1954, type: 3}
       propertyPath: m_Name
       value: Boss_LNG
+      objectReference: {fileID: 0}
+    - target: {fileID: 9163507261244064286, guid: c266ac3d155a1ba4ab66543bb90d1954, type: 3}
+      propertyPath: m_Simulated
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9163507261244064286, guid: c266ac3d155a1ba4ab66543bb90d1954, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c266ac3d155a1ba4ab66543bb90d1954, type: 3}

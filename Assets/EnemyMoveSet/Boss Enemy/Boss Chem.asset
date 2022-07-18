@@ -24,6 +24,8 @@ MonoBehaviour:
     condition: 0
     indexList: 
     targetPosition: {x: 0, y: 0}
+    centerPosition: {x: 0, y: 0}
+    scaleToFillMap: {x: 0, y: 0}
   description: 
   drawGizmos: 0
   selectIndex: 2
@@ -51,6 +53,8 @@ MonoBehaviour:
     condition: 0
     indexList: 
     targetPosition: {x: 0, y: 0}
+    centerPosition: {x: 0, y: 0}
+    scaleToFillMap: {x: 0, y: 0}
   description: 
   drawGizmos: 0
   children:
@@ -79,6 +83,8 @@ MonoBehaviour:
     condition: 0
     indexList: 
     targetPosition: {x: 0, y: 0}
+    centerPosition: {x: 0, y: 0}
+    scaleToFillMap: {x: 0, y: 0}
   description: 
   drawGizmos: 0
   speed: 4
@@ -108,6 +114,8 @@ MonoBehaviour:
     condition: 0
     indexList: 
     targetPosition: {x: 0, y: 0}
+    centerPosition: {x: 0, y: 0}
+    scaleToFillMap: {x: 0, y: 0}
   description: 
   drawGizmos: 0
   poisonExplodeVFXPrefab: {fileID: 6948196022750234048, guid: 1f07b06352b50714db7a57530058be87, type: 3}
@@ -136,6 +144,8 @@ MonoBehaviour:
     condition: 0
     indexList: 
     targetPosition: {x: 0, y: 0}
+    centerPosition: {x: 0, y: 0}
+    scaleToFillMap: {x: 0, y: 0}
   description: Skill 3
   drawGizmos: 0
   message: Skill 3
@@ -163,6 +173,8 @@ MonoBehaviour:
     condition: 0
     indexList: 
     targetPosition: {x: 0, y: 0}
+    centerPosition: {x: 0, y: 0}
+    scaleToFillMap: {x: 0, y: 0}
   description: 
   drawGizmos: 0
   duration: 1
@@ -190,6 +202,8 @@ MonoBehaviour:
     condition: 0
     indexList: 
     targetPosition: {x: 0, y: 0}
+    centerPosition: {x: 0, y: 0}
+    scaleToFillMap: {x: 0, y: 0}
   description: Ultimate Skill
   drawGizmos: 0
   message: Ultimate Skill
@@ -217,6 +231,8 @@ MonoBehaviour:
     condition: 0
     indexList: 
     targetPosition: {x: 0, y: 0}
+    centerPosition: {x: 0, y: 0}
+    scaleToFillMap: {x: 0, y: 0}
   description: Skill 2
   drawGizmos: 0
   message: Skill 2
@@ -244,6 +260,8 @@ MonoBehaviour:
     condition: 0
     indexList: 
     targetPosition: {x: 0, y: 0}
+    centerPosition: {x: 0, y: 0}
+    scaleToFillMap: {x: 0, y: 0}
   description: 
   drawGizmos: 0
   poisonFillPrefab: {fileID: 9162170533552617226, guid: 36ea93bc41277ae4f81958d8aae2d2df, type: 3}
@@ -274,6 +292,8 @@ MonoBehaviour:
     condition: 0
     indexList: 
     targetPosition: {x: 0, y: 0}
+    centerPosition: {x: 0, y: 0}
+    scaleToFillMap: {x: 0, y: 0}
   description: 
   drawGizmos: 0
   children:
@@ -304,6 +324,8 @@ MonoBehaviour:
     condition: 0
     indexList: 
     targetPosition: {x: 0, y: 0}
+    centerPosition: {x: 0, y: 0}
+    scaleToFillMap: {x: 0, y: 0}
   description: 
   drawGizmos: 0
   poisonPrefab: {fileID: 3751878952791922199, guid: 891824ae757909249a5e72cd0bb62baf, type: 3}
@@ -335,6 +357,8 @@ MonoBehaviour:
     condition: 0
     indexList: 
     targetPosition: {x: 0, y: 0}
+    centerPosition: {x: 0, y: 0}
+    scaleToFillMap: {x: 0, y: 0}
   description: 
   drawGizmos: 0
   children:
@@ -364,6 +388,8 @@ MonoBehaviour:
     condition: 0
     indexList: 
     targetPosition: {x: 0, y: 0}
+    centerPosition: {x: 0, y: 0}
+    scaleToFillMap: {x: 0, y: 0}
   description: 
   drawGizmos: 0
   children:
@@ -393,6 +419,8 @@ MonoBehaviour:
     condition: 0
     indexList: 
     targetPosition: {x: 0, y: 0}
+    centerPosition: {x: 0, y: 0}
+    scaleToFillMap: {x: 0, y: 0}
   description: 
   drawGizmos: 0
   selectIndex: 0
@@ -420,6 +448,8 @@ MonoBehaviour:
     condition: 0
     indexList: 
     targetPosition: {x: 0, y: 0}
+    centerPosition: {x: 0, y: 0}
+    scaleToFillMap: {x: 0, y: 0}
   description: 
   drawGizmos: 0
   children:
@@ -486,6 +516,8 @@ MonoBehaviour:
     condition: 0
     indexList: 
     targetPosition: {x: 0, y: 0}
+    centerPosition: {x: 1.5, y: 18}
+    scaleToFillMap: {x: 13, y: 12}
 --- !u!114 &38662573949604348
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -510,6 +542,8 @@ MonoBehaviour:
     condition: 0
     indexList: 
     targetPosition: {x: 0, y: 0}
+    centerPosition: {x: 0, y: 0}
+    scaleToFillMap: {x: 0, y: 0}
   description: 
   drawGizmos: 0
   children:
@@ -540,6 +574,8 @@ MonoBehaviour:
     condition: 0
     indexList: 
     targetPosition: {x: 0, y: 0}
+    centerPosition: {x: 0, y: 0}
+    scaleToFillMap: {x: 0, y: 0}
   description: 
   drawGizmos: 0
   child: {fileID: -375133520836886437}
@@ -569,6 +605,8 @@ MonoBehaviour:
     condition: 0
     indexList: 
     targetPosition: {x: 0, y: 0}
+    centerPosition: {x: 0, y: 0}
+    scaleToFillMap: {x: 0, y: 0}
   description: 
   drawGizmos: 0
   speed: 5
@@ -599,6 +637,8 @@ MonoBehaviour:
     condition: 0
     indexList: 
     targetPosition: {x: 0, y: 0}
+    centerPosition: {x: 0, y: 0}
+    scaleToFillMap: {x: 0, y: 0}
   description: 
   drawGizmos: 0
   children:
@@ -630,6 +670,8 @@ MonoBehaviour:
     condition: 0
     indexList: 
     targetPosition: {x: 0, y: 0}
+    centerPosition: {x: 0, y: 0}
+    scaleToFillMap: {x: 0, y: 0}
   description: Normal Attack
   drawGizmos: 0
   message: Normal Attack
@@ -657,6 +699,8 @@ MonoBehaviour:
     condition: 0
     indexList: 
     targetPosition: {x: 0, y: 0}
+    centerPosition: {x: 0, y: 0}
+    scaleToFillMap: {x: 0, y: 0}
   description: 
   drawGizmos: 0
   normalAttackNumber: 0
@@ -685,6 +729,8 @@ MonoBehaviour:
     condition: 0
     indexList: 
     targetPosition: {x: 0, y: 0}
+    centerPosition: {x: 0, y: 0}
+    scaleToFillMap: {x: 0, y: 0}
   description: 
   drawGizmos: 0
   children:
@@ -713,6 +759,8 @@ MonoBehaviour:
     condition: 0
     indexList: 
     targetPosition: {x: 0, y: 0}
+    centerPosition: {x: 0, y: 0}
+    scaleToFillMap: {x: 0, y: 0}
   description: 
   drawGizmos: 0
   children:
@@ -742,6 +790,8 @@ MonoBehaviour:
     condition: 0
     indexList: 
     targetPosition: {x: 0, y: 0}
+    centerPosition: {x: 0, y: 0}
+    scaleToFillMap: {x: 0, y: 0}
   description: 
   drawGizmos: 0
   smokePowerPrefab: {fileID: 1067937955166649055, guid: 9f39bcaec8fa4144c80e8ca1f18f5447, type: 3}
@@ -773,6 +823,8 @@ MonoBehaviour:
     condition: 0
     indexList: 
     targetPosition: {x: 0, y: 0}
+    centerPosition: {x: 0, y: 0}
+    scaleToFillMap: {x: 0, y: 0}
   description: 
   drawGizmos: 0
   children:
@@ -802,6 +854,8 @@ MonoBehaviour:
     condition: 0
     indexList: 
     targetPosition: {x: 0, y: 0}
+    centerPosition: {x: 0, y: 0}
+    scaleToFillMap: {x: 0, y: 0}
   description: 
   drawGizmos: 0
   children:
@@ -830,6 +884,8 @@ MonoBehaviour:
     condition: 0
     indexList: 
     targetPosition: {x: 0, y: 0}
+    centerPosition: {x: 0, y: 0}
+    scaleToFillMap: {x: 0, y: 0}
   description: 
   drawGizmos: 0
   children:
@@ -859,6 +915,8 @@ MonoBehaviour:
     condition: 0
     indexList: 
     targetPosition: {x: 0, y: 0}
+    centerPosition: {x: 0, y: 0}
+    scaleToFillMap: {x: 0, y: 0}
   description: 
   drawGizmos: 0
   selectIndex: 2
@@ -886,6 +944,8 @@ MonoBehaviour:
     condition: 0
     indexList: 
     targetPosition: {x: 0, y: 0}
+    centerPosition: {x: 0, y: 0}
+    scaleToFillMap: {x: 0, y: 0}
   description: 
   drawGizmos: 0
   selectIndex: 1
@@ -913,6 +973,8 @@ MonoBehaviour:
     condition: 0
     indexList: 
     targetPosition: {x: 0, y: 0}
+    centerPosition: {x: 0, y: 0}
+    scaleToFillMap: {x: 0, y: 0}
   description: 
   drawGizmos: 0
   speed: 5
@@ -943,6 +1005,8 @@ MonoBehaviour:
     condition: 0
     indexList: 
     targetPosition: {x: 0, y: 0}
+    centerPosition: {x: 0, y: 0}
+    scaleToFillMap: {x: 0, y: 0}
   description: 
   drawGizmos: 0
   duration: 2
@@ -970,6 +1034,8 @@ MonoBehaviour:
     condition: 0
     indexList: 
     targetPosition: {x: 0, y: 0}
+    centerPosition: {x: 0, y: 0}
+    scaleToFillMap: {x: 0, y: 0}
   description: 
   drawGizmos: 0
   child: {fileID: 450028045138349318}
@@ -997,6 +1063,8 @@ MonoBehaviour:
     condition: 0
     indexList: 
     targetPosition: {x: 0, y: 0}
+    centerPosition: {x: 0, y: 0}
+    scaleToFillMap: {x: 0, y: 0}
   description: 
   drawGizmos: 0
   duration: 1
@@ -1024,6 +1092,8 @@ MonoBehaviour:
     condition: 0
     indexList: 
     targetPosition: {x: 0, y: 0}
+    centerPosition: {x: 0, y: 0}
+    scaleToFillMap: {x: 0, y: 0}
   description: Skill 1
   drawGizmos: 0
   message: Skill 1

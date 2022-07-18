@@ -43,8 +43,8 @@ public class BossChemUltimate : ActionNode
 
     private void SpawnPoisonFill()
     {
-        poisonFill = Instantiate(poisonFillPrefab, spawnUltimatePosition, Quaternion.identity);
-        poisonFill.transform.localScale = spawnUltimateScale;
+        poisonFill = Instantiate(poisonFillPrefab, blackboard.centerPosition, Quaternion.identity);
+        poisonFill.transform.localScale = blackboard.scaleToFillMap;
         context.gameObject.GetComponent<EnemyController>().SetVisible(false, ultimateDuration);
         Destroy(poisonFill, ultimateDuration);
     }

@@ -23,7 +23,6 @@ public class SpawnCharShoots : MonoBehaviour
 
     private void RotateObject()
     {
-        Debug.Log(transform.rotation);
         transform.Rotate(Vector3.forward, Time.deltaTime * turnSpeed);
     }
 }
