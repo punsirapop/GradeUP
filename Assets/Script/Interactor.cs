@@ -15,7 +15,7 @@ public class Interactor : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.R))
             {
                 Debug.Log("INTERACT YAY");
-                //Check 
+                //Check tag add use Onuse()
             }
         }
     }
@@ -24,8 +24,7 @@ public class Interactor : MonoBehaviour
         bool isDetected = Physics2D.OverlapCircle(playerpoint.position,radius,detectlayer);
         return isDetected;
     }
-    private void OnDrawGizmos()
+    /*private void OnDrawGizmos()
     {
-        Gizmos.DrawSphere(playerpoint.position, radius);
-    }
+    }*/
 }

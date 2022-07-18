@@ -9,6 +9,7 @@ TagManager:
   - Hit
   - NoHit
   - Item
+  - ItemSpawner
   layers:
   - Default
   - TransparentFX
@@ -18,7 +19,7 @@ TagManager:
   - UI
   - Bullet
   - Enemy
-  - 
+  - Interactable
   - 
   - 
   - 

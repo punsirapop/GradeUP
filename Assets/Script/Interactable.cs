@@ -7,7 +7,6 @@ public class Interactable : MonoBehaviour
     protected BoxCollider2D boxCollider;
     private bool isInteract = false;
 
-
     protected virtual void OnUse()
     {
         if (this.isInteract == false)
@@ -19,6 +18,5 @@ public class Interactable : MonoBehaviour
 
         }
         //when player used
-        //Destroy(this.gameObject);
     }
 }
