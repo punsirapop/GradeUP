@@ -26,4 +26,7 @@ public class itemSO : ScriptableObject
 
     [SerializeField] private bool _isActive;
     public bool isActive => _isActive;
+
+    [SerializeField] private int _price = 20;
+    public int Price => _price;
 }

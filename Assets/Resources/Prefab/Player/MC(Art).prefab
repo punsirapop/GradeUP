@@ -193,7 +193,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &4621294064056916065
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -238,6 +238,7 @@ MonoBehaviour:
   Atk_Speed: 0
   MoveSpeed: 0
   Art: 0
+  money: 20
   rb: {fileID: 4621294064056916066}
   firepoint: {fileID: 4621294062634954677}
   cam: {fileID: 0}

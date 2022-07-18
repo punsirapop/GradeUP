@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 5446525841424581745}
   - component: {fileID: 5446525841424581744}
   - component: {fileID: 5446525841424581749}
+  - component: {fileID: 2105686779}
+  - component: {fileID: 2105686780}
   m_Layer: 3
   m_Name: MC(Physic)
   m_TagString: Player
@@ -134,7 +136,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &5446525841424581749
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -153,6 +155,7 @@ MonoBehaviour:
   Atk_Speed: 0
   MoveSpeed: 0
   Art: 0
+  money: 20
   rb: {fileID: 0}
   firepoint: {fileID: 5446525841694112701}
   cam: {fileID: 0}
@@ -161,6 +164,37 @@ MonoBehaviour:
   _bullet:
   - {fileID: 728747090168759146, guid: 8fcebc2969634c146803345a7df69c5d, type: 3}
   - {fileID: 728747090168759146, guid: 150915e48f7369f4895009990995e058, type: 3}
+--- !u!114 &2105686779
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5446525841424581711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0b69d7e4c955a84b909e8abf2d32e8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  max_HP: 0
+  Current_HP: 0
+  DebugUI: {fileID: 0}
+--- !u!114 &2105686780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5446525841424581711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cca7982922a76447a9d4166dac6410f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerpoint: {fileID: 5446525841424581748}
+  detectlayer:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!1 &5446525841694112699
 GameObject:
   m_ObjectHideFlags: 0

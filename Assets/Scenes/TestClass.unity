@@ -1611,17 +1611,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2105686779, guid: 1987565f9c4b6b14b9f861fbd6924ccb, type: 3}
+      propertyPath: DebugUI
+      value: 
+      objectReference: {fileID: 626929833}
     - target: {fileID: 5446525841424581711, guid: 1987565f9c4b6b14b9f861fbd6924ccb, type: 3}
       propertyPath: m_Name
       value: MC(Physic)
-      objectReference: {fileID: 0}
-    - target: {fileID: 5446525841424581711, guid: 1987565f9c4b6b14b9f861fbd6924ccb, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5446525841424581744, guid: 1987565f9c4b6b14b9f861fbd6924ccb, type: 3}
-      propertyPath: m_Constraints
-      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5446525841424581748, guid: 1987565f9c4b6b14b9f861fbd6924ccb, type: 3}
       propertyPath: m_RootOrder
@@ -1667,10 +1663,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5446525841424581749, guid: 1987565f9c4b6b14b9f861fbd6924ccb, type: 3}
-      propertyPath: ItemScript
-      value: 
-      objectReference: {fileID: 4497213297742470481, guid: 0d20d6166c61b5f4dbf4f078114bf68f, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1987565f9c4b6b14b9f861fbd6924ccb, type: 3}
 --- !u!1 &1069738707
@@ -3172,47 +3164,6 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 6211313540798558441, guid: 124b8a652643187409882c37c4ad7f9f, type: 3}
   m_PrefabInstance: {fileID: 1978749131}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &2105686773 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5446525841424581711, guid: 1987565f9c4b6b14b9f861fbd6924ccb, type: 3}
-  m_PrefabInstance: {fileID: 879172266}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2105686779
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2105686773}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0b69d7e4c955a84b909e8abf2d32e8b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  max_HP: 0
-  Current_HP: 0
-  DebugUI: {fileID: 626929833}
---- !u!114 &2105686780
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2105686773}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3cca7982922a76447a9d4166dac6410f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerpoint: {fileID: 2105686785}
-  detectlayer:
-    serializedVersion: 2
-    m_Bits: 256
---- !u!4 &2105686785 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5446525841424581748, guid: 1987565f9c4b6b14b9f861fbd6924ccb, type: 3}
-  m_PrefabInstance: {fileID: 879172266}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &2105991637
 GameObject:

@@ -12,6 +12,8 @@ public class StatusManager : MonoBehaviour
     private int Atk_p = 100, HP_p = 100, Atk_Speed_p = 100, MoveSpeed_p = 100;
     private int Atk_f, HP_f, Atk_Speed_f, MoveSpeed_f;
 
+    public int money = 20;
+
     public delegate void SetMaxHPDelegate(float HP);
     public SetMaxHPDelegate SetMaxHP;
     private void Start()

@@ -24,7 +24,4 @@ public class Interactor : MonoBehaviour
         bool isDetected = Physics2D.OverlapCircle(playerpoint.position,radius,detectlayer);
         return isDetected;
     }
-    /*private void OnDrawGizmos()
-    {
-    }*/
 }
