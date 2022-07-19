@@ -12,8 +12,6 @@ public class StatusManager : MonoBehaviour
     private int Atk_p = 100, HP_p = 100, Atk_Speed_p = 100, MoveSpeed_p = 100;
     private int Atk_f, HP_f, Atk_Speed_f, MoveSpeed_f;
 
-    public int money = 20;
-
     public delegate void SetMaxHPDelegate(float HP);
     public SetMaxHPDelegate SetMaxHP;
     private void Start()
@@ -23,11 +21,9 @@ public class StatusManager : MonoBehaviour
         this.Atk_Speed_base = ClassStatus.AttackSpeed;
         this.MoveSpeed_base = ClassStatus.Speed;
         UpdateStat();
-
-        //Art = ClassStatus.Speed;
     }
 
-    public void AddPercentBonus(int hp, int atk , int atk_speed, int speed) //Add bonus %
+    public void AddPercentBonus(int hp, int atk, int atk_speed, int speed) //Add bonus %
     {
         HP_p += hp;
         Atk_p += atk;
@@ -36,7 +32,7 @@ public class StatusManager : MonoBehaviour
         UpdateStat();
     }
 
-     public void AddFlatBonus(int hp, int atk, int atk_speed, int speed) //Add bonus flat 
+    public void AddFlatBonus(int hp, int atk, int atk_speed, int speed) //Add bonus flat 
     {
         HP_f += hp;
         Atk_f += atk;

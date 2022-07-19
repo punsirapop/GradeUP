@@ -1,8 +1,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 using TMPro;
+using UnityEngine;
 
 public class DebugUI : MonoBehaviour
 {
@@ -21,7 +21,7 @@ public class DebugUI : MonoBehaviour
 
     public delegate void GetDamageDelegate(float HP);
     public GetDamageDelegate GetDamage;
-    public delegate IEnumerator GetDamageOvertimeDelegate(float HP,int sec);
+    public delegate IEnumerator GetDamageOvertimeDelegate(float HP, int sec);
     public GetDamageOvertimeDelegate GetOvertimeDamage;
     void Update()
     {
@@ -37,7 +37,7 @@ public class DebugUI : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.E))
         {
-            if(Panal.activeInHierarchy == false)
+            if (Panal.activeInHierarchy == false)
             {
 
                 Panal.SetActive(true);
@@ -50,9 +50,9 @@ public class DebugUI : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.V))
         {
-            StartCoroutine(GetOvertimeDamage(15f,3));
+            StartCoroutine(GetOvertimeDamage(15f, 3));
         }
-        if(_HP == 0)
+        if (_HP == 0)
         {
             StopAllCoroutines();
         }

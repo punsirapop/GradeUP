@@ -19,3 +19,4 @@ MonoBehaviour:
   _attackSpeed: 0
   _speed: 0
   _isActive: 0
+  _price: 30
