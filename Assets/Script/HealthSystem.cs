@@ -4,10 +4,19 @@ using UnityEngine;
 
 public class HealthSystem : MonoBehaviour
 {
+    public static HealthSystem Instance;
     [SerializeField] public float max_HP, Current_HP;
     [SerializeField] DebugUI DebugUI;
-    private void OnEnable()
+    private void Awake()
     {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            Instance = this;
+        }
         GetComponent<StatusManager>().SetMaxHP += SetMaxHP;
         DebugUI.GetDamage += GetDamage;
         DebugUI.GetOvertimeDamage += GetOvertimeDamage;
@@ -23,7 +32,7 @@ public class HealthSystem : MonoBehaviour
         this.max_HP = _max_HP;
         Current_HP = max_HP;
     }
-    protected void GetDamage(float _damage)
+    public void GetDamage(float _damage)
     {
         if (Current_HP - _damage > 0)
         {
@@ -35,11 +44,11 @@ public class HealthSystem : MonoBehaviour
             Debug.Log("You died");
         }
     }
-    protected void GetHeal(float amount)
+    public void GetHeal(float amount)
     {
         this.Current_HP += amount;
     }
-    protected IEnumerator GetOvertimeDamage(float _damage, int time)
+    public IEnumerator GetOvertimeDamage(float _damage, int time)
     {
         for (int i = 1; i <= time; i++)
         {
