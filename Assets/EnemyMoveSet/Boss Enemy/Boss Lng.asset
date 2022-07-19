@@ -988,10 +988,12 @@ MonoBehaviour:
   description: 
   drawGizmos: 0
   muscleStrongPrefab: {fileID: 1985175884344350366, guid: 9e393eb7929d445499d43943634428a5, type: 3}
-  attackTimes: 6
+  attackTimes: 4
   ringCount: 6
-  scaleRing: 1
-  skillDurationForStomp: 3
+  scaleRing: 3
+  spaceRing: 4
+  skillDurationForStomp: 1
+  skillDelay: 1
 --- !u!114 &4469635631147371817
 MonoBehaviour:
   m_ObjectHideFlags: 0

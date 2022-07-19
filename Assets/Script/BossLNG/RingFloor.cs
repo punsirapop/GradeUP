@@ -4,12 +4,10 @@ using UnityEngine;
 
 public class RingFloor : MonoBehaviour
 {
-    float duration;
     [SerializeField] float scaleUp = 10f;
 
-    public void Setup(float ringScale, float duration)
+    public void Setup(float ringScale)
     {
-        this.duration = duration;
         // if (index%2 == 0)
         // {
         //     GetComponentInChildren<SpriteRenderer>().color = Color.red;

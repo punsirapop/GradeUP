@@ -9,18 +9,19 @@ public class MuscleStrong : MonoBehaviour
     
     float scaleRing;
     float durationForTimes;
-    float ringCount;
+    int ringCount;
+    float spaceRing;
 
     void Start()
     {
         
     }
 
-    public void Setup(float scaleRing, float ringCount, float durationForTimes)
+    public void Setup(float scaleRing, int ringCount, float spaceRing)
     {
         this.scaleRing = scaleRing;
         this.ringCount = ringCount;
-        this.durationForTimes = durationForTimes;
+        this.spaceRing = spaceRing;
 
         // Debug.Log(durationForTimes);
         SpawnRingsFloor();
@@ -40,10 +41,12 @@ public class MuscleStrong : MonoBehaviour
 
     void SpawnRingsFloor()
     {
-        for (int i = 0; i < ringCount; i++)
+        // for (int i = 0; i < ringCount; i++)
+        for (int i = ringCount-1; i >= 0; i--)
         {
             GameObject ringFloor = Instantiate(ringFloorPrefab, transform);
-            ringFloor.GetComponent<RingFloor>().Setup(((scaleRing + 1) * ringCount) - (scaleRing*(i+1)), durationForTimes);
+            // ringFloor.GetComponent<RingFloor>().Setup(((scaleRing + 1 + spaceRing) * ringCount) - (scaleRing*(i+1) + spaceRing));
+            ringFloor.GetComponent<RingFloor>().Setup(scaleRing + (i*spaceRing));
         }
     }
 }
