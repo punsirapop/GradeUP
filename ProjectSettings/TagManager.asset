@@ -15,6 +15,7 @@ TagManager:
   - EnemyPoison
   - Art
   - NPC
+  - Knock
   layers:
   - Default
   - TransparentFX

@@ -9,6 +9,8 @@ public class EnemyHealth : HealthSystem
 
     StatusManager playerStatusManager;
     SpriteRenderer spriteRenderer;
+    Collider2D thisCollider;
+    Rigidbody2D thisRB;
 
     bool isBurnt = false, isBurning = false;
 
@@ -18,8 +20,17 @@ public class EnemyHealth : HealthSystem
     {
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         playerStatusManager = GameObject.FindGameObjectWithTag("Player").GetComponent<StatusManager>();
+        thisCollider = GetComponent<Collider2D>();
+        thisRB = GetComponent<Rigidbody2D>();
         max_HP = enemyStat.HP;
         Current_HP = max_HP;
+
+        ClassLng.ScreenHit += ScreenHit;
+    }
+
+    void OnDisable()
+    {
+        ClassLng.ScreenHit -= ScreenHit;
     }
 
     void Update()
@@ -44,14 +55,19 @@ public class EnemyHealth : HealthSystem
         switch (collision.tag)
         {
             case "Hit":
-                Debug.Log("Enemy got hit!");
+                Debug.Log("Enemy got Hit!");
                 GetDamage(playerStatusManager.Atk);
-                Debug.Log("HP Left: " + Current_HP + " / " + max_HP);
+                PrintHP();
+                break;
+            case "Knock":
+                Debug.Log("Enemy got Knocked!");
+                GetDamage(playerStatusManager.Atk);
+                KnockBack(collision);
+                PrintHP();
                 break;
             case "PlayerPoison":
                 Debug.Log("Enemy got Poison!");
-                StartCoroutine(GetOvertimeDamage(playerStatusManager.Atk/4, 4));
-                Debug.Log("HP Left: " + Current_HP + " / " + max_HP);
+                StartCoroutine(GetOvertimeDamage(playerStatusManager.Atk / 4, 4));
                 break;
             case "PlayerFire":
                 Debug.Log("Enemy got Burnt!");
@@ -60,7 +76,7 @@ public class EnemyHealth : HealthSystem
             case "Art":
                 List<Color> colors = new List<Color>();
                 Color newColor = collision.GetComponent<SpriteRenderer>().color;
-                if (ClassArt.ActiveSubClass == 1)
+                if (playerStatusManager.ActiveSubClass == 1)
                 {
                     colors.Add(newColor);
                     colors.Add(newColor);
@@ -75,6 +91,14 @@ public class EnemyHealth : HealthSystem
         }
     }
 
+    void KnockBack(Collider2D collision)
+    {
+        Debug.Log("Start knocking back");
+        Vector2 distance = (transform.position - collision.transform.position).normalized;
+        Debug.Log(distance);
+        thisRB.AddForce(distance * 5f, ForceMode2D.Impulse);
+    }
+
     void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.CompareTag("PlayerFire"))
@@ -87,7 +111,7 @@ public class EnemyHealth : HealthSystem
     {
         isBurning = true;
         GetDamage(playerStatusManager.Atk / 4);
-        Debug.Log("HP Left: " + Current_HP + " / " + max_HP);
+        PrintHP();
         yield return new WaitForSeconds(1);
         isBurning = false;
     }
@@ -135,6 +159,16 @@ public class EnemyHealth : HealthSystem
         if (!colors[0].Equals(Color.white))
         {
             spriteRenderer.color = Color.white;
+        }
+    }
+
+    private void ScreenHit()
+    {
+        if (gameObject.GetComponentInChildren<SpriteRenderer>().isVisible)
+        {
+            Debug.Log("Get Attacked by ScreenATK");
+            GetDamage(playerStatusManager.Atk);
+            PrintHP();
         }
     }
 }

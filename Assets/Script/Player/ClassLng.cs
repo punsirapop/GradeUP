@@ -5,13 +5,11 @@ using UnityEngine;
 
 public class ClassLng : characterCon
 {
-    [SerializeField] public static int ActiveSubClass = 0;
     [SerializeField] GameObject hitWave , hitBullet;
     bool isAttacking = false, isShooting = false;
     readonly object attackLock = new object();
 
-    public delegate void ScreenHitDelegate();
-    public ScreenHitDelegate Screenhit;
+    public static event Action ScreenHit;
 
     private void OnEnable()
     {
@@ -36,34 +34,52 @@ public class ClassLng : characterCon
             switch (ActiveSubClass)
             {
                 case 0:
-                    StartCoroutine(NormalAttack());
+                    NormalAttack();
                     break;
                 case 1:
-                    StartCoroutine(NormalAttack());
+                    NormalAttack();
                     break;
                 case 2:
                     StartCoroutine(OrbitAttack());
                     break;
                 case 3:
-                    StartCoroutine(ScreenAttack());
+                    ScreenAttack();
                     break;
             }
             Debug.Log("Attacked");
         }
     }
 
+    private void NormalAttack() //normal atk
+    {
+        isShooting = true;
+        GameObject bull = Instantiate(hitWave, _firepoint.position,
+            Quaternion.AngleAxis(90f, Vector3.forward) * _firepoint.rotation, _firepoint.transform);
+        StartCoroutine(OnCooldown());
+    }
 
+    IEnumerator OnCooldown()
+    {
+        float Cooldown = 5 / (2 * Atk_Speed);
+        yield return new WaitForSeconds(Cooldown);
+        isShooting = false;
+        isAttacking = false;
+    }
+
+    /*
     IEnumerator NormalAttack()
     {
         isShooting = true;
         GameObject hitBox = Instantiate(hitWave, _firepoint.position,
-            Quaternion.AngleAxis(90f, Vector3.forward) * _firepoint.rotation, transform);
+            Quaternion.AngleAxis(90f, Vector3.forward) * _firepoint.rotation, _firepoint.transform);
         float punchTime = 5 / (2 * Atk_Speed);
         yield return new WaitForSeconds(punchTime);
         isShooting = false;
         isAttacking = false;
         yield break;
     }
+    */
+
     IEnumerator OrbitAttack()
     {
         List<GameObject> hitboxes = new List<GameObject>();
@@ -100,11 +116,10 @@ public class ClassLng : characterCon
         isAttacking = false;
         yield break;
     }
-    IEnumerator ScreenAttack()
+    void ScreenAttack()
     {
-        Screenhit?.Invoke();
-        yield return new WaitForSeconds(0.01f);
-        isAttacking = false;
+        ScreenHit?.Invoke();
+        StartCoroutine(OnCooldown());
     }
 
     protected override void FixedUpdate()
@@ -120,6 +135,9 @@ public class ClassLng : characterCon
         }
 
     }
+
+    /*
+     * MOVED TO CHARACTER CON
     private void ChangeSubClass(int ID) //for Change Sub-Class 
     {
         switch (ID)
@@ -144,4 +162,5 @@ public class ClassLng : characterCon
         }
         //FindObjectOfType<DebugUI>().ChangeSubClass -= ChangeSubClass; //when debug finish remove plz comment  
     }
+    */
 }

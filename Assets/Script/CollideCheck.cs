@@ -13,7 +13,7 @@ public class CollideCheck : MonoBehaviour
     {
         if (playerClass == 1)
         {
-            player.GetComponent<ClassLng>().Screenhit -= ScreenHit;
+            ClassLng.ScreenHit -= ScreenHit;
         }
     }
     void Start()
@@ -29,7 +29,7 @@ public class CollideCheck : MonoBehaviour
         else if (player.TryGetComponent(out ClassLng classLng) == true)
         {
             playerClass = 1;
-            classLng.Screenhit += ScreenHit;
+            ClassLng.ScreenHit += ScreenHit;
         }
         else if (player.TryGetComponent(out classPE classPE) == true)
         {
@@ -55,7 +55,7 @@ public class CollideCheck : MonoBehaviour
                 case 0:
                     List<Color> colors = new List<Color>();
                     Color newColor = collision.GetComponent<SpriteRenderer>().color;
-                    if (ClassArt.ActiveSubClass == 1)
+                    if (player.GetComponent<ClassArt>().ActiveSubClass == 1)
                     {
                         colors.Add(newColor);
                         colors.Add(newColor);

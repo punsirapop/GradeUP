@@ -7,11 +7,10 @@ public class ClassArt : characterCon
 {
     [SerializeField] GameObject hitSwing, hitPunch;
     [SerializeField] protected GameObject _bullet;
-    bool isAttacking = false, isShooting = false;
+    bool isAttacking = false, isShooting = false, isDashing = false;
 
     readonly object attackLock = new object();
 
-    public static int ActiveSubClass = 0;
     private void OnEnable()
     {
         InitializeStats();
@@ -31,7 +30,7 @@ public class ClassArt : characterCon
         lock (attackLock)
         {
             isAttacking = true;
-            switch (ActiveSubClass)
+            switch (activeSubClass)
             {
                 case 0:
                     StartCoroutine(NormalAttack());
@@ -122,6 +121,7 @@ public class ClassArt : characterCon
             Quaternion.AngleAxis(90f, Vector3.forward) * _firepoint.rotation, firepoint.transform);
         hitBox.tag = "Art";
         int color = UnityEngine.Random.Range(0, 3);
+
         switch (color)
         {
             case 0:
@@ -134,17 +134,32 @@ public class ClassArt : characterCon
                 hitBox.GetComponent<SpriteRenderer>().color = Color.blue;
                 break;
         }
-        while (Vector2.Distance(transform.position, hitMaxRange.transform.position) > .05f)
+
+        isIFramed = true;
+        isDashing = true;
+        StartCoroutine(WaitForDashEnd());
+        while (Vector2.Distance(transform.position, hitMaxRange.transform.position) > .05f && isDashing)
         {
             transform.position = Vector2.Lerp(transform.position, hitMaxRange.transform.position, Time.deltaTime * spd);
             yield return new WaitForFixedUpdate();
         }
+        isIFramed = false;
+
         Destroy(hitMaxRange);
         Destroy(hitBox);
         rb.velocity = Vector2.zero;
         StartCoroutine(OnCooldown());
         yield break;
     }
+
+    IEnumerator WaitForDashEnd()
+    {
+        Debug.Log("Start");
+        yield return new WaitForSeconds(1f);
+        isDashing = false;
+        Debug.Log("End");
+    }
+
     IEnumerator OnCooldown()
     {
         float Cooldown = 5 / (2 * Atk_Speed);
@@ -163,24 +178,26 @@ public class ClassArt : characterCon
             rb.velocity = Vector2.zero;
         }
     }
+    /*
+     * MOVED TO CHARACTER CON
     private void ChangeSubClass(int ID) //for Change Sub-Class 
     {
         switch (ID)
         {
             case 0: //default
-                ActiveSubClass = 0;
+                activeSubClass = 0;
                 break;
 
             case 1: //Explotion
-                ActiveSubClass = 1;
+                activeSubClass = 1;
                 break;
 
             case 2: //Posion
-                ActiveSubClass = 2;
+                activeSubClass = 2;
                 break;
 
             case 3: //Burn
-                ActiveSubClass = 3;
+                activeSubClass = 3;
                 break;
 
             default:
@@ -188,4 +205,5 @@ public class ClassArt : characterCon
         }
         //FindObjectOfType<DebugUI>().ChangeSubClass -= ChangeSubClass; //when debug finish remove comment plz   
     }
+    */
 }

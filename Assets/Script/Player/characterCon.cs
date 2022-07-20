@@ -91,7 +91,7 @@ public class characterCon : StatusManager
         }
     }
 
-    void OnTriggerExit2D(Collider2D collision)
+    protected void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.CompareTag("NPC"))
         {

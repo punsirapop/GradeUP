@@ -7,7 +7,7 @@ public class classPE : characterCon
     bool isAttacking = false ,isCharging = false;
     readonly object clickLock = new object();
     [SerializeField] protected GameObject _bullet;
-    private int ActiveSubClass = 0;
+
     private void OnEnable()
     {
         InitializeStats();
@@ -52,6 +52,7 @@ public class classPE : characterCon
         {
             // Generate hitbox
             GameObject hitBox = Instantiate(_bullet, _firepoint.transform);
+            hitBox.tag = "Knock";
             // Forced stop moving
             rb.velocity = Vector2.zero;
             // Set reload time
@@ -88,12 +89,15 @@ public class classPE : characterCon
             // Generate hitbox
             GameObject hitBox = Instantiate(hitPunch, _firepoint.position,
                 Quaternion.AngleAxis(90f, Vector3.forward) * _firepoint.rotation, firepoint.transform);
+            hitBox.tag = "Knock";
             // Dash player until reaching destination
+            isIFramed = true;
             while (Vector2.Distance(transform.position, hitMaxRange.transform.position) > .05f)
             {
                 transform.position = Vector2.Lerp(transform.position, hitMaxRange.transform.position, Time.deltaTime * spd);
                 yield return new WaitForFixedUpdate();
             }
+            isIFramed = false;
             Destroy(hitMaxRange);
             Destroy(hitBox);
             // Set reload time
@@ -105,6 +109,7 @@ public class classPE : characterCon
         if (isAttacking)
         {
             GameObject hitBox = Instantiate(hitPunch, _firepoint.position, _firepoint.rotation, firepoint.transform);
+            hitBox.tag = "Knock";
             rb.velocity = Vector2.zero;
             float punchTime = 5 / (2 * Atk_Speed * 3);
             yield return new WaitForSeconds(punchTime);
@@ -118,6 +123,7 @@ public class classPE : characterCon
         if (isAttacking)
         {
             GameObject hitBox = Instantiate(hitPunch, _firepoint.position, _firepoint.rotation, firepoint.transform);
+            hitBox.tag = "Knock";
             rb.velocity = Vector2.zero;
             // Set swing angle, start range, and time
             float swingAngle = -90f, swingRange = 180, swingTime = 5 / (2 * Atk_Speed);
@@ -157,6 +163,9 @@ public class classPE : characterCon
         }
 
     }
+
+    /*
+     * MOVED TO CHARACTER CON
     private void ChangeSubClass(int ID) //for Change Sub-Class 
     {
         switch (ID)
@@ -182,4 +191,5 @@ public class classPE : characterCon
         }
         //FindObjectOfType<DebugUI>().ChangeSubClass -= ChangeSubClass; //when debug finish remove plz comment  
     }
+    */
 }

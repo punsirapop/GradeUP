@@ -6,11 +6,16 @@ public class StatusManager : MonoBehaviour
 {
     //status public for Debug only
     [SerializeField] public classSO ClassStatus;
+
     public float Atk, HP, Atk_Speed, MoveSpeed, Art;
 
     private int Atk_base, HP_base, Atk_Speed_base, MoveSpeed_base;
     private int Atk_p, HP_p, Atk_Speed_p, MoveSpeed_p;
     private int Atk_f, HP_f, Atk_Speed_f, MoveSpeed_f;
+
+    [SerializeField] protected int activeSubClass = 0;
+    public int ActiveSubClass => activeSubClass;
+
     protected void InitializeStats()
     {
         this.HP = ClassStatus.HP;
@@ -44,5 +49,31 @@ public class StatusManager : MonoBehaviour
         Atk = (Atk_base + Atk_f) * Atk_p / 100;
         Atk_Speed = (Atk_Speed_base + Atk_Speed_f) * Atk_Speed_p / 100;
         MoveSpeed = (MoveSpeed_base + MoveSpeed_f) * MoveSpeed_p / 100;
+    }
+
+    protected virtual void ChangeSubClass(int ID) //for Change Sub-Class 
+    {
+        switch (ID)
+        {
+            case 0: //default
+                activeSubClass = 0;
+                break;
+
+            case 1: //Explotion
+                activeSubClass = 1;
+                break;
+
+            case 2: //Posion
+                activeSubClass = 2;
+                break;
+
+            case 3: //Burn
+                activeSubClass = 3;
+                break;
+
+            default:
+                break;
+        }
+        //FindObjectOfType<DebugUI>().ChangeSubClass -= ChangeSubClass; //when debug finish remove comment plz   
     }
 }
