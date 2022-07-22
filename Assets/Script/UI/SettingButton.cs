@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class PauseButton : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
+public class SettingButton : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
 {
     UIManager uIManager;
     Image image;
@@ -16,7 +16,7 @@ public class PauseButton : MonoBehaviour, IPointerClickHandler, IPointerEnterHan
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        uIManager.PauseUI();
+        FindObjectOfType<UIManager>().SettingUI();
 
         uIManager.HoverButton(image, false);
     }
