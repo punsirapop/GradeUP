@@ -12,7 +12,7 @@ public class InventoryManager : MonoBehaviour
 
     private void Awake()
     {
-        characterCon.OnCollectItem += CollectItem;
+        CharacterCon.OnCollectItem += CollectItem;
     }
 
     void CollectItem(GameObject itemHolder)

@@ -31,7 +31,7 @@ public class CollideCheck : MonoBehaviour
             playerClass = 1;
             ClassLng.ScreenHit += ScreenHit;
         }
-        else if (player.TryGetComponent(out classPE classPE) == true)
+        else if (player.TryGetComponent(out ClassPE classPE) == true)
         {
             playerClass = 2;
         }

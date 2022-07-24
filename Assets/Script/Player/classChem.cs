@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class classChem : characterCon
+public class ClassChem : CharacterCon
 {
     [SerializeField] private GameObject[] _bullet;
     private GameObject _selectBullet;

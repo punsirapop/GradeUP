@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class classPE : characterCon
+public class ClassPE : CharacterCon
 {
     [SerializeField] GameObject hitPunch, hitSwing;
     bool isAttacking = false ,isCharging = false;

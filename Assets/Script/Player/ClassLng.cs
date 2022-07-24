@@ -2,20 +2,47 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Pool;
 
-public class ClassLng : characterCon
+public class ClassLng : CharacterCon
 {
-    [SerializeField] GameObject hitWave , hitBullet;
+    [SerializeField] GameObject hitWave , hitSwing;
+    [SerializeField] List<Sprite> waveSprite = new List<Sprite>();
+    [SerializeField] List<Sprite> swingSprite = new List<Sprite>();
     bool isAttacking = false, isShooting = false;
     readonly object attackLock = new object();
 
     public static event Action ScreenHit;
 
+    ObjectPool<GameObject> hitWavePool;
+    List<GameObject> hitSwingList = new List<GameObject>();
+
     private void OnEnable()
     {
         InitializeStats();
         // FindObjectOfType<DebugUI>().ChangeSubClass += ChangeSubClass;
+        hitWavePool = new ObjectPool<GameObject>(() => { return Instantiate(hitWave, fireRange); },
+            wave => { wave.gameObject.SetActive(true);
+                wave.transform.position = fireRange.position;
+                wave.transform.rotation = fireRange.rotation;
+                wave.transform.localScale = fireRange.localScale;
+                wave.GetComponent<SpriteRenderer>().sprite = waveSprite[UnityEngine.Random.Range(0, waveSprite.Count)];
+            },
+            wave => { wave.gameObject.SetActive(false); },
+            wave => { Destroy(wave.gameObject); },
+            true, 10, 20);
+
+        for (int i = 0; i < 6; i++)
+        {
+            Vector3 position = Quaternion.AngleAxis(i * 360 / 6, Vector3.forward) * fireRange.position;
+            Quaternion rotation = Quaternion.AngleAxis(i * 360 / 6, Vector3.forward);
+            GameObject hitBox = Instantiate(hitSwing, position, rotation, fireRange);
+            hitBox.GetComponent<SpriteRenderer>().sprite = swingSprite[i];
+            hitBox.SetActive(false);
+            hitSwingList.Add(hitBox);
+        }
     }
+
     protected override void Update()
     {
         base.Update();
@@ -53,8 +80,14 @@ public class ClassLng : characterCon
     private void NormalAttack() //normal atk
     {
         isShooting = true;
-        GameObject bull = Instantiate(hitWave, fireRange.position,
-            Quaternion.AngleAxis(90f, Vector3.forward) * fireRange.rotation, fireRange.transform);
+        /*
+        GameObject bull = Instantiate(hitWave, fireRange.position, fireRange.rotation, fireRange.transform);
+        bull.GetComponent<SpriteRenderer>().sprite = waveSprite[UnityEngine.Random.Range(0, waveSprite.Count)];
+        */
+        GameObject wave = hitWavePool.Get();
+        Rigidbody2D rb = wave.GetComponent<Rigidbody2D>();
+        rb.AddForce(fireRange.up * 5f, ForceMode2D.Impulse);
+        StartCoroutine(DelayDestroy(wave));
         StartCoroutine(OnCooldown());
     }
 
@@ -64,19 +97,23 @@ public class ClassLng : characterCon
         yield return new WaitForSeconds(Cooldown);
         isShooting = false;
         isAttacking = false;
+        yield break;
+    }
+
+    IEnumerator DelayDestroy(GameObject wave)
+    {
+        float delay = .5f;
+        yield return new WaitForSeconds(delay);
+        hitWavePool.Release(wave);
     }
 
     IEnumerator OrbitAttack()
     {
-        List<GameObject> hitboxes = new List<GameObject>();
-
         isShooting = true;
-        for (int i = 0; i < 6; i++)
+
+        foreach (GameObject hitSwing in hitSwingList)
         {
-            Vector3 position = Quaternion.AngleAxis(i * 360 / 6, Vector3.forward) * fireRange.position;
-            Quaternion rotation = Quaternion.AngleAxis(i * 360 / 6, Vector3.forward);
-            GameObject hitBox = Instantiate(hitBullet, position, rotation);
-            hitboxes.Add(hitBox);
+            hitSwing.SetActive(true);
         }
 
         // Swing
@@ -84,7 +121,7 @@ public class ClassLng : characterCon
         float swingTime = 5 / Atk_Speed;
         for (float time = 0; time < swingTime; time += Time.deltaTime)
         {
-            foreach (GameObject hitBox in hitboxes)
+            foreach (GameObject hitBox in hitSwingList)
             {
                 hitBox.transform.position = transform.position + hitBox.transform.rotation *
                     Quaternion.AngleAxis(swingAngle, Vector3.forward) * new Vector2(3f, 0f);
@@ -93,9 +130,9 @@ public class ClassLng : characterCon
             yield return null;
         }
 
-        foreach (GameObject hitBox in hitboxes)
+        foreach (GameObject hitSwing in hitSwingList)
         {
-            Destroy(hitBox);
+            hitSwing.SetActive(false);
         }
 
         isShooting = false;

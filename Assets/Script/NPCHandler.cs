@@ -8,14 +8,14 @@ public class NPCHandler : MonoBehaviour
     [SerializeField] GameObject displayInfo;
     void OnEnable()
     {
-        characterCon.OnNearNPC += ShowDisplay;
-        characterCon.OnLeaveNPC += StopDisplay;
+        CharacterCon.OnNearNPC += ShowDisplay;
+        CharacterCon.OnLeaveNPC += StopDisplay;
     }
 
     void OnDisable()
     {
-        characterCon.OnNearNPC += ShowDisplay;
-        characterCon.OnLeaveNPC += StopDisplay;
+        CharacterCon.OnNearNPC += ShowDisplay;
+        CharacterCon.OnLeaveNPC += StopDisplay;
     }
 
     void ShowDisplay(GameObject npc)
@@ -23,7 +23,7 @@ public class NPCHandler : MonoBehaviour
         if (gameObject.Equals(npc) && !displayInfo.active)
         {
             displayInfo.SetActive(true);
-            characterCon.OnInteractNPC += Interact;
+            CharacterCon.OnInteractNPC += Interact;
         }
     }
 
@@ -32,7 +32,7 @@ public class NPCHandler : MonoBehaviour
         if (gameObject.Equals(npc) && displayInfo.active)
         {
             displayInfo.SetActive(false);
-            characterCon.OnInteractNPC -= Interact;
+            CharacterCon.OnInteractNPC -= Interact;
         }
     }
 

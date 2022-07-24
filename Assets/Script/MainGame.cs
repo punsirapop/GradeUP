@@ -7,7 +7,7 @@ public class MainGame : MonoBehaviour
     public static MainGame instance;
     public GameObject player;
     public StatusManager statusManager;
-    public characterCon playerController;
+    public CharacterCon playerController;
 
     private void Awake()
     {
@@ -16,6 +16,6 @@ public class MainGame : MonoBehaviour
 
         player = GameObject.FindGameObjectWithTag("Player");
         statusManager = player.GetComponent<StatusManager>();
-        playerController = player.GetComponent<characterCon>();
+        playerController = player.GetComponent<CharacterCon>();
     }
 }

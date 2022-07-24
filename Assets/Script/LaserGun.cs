@@ -43,7 +43,7 @@ public class LaserGun : AttackHandler
             playerDistance = hits[1].distance;
             // lr.SetPosition(1, Vector3.up * playerDistance);
             //***********************************************************************
-            if (string.Equals(name, "LaserGun(Clone)") && !characterCon.isIFramed)
+            if (string.Equals(name, "LaserGun(Clone)") && !CharacterCon.isIFramed)
             {
                 OnLaserHit?.Invoke(gameObject);
             }

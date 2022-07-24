@@ -18,8 +18,8 @@ public class PlayerHealth : HealthSystem
 
     void Start()
     {
-        characterCon.OnHit += IsHit;
-        characterCon.OnPoisoned += IsPoisoned;
+        CharacterCon.OnHit += IsHit;
+        CharacterCon.OnPoisoned += IsPoisoned;
         LaserGun.OnLaserHit += IsHit;
 
         max_HP = statusManager.HP;
@@ -82,11 +82,11 @@ public class PlayerHealth : HealthSystem
         Color oldColor = sr.color;
 
         sr.color = new Color(1, 0, 0, .5f);
-        characterCon.isIFramed = true;
+        CharacterCon.isIFramed = true;
         yield return new WaitForSeconds(.5f);
 
         sr.color = oldColor;
-        characterCon.isIFramed = false;
+        CharacterCon.isIFramed = false;
         yield break;
     }
 }
