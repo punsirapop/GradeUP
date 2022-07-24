@@ -31,9 +31,9 @@ public class classChem : characterCon
     private void SpawnBullet() //normal atk
     {
         isAttacking = true;
-        GameObject bull = Instantiate(_selectBullet, _firepoint.position, _firepoint.rotation, _firepoint.transform);
+        GameObject bull = Instantiate(_selectBullet, fireRange.position, fireRange.rotation, fireRange.transform);
         Rigidbody2D rb = bull.GetComponent<Rigidbody2D>();
-        rb.AddForce(_firepoint.up * _Bulletforce, ForceMode2D.Impulse);
+        rb.AddForce(fireRange.up * _Bulletforce, ForceMode2D.Impulse);
         Setbullet?.Invoke(_mousepos);
         StartCoroutine(OnCooldown());
     }

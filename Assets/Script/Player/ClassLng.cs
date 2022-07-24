@@ -30,7 +30,7 @@ public class ClassLng : characterCon
         lock (attackLock)
         {
             isAttacking = true;
-            //_firepoint.position = transform.position + transform.rotation * new Vector3(0f, .5f);
+            //fireRange.position = transform.position + transform.rotation * new Vector3(0f, .5f);
             switch (ActiveSubClass)
             {
                 case 0:
@@ -53,8 +53,8 @@ public class ClassLng : characterCon
     private void NormalAttack() //normal atk
     {
         isShooting = true;
-        GameObject bull = Instantiate(hitWave, _firepoint.position,
-            Quaternion.AngleAxis(90f, Vector3.forward) * _firepoint.rotation, _firepoint.transform);
+        GameObject bull = Instantiate(hitWave, fireRange.position,
+            Quaternion.AngleAxis(90f, Vector3.forward) * fireRange.rotation, fireRange.transform);
         StartCoroutine(OnCooldown());
     }
 
@@ -66,20 +66,6 @@ public class ClassLng : characterCon
         isAttacking = false;
     }
 
-    /*
-    IEnumerator NormalAttack()
-    {
-        isShooting = true;
-        GameObject hitBox = Instantiate(hitWave, _firepoint.position,
-            Quaternion.AngleAxis(90f, Vector3.forward) * _firepoint.rotation, _firepoint.transform);
-        float punchTime = 5 / (2 * Atk_Speed);
-        yield return new WaitForSeconds(punchTime);
-        isShooting = false;
-        isAttacking = false;
-        yield break;
-    }
-    */
-
     IEnumerator OrbitAttack()
     {
         List<GameObject> hitboxes = new List<GameObject>();
@@ -87,7 +73,7 @@ public class ClassLng : characterCon
         isShooting = true;
         for (int i = 0; i < 6; i++)
         {
-            Vector3 position = Quaternion.AngleAxis(i * 360 / 6, Vector3.forward) * _firepoint.position;
+            Vector3 position = Quaternion.AngleAxis(i * 360 / 6, Vector3.forward) * fireRange.position;
             Quaternion rotation = Quaternion.AngleAxis(i * 360 / 6, Vector3.forward);
             GameObject hitBox = Instantiate(hitBullet, position, rotation);
             hitboxes.Add(hitBox);
@@ -104,7 +90,7 @@ public class ClassLng : characterCon
                     Quaternion.AngleAxis(swingAngle, Vector3.forward) * new Vector2(3f, 0f);
                 swingAngle += 30 * Time.deltaTime / swingTime;
             }
-            yield return new WaitForSeconds(Time.deltaTime);
+            yield return null;
         }
 
         foreach (GameObject hitBox in hitboxes)
@@ -133,34 +119,5 @@ public class ClassLng : characterCon
         {
             rb.velocity = Vector2.zero;
         }
-
     }
-
-    /*
-     * MOVED TO CHARACTER CON
-    private void ChangeSubClass(int ID) //for Change Sub-Class 
-    {
-        switch (ID)
-        {
-            case 0: //default
-                break;
-
-            case 1: //default++
-                ActiveSubClass = 1;
-                break;
-
-            case 2: //spin
-                ActiveSubClass = 2;
-                break;
-
-            case 3: //all screen
-                ActiveSubClass = 3;
-                break;
-
-            default:
-                break;
-        }
-        //FindObjectOfType<DebugUI>().ChangeSubClass -= ChangeSubClass; //when debug finish remove plz comment  
-    }
-    */
 }

@@ -251,7 +251,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4621294064056916064, guid: cefedf57542a5774dbba880e8f420967, type: 3}
       propertyPath: activeSubClass
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4621294064056916071, guid: cefedf57542a5774dbba880e8f420967, type: 3}
       propertyPath: m_Name
@@ -496,6 +496,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4983925195361858553, guid: 4f21419708c421a469bfa6df9971e1fc, type: 3}
   m_PrefabInstance: {fileID: 1058943549}
   m_PrefabAsset: {fileID: 0}
+--- !u!50 &815862296 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: -7422214125550840296, guid: 83e87e7858092af4782e827163383fab, type: 3}
+  m_PrefabInstance: {fileID: 1297562160}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &881941065
 GameObject:
   m_ObjectHideFlags: 0
@@ -576,7 +581,7 @@ GameObject:
   - component: {fileID: 1053525444}
   - component: {fileID: 1053525443}
   m_Layer: 5
-  m_Name: ScreenCanvas
+  m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -742,7 +747,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4983925195361858555, guid: 4f21419708c421a469bfa6df9971e1fc, type: 3}
       propertyPath: activeSubClass
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4983925195361858555, guid: 4f21419708c421a469bfa6df9971e1fc, type: 3}
       propertyPath: _bullet.Array.size
@@ -1565,8 +1570,12 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -7422214125550840296, guid: 83e87e7858092af4782e827163383fab, type: 3}
       propertyPath: m_LinearDrag
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -3685260554315490367, guid: 83e87e7858092af4782e827163383fab, type: 3}
+      propertyPath: rigidBody
+      value: 
+      objectReference: {fileID: 815862296}
     - target: {fileID: 975062697693766192, guid: 83e87e7858092af4782e827163383fab, type: 3}
       propertyPath: m_IsTrigger
       value: 1
@@ -1577,7 +1586,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2698141629128264872, guid: 83e87e7858092af4782e827163383fab, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2698141629128264879, guid: 83e87e7858092af4782e827163383fab, type: 3}
       propertyPath: m_RootOrder
@@ -3420,7 +3429,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2500779849898784210, guid: d60a2a6545ec306479b7f6e2b67aaf01, type: 3}
       propertyPath: activeSubClass
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2500779849898784211, guid: d60a2a6545ec306479b7f6e2b67aaf01, type: 3}
       propertyPath: m_Name

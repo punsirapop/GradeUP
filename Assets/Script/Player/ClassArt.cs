@@ -5,9 +5,18 @@ using UnityEngine;
 
 public class ClassArt : characterCon
 {
-    [SerializeField] GameObject hitSwing, hitPunch;
-    [SerializeField] protected GameObject _bullet;
+    [SerializeField] List<GameObject> _hitSwing;
+    [SerializeField] GameObject _hitDash;
+    [SerializeField] List<GameObject> _bullet;
+    [SerializeField] List<Material> _trail;
+    [SerializeField] LineRenderer lineRenderer;
+
     bool isAttacking = false, isShooting = false, isDashing = false;
+    List<GameObject> hitSwing = new List<GameObject>();
+    GameObject hitDash;
+
+    private static int playerColor;
+    public static int PlayerColor => playerColor;
 
     readonly object attackLock = new object();
 
@@ -15,17 +24,43 @@ public class ClassArt : characterCon
     {
         InitializeStats();
         // FindObjectOfType<DebugUI>().ChangeSubClass += ChangeSubClass;
+
+        foreach (GameObject hitbox in _hitSwing)
+        {
+            GameObject genHitBox = Instantiate(hitbox, fireRange.position,
+                Quaternion.AngleAxis(90f, Vector3.forward) * fireRange.rotation, firepoint.transform);
+            genHitBox.SetActive(false);
+            hitSwing.Add(genHitBox);
+        }
+
+        hitDash = Instantiate(_hitDash, fireRange.position, fireRange.rotation, fireRange.transform);
+        hitDash.GetComponent<SpriteRenderer>().enabled = false;
+        hitDash.SetActive(false);
+
+        /*
+        foreach (GameObject hitbox in _hitDash)
+        {
+            GameObject genHitBox = Instantiate(hitbox, fireRange.position, fireRange.rotation, firepoint.transform);
+            genHitBox.SetActive(false);
+            hitDash.Add(genHitBox);
+        }
+        */
     }
     protected override void Update()
     {
         base.Update();
         if (!isAttacking && Input.GetButtonDown("Fire1"))
         {
-            Actack();
+            Attack();
         }
     }
 
-    private void Actack()
+    private void RandomColor()
+    {
+        playerColor = UnityEngine.Random.Range(0, 3);
+    }
+
+    private void Attack()
     {
         lock (attackLock)
         {
@@ -51,22 +86,10 @@ public class ClassArt : characterCon
 
     IEnumerator NormalAttack()
     {
-        GameObject hitBox = Instantiate(hitSwing, _firepoint.position, _firepoint.rotation, firepoint.transform);
-        hitBox.tag = "Art";
         // Randomize color of attack
-        int color = UnityEngine.Random.Range(0, 3);
-        switch (color)
-        {
-            case 0:
-                hitBox.GetComponent<SpriteRenderer>().color = Color.red;
-                break;
-            case 1:
-                hitBox.GetComponent<SpriteRenderer>().color = Color.yellow;
-                break;
-            case 2:
-                hitBox.GetComponent<SpriteRenderer>().color = Color.blue;
-                break;
-        }
+        RandomColor();
+        hitSwing[playerColor].SetActive(true);
+        /*
         rb.velocity = Vector2.zero;
         // Swing
         float swingAngle = 0f;
@@ -76,64 +99,50 @@ public class ClassArt : characterCon
             hitBox.transform.position = transform.position + _firepoint.rotation *
                 Quaternion.AngleAxis(swingAngle, Vector3.forward) * new Vector2(2f, 0f);
             swingAngle += 180 * Time.deltaTime / swingTime;
-            yield return new WaitForSeconds(Time.deltaTime);
+            yield return null;
         }
-        Destroy(hitBox);
-        yield return new WaitForSeconds(swingTime);
-        isAttacking = false;
+        */
+        yield return new WaitForSeconds(5 / (2 * Atk_Speed));
+        hitSwing[playerColor].SetActive(false);
+        StartCoroutine(OnCooldown());
         yield break;
     }
+
     IEnumerator PaintballGun()
     {
         isShooting = true;
-        GameObject bull = Instantiate(_bullet, _firepoint.position, _firepoint.rotation);
-        bull.tag = "Art";
-        Rigidbody2D rb = bull.GetComponent<Rigidbody2D>();
-        rb.AddForce(_firepoint.up * _Bulletforce, ForceMode2D.Impulse);
+
         //GameObject hitBox = Instantiate(_bullet, _firepoint.position, _firepoint.rotation, bullets.transform);
         // Randomize color of attack
-        int color = UnityEngine.Random.Range(0, 3);
-        switch (color)
-        {
-            case 0:
-                bull.GetComponent<SpriteRenderer>().color = Color.red;
-                break;
-            case 1:
-                bull.GetComponent<SpriteRenderer>().color = Color.yellow;
-                break;
-            case 2:
-                bull.GetComponent<SpriteRenderer>().color = Color.blue;
-                break;
-        }
+        RandomColor();
+        GameObject bull = Instantiate(_bullet[playerColor], fireRange.position, fireRange.rotation);
+        Rigidbody2D rb = bull.GetComponent<Rigidbody2D>();
+        rb.AddForce(fireRange.up * _Bulletforce, ForceMode2D.Impulse);
+
         StartCoroutine(OnCooldown());
         isShooting = false;
         yield break;
     }
     IEnumerator DashAttack()
     {
-        GameObject hitMaxRange = Instantiate(hitSwing, _firepoint.position, _firepoint.rotation, firepoint.transform);
+        GameObject hitMaxRange = new GameObject("hitMaxRange");
+        hitMaxRange.transform.position = fireMaxRange.transform.position;
+        lineRenderer.enabled = true;
+        Vector3 startPos = transform.position;
+        lineRenderer.SetPosition(0, startPos);
+
+        RandomColor();
+        hitDash.SetActive(true);
+        lineRenderer.material = _trail[playerColor];
+
+        /*
+        GameObject hitMaxRange = Instantiate(hitSwing, fireRange.position, fireRange.rotation);
         hitMaxRange.tag = "Untagged";
         hitMaxRange.transform.position += _firepoint.rotation * new Vector2(0f, 3f);
-        hitMaxRange.transform.SetParent(null);
         Destroy(hitMaxRange.GetComponent<SpriteRenderer>());
-        float spd = 5f;
-        GameObject hitBox = Instantiate(hitPunch, _firepoint.position,
-            Quaternion.AngleAxis(90f, Vector3.forward) * _firepoint.rotation, firepoint.transform);
-        hitBox.tag = "Art";
-        int color = UnityEngine.Random.Range(0, 3);
+        */
 
-        switch (color)
-        {
-            case 0:
-                hitBox.GetComponent<SpriteRenderer>().color = Color.red;
-                break;
-            case 1:
-                hitBox.GetComponent<SpriteRenderer>().color = Color.yellow;
-                break;
-            case 2:
-                hitBox.GetComponent<SpriteRenderer>().color = Color.blue;
-                break;
-        }
+        float spd = 5f;
 
         isIFramed = true;
         isDashing = true;
@@ -141,12 +150,14 @@ public class ClassArt : characterCon
         while (Vector2.Distance(transform.position, hitMaxRange.transform.position) > .05f && isDashing)
         {
             transform.position = Vector2.Lerp(transform.position, hitMaxRange.transform.position, Time.deltaTime * spd);
+            lineRenderer.SetPosition(1, fireRange.transform.position);
             yield return new WaitForFixedUpdate();
         }
         isIFramed = false;
-
+        lineRenderer.enabled = false;
+        hitDash.SetActive(false);
         Destroy(hitMaxRange);
-        Destroy(hitBox);
+
         rb.velocity = Vector2.zero;
         StartCoroutine(OnCooldown());
         yield break;
@@ -166,6 +177,7 @@ public class ClassArt : characterCon
         yield return new WaitForSeconds(Cooldown);
         isAttacking = false;
     }
+
     protected override void FixedUpdate()
     {
         if (!isAttacking || isShooting)
@@ -178,32 +190,4 @@ public class ClassArt : characterCon
             rb.velocity = Vector2.zero;
         }
     }
-    /*
-     * MOVED TO CHARACTER CON
-    private void ChangeSubClass(int ID) //for Change Sub-Class 
-    {
-        switch (ID)
-        {
-            case 0: //default
-                activeSubClass = 0;
-                break;
-
-            case 1: //Explotion
-                activeSubClass = 1;
-                break;
-
-            case 2: //Posion
-                activeSubClass = 2;
-                break;
-
-            case 3: //Burn
-                activeSubClass = 3;
-                break;
-
-            default:
-                break;
-        }
-        //FindObjectOfType<DebugUI>().ChangeSubClass -= ChangeSubClass; //when debug finish remove comment plz   
-    }
-    */
 }

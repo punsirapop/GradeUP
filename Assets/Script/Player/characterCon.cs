@@ -17,7 +17,8 @@ public class characterCon : StatusManager
     [SerializeField] protected Rigidbody2D rb;
     [SerializeField] protected Rigidbody2D firepoint;
     [SerializeField] protected Camera cam;
-    [SerializeField] protected Transform _firepoint;
+    [SerializeField] protected Transform fireRange;
+    [SerializeField] protected Transform fireMaxRange;
 
     protected Vector2 _movement;
     protected Vector2 _mousepos;

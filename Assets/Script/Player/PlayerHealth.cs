@@ -4,28 +4,6 @@ using UnityEngine;
 using System;
 using TMPro;
 
-/*
-struct Poison
-{
-    enemySO attackOwner;
-    public enemySO AttackOwner => attackOwner;
-
-    int duration;
-    public int Duration => duration;
-
-    public Poison(enemySO AttackOwner, int Duration)
-    {
-        attackOwner = AttackOwner;
-        duration = Duration;
-    }
-
-    public void Countdown()
-    {
-        duration--;
-    }
-}
-*/
-
 public class PlayerHealth : HealthSystem
 {
     public static event Action OnPlayerDeath;
@@ -36,7 +14,6 @@ public class PlayerHealth : HealthSystem
     [SerializeField] TextMeshProUGUI hpDisplay;
     [SerializeField] GameObject deadDisplay;
 
-    // List<Poison> poisonStack = new List<Poison>();
     int poisonStack = 0;
 
     void Start()
@@ -54,22 +31,6 @@ public class PlayerHealth : HealthSystem
     void Update()
     {
         hpDisplay.SetText(Current_HP + " / " + max_HP);
-
-        /*
-        if(poisonStack.Count > 0)
-        {
-            Debug.Log("Got Poisoned!");
-            StartCoroutine(EnablePoison());
-
-            foreach (Poison poison in poisonStack)
-            {
-                if(poison.Duration <= 0)
-                {
-                    poisonStack.Remove(poison);
-                }
-            }
-        }
-        */
         
         if (Current_HP <= 0)
         {

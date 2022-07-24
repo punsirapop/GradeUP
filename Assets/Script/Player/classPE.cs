@@ -51,7 +51,7 @@ public class classPE : characterCon
         if (isAttacking)
         {
             // Generate hitbox
-            GameObject hitBox = Instantiate(_bullet, _firepoint.transform);
+            GameObject hitBox = Instantiate(_bullet, fireRange.transform);
             hitBox.tag = "Knock";
             // Forced stop moving
             rb.velocity = Vector2.zero;
@@ -70,14 +70,14 @@ public class classPE : characterCon
             // Initiate charging sequence
             isCharging = true;
             // Generate charge destination indicator
-            GameObject hitMaxRange = Instantiate(hitSwing, _firepoint.position, _firepoint.rotation, firepoint.transform);
+            GameObject hitMaxRange = Instantiate(hitSwing, fireRange.position, fireRange.rotation, firepoint.transform);
             hitMaxRange.tag = "Untagged";
             while (Input.GetMouseButton(0))
             {
                 // Keep extending indicator until set position
                 if (Vector2.Distance(transform.position, hitMaxRange.transform.position) < 5f)
                 {
-                    hitMaxRange.transform.position += _firepoint.rotation * new Vector2(0f, .05f);
+                    hitMaxRange.transform.position += fireRange.rotation * new Vector2(0f, .05f);
                 }
                 yield return new WaitForFixedUpdate();
             }
@@ -87,8 +87,8 @@ public class classPE : characterCon
             // Set dash speed
             float spd = 5f;
             // Generate hitbox
-            GameObject hitBox = Instantiate(hitPunch, _firepoint.position,
-                Quaternion.AngleAxis(90f, Vector3.forward) * _firepoint.rotation, firepoint.transform);
+            GameObject hitBox = Instantiate(hitPunch, fireRange.position,
+                Quaternion.AngleAxis(90f, Vector3.forward) * fireRange.rotation, firepoint.transform);
             hitBox.tag = "Knock";
             // Dash player until reaching destination
             isIFramed = true;
@@ -108,7 +108,7 @@ public class classPE : characterCon
     {   //will Change aSpd and will use NormalPunch() instead
         if (isAttacking)
         {
-            GameObject hitBox = Instantiate(hitPunch, _firepoint.position, _firepoint.rotation, firepoint.transform);
+            GameObject hitBox = Instantiate(hitPunch, fireRange.position, fireRange.rotation, firepoint.transform);
             hitBox.tag = "Knock";
             rb.velocity = Vector2.zero;
             float punchTime = 5 / (2 * Atk_Speed * 3);
@@ -122,7 +122,7 @@ public class classPE : characterCon
     {
         if (isAttacking)
         {
-            GameObject hitBox = Instantiate(hitPunch, _firepoint.position, _firepoint.rotation, firepoint.transform);
+            GameObject hitBox = Instantiate(hitPunch, fireRange.position, fireRange.rotation, firepoint.transform);
             hitBox.tag = "Knock";
             rb.velocity = Vector2.zero;
             // Set swing angle, start range, and time
@@ -130,8 +130,8 @@ public class classPE : characterCon
             // Move hitbox in circular motion within swing time limit
             for (float time = 0; time < swingTime; time += Time.deltaTime)
             {
-                hitBox.transform.SetPositionAndRotation(transform.position + _firepoint.rotation *
-                    Quaternion.AngleAxis(swingAngle, Vector3.forward) * new Vector3(0f, 2f), _firepoint.rotation * Quaternion.AngleAxis(swingAngle, Vector3.forward));
+                hitBox.transform.SetPositionAndRotation(transform.position + fireRange.rotation *
+                    Quaternion.AngleAxis(swingAngle, Vector3.forward) * new Vector3(0f, 2f), fireRange.rotation * Quaternion.AngleAxis(swingAngle, Vector3.forward));
                 swingAngle += swingRange * Time.deltaTime / swingTime;
                 yield return new WaitForSeconds(Time.deltaTime);
             }
@@ -161,35 +161,5 @@ public class classPE : characterCon
             }
             rb.velocity = Vector2.zero;
         }
-
     }
-
-    /*
-     * MOVED TO CHARACTER CON
-    private void ChangeSubClass(int ID) //for Change Sub-Class 
-    {
-        switch (ID)
-        {
-            case 0: //default
-                ActiveSubClass = 0;
-                break;
-
-            case 1: //Explotion
-                ActiveSubClass = 1;
-                break;
-
-            case 2: //Posion
-                ActiveSubClass = 2;
-                break;
-
-            case 3: //Burn
-                ActiveSubClass = 3;
-                break;
-
-            default:
-                break;
-        }
-        //FindObjectOfType<DebugUI>().ChangeSubClass -= ChangeSubClass; //when debug finish remove plz comment  
-    }
-    */
 }

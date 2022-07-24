@@ -78,8 +78,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 0.40943396, b: 0.40943396, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 155e9b381e8071a4398b1a1c1cb6d2b9, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -106,7 +106,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 20.48, y: 20.48}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -154,12 +154,12 @@ MonoBehaviour:
   Atk_Speed: 0
   MoveSpeed: 0
   Art: 0
+  activeSubClass: 0
   moveable: {fileID: 0}
   rb: {fileID: 0}
   firepoint: {fileID: 5446525841694112701}
   cam: {fileID: 0}
   _firepoint: {fileID: 5446525841694112700}
-  ActiveSubClass: 0
   _bullet:
   - {fileID: 728747090168759146, guid: 8fcebc2969634c146803345a7df69c5d, type: 3}
   - {fileID: 728747090168759146, guid: 150915e48f7369f4895009990995e058, type: 3}

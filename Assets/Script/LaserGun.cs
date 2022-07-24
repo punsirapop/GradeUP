@@ -31,15 +31,17 @@ public class LaserGun : AttackHandler
         transform.rotation = Quaternion.RotateTowards(transform.rotation, rotation, 0.1f * rotateSpeed);
 
         // Check if hit something
-        RaycastHit2D hit = Physics2D.Raycast(lr.transform.position, transform.rotation * new Vector2(0f, 1000f));
+        RaycastHit2D[] hits = Physics2D.RaycastAll(lr.transform.position, transform.rotation * new Vector2(0f, 1000f));
         //Debug.Log(hits.Length);
         lr.SetPosition(0, new Vector3(0f, 0f, -1f));
         lr.SetPosition(1, new Vector3(0, 100, -1f));
-        
-        if (hit.collider.CompareTag("Player"))
+
+        Debug.Log("Shooting laser");
+        if (hits[1].collider.CompareTag("Player"))
         {
-            playerDistance = hit.distance;
-            lr.SetPosition(1, Vector3.up * playerDistance);
+            Debug.Log("Hit Player");
+            playerDistance = hits[1].distance;
+            // lr.SetPosition(1, Vector3.up * playerDistance);
             //***********************************************************************
             if (string.Equals(name, "LaserGun(Clone)") && !characterCon.isIFramed)
             {
@@ -47,10 +49,10 @@ public class LaserGun : AttackHandler
             }
             //***********************************************************************
         }
-        else if (hit.collider.CompareTag("Wall"))
+        else if (hits[1].collider.CompareTag("Wall"))
         {
-            wallDistance = hit.distance;
-            lr.SetPosition(1, Vector3.up * wallDistance);
+            wallDistance = hits[1].distance;
+            // lr.SetPosition(1, Vector3.up * wallDistance);
         }        
     }
 }
