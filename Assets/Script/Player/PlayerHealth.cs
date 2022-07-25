@@ -12,6 +12,7 @@ public class PlayerHealth : HealthSystem
 
     [SerializeField] StatusManager statusManager;
     [SerializeField] TextMeshProUGUI hpDisplay;
+    [SerializeField] HealthBar healthBar;
     [SerializeField] GameObject deadDisplay;
 
     int poisonStack = 0;
@@ -24,18 +25,20 @@ public class PlayerHealth : HealthSystem
 
         max_HP = statusManager.HP;
         Current_HP = max_HP;
-
-        Debug.Log("Start HP: " + Current_HP + " / " + max_HP);
+        
+        // Debug.Log("Start HP: " + Current_HP + " / " + max_HP);
+        healthBar.SetMaxHealthBar(max_HP);
     }
 
     void Update()
     {
-        hpDisplay.SetText(Current_HP + " / " + max_HP);
-        
+        // hpDisplay.SetText(Current_HP + " / " + max_HP);
+        healthBar.SetHealth(Current_HP);
+
         if (Current_HP <= 0)
         {
             OnPlayerDeath?.Invoke();
-            hpDisplay.enabled = false;
+            // hpDisplay.enabled = false;
             deadDisplay.SetActive(true);
             gameObject.SetActive(false);
         }
