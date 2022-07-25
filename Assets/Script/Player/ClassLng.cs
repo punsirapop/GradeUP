@@ -17,6 +17,7 @@ public class ClassLng : CharacterCon
     ObjectPool<GameObject> hitWavePool;
     List<GameObject> hitSwingList = new List<GameObject>();
 
+    float swingAngle = 0f;
     private void OnEnable()
     {
         InitializeStats();
@@ -36,7 +37,7 @@ public class ClassLng : CharacterCon
         {
             Vector3 position = Quaternion.AngleAxis(i * 360 / 6, Vector3.forward) * fireRange.position;
             Quaternion rotation = Quaternion.AngleAxis(i * 360 / 6, Vector3.forward);
-            GameObject hitBox = Instantiate(hitSwing, position, rotation, fireRange);
+            GameObject hitBox = Instantiate(hitSwing, position, rotation);
             hitBox.GetComponent<SpriteRenderer>().sprite = swingSprite[i];
             hitBox.SetActive(false);
             hitSwingList.Add(hitBox);
@@ -117,7 +118,6 @@ public class ClassLng : CharacterCon
         }
 
         // Swing
-        float swingAngle = 0f;
         float swingTime = 5 / Atk_Speed;
         for (float time = 0; time < swingTime; time += Time.deltaTime)
         {

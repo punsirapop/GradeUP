@@ -181,7 +181,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 20.48, y: 20.48}
+    oldSize: {x: 2.56, y: 2.56}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -208,15 +208,17 @@ MonoBehaviour:
   Atk_Speed: 0
   MoveSpeed: 0
   Art: 0
-  activeSubClass: 0
+  activeSubClass: 1
   moveable: {fileID: 0}
   rb: {fileID: 0}
   firepoint: {fileID: 2500779849550607289}
   cam: {fileID: 0}
-  _firepoint: {fileID: 2500779850666082348}
-  hitPunch: {fileID: 622666229397312050, guid: 21f745abaaf348c44a47d112c14f661f, type: 3}
-  hitSwing: {fileID: 711672648239661606, guid: c667cb0bfb968f64bace6a86af7f98ba, type: 3}
-  _bullet: {fileID: 622666229397312050, guid: 21f745abaaf348c44a47d112c14f661f, type: 3}
+  fireRange: {fileID: 2500779850666082348}
+  fireMaxRange: {fileID: 0}
+  _hitBox:
+  - {fileID: 622666229397312050, guid: 900684389479fd44893674d90f1cae3b, type: 3}
+  - {fileID: 622666229397312050, guid: aeefc039fbbeaa74e849efd87697bdc4, type: 3}
+  - {fileID: 622666229397312050, guid: 0a3ce4e52a6045342a62a24efe982d7d, type: 3}
 --- !u!114 &7685707155377946783
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -229,7 +231,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e9629bddacc282488f1a14b598214cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  statusManager: {fileID: 0}
+  statusManager: {fileID: 2500779849898784210}
   hpDisplay: {fileID: 0}
   deadDisplay: {fileID: 0}
 --- !u!1 &2500779850666082349
@@ -242,7 +244,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2500779850666082348}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: fireRange
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -1,17 +1,27 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class ClassPE : CharacterCon
 {
-    [SerializeField] GameObject hitPunch, hitSwing;
-    bool isAttacking = false ,isCharging = false;
+    [SerializeField] List<GameObject> _hitBox;
+    bool isAttacking = false ,isCharging = false, isDashing = false;
     readonly object clickLock = new object();
-    [SerializeField] protected GameObject _bullet;
+
+    List<GameObject> hitBox = new List<GameObject>();
 
     private void OnEnable()
     {
         InitializeStats();
         // FindObjectOfType<DebugUI>().ChangeSubClass += ChangeSubClass;
+        foreach(GameObject obj in _hitBox)
+        {
+            GameObject newHitBox = Instantiate(obj, fireRange.position, fireRange.rotation, fireRange.transform);
+            newHitBox.SetActive(false);
+            hitBox.Add(newHitBox);
+        }
+
+        hitBox[0].transform.rotation *= Quaternion.AngleAxis(90f, Vector3.forward);
     }
     protected override void Update()
     {
@@ -27,21 +37,15 @@ public class ClassPE : CharacterCon
         lock (clickLock)
         {
             isAttacking = true;
-            switch (ActiveSubClass)
+            if(activeSubClass == 1)
             {
-                case 0:
-                    StartCoroutine(NormalPunch());
-                    break;
-                case 1:
-                    StartCoroutine(ChargePunch());
-                    break;
-                case 2:
-                    StartCoroutine(SpeedPunch());
-                    break;
-                case 3:
-                    StartCoroutine(SwingAtk());
-                    break;
+                StartCoroutine(ChargePunch());
             }
+            else
+            {
+                StartCoroutine(NormalPunch());
+            }
+            
             Debug.Log("Punched");
 
         }
@@ -50,17 +54,25 @@ public class ClassPE : CharacterCon
     {
         if (isAttacking)
         {
+            int subSpeed = 1;
+            int hitboxUse = 0;
+            if(activeSubClass == 2)
+            {
+                subSpeed = 3;
+            }
+            if(activeSubClass == 3)
+            {
+                hitboxUse = 2;
+            }
             // Generate hitbox
-            GameObject hitBox = Instantiate(_bullet, fireRange.transform);
-            hitBox.tag = "Knock";
+            hitBox[hitboxUse].SetActive(true);
             // Forced stop moving
             rb.velocity = Vector2.zero;
             // Set reload time
-            float punchTime = 5 / (2 * Atk_Speed);
+            float punchTime = 5 / (2 * Atk_Speed * subSpeed);
             yield return new WaitForSeconds(punchTime);
-            Destroy(hitBox);
-            yield return new WaitForSeconds(punchTime);
-            isAttacking = false;
+            hitBox[hitboxUse].SetActive(false);
+            StartCoroutine(OnCooldown());
         }
     }
     IEnumerator ChargePunch()
@@ -70,8 +82,9 @@ public class ClassPE : CharacterCon
             // Initiate charging sequence
             isCharging = true;
             // Generate charge destination indicator
-            GameObject hitMaxRange = Instantiate(hitSwing, fireRange.position, fireRange.rotation, firepoint.transform);
-            hitMaxRange.tag = "Untagged";
+            GameObject hitMaxRange = Instantiate(_hitBox[0], fireRange.position,
+                Quaternion.AngleAxis(90f, Vector3.forward) * fireRange.rotation, firepoint.transform);
+            hitMaxRange.GetComponent<Collider2D>().enabled = false;
             while (Input.GetMouseButton(0))
             {
                 // Keep extending indicator until set position
@@ -82,42 +95,37 @@ public class ClassPE : CharacterCon
                 yield return new WaitForFixedUpdate();
             }
             hitMaxRange.transform.SetParent(null);
+            hitMaxRange.GetComponent<SpriteRenderer>().enabled = false;
+
             // End charging sequence
             isCharging = false;
+            isIFramed = true;
+            isDashing = true;
             // Set dash speed
             float spd = 5f;
             // Generate hitbox
-            GameObject hitBox = Instantiate(hitPunch, fireRange.position,
-                Quaternion.AngleAxis(90f, Vector3.forward) * fireRange.rotation, firepoint.transform);
-            hitBox.tag = "Knock";
+            hitBox[1].SetActive(true);
             // Dash player until reaching destination
-            isIFramed = true;
-            while (Vector2.Distance(transform.position, hitMaxRange.transform.position) > .05f)
+            StartCoroutine(WaitForDashEnd());
+            while (Vector2.Distance(transform.position, hitMaxRange.transform.position) > .05f && isDashing)
             {
                 transform.position = Vector2.Lerp(transform.position, hitMaxRange.transform.position, Time.deltaTime * spd);
                 yield return new WaitForFixedUpdate();
             }
             isIFramed = false;
+            hitBox[1].SetActive(false);
             Destroy(hitMaxRange);
-            Destroy(hitBox);
             // Set reload time
             StartCoroutine(OnCooldown());
         }
     }
-    IEnumerator SpeedPunch()
-    {   //will Change aSpd and will use NormalPunch() instead
-        if (isAttacking)
-        {
-            GameObject hitBox = Instantiate(hitPunch, fireRange.position, fireRange.rotation, firepoint.transform);
-            hitBox.tag = "Knock";
-            rb.velocity = Vector2.zero;
-            float punchTime = 5 / (2 * Atk_Speed * 3);
-            yield return new WaitForSeconds(punchTime);
-            Destroy(hitBox);
-            yield return new WaitForSeconds(punchTime);
-            isAttacking = false;
-        }
+
+    IEnumerator WaitForDashEnd()
+    {
+        yield return new WaitForSeconds(1f);
+        isDashing = false;
     }
+    /*
     IEnumerator SwingAtk()
     {
         if (isAttacking)
@@ -139,6 +147,7 @@ public class ClassPE : CharacterCon
             StartCoroutine(OnCooldown());
         }
     }
+    */
     IEnumerator OnCooldown()
     {
         float Cooldown = 5 / (2 * Atk_Speed);

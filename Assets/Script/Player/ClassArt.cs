@@ -165,10 +165,8 @@ public class ClassArt : CharacterCon
 
     IEnumerator WaitForDashEnd()
     {
-        Debug.Log("Start");
         yield return new WaitForSeconds(1f);
         isDashing = false;
-        Debug.Log("End");
     }
 
     IEnumerator OnCooldown()

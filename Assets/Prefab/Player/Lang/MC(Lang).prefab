@@ -73,7 +73,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -233,15 +233,32 @@ MonoBehaviour:
   Atk_Speed: 0
   MoveSpeed: 0
   Art: 0
-  activeSubClass: 3
+  activeSubClass: 2
   moveable: {fileID: 0}
   rb: {fileID: 0}
   firepoint: {fileID: 3557058661614215023}
   cam: {fileID: 0}
   fireRange: {fileID: 3557058661064618180}
   fireMaxRange: {fileID: 0}
-  hitWave: {fileID: 622666229397312050, guid: f836706b6610963439b8040a10c21e79, type: 3}
-  hitBullet: {fileID: 711672648239661606, guid: d7d9d3cc5dd76284d8008ddacb76b39a, type: 3}
+  hitWave: {fileID: 622666229397312050, guid: bbbbc9a8581eb4141b937b1db00970fa, type: 3}
+  hitSwing: {fileID: 711672648239661606, guid: d7d9d3cc5dd76284d8008ddacb76b39a, type: 3}
+  waveSprite:
+  - {fileID: 21300000, guid: 79779b2d2b8c1524cbb7262a02306370, type: 3}
+  - {fileID: 21300000, guid: 8235cd7d783b55f4aa4dc5dd0e46e32d, type: 3}
+  - {fileID: 21300000, guid: 63cedca506f50d746ab2ad0a781b1add, type: 3}
+  - {fileID: 21300000, guid: 3ffc0343ebd849d4c99778d130eacf6c, type: 3}
+  - {fileID: 21300000, guid: 7a009cc6f094fa9408b1a7284b4846d5, type: 3}
+  - {fileID: 21300000, guid: 64ce49e70e04b5a46aad6eb23ff55b1f, type: 3}
+  - {fileID: 21300000, guid: 8b62f60ca765ebb4b92d2d0cdc61eb6a, type: 3}
+  - {fileID: 21300000, guid: d624461a3f99e9d4885f810b2672181d, type: 3}
+  - {fileID: 21300000, guid: 0ff4977618f31384ba02df033a5826f6, type: 3}
+  swingSprite:
+  - {fileID: 21300000, guid: 2927470c3e99c9f4e83115ef59f8b2c7, type: 3}
+  - {fileID: 21300000, guid: 0a4f014eea3865e46955910a2e0fa0b4, type: 3}
+  - {fileID: 21300000, guid: 7f6152433ac53b348aa64f121f342ea2, type: 3}
+  - {fileID: 21300000, guid: db16f1ed203ffdd4b98018b602806d39, type: 3}
+  - {fileID: 21300000, guid: c4078dfe19e28e941829662fe33cd503, type: 3}
+  - {fileID: 21300000, guid: 6b5d3eb757cd25f48a6f07e859ff2fec, type: 3}
 --- !u!114 &-1489031138300869997
 MonoBehaviour:
   m_ObjectHideFlags: 0
