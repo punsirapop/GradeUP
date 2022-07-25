@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: rulerSO
   m_EditorClassIdentifier: 
   _enemyName: Ruler
-  _HP: 999
+  _HP: 100
   _attack: 20
   _attackSpeed: 4
   _speed: 5

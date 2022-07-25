@@ -217,6 +217,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyStat: {fileID: 11400000, guid: 60fe517f1c30abe42b14e0bf5e56f8c6, type: 2}
+  spriteRenderer: {fileID: 867267398436550368}
+  rigidBody: {fileID: 867267399639455425}
+  agent: {fileID: 867267399639455431}
 --- !u!58 &7116381308334099605
 CircleCollider2D:
   m_ObjectHideFlags: 0

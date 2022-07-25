@@ -2,26 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEngine.AI;
 
 public class EnemyHealth : HealthSystem
 {
     public enemySO enemyStat;
 
     StatusManager playerStatusManager;
-    SpriteRenderer spriteRenderer;
-    Collider2D thisCollider;
-    Rigidbody2D thisRB;
+    [SerializeField] SpriteRenderer spriteRenderer;
+    [SerializeField] Rigidbody2D rigidBody;
+    [SerializeField] NavMeshAgent agent;
 
     bool isBurnt = false, isBurning = false;
+
+    int myColor = -1;
 
     readonly object burnLock = new object();
 
     void Start()
     {
-        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         playerStatusManager = GameObject.FindGameObjectWithTag("Player").GetComponent<StatusManager>();
-        thisCollider = GetComponent<Collider2D>();
-        thisRB = GetComponent<Rigidbody2D>();
         max_HP = enemyStat.HP;
         Current_HP = max_HP;
 
@@ -62,7 +62,7 @@ public class EnemyHealth : HealthSystem
             case "Knock":
                 Debug.Log("Enemy got Knocked!");
                 GetDamage(playerStatusManager.Atk);
-                KnockBack(collision);
+                StartCoroutine(KnockBack(collision));
                 PrintHP();
                 break;
             case "PlayerPoison":
@@ -74,8 +74,8 @@ public class EnemyHealth : HealthSystem
                 isBurnt = true;
                 break;
             case "Art":
-                List<Color> colors = new List<Color>();
-                Color newColor = collision.GetComponent<SpriteRenderer>().color;
+                List<int> colors = new List<int>();
+                int newColor = ClassArt.PlayerColor;
                 if (playerStatusManager.ActiveSubClass == 1)
                 {
                     colors.Add(newColor);
@@ -83,20 +83,12 @@ public class EnemyHealth : HealthSystem
                 }
                 else
                 {
-                    colors.Add(spriteRenderer.color);
+                    colors.Add(myColor);
                     colors.Add(newColor);
                 }
                 MixColor(colors);
                 break;
         }
-    }
-
-    void KnockBack(Collider2D collision)
-    {
-        Debug.Log("Start knocking back");
-        Vector2 distance = (transform.position - collision.transform.position).normalized;
-        Debug.Log(distance);
-        thisRB.AddForce(distance * 5f, ForceMode2D.Impulse);
     }
 
     void OnTriggerExit2D(Collider2D collision)
@@ -105,6 +97,21 @@ public class EnemyHealth : HealthSystem
         {
             isBurnt = false;
         }
+    }
+
+    IEnumerator KnockBack(Collider2D collision)
+    {
+        Debug.Log("Start knocking back");
+        float speed = agent.speed;
+        agent.speed = 0;
+        rigidBody.velocity = Vector2.zero;
+        Vector2 distance = (transform.position - collision.transform.position).normalized;
+        Debug.Log(distance);
+        rigidBody.AddForce(distance * 10f, ForceMode2D.Impulse);
+        yield return new WaitForSeconds(.25f);
+        rigidBody.velocity = Vector2.zero;
+        agent.speed = speed;
+        yield break;
     }
 
     IEnumerator Burning()
@@ -116,20 +123,20 @@ public class EnemyHealth : HealthSystem
         isBurning = false;
     }
 
-    void MixColor(List<Color> colors)
+    void MixColor(List<int> colors)
     {
         // Mix same color
         if (colors[0].Equals(colors[1]))
         {
-            if (colors.Contains(Color.red))
+            if (colors.Contains(0))
             {
                 Debug.Log("WED");
             }
-            else if (colors.Contains(Color.yellow))
+            else if (colors.Contains(1))
             {
                 Debug.Log("YELLO");
             }
-            else if (colors.Contains(Color.blue))
+            else if (colors.Contains(2))
             {
                 Debug.Log("BLU");
             }
@@ -137,28 +144,28 @@ public class EnemyHealth : HealthSystem
         // Mix different color
         else
         {
-            if (colors.Contains(Color.red) && colors.Contains(Color.yellow))
+            if (colors.Contains(0) && colors.Contains(1))
             {
                 Debug.Log("ORANG");
             }
-            else if (colors.Contains(Color.red) && colors.Contains(Color.blue))
+            else if (colors.Contains(0) && colors.Contains(2))
             {
                 Debug.Log("PUPEL");
             }
-            else if (colors.Contains(Color.yellow) && colors.Contains(Color.blue))
+            else if (colors.Contains(1) && colors.Contains(2))
             {
                 Debug.Log("GWEEN");
             }
             // Mix failed
             else
             {
-                spriteRenderer.color = colors[1];
+                myColor = colors[1];
             }
         }
         // Reset color if mix success
-        if (!colors[0].Equals(Color.white))
+        if (!colors[0].Equals(-1))
         {
-            spriteRenderer.color = Color.white;
+            myColor = -1;
         }
     }
 

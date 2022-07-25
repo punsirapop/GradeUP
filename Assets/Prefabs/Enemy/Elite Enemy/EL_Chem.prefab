@@ -149,6 +149,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyStat: {fileID: 11400000, guid: 0c00862fb111855468ab1b6ff2249bd7, type: 2}
+  spriteRenderer: {fileID: 9163507261429605729}
+  rigidBody: {fileID: 9163507261244064286}
+  agent: {fileID: 9163507261244064284}
 --- !u!1 &9163507261429605731
 GameObject:
   m_ObjectHideFlags: 0

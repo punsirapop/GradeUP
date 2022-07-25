@@ -37,19 +37,18 @@ public class classPhysic : characterCon
 
         if (ActiveSubClass == 1)
         {
-
-            GameObject bullleft = Instantiate(_selectBullet, _firepoint.position, _firepoint.rotation, _firepoint.transform);
+            GameObject bullleft = Instantiate(_selectBullet, fireRange.position, fireRange.rotation, fireRange.transform);
             Rigidbody2D rbleft = bullleft.GetComponent<Rigidbody2D>();
-            rbleft.AddForce((Quaternion.Euler(0, 0, 15.5f) * _firepoint.up) * _Bulletforce, ForceMode2D.Impulse);
+            rbleft.AddForce((Quaternion.Euler(0, 0, 15.5f) * fireRange.up) * _Bulletforce, ForceMode2D.Impulse);
 
-            GameObject bullright = Instantiate(_selectBullet, _firepoint.position, _firepoint.rotation, _firepoint.transform);
+            GameObject bullright = Instantiate(_selectBullet, fireRange.position, fireRange.rotation, fireRange.transform);
             Rigidbody2D rbright = bullright.GetComponent<Rigidbody2D>();
-            rbright.AddForce((Quaternion.Euler(0, 0, -15.5f) * _firepoint.up) * _Bulletforce, ForceMode2D.Impulse);
+            rbright.AddForce((Quaternion.Euler(0, 0, -15.5f) * fireRange.up) * _Bulletforce, ForceMode2D.Impulse);
         }
 
-        GameObject bull = Instantiate(_selectBullet, _firepoint.position, _firepoint.rotation, _firepoint.transform);
+        GameObject bull = Instantiate(_selectBullet, fireRange.position, fireRange.rotation, fireRange.transform);
         Rigidbody2D rb = bull.GetComponent<Rigidbody2D>();
-        rb.AddForce(_firepoint.up * _Bulletforce, ForceMode2D.Impulse);
+        rb.AddForce(fireRange.up * _Bulletforce, ForceMode2D.Impulse);
 
         StartCoroutine(OnCooldown());
     }
@@ -70,5 +69,4 @@ public class classPhysic : characterCon
         }
         //FindObjectOfType<DebugUI>().ChangeSubClass -= ChangeSubClass; //when debug finish remove plz comment  
     }
-    
 }
