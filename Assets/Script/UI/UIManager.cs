@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+using TMPro;
 
 public enum UIType
 {
@@ -36,8 +38,10 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject hoverTextPanel;
     
     GameObject hoverText;
+    public UIType nowCanvas;
 
-    private void Start() {
+    private void Start()
+    {
         foreach (UIType type in System.Enum.GetValues(typeof(UIType)))
         {
             if (type == defaultStartCanvas)
@@ -51,22 +55,34 @@ public class UIManager : MonoBehaviour
         }
     }
 
+    private void ResetCanvas()
+    {
+        foreach (UIType type in System.Enum.GetValues(typeof(UIType)))
+        {
+            CloseCanvas(type);
+        }
+    }
+
     public void OpenCanvas(UIType type)
     {
         switch (type)
         {
             case UIType.Player:
+                if (playerCanvas != null)
                 playerCanvas.SetActive(true);
                 return;
             case UIType.Pause:
+                if (pauseCanvas != null)
                 pauseCanvas.SetActive(true);
                 return;
             case UIType.Setting:
+                if (settingCanvas != null)
                 settingCanvas.SetActive(true);
                 return;
-            // case UIType.Menu:
-            //     menuCanvas.SetActive(true);
-            //     return;
+            case UIType.Menu:
+                if (menuCanvas != null)
+                MenuUI();
+                return;
             default:
                 return;
         }
@@ -77,17 +93,21 @@ public class UIManager : MonoBehaviour
         switch (type)
         {
             case UIType.Player:
+                if (playerCanvas != null)
                 playerCanvas.SetActive(false);
                 return;
             case UIType.Pause:
+                if (pauseCanvas != null)
                 pauseCanvas.SetActive(false);
                 return;
             case UIType.Setting:
+                if (settingCanvas != null)
                 settingCanvas.SetActive(false);
                 return;
-            // case UIType.Menu:
-            //     menuCanvas.SetActive(false);
-            //     return;
+            case UIType.Menu:
+                if (menuCanvas != null)
+                menuCanvas.SetActive(false);
+                return;
             default:
                 return;
         }
@@ -95,7 +115,10 @@ public class UIManager : MonoBehaviour
 
     public void PlayUI()
     {
+        nowCanvas = UIType.Player;
+
         Time.timeScale = 1f;
+        CloseCanvas(UIType.Menu);
         CloseCanvas(UIType.Pause);
         OpenCanvas(UIType.Player);
     }
@@ -114,18 +137,45 @@ public class UIManager : MonoBehaviour
         OpenCanvas(UIType.Setting);
     }
 
+    public void MenuUI()
+    {
+        nowCanvas = UIType.Menu;
+        Time.timeScale = 0f;
+        
+        ResetCanvas();
+        menuCanvas.SetActive(true);
+    }
+
+    public void NextScene(int nextSceneIndex)
+    {
+        SceneManager.LoadScene(nextSceneIndex);
+    }
+
+    public void HoverButton(TextMeshProUGUI text, bool isEnter)
+    {
+        if (text == null) return;
+
+        if (isEnter)
+        {
+            text.color = new Color(.85f, .85f, .85f, 1);
+        }
+        else
+        {
+            text.color = Color.white;
+        }
+    }
+
     public void HoverButton(Image image, bool isEnter)
     {
         if (image == null) return;
 
-        // Debug.Log(image?.gameObject + " is Hover : " + isEnter);
         if (isEnter)
         {
             image.color = new Color(.85f, .85f, .85f, 1);
         }
         else
         {
-            image.color = new Color(1, 1, 1, 1);
+            image.color = Color.white;
         }
     }
 

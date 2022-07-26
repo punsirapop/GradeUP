@@ -4,8 +4,10 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class SettingButton : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
+public class OpenButton : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
 {
+    [SerializeField] UIType openCanvas;
+
     UIManager uIManager;
     Image image;
 
@@ -16,7 +18,7 @@ public class SettingButton : MonoBehaviour, IPointerClickHandler, IPointerEnterH
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        FindObjectOfType<UIManager>().SettingUI();
+        uIManager.SettingUI();
 
         uIManager.HoverButton(image, false);
     }

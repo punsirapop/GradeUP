@@ -16,7 +16,7 @@ public class ResumeButton : MonoBehaviour, IPointerClickHandler, IPointerEnterHa
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        FindObjectOfType<UIManager>().PlayUI();
+        uIManager.PlayUI();
 
         uIManager.HoverButton(image, false);
     }
