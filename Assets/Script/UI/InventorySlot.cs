@@ -23,11 +23,6 @@ public class InventorySlot : MonoBehaviour
         Setup(item.ItemObject?.GetComponent<SpriteRenderer>().sprite, item.ItemName, item.HP.ToString());
     }
 
-    public void Setup(Item item)
-    {
-        Setup(item.sprite, item.name, item.description);
-    }
-
     public void Setup(Sprite sprite, string name, string description)
     {
         if (sprite == null)

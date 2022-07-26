@@ -5,20 +5,37 @@ using UnityEngine.UI;
 
 public enum UIType
 {
+    Class,
+    SubClass,
+    Trait,
     Player,
     Pause,
     Setting,
+    Death,
+    Reward,
     Menu
 }
 
 public class UIManager : MonoBehaviour
 {
+    [Tooltip("Choose your default canvas when start this scene")]
     [SerializeField] UIType defaultStartCanvas;
 
+    [Header("Canvas")]
+    [SerializeField] GameObject classCanvas;
+    [SerializeField] GameObject subClassCanvas;
+    [SerializeField] GameObject traitCanvas;
     [SerializeField] GameObject playerCanvas;
     [SerializeField] GameObject pauseCanvas;
     [SerializeField] GameObject settingCanvas;
+    [SerializeField] GameObject dealthCanvas;
+    [SerializeField] GameObject rewardCanvas;
     [SerializeField] GameObject menuCanvas;
+
+    [Header("Other")]
+    [SerializeField] GameObject hoverTextPanel;
+    
+    GameObject hoverText;
 
     private void Start() {
         foreach (UIType type in System.Enum.GetValues(typeof(UIType)))
@@ -111,4 +128,20 @@ public class UIManager : MonoBehaviour
             image.color = new Color(1, 1, 1, 1);
         }
     }
+
+    public void CreateHoverText(string message)
+    {
+        hoverText = Instantiate(hoverTextPanel, pauseCanvas.transform);
+
+        Vector2 mouse = Input.mousePosition;
+        hoverText.transform.position = mouse;
+
+        hoverText.GetComponent<HoverTextPanel>().SetText(message);
+    }
+
+    public void DestroyHoverText()
+    {
+        if (hoverText != null) Destroy(hoverText);
+    }
+
 }
