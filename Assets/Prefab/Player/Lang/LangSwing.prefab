@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 252053077651008370}
   - component: {fileID: 5112122215964584987}
   - component: {fileID: 5924880976014834756}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LangSwing
   m_TagString: Hit
   m_Icon: {fileID: 0}

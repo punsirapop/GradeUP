@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8185200759501846882}
   - component: {fileID: 950232158300670293}
   - component: {fileID: 9063373783384740498}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ChemArea
   m_TagString: Hit
   m_Icon: {fileID: 0}

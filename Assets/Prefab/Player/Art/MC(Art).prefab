@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 207062963}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: fireMaxRange
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4621294062634954676}
   - component: {fileID: 4621294062634954677}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: firepoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 4621294063399071058}
   - component: {fileID: 1794284361}
   - component: {fileID: 1794284362}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: fireRange
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -206,7 +206,7 @@ GameObject:
   - component: {fileID: 5975591755021458268}
   - component: {fileID: 4710802484436546579}
   - component: {fileID: 1982891458}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: MC(Art)
   m_TagString: Player
   m_Icon: {fileID: 0}

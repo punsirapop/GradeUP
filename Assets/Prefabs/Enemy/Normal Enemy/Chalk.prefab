@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4024509274173612471}
   - component: {fileID: 4024509274173612470}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Circle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100,7 +100,7 @@ GameObject:
   - component: {fileID: 4024509275365033636}
   - component: {fileID: -6225649481640622483}
   - component: {fileID: 5292233593439169189}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Chalk
   m_TagString: Enemy
   m_Icon: {fileID: 0}

@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 972663374477879707}
   - component: {fileID: -5729218109589850392}
   - component: {fileID: -1738328762841835919}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Big Guy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -162,7 +162,7 @@ GameObject:
   m_Component:
   - component: {fileID: 972663376182360578}
   - component: {fileID: 972663376182360579}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Circle
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: -6601946090377240912}
   - component: {fileID: 1113490975525282261}
   - component: {fileID: 3122311915792916031}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LangWave
   m_TagString: Hit
   m_Icon: {fileID: 0}

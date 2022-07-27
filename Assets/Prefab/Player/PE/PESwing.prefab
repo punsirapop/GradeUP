@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 622666229397312060}
   - component: {fileID: -6601946090377240912}
   - component: {fileID: 1567375807763672160}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PESwing
   m_TagString: Knock
   m_Icon: {fileID: 0}

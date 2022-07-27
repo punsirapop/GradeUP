@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 739778088}
   - component: {fileID: 739778090}
   - component: {fileID: 739778089}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: fireRange
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100,10 +100,10 @@ MonoBehaviour:
   statusManager: {fileID: 5446525841424581749}
   spriteRenderer: {fileID: 739778090}
   weaponList:
-  - {fileID: 21300000, guid: 417ddfa33636dab449bdd089a3a46d36, type: 3}
-  - {fileID: 21300000, guid: 1d43d2b24f7a1ab4692d474c18fb14bc, type: 3}
-  - {fileID: 21300000, guid: 9af59145ea0879f47b021327fc04bbb7, type: 3}
-  - {fileID: 21300000, guid: 417ddfa33636dab449bdd089a3a46d36, type: 3}
+  - {fileID: 21300000, guid: 31d95dee2dcba9f478593bb08d324914, type: 3}
+  - {fileID: 21300000, guid: cf4afe46dea7be242801a9d21148a682, type: 3}
+  - {fileID: 21300000, guid: b9367257988cea94d90dea75d3820893, type: 3}
+  - {fileID: 21300000, guid: 956f2c96873e9d740958699241588069, type: 3}
 --- !u!1 &5446525841424581711
 GameObject:
   m_ObjectHideFlags: 0
@@ -119,7 +119,7 @@ GameObject:
   - component: {fileID: -3406692714826512319}
   - component: {fileID: 2123619582}
   - component: {fileID: 2123619583}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: MC(Physic)
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -244,10 +244,10 @@ MonoBehaviour:
   - {fileID: 728747090168759146, guid: 98ddc358dbcacea42a7a9c8bd30a78b1, type: 3}
   - {fileID: 728747090168759146, guid: ba1912f6fbabc7e4e87e12c8d49df3bf, type: 3}
   _bulletSprite:
-  - {fileID: 21300000, guid: 417ddfa33636dab449bdd089a3a46d36, type: 3}
-  - {fileID: 21300000, guid: 1d43d2b24f7a1ab4692d474c18fb14bc, type: 3}
-  - {fileID: 21300000, guid: 9af59145ea0879f47b021327fc04bbb7, type: 3}
-  - {fileID: 21300000, guid: 417ddfa33636dab449bdd089a3a46d36, type: 3}
+  - {fileID: 21300000, guid: 31d95dee2dcba9f478593bb08d324914, type: 3}
+  - {fileID: 21300000, guid: cf4afe46dea7be242801a9d21148a682, type: 3}
+  - {fileID: 21300000, guid: b9367257988cea94d90dea75d3820893, type: 3}
+  - {fileID: 21300000, guid: 956f2c96873e9d740958699241588069, type: 3}
 --- !u!114 &-3406692714826512319
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -315,7 +315,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5446525841694112700}
   - component: {fileID: 5446525841694112701}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: firepoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}

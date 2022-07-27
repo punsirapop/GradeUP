@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8185200759501846882}
   - component: {fileID: 8996153685166331292}
   - component: {fileID: 8671655035491365547}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ChemArea 3
   m_TagString: PlayerFire
   m_Icon: {fileID: 0}

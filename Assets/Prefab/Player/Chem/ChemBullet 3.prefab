@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2176146301627252370}
   - component: {fileID: 7062781981166389383}
   - component: {fileID: 6879868735830523619}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: ChemBullet 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: 21300000, guid: 817a9a7e8a4a774478cbb28b506f918e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3a3ea94a806e1e749a1aa16025608386, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

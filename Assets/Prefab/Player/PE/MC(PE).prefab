@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2500779849550607290}
   - component: {fileID: 2500779849550607289}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: firepoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -68,7 +68,7 @@ GameObject:
   - component: {fileID: 1491247472}
   - component: {fileID: 2500779849898784210}
   - component: {fileID: 7685707155377946783}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: MC(PE)
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -243,7 +243,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2500779850666082348}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: fireRange
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8185200759501846882}
   - component: {fileID: -3299960435465635129}
   - component: {fileID: -4208488419901602313}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ChemArea 1
   m_TagString: Knock
   m_Icon: {fileID: 0}

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6661400661311843584}
   - component: {fileID: 6661400661311843587}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Circle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6661400662206344611}
   - component: {fileID: 6661400662206344610}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: RingWeapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -149,7 +149,7 @@ GameObject:
   - component: {fileID: 6661400662668759094}
   - component: {fileID: 8768860352417665541}
   - component: {fileID: -2913966932399258419}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: EL_lng
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -297,10 +297,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ball (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 5674531708224811644, guid: 4b8264c7fd7d97049ad5f54cba296094, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 6653247127765555861, guid: 4b8264c7fd7d97049ad5f54cba296094, type: 3}
       propertyPath: attackOwner
       value: 
       objectReference: {fileID: 11400000, guid: ceeb169cb07751c40a4f2cab8697f864, type: 2}
+    - target: {fileID: 7263110636728223820, guid: 4b8264c7fd7d97049ad5f54cba296094, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 7762289802903481724, guid: 4b8264c7fd7d97049ad5f54cba296094, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -388,10 +396,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ball (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 5674531708224811644, guid: 4b8264c7fd7d97049ad5f54cba296094, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 6653247127765555861, guid: 4b8264c7fd7d97049ad5f54cba296094, type: 3}
       propertyPath: attackOwner
       value: 
       objectReference: {fileID: 11400000, guid: ceeb169cb07751c40a4f2cab8697f864, type: 2}
+    - target: {fileID: 7263110636728223820, guid: 4b8264c7fd7d97049ad5f54cba296094, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 7762289802903481724, guid: 4b8264c7fd7d97049ad5f54cba296094, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -479,10 +495,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ball
       objectReference: {fileID: 0}
+    - target: {fileID: 5674531708224811644, guid: 4b8264c7fd7d97049ad5f54cba296094, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 6653247127765555861, guid: 4b8264c7fd7d97049ad5f54cba296094, type: 3}
       propertyPath: attackOwner
       value: 
       objectReference: {fileID: 11400000, guid: ceeb169cb07751c40a4f2cab8697f864, type: 2}
+    - target: {fileID: 7263110636728223820, guid: 4b8264c7fd7d97049ad5f54cba296094, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 7762289802903481724, guid: 4b8264c7fd7d97049ad5f54cba296094, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -570,10 +594,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ball (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5674531708224811644, guid: 4b8264c7fd7d97049ad5f54cba296094, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 6653247127765555861, guid: 4b8264c7fd7d97049ad5f54cba296094, type: 3}
       propertyPath: attackOwner
       value: 
       objectReference: {fileID: 11400000, guid: ceeb169cb07751c40a4f2cab8697f864, type: 2}
+    - target: {fileID: 7263110636728223820, guid: 4b8264c7fd7d97049ad5f54cba296094, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 7762289802903481724, guid: 4b8264c7fd7d97049ad5f54cba296094, type: 3}
       propertyPath: m_RootOrder
       value: 1
