@@ -16,4 +16,4 @@ MonoBehaviour:
   _HP: 100
   _Attack: 25
   _AttackSpeed: 5
-  _Speed: 5
+  _Speed: 10

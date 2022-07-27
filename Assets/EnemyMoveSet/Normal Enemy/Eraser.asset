@@ -1,39 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-8186462720025814845
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 74baa38483583534f80e2c47304f053a, type: 3}
-  m_Name: MoveToPlayerXOrY
-  m_EditorClassIdentifier: 
-  state: 0
-  started: 0
-  guid: e56ad78fef8e32a49ba9f73e2ec3e597
-  position: {x: 409.4001, y: -119.20001}
-  blackboard:
-    moveToPosition: {x: 0, y: 0}
-    index: 0
-    nextSkillIndex: -1
-    lastSkillIndex: -1
-    condition: 0
-    indexList: 
-    targetPosition: {x: 0, y: 0}
-  description: 
-  drawGizmos: 0
-  speed: 2
-  duration: 0.1
-  stoppingDistance: 0.2
-  moveXAxis: 0
-  moveYAxis: 0
-  moveBothAxis: 0
-  moveShortestAxis: 1
-  direction: {x: 0, y: 0}
 --- !u!114 &-7105733129291206343
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49,7 +15,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 7afb3490bb09a0842b70a0d7c2595609
-  position: {x: 26.400024, y: -119.20001}
+  position: {x: 42.68686, y: -119.19994}
   blackboard:
     moveToPosition: {x: 0, y: 0}
     index: 0
@@ -58,38 +24,13 @@ MonoBehaviour:
     condition: 0
     indexList: 
     targetPosition: {x: 0, y: 0}
+    numberCount: 0
+    positions: []
   description: 
   drawGizmos: 0
-  duration: 0.1
---- !u!114 &-6259309408035153219
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f002d1eb4518ee04f872f6470e6ba294, type: 3}
-  m_Name: MoveToPlayer
-  m_EditorClassIdentifier: 
-  state: 0
-  started: 0
-  guid: 731f858c52ca0fb4ca8d717b69356627
-  position: {x: -198.39992, y: 101.59999}
-  blackboard:
-    moveToPosition: {x: 0, y: 0}
-    index: 0
-    nextSkillIndex: -1
-    lastSkillIndex: -1
-    condition: 0
-    indexList: 
-    targetPosition: {x: 0, y: 0}
-  description: 
-  drawGizmos: 0
-  speed: 2
-  stoppingDistance: 10
-  acceleration: 40
+  duration: 0.5
+  addMinRandomDuration: 0
+  addMaxRandomDuration: 0
 --- !u!114 &-3889206435015693246
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -114,11 +55,14 @@ MonoBehaviour:
     condition: 0
     indexList: 
     targetPosition: {x: 0, y: 0}
+    numberCount: 0
+    positions: []
   description: 
   drawGizmos: 0
   child: {fileID: 6570835468604741663}
   restartOnSuccess: 1
   restartOnFailure: 0
+  roundNumber: 0
 --- !u!114 &-2785599762029756049
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -134,7 +78,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 9bfaf3e2ff7b2f4468fff8a569337dcf
-  position: {x: -330, y: -118.83203}
+  position: {x: -314.91315, y: -119.19994}
   blackboard:
     moveToPosition: {x: 0, y: 0}
     index: 0
@@ -143,9 +87,13 @@ MonoBehaviour:
     condition: 0
     indexList: 
     targetPosition: {x: 0, y: 0}
+    numberCount: 0
+    positions: []
   description: 
   drawGizmos: 0
-  duration: 0.1
+  duration: 1
+  addMinRandomDuration: 0
+  addMaxRandomDuration: 0.5
 --- !u!114 &-2110933363014522634
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -161,7 +109,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 730561f428ba31443ab124b2b240454d
-  position: {x: 224.40002, y: -119.20001}
+  position: {x: 226.32645, y: -119.19996}
   blackboard:
     moveToPosition: {x: 0, y: 0}
     index: 0
@@ -170,15 +118,17 @@ MonoBehaviour:
     condition: 0
     indexList: 
     targetPosition: {x: 0, y: 0}
+    numberCount: 0
+    positions: []
   description: 
   drawGizmos: 0
-  bulletPrefab: {fileID: 2211216140542991120, guid: 57205e83336351f4aa660a1c0d5e7dd0, type: 3}
+  bulletPrefab: {fileID: 8296286728024908801, guid: 7f426f3d49c622c45a932f5ae4f2fe14, type: 3}
   attackOwnerStat: {fileID: 11400000, guid: 60fe517f1c30abe42b14e0bf5e56f8c6, type: 2}
-  attackDuration: 0.1
-  bulletDuration: 1.5
-  bulletForce: 10
+  attackDuration: 0.3
+  bulletDuration: 3
+  bulletForce: 5
   isAttackManyDirection: 1
-  maxDirection: 12
+  maxDirection: 4
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -198,12 +148,9 @@ MonoBehaviour:
   - {fileID: -3889206435015693246}
   - {fileID: 6570835468604741663}
   - {fileID: -2785599762029756049}
-  - {fileID: -6259309408035153219}
   - {fileID: -7105733129291206343}
   - {fileID: -2110933363014522634}
-  - {fileID: -8186462720025814845}
-  - {fileID: 3420776565341719205}
-  - {fileID: 6279099389000933290}
+  - {fileID: 4234616293522359367}
   blackboard:
     moveToPosition: {x: 0, y: 0}
     index: 0
@@ -212,6 +159,8 @@ MonoBehaviour:
     condition: 0
     indexList: 
     targetPosition: {x: 0, y: 0}
+    numberCount: 0
+    positions: []
 --- !u!114 &876910804886075854
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -236,10 +185,12 @@ MonoBehaviour:
     condition: 0
     indexList: 
     targetPosition: {x: 0, y: 0}
+    numberCount: 0
+    positions: []
   description: 
   drawGizmos: 0
   child: {fileID: -3889206435015693246}
---- !u!114 &3420776565341719205
+--- !u!114 &4234616293522359367
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -248,13 +199,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4489e3e257543504c8fc9f891246af6c, type: 3}
-  m_Name: MoveInDirection
+  m_Script: {fileID: 11500000, guid: 5f28172f79770314b9535646716fce84, type: 3}
+  m_Name: MoveToPosition
   m_EditorClassIdentifier: 
   state: 0
   started: 0
-  guid: aa37d763bc0029640834ac474cf3de48
-  position: {x: -5.5999794, y: 101.75503}
+  guid: 7e317a4e056dbad4ebed31009902ee5e
+  position: {x: -139.71317, y: -119.19994}
   blackboard:
     moveToPosition: {x: 0, y: 0}
     index: 0
@@ -263,41 +214,17 @@ MonoBehaviour:
     condition: 0
     indexList: 
     targetPosition: {x: 0, y: 0}
+    numberCount: 0
+    positions: []
   description: 
   drawGizmos: 0
-  speed: 15
-  duration: 0.1
-  isRandomDirection: 1
-  direction: {x: 0, y: 0}
---- !u!114 &6279099389000933290
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2932073b8a6c3b34391576c45d359457, type: 3}
-  m_Name: Parallel
-  m_EditorClassIdentifier: 
-  state: 0
-  started: 0
-  guid: 042a4cf4f9449b742bff2c2f4b3caab2
-  position: {x: -156.00003, y: -119.19994}
-  blackboard:
-    moveToPosition: {x: 0, y: 0}
-    index: 0
-    nextSkillIndex: -1
-    lastSkillIndex: -1
-    condition: 0
-    indexList: 
-    targetPosition: {x: 0, y: 0}
-  description: 
-  drawGizmos: 0
-  children:
-  - {fileID: -6259309408035153219}
-  - {fileID: 3420776565341719205}
+  speed: 2
+  stoppingDistance: 0.1
+  acceleration: 20
+  enemyMoveToPosition: 1
+  positionX: -5
+  positionY: -5
+  randomMaxPosition: 3
 --- !u!114 &6570835468604741663
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -322,10 +249,12 @@ MonoBehaviour:
     condition: 0
     indexList: 
     targetPosition: {x: 0, y: 0}
+    numberCount: 0
+    positions: []
   description: 
   drawGizmos: 0
   children:
   - {fileID: -2785599762029756049}
-  - {fileID: 6279099389000933290}
+  - {fileID: 4234616293522359367}
   - {fileID: -7105733129291206343}
   - {fileID: -2110933363014522634}

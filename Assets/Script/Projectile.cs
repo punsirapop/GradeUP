@@ -8,11 +8,11 @@ public class Projectile : MonoBehaviour
     [SerializeField] private GameObject Target;
     private void OnEnable()
     {
-        FindObjectOfType<classChem>().Setbullet += SetBullet;
+        FindObjectOfType<ClassChem>().Setbullet += SetBullet;
     }
     private void SetBullet(Vector3 position)
     {
-        FindObjectOfType<classChem>().Setbullet -= SetBullet;
+        FindObjectOfType<ClassChem>().Setbullet -= SetBullet;
         Target = Instantiate(this.Hitarea, position, Quaternion.identity);
     }
     private void OnCollisionEnter2D(Collision2D collision)

@@ -15,7 +15,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 36f898ad684951541b5b11daa99523a5
-  position: {x: 197.20001, y: 167.99997}
+  position: {x: 195.59998, y: 167.99997}
   blackboard:
     moveToPosition: {x: 0, y: 0}
     index: 0
@@ -24,6 +24,8 @@ MonoBehaviour:
     condition: 0
     indexList: 
     targetPosition: {x: 0, y: 0}
+    numberCount: 0
+    positions: []
   description: 
   drawGizmos: 0
   speed: 1.5
@@ -53,6 +55,8 @@ MonoBehaviour:
     condition: 0
     indexList: 
     targetPosition: {x: 0, y: 0}
+    numberCount: 0
+    positions: []
   description: 
   drawGizmos: 0
   children:
@@ -88,6 +92,8 @@ MonoBehaviour:
     condition: 0
     indexList: 
     targetPosition: {x: 0, y: 0}
+    numberCount: 0
+    positions: []
 --- !u!114 &2361778225987916603
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -112,9 +118,13 @@ MonoBehaviour:
     condition: 0
     indexList: 
     targetPosition: {x: 0, y: 0}
+    numberCount: 0
+    positions: []
   description: 
   drawGizmos: 0
   duration: 1
+  addMinRandomDuration: 0
+  addMaxRandomDuration: 0
 --- !u!114 &4409160910924767692
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -139,6 +149,8 @@ MonoBehaviour:
     condition: 0
     indexList: 
     targetPosition: {x: 0, y: 0}
+    numberCount: 0
+    positions: []
   description: 
   drawGizmos: 0
   child: {fileID: 6118018161355137076}
@@ -166,11 +178,14 @@ MonoBehaviour:
     condition: 0
     indexList: 
     targetPosition: {x: 0, y: 0}
+    numberCount: 0
+    positions: []
   description: 
   drawGizmos: 0
   child: {fileID: -2910559159995742908}
   restartOnSuccess: 1
   restartOnFailure: 0
+  roundNumber: 0
 --- !u!114 &6193915455615198744
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -195,6 +210,8 @@ MonoBehaviour:
     condition: 0
     indexList: 
     targetPosition: {x: 0, y: 0}
+    numberCount: 0
+    positions: []
   description: 
   drawGizmos: 0
   message: walk and Atk

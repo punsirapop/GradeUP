@@ -21,7 +21,8 @@ public class EnemyHealth : HealthSystem
 
     void Start()
     {
-        playerStatusManager = GameObject.FindGameObjectWithTag("Player").GetComponent<StatusManager>();
+        playerStatusManager = MainGame.instance.playerController.GetComponent<StatusManager>();
+        //playerStatusManager = GameObject.FindGameObjectWithTag("Player").GetComponent<StatusManager>();
         max_HP = enemyStat.HP;
         Current_HP = max_HP;
 

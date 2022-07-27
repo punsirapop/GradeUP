@@ -22,9 +22,6 @@ public class MoveToPlayer : ActionNode
         context.agent.updateUpAxis = false;
         context.agent.destination = target.position;
         context.agent.acceleration = acceleration;
-
-        // context.animator.SetBool("isWalk", true);
-
     }
 
     protected override void OnStop() {
@@ -40,11 +37,8 @@ public class MoveToPlayer : ActionNode
         if (context.agent.remainingDistance < stoppingDistance)
         {
             context.agent.destination = context.transform.position;
-            // context.animator.SetBool("isWalk", false);
             return State.Success;
         }
-        //Debug.Log("remaining distance = " + context.agent.remainingDistance);
-        //context.agent.SetDestination(target.position);
         context.agent.destination = target.position;
         return State.Running;
     }

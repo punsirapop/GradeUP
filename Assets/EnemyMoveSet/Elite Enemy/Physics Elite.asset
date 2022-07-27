@@ -24,10 +24,12 @@ MonoBehaviour:
     condition: 0
     indexList: 
     targetPosition: {x: 0, y: 0}
+    numberCount: 0
+    positions: []
   description: 
   drawGizmos: 0
   speed: 2
-  stoppingDistance: 10
+  stoppingDistance: 25
   acceleration: 40
 --- !u!114 &-8775635294459874186
 MonoBehaviour:
@@ -53,6 +55,8 @@ MonoBehaviour:
     condition: 0
     indexList: 
     targetPosition: {x: 0, y: 0}
+    numberCount: 0
+    positions: []
   description: 
   drawGizmos: 0
   children:
@@ -61,6 +65,8 @@ MonoBehaviour:
   - {fileID: -6511787126086203784}
   - {fileID: 633226688749393546}
   - {fileID: 395270008795464094}
+  - {fileID: -4097535223870221764}
+  - {fileID: 7621184778781198910}
   - {fileID: -231439577767577164}
 --- !u!114 &-8156071427109219208
 MonoBehaviour:
@@ -77,7 +83,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: a4b0b1ec920edbb4c80a1ec5bb58c759
-  position: {x: 142.39996, y: 271.19998}
+  position: {x: 142.40001, y: 271.2}
   blackboard:
     moveToPosition: {x: 0, y: 0}
     index: 0
@@ -86,11 +92,12 @@ MonoBehaviour:
     condition: 0
     indexList: 
     targetPosition: {x: 0, y: 0}
+    numberCount: 0
+    positions: []
   description: 
   drawGizmos: 0
   duration: 2
   laserPrefab: {fileID: 8234417435184129007, guid: 169b49607daf5964e8ccf6051df6086d, type: 3}
-  attackOwnerStat: {fileID: 11400000, guid: 4d91ba67a9c2a624ba6be56ace7e661c, type: 2}
 --- !u!114 &-6511787126086203784
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -115,6 +122,8 @@ MonoBehaviour:
     condition: 0
     indexList: 
     targetPosition: {x: 0, y: 0}
+    numberCount: 0
+    positions: []
   description: 
   drawGizmos: 0
   children:
@@ -144,6 +153,8 @@ MonoBehaviour:
     condition: 0
     indexList: 
     targetPosition: {x: 0, y: 0}
+    numberCount: 0
+    positions: []
   description: 
   drawGizmos: 0
   isTargetPlayer: 1
@@ -172,9 +183,42 @@ MonoBehaviour:
     condition: 0
     indexList: 
     targetPosition: {x: 0, y: 0}
+    numberCount: 0
+    positions: []
   description: 
   drawGizmos: 0
   child: {fileID: 5136944612853250075}
+--- !u!114 &-4097535223870221764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a5134d9de14153468b48928d3e7359a, type: 3}
+  m_Name: Wait
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 6ad46265d90a6f5498e903fa042ea76d
+  position: {x: 562.4001, y: 141.6}
+  blackboard:
+    moveToPosition: {x: 0, y: 0}
+    index: 0
+    nextSkillIndex: -1
+    lastSkillIndex: -1
+    condition: 0
+    indexList: 
+    targetPosition: {x: 0, y: 0}
+    numberCount: 0
+    positions: []
+  description: 
+  drawGizmos: 0
+  duration: 1
+  addMinRandomDuration: 0
+  addMaxRandomDuration: 0
 --- !u!114 &-231439577767577164
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -190,7 +234,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 9161185cd98585a448d6e6a9746c0a4b
-  position: {x: 602.8105, y: 141.6}
+  position: {x: 862.3998, y: 142.39995}
   blackboard:
     moveToPosition: {x: 0, y: 0}
     index: 0
@@ -199,9 +243,13 @@ MonoBehaviour:
     condition: 0
     indexList: 
     targetPosition: {x: 0, y: 0}
+    numberCount: 0
+    positions: []
   description: 
   drawGizmos: 0
-  duration: 2
+  duration: 1
+  addMinRandomDuration: 0
+  addMaxRandomDuration: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -228,6 +276,8 @@ MonoBehaviour:
   - {fileID: -8156071427109219208}
   - {fileID: -6511787126086203784}
   - {fileID: -231439577767577164}
+  - {fileID: -4097535223870221764}
+  - {fileID: 7621184778781198910}
   blackboard:
     moveToPosition: {x: 0, y: 0}
     index: 0
@@ -236,6 +286,8 @@ MonoBehaviour:
     condition: 0
     indexList: 
     targetPosition: {x: 0, y: 0}
+    numberCount: 0
+    positions: []
 --- !u!114 &395270008795464094
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -251,7 +303,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: d75d92af17fdac242accb1b7603ab9f3
-  position: {x: 420.00003, y: 141.99998}
+  position: {x: 387.2, y: 141.6}
   blackboard:
     moveToPosition: {x: 0, y: 0}
     index: 0
@@ -260,11 +312,12 @@ MonoBehaviour:
     condition: 0
     indexList: 
     targetPosition: {x: 0, y: 0}
+    numberCount: 0
+    positions: []
   description: 
   drawGizmos: 0
   duration: 2
   laserPrefab: {fileID: 6416795819457785689, guid: b95b82e0015f2dc4b8c0b1a942c667e0, type: 3}
-  attackOwnerStat: {fileID: 11400000, guid: 4d91ba67a9c2a624ba6be56ace7e661c, type: 2}
 --- !u!114 &633226688749393546
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -289,6 +342,8 @@ MonoBehaviour:
     condition: 0
     indexList: 
     targetPosition: {x: 0, y: 0}
+    numberCount: 0
+    positions: []
   description: 
   drawGizmos: 0
   message: Attack
@@ -316,11 +371,14 @@ MonoBehaviour:
     condition: 0
     indexList: 
     targetPosition: {x: 0, y: 0}
+    numberCount: 0
+    positions: []
   description: 
   drawGizmos: 0
   child: {fileID: -8775635294459874186}
   restartOnSuccess: 1
   restartOnFailure: 0
+  roundNumber: 0
 --- !u!114 &7432107571028997414
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -345,6 +403,43 @@ MonoBehaviour:
     condition: 0
     indexList: 
     targetPosition: {x: 0, y: 0}
+    numberCount: 0
+    positions: []
   description: 
   drawGizmos: 0
   message: Lock Target
+--- !u!114 &7621184778781198910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f28172f79770314b9535646716fce84, type: 3}
+  m_Name: MoveToPosition
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 09b64d8938db74e459657a7c01d9e099
+  position: {x: 712, y: 142.4}
+  blackboard:
+    moveToPosition: {x: 0, y: 0}
+    index: 0
+    nextSkillIndex: -1
+    lastSkillIndex: -1
+    condition: 0
+    indexList: 
+    targetPosition: {x: 0, y: 0}
+    numberCount: 0
+    positions: []
+  description: 
+  drawGizmos: 0
+  speed: 1
+  stoppingDistance: 0.1
+  acceleration: 20
+  enemyMoveToPosition: 1
+  positionX: 0
+  positionY: 0
+  randomMaxPosition: 3

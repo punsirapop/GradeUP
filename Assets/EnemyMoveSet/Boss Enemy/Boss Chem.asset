@@ -24,6 +24,8 @@ MonoBehaviour:
     condition: 0
     indexList: 
     targetPosition: {x: 0, y: 0}
+    numberCount: 0
+    positions: []
   description: 
   drawGizmos: 0
   normalAttackNumber: 0
@@ -52,6 +54,8 @@ MonoBehaviour:
     condition: 0
     indexList: 
     targetPosition: {x: 0, y: 0}
+    numberCount: 0
+    positions: []
   description: Skill 3
   drawGizmos: 0
   message: Skill 3
@@ -79,6 +83,8 @@ MonoBehaviour:
     condition: 0
     indexList: 
     targetPosition: {x: 0, y: 0}
+    numberCount: 0
+    positions: []
   description: Ultimate Skill
   drawGizmos: 0
   message: Ultimate Skill
@@ -106,9 +112,11 @@ MonoBehaviour:
     condition: 0
     indexList: 
     targetPosition: {x: 0, y: 0}
+    numberCount: 0
+    positions: []
   description: 
   drawGizmos: 0
-  normalAttackNumber: 0
+  normalAttackNumber: 1
   numberOfSkill: 0
 --- !u!114 &-5695743457009565376
 MonoBehaviour:
@@ -134,6 +142,8 @@ MonoBehaviour:
     condition: 0
     indexList: 
     targetPosition: {x: 0, y: 0}
+    numberCount: 0
+    positions: []
   description: Skill 2
   drawGizmos: 0
   message: Skill 2
@@ -161,6 +171,8 @@ MonoBehaviour:
     condition: 0
     indexList: 
     targetPosition: {x: 0, y: 0}
+    numberCount: 0
+    positions: []
   description: 
   drawGizmos: 0
   children:
@@ -190,6 +202,8 @@ MonoBehaviour:
     condition: 0
     indexList: 
     targetPosition: {x: 0, y: 0}
+    numberCount: 0
+    positions: []
   description: 
   drawGizmos: 0
   children:
@@ -219,6 +233,8 @@ MonoBehaviour:
     condition: 0
     indexList: 
     targetPosition: {x: 0, y: 0}
+    numberCount: 0
+    positions: []
   description: 
   drawGizmos: 0
   normalAttackNumber: 0
@@ -247,6 +263,8 @@ MonoBehaviour:
     condition: 0
     indexList: 
     targetPosition: {x: 0, y: 0}
+    numberCount: 0
+    positions: []
   description: 
   drawGizmos: 0
   children:
@@ -299,6 +317,8 @@ MonoBehaviour:
     condition: 0
     indexList: 
     targetPosition: {x: 0, y: 0}
+    numberCount: 0
+    positions: []
 --- !u!114 &450028045138349318
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -323,11 +343,14 @@ MonoBehaviour:
     condition: 0
     indexList: 
     targetPosition: {x: 0, y: 0}
+    numberCount: 0
+    positions: []
   description: 
   drawGizmos: 0
   child: {fileID: -375133520836886437}
   restartOnSuccess: 1
   restartOnFailure: 0
+  roundNumber: 0
 --- !u!114 &2581547616931533699
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -343,7 +366,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 05f7e9cebbf30ec40a3ea700d7ab3b94
-  position: {x: -223.19987, y: 263.12088}
+  position: {x: -223.20003, y: 262.4}
   blackboard:
     moveToPosition: {x: 0, y: 0}
     index: 0
@@ -352,6 +375,8 @@ MonoBehaviour:
     condition: 0
     indexList: 
     targetPosition: {x: 0, y: 0}
+    numberCount: 0
+    positions: []
   description: Normal Attack
   drawGizmos: 0
   message: Normal Attack
@@ -370,7 +395,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: ceb6d61f7bfe98f40a54fc228c609ac3
-  position: {x: -395.19995, y: 136}
+  position: {x: -394.05005, y: 135.20006}
   blackboard:
     moveToPosition: {x: 0, y: 0}
     index: 0
@@ -379,6 +404,8 @@ MonoBehaviour:
     condition: 0
     indexList: 
     targetPosition: {x: 0, y: 0}
+    numberCount: 0
+    positions: []
   description: 
   drawGizmos: 0
   normalAttackNumber: 0
@@ -407,6 +434,8 @@ MonoBehaviour:
     condition: 0
     indexList: 
     targetPosition: {x: 0, y: 0}
+    numberCount: 0
+    positions: []
   description: 
   drawGizmos: 0
   children:
@@ -435,6 +464,8 @@ MonoBehaviour:
     condition: 0
     indexList: 
     targetPosition: {x: 0, y: 0}
+    numberCount: 0
+    positions: []
   description: 
   drawGizmos: 0
   children:
@@ -464,6 +495,8 @@ MonoBehaviour:
     condition: 0
     indexList: 
     targetPosition: {x: 0, y: 0}
+    numberCount: 0
+    positions: []
   description: 
   drawGizmos: 0
   children:
@@ -493,9 +526,13 @@ MonoBehaviour:
     condition: 0
     indexList: 
     targetPosition: {x: 0, y: 0}
+    numberCount: 0
+    positions: []
   description: 
   drawGizmos: 0
   duration: 1
+  addMinRandomDuration: 0
+  addMaxRandomDuration: 0
 --- !u!114 &8196722952343146514
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -520,6 +557,8 @@ MonoBehaviour:
     condition: 0
     indexList: 
     targetPosition: {x: 0, y: 0}
+    numberCount: 0
+    positions: []
   description: 
   drawGizmos: 0
   child: {fileID: 450028045138349318}
@@ -547,6 +586,8 @@ MonoBehaviour:
     condition: 0
     indexList: 
     targetPosition: {x: 0, y: 0}
+    numberCount: 0
+    positions: []
   description: 
   drawGizmos: 0
   normalAttackNumber: 0
@@ -566,7 +607,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 07677eaaeaf5b30449eedd8ed9ceab44
-  position: {x: 132.80016, y: 263.12088}
+  position: {x: 132.79999, y: 261.6}
   blackboard:
     moveToPosition: {x: 0, y: 0}
     index: 0
@@ -575,6 +616,8 @@ MonoBehaviour:
     condition: 0
     indexList: 
     targetPosition: {x: 0, y: 0}
+    numberCount: 0
+    positions: []
   description: Skill 1
   drawGizmos: 0
   message: Skill 1

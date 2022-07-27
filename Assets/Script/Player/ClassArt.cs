@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ClassArt : characterCon
+public class ClassArt : CharacterCon
 {
     [SerializeField] List<GameObject> _hitSwing;
     [SerializeField] GameObject _hitDash;
@@ -165,10 +165,8 @@ public class ClassArt : characterCon
 
     IEnumerator WaitForDashEnd()
     {
-        Debug.Log("Start");
         yield return new WaitForSeconds(1f);
         isDashing = false;
-        Debug.Log("End");
     }
 
     IEnumerator OnCooldown()

@@ -9,39 +9,96 @@ public class PlayerHealth : HealthSystem
     public static event Action OnPlayerDeath;
 
     enemySO enemy;
+    SpriteRenderer sr;
 
     [SerializeField] StatusManager statusManager;
-    [SerializeField] TextMeshProUGUI hpDisplay;
-    [SerializeField] HealthBar healthBar;
+    GameObject statDisplay;
     [SerializeField] GameObject deadDisplay;
+
+    TextMeshProUGUI[] Display;
 
     int poisonStack = 0;
 
     void Start()
     {
-        characterCon.OnHit += IsHit;
-        characterCon.OnPoisoned += IsPoisoned;
+        CharacterCon.OnHit += IsHit;
+        CharacterCon.OnPoisoned += IsPoisoned;
         LaserGun.OnLaserHit += IsHit;
+        SpawnPlayer.SetCurrentHp += SetHp;
 
+        sr = gameObject.GetComponent<SpriteRenderer>();
+
+
+        SetMaxHP(statusManager.HP);
+        SetHp(PlayerPrefs.GetFloat("playerCurrentHp", max_HP));
+
+        /*
         max_HP = statusManager.HP;
         Current_HP = max_HP;
-        
-        // Debug.Log("Start HP: " + Current_HP + " / " + max_HP);
-        healthBar.SetMaxHealthBar(max_HP);
+        */
+
+        Debug.Log("Start HP: " + Current_HP + " / " + max_HP);
+
+        statDisplay = GameObject.Find("statDisplay");
+        Display = statDisplay.GetComponentsInChildren<TextMeshProUGUI>();
+        deadDisplay = GameObject.Find("DeadScreen");
+        deadDisplay.SetActive(false);
+    }
+
+    void OnEnable()
+    {
+        sr = gameObject.GetComponent<SpriteRenderer>();
+        statDisplay = GameObject.Find("statDisplay");
+        Display = statDisplay.GetComponentsInChildren<TextMeshProUGUI>();
+        //deadDisplay = GameObject.Find("DeadScreen");
+    }
+
+    private void OnDisable()
+    {
+        CharacterCon.OnHit -= IsHit;
+        CharacterCon.OnPoisoned -= IsPoisoned;
+        LaserGun.OnLaserHit -= IsHit;
+        SpawnPlayer.SetCurrentHp -= SetHp;
     }
 
     void Update()
     {
-        // hpDisplay.SetText(Current_HP + " / " + max_HP);
-        healthBar.SetHealth(Current_HP);
+        UpdateDisplay();
 
         if (Current_HP <= 0)
         {
-            OnPlayerDeath?.Invoke();
-            // hpDisplay.enabled = false;
+            // OnPlayerDeath?.Invoke();
+            if(statDisplay == null)
+                statDisplay = GameObject.Find("statDisplay");
+            statDisplay.SetActive(false);
+            /*
+            foreach (TextMeshProUGUI display in Display)
+            {
+                display.enabled = false;
+            }
+            */
+            if (deadDisplay == null)
+                deadDisplay = GameObject.Find("DeadScreen");
             deadDisplay.SetActive(true);
             gameObject.SetActive(false);
         }
+    }
+
+    void UpdateDisplay()
+    {
+        /*
+        Debug.Log(statDisplay);
+        if (statDisplay == null)
+        {
+            statDisplay = GameObject.Find("statDisplay");
+            Display = statDisplay.GetComponentsInChildren<TextMeshProUGUI>();
+        }
+        */
+
+        Display[0].text = (Current_HP + " / " + max_HP);
+        Display[1].text = ("ATK: " + statusManager.Atk);
+        Display[2].text = ("SPD: " + statusManager.MoveSpeed);
+        Display[3].text = ("ASPD: " + statusManager.Atk_Speed);
     }
 
     void IsHit(GameObject enemyAttack)
@@ -49,6 +106,7 @@ public class PlayerHealth : HealthSystem
         try
         {
             enemy = enemyAttack.GetComponent<AttackHandler>().attackOwner;
+            Debug.Log("enemy = " + enemy);
         }
         catch (Exception)
         {
@@ -58,7 +116,8 @@ public class PlayerHealth : HealthSystem
         float damage = enemy.Attack;
         GetDamage(damage);
         Debug.Log("Get attacked by " + enemy.EnemyName + " - " + damage);
-        StartCoroutine(IFrame());
+        Debug.Log("Remaining HP: " + Current_HP + " / " + max_HP);
+        gameObject.GetComponent<MonoBehaviour>().StartCoroutine(IFrame());
     }
 
     void IsPoisoned(GameObject enemyAttack)
@@ -81,15 +140,21 @@ public class PlayerHealth : HealthSystem
 
     IEnumerator IFrame()
     {
-        SpriteRenderer sr = gameObject.GetComponent<SpriteRenderer>();
+        Debug.Log("Doing IFrame");
+        
         Color oldColor = sr.color;
 
         sr.color = new Color(1, 0, 0, .5f);
-        characterCon.isIFramed = true;
+        CharacterCon.isIFramed = true;
         yield return new WaitForSeconds(.5f);
 
         sr.color = oldColor;
-        characterCon.isIFramed = false;
+        CharacterCon.isIFramed = false;
         yield break;
+    }
+
+    public float GetMaxHp()
+    {
+        return max_HP;
     }
 }

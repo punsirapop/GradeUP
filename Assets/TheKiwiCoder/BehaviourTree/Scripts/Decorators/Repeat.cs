@@ -8,6 +8,9 @@ namespace TheKiwiCoder {
         public bool restartOnSuccess = true;
         public bool restartOnFailure = false;
 
+        public int roundNumber;
+        private int roundCount = 1;
+
         protected override void OnStart() {
 
         }
@@ -29,7 +32,15 @@ namespace TheKiwiCoder {
                 case State.Success:
                     if (restartOnSuccess) {
                         return State.Running;
-                    } else {
+                    }
+                    if( roundCount < roundNumber)
+                    {
+                        roundCount += 1;
+                        return State.Running;
+                    }
+                    else 
+                    {
+                        roundCount = 1;
                         return State.Success;
                     }
             }

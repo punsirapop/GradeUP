@@ -5,17 +5,19 @@ TagManager:
   serializedVersion: 2
   tags:
   - Wall
-  - Enemy
+  - Marker
+  - BossPE
   - Hit
+  - Knock
+  - PlayerPoison
+  - PlayerFire
+  - Art
   - NoHit
+  - NPC
+  - Enemy
   - Item
   - EnemyAttack
-  - PlayerFire
-  - PlayerPoison
   - EnemyPoison
-  - Art
-  - NPC
-  - Knock
   layers:
   - Default
   - TransparentFX

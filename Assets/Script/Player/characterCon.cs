@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public class characterCon : StatusManager
+public class CharacterCon : StatusManager
 {
     public MoveToNextRoom moveable;
 

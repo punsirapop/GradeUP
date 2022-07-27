@@ -14,6 +14,10 @@ public class MoveInDirection : ActionNode
 
     protected override void OnStart()
     {
+        //context.agent.speed = speed;
+        //context.agent.updateRotation = false;
+        //context.agent.updateUpAxis = false;
+
         if (isRandomDirection)
         {
             int Randomdirection = Random.Range(1, 5);
@@ -43,7 +47,7 @@ public class MoveInDirection : ActionNode
 
         direction.Normalize();
         // if x = 0 somehow not worked //
-        direction.x += 0.0001f;
+        direction.x += 0.001f;
         startTime = Time.time;
     }
 
@@ -57,7 +61,10 @@ public class MoveInDirection : ActionNode
         {
             return State.Success;
         }
-        context.physics.MovePosition(context.physics.position + speed * Time.fixedDeltaTime * direction);
+        Debug.Log("Walk");
+        context.transform.position = context.transform.position + new Vector3(direction.x, direction.y) * Time.deltaTime * speed;
+        //context.agent.destination = context.transform.position + new Vector3(direction.x, direction.y) * Time.deltaTime * speed;
+        //context.physics.MovePosition(context.physics.position + speed * Time.deltaTime * direction);
         return State.Running;
     }
 }

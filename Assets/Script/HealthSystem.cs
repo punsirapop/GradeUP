@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class HealthSystem : MonoBehaviour
 {
@@ -9,6 +10,17 @@ public class HealthSystem : MonoBehaviour
     protected void SetMaxHP(float _max_HP)
     {
         this.max_HP = _max_HP;
+    }
+
+    protected void SetHp(float hp)
+    {
+        this.Current_HP = hp;
+        Debug.Log("set HP" + Current_HP);
+    }
+
+    public float GetHp()
+    {
+        return this.Current_HP;
     }
 
     protected void GetDamage(float _damage)

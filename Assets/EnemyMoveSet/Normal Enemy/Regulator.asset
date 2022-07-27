@@ -24,6 +24,8 @@ MonoBehaviour:
     condition: 0
     indexList: 
     targetPosition: {x: 0, y: 0}
+    numberCount: 0
+    positions: []
   description: 
   drawGizmos: 0
   child: {fileID: 8825192354973985960}
@@ -51,6 +53,8 @@ MonoBehaviour:
     condition: 0
     indexList: 
     targetPosition: {x: 0, y: 0}
+    numberCount: 0
+    positions: []
   description: 
   drawGizmos: 0
   children:
@@ -83,9 +87,13 @@ MonoBehaviour:
     condition: 0
     indexList: 
     targetPosition: {x: 0, y: 0}
+    numberCount: 0
+    positions: []
   description: 
   drawGizmos: 0
   duration: 0.3
+  addMinRandomDuration: 0
+  addMaxRandomDuration: 0
 --- !u!114 &-2008562926764092063
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -110,6 +118,8 @@ MonoBehaviour:
     condition: 0
     indexList: 
     targetPosition: {x: 0, y: 0}
+    numberCount: 0
+    positions: []
   description: 
   drawGizmos: 0
   attackAreaPrefab: {fileID: 2211216140542991120, guid: 57205e83336351f4aa660a1c0d5e7dd0, type: 3}
@@ -118,6 +128,7 @@ MonoBehaviour:
   delayAttack: 0
   extraRange: 0
   attackAngle: 0
+  type: 0
   isEnemyAttackPlayerDirection: 1
   isEnemyAttackShortestAxis: 0
   isEnemyAttackOnlyXAxis: 0
@@ -156,6 +167,8 @@ MonoBehaviour:
     condition: 0
     indexList: 
     targetPosition: {x: 0, y: 0}
+    numberCount: 0
+    positions: []
 --- !u!114 &588350924715034586
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -180,6 +193,8 @@ MonoBehaviour:
     condition: 0
     indexList: 
     targetPosition: {x: 0, y: 0}
+    numberCount: 0
+    positions: []
   description: 
   drawGizmos: 0
 --- !u!114 &1669339186674116119
@@ -206,9 +221,13 @@ MonoBehaviour:
     condition: 0
     indexList: 
     targetPosition: {x: 0, y: 0}
+    numberCount: 0
+    positions: []
   description: 
   drawGizmos: 0
   duration: 1
+  addMinRandomDuration: 0
+  addMaxRandomDuration: 0
 --- !u!114 &2237048538656045806
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -233,6 +252,8 @@ MonoBehaviour:
     condition: 0
     indexList: 
     targetPosition: {x: 0, y: 0}
+    numberCount: 0
+    positions: []
   description: 
   drawGizmos: 0
   speed: 4
@@ -262,8 +283,11 @@ MonoBehaviour:
     condition: 0
     indexList: 
     targetPosition: {x: 0, y: 0}
+    numberCount: 0
+    positions: []
   description: 
   drawGizmos: 0
   child: {fileID: -2558493401968130318}
   restartOnSuccess: 1
   restartOnFailure: 0
+  roundNumber: 0

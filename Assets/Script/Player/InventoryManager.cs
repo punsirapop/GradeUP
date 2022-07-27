@@ -12,14 +12,14 @@ public class InventoryManager : MonoBehaviour
 
     private void Awake()
     {
-        characterCon.OnCollectItem += CollectItem;
+        CharacterCon.OnCollectItem += CollectItem;
     }
 
     void CollectItem(GameObject itemHolder)
     {
         if (inventory.Count < maxSlot)
         {
-            inventory.Add(itemHolder.GetComponent<ItemScript>().ItemStat);
+            //inventory.Add(itemHolder.GetComponent<ItemScript>().ItemStat);
             Destroy(itemHolder);
             Debug.Log("Inventory Count: " + inventory.Count);
         }

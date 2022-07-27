@@ -21,5 +21,9 @@ namespace TheKiwiCoder {
 
         public Vector2 targetPosition;
 
+        [Header("Boss")]
+        public int numberCount;
+        public List<Vector2> positions;
+
     }
 }
