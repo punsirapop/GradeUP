@@ -1,0 +1,326 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-7094303056237566080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 372b8766ffc4e2147b178428e6e7f661, type: 3}
+  m_Name: RangeAttack
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: ebdf3a156951f444f94df99efff742ca
+  position: {x: 404, y: 224}
+  blackboard:
+    moveToPosition: {x: 0, y: 0}
+    index: 0
+    nextSkillIndex: -1
+    lastSkillIndex: -1
+    condition: 0
+    indexList: 
+    targetPosition: {x: 0, y: 0}
+    numberCount: 0
+    positions: []
+  description: 
+  drawGizmos: 0
+  bulletPrefab: {fileID: 2211216140542991120, guid: 57205e83336351f4aa660a1c0d5e7dd0, type: 3}
+  attackOwnerStat: {fileID: 11400000, guid: 0c00862fb111855468ab1b6ff2249bd7, type: 2}
+  attackDuration: 2
+  bulletDuration: 1.5
+  bulletForce: 6
+  isAttackManyDirection: 0
+  maxDirection: 4
+--- !u!114 &-6012451155781256374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 163c147d123e4a945b688eddc64e3ea5, type: 3}
+  m_Name: RootNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: f9679ebd0fa91bf49ae52e1c982bf522
+  position: {x: 27, y: -152}
+  blackboard:
+    moveToPosition: {x: 0, y: 0}
+    index: 0
+    nextSkillIndex: -1
+    lastSkillIndex: -1
+    condition: 0
+    indexList: 
+    targetPosition: {x: 0, y: 0}
+    numberCount: 0
+    positions: []
+  description: 
+  drawGizmos: 0
+  child: {fileID: 3434842926587925347}
+--- !u!114 &-4815500543046588313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f002d1eb4518ee04f872f6470e6ba294, type: 3}
+  m_Name: MoveToPlayer
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: d16a502fd99fcd142a3697fc657018f9
+  position: {x: -196, y: 224}
+  blackboard:
+    moveToPosition: {x: 0, y: 0}
+    index: 0
+    nextSkillIndex: -1
+    lastSkillIndex: -1
+    condition: 0
+    indexList: 
+    targetPosition: {x: 0, y: 0}
+    numberCount: 0
+    positions: []
+  description: 
+  drawGizmos: 0
+  speed: 3
+  stoppingDistance: 12
+  acceleration: 40
+--- !u!114 &-1498956666333859575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a5134d9de14153468b48928d3e7359a, type: 3}
+  m_Name: Wait
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: f46ef83aa0153cc4eaab2c6d121e7ae3
+  position: {x: -46, y: 224}
+  blackboard:
+    moveToPosition: {x: 0, y: 0}
+    index: 0
+    nextSkillIndex: -1
+    lastSkillIndex: -1
+    condition: 0
+    indexList: 
+    targetPosition: {x: 0, y: 0}
+    numberCount: 0
+    positions: []
+  description: 
+  drawGizmos: 0
+  duration: 0.3
+  addMinRandomDuration: 0
+  addMaxRandomDuration: 0
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d285eb63c2cdd74180de7cfceaa96ad, type: 3}
+  m_Name: Chemistry Elite
+  m_EditorClassIdentifier: 
+  rootNode: {fileID: -6012451155781256374}
+  treeState: 0
+  nodes:
+  - {fileID: -6012451155781256374}
+  - {fileID: 3434842926587925347}
+  - {fileID: 2997014756786830338}
+  - {fileID: -4815500543046588313}
+  - {fileID: -7094303056237566080}
+  - {fileID: 87929421122405906}
+  - {fileID: -1498956666333859575}
+  - {fileID: 7788779392371271663}
+  - {fileID: 6212576790570739079}
+  blackboard:
+    moveToPosition: {x: 0, y: 0}
+    index: 0
+    nextSkillIndex: -1
+    lastSkillIndex: -1
+    condition: 0
+    indexList: 
+    targetPosition: {x: 0, y: 0}
+    numberCount: 0
+    positions: []
+--- !u!114 &87929421122405906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a5134d9de14153468b48928d3e7359a, type: 3}
+  m_Name: Wait
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 82477f6c1b61f684cae4b07bee7fa5b9
+  position: {x: 254, y: 224}
+  blackboard:
+    moveToPosition: {x: 0, y: 0}
+    index: 0
+    nextSkillIndex: -1
+    lastSkillIndex: -1
+    condition: 0
+    indexList: 
+    targetPosition: {x: 0, y: 0}
+    numberCount: 0
+    positions: []
+  description: 
+  drawGizmos: 0
+  duration: 0.5
+  addMinRandomDuration: 0
+  addMaxRandomDuration: 0
+--- !u!114 &2997014756786830338
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61431bba79d7d7843b82bf1de71703f5, type: 3}
+  m_Name: Sequencer
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 2e905c10b3132954da25e4bc55ede417
+  position: {x: 27.200012, y: 88.000015}
+  blackboard:
+    moveToPosition: {x: 0, y: 0}
+    index: 0
+    nextSkillIndex: -1
+    lastSkillIndex: -1
+    condition: 0
+    indexList: 
+    targetPosition: {x: 0, y: 0}
+    numberCount: 0
+    positions: []
+  description: 
+  drawGizmos: 0
+  children:
+  - {fileID: 7788779392371271663}
+  - {fileID: -4815500543046588313}
+  - {fileID: -1498956666333859575}
+  - {fileID: 6212576790570739079}
+  - {fileID: 87929421122405906}
+  - {fileID: -7094303056237566080}
+--- !u!114 &3434842926587925347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afb5496e8cd973748a10b3e3ef436ebd, type: 3}
+  m_Name: Repeat
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: ff3b6dfe8878b0a47bf5afc1fa1c1c2d
+  position: {x: 27.200012, y: -35.399994}
+  blackboard:
+    moveToPosition: {x: 0, y: 0}
+    index: 0
+    nextSkillIndex: -1
+    lastSkillIndex: -1
+    condition: 0
+    indexList: 
+    targetPosition: {x: 0, y: 0}
+    numberCount: 0
+    positions: []
+  description: 
+  drawGizmos: 0
+  child: {fileID: 2997014756786830338}
+  restartOnSuccess: 1
+  restartOnFailure: 0
+  roundNumber: 0
+--- !u!114 &6212576790570739079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f28172f79770314b9535646716fce84, type: 3}
+  m_Name: MoveToPosition
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 9d1093abf624c224ba40b38f53f72ee0
+  position: {x: 102.40005, y: 224.79988}
+  blackboard:
+    moveToPosition: {x: 0, y: 0}
+    index: 0
+    nextSkillIndex: -1
+    lastSkillIndex: -1
+    condition: 0
+    indexList: 
+    targetPosition: {x: 0, y: 0}
+    numberCount: 0
+    positions: []
+  description: 
+  drawGizmos: 0
+  speed: 5
+  stoppingDistance: 0.1
+  acceleration: 20
+  enemyMoveToPosition: 1
+  positionX: 0
+  positionY: 0
+  randomMaxPosition: 4
+--- !u!114 &7788779392371271663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a5134d9de14153468b48928d3e7359a, type: 3}
+  m_Name: Wait
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 1508aea0ee2f7b84793f76eef7d1146b
+  position: {x: -346, y: 224}
+  blackboard:
+    moveToPosition: {x: 0, y: 0}
+    index: 0
+    nextSkillIndex: -1
+    lastSkillIndex: -1
+    condition: 0
+    indexList: 
+    targetPosition: {x: 0, y: 0}
+    numberCount: 0
+    positions: []
+  description: 
+  drawGizmos: 0
+  duration: 0.3
+  addMinRandomDuration: 0
+  addMaxRandomDuration: 0

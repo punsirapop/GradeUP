@@ -6,6 +6,60 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/TestClass.unity
-    guid: 8b3f80b6727e7194397e8d6f382951f6
+    path: Assets/Scenes/SampleScene.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Small Room/Small Room 0.unity
+    guid: 17b4039fcc0e3bc429b130f90a3a7552
+  - enabled: 1
+    path: Assets/Scenes/Small Room/Small Room 1.unity
+    guid: bdd94364217913c4282622df0a5c4584
+  - enabled: 1
+    path: Assets/Scenes/Small Room/Small Room 2.unity
+    guid: 655efa070dd22734a89a73245e7835bc
+  - enabled: 1
+    path: Assets/Scenes/Small Room/Small Room 3.unity
+    guid: a6edb570645191d4fb8cab3f84f27a26
+  - enabled: 1
+    path: Assets/Scenes/Medium Room/Medium Room 0.unity
+    guid: 13d6334290df00041a22a80910763850
+  - enabled: 1
+    path: Assets/Scenes/Medium Room/Medium Room 1.unity
+    guid: 8164c33a399d05b4c9c49fccb770ba7c
+  - enabled: 1
+    path: Assets/Scenes/Medium Room/Medium Room 2.unity
+    guid: 0e14a17397eb4e34098fad78e7bfa1cc
+  - enabled: 1
+    path: Assets/Scenes/Medium Room/Medium Room 3.unity
+    guid: 2f303762cb0df3e468ea5d0a67911a25
+  - enabled: 1
+    path: Assets/Scenes/Large Room/Large Room 0.unity
+    guid: 3837a150fe6ee5746ae6d2f3cfc9a6f6
+  - enabled: 1
+    path: Assets/Scenes/Large Room/Large Room 1.unity
+    guid: 977a192908c20a54c9c810a5419f9956
+  - enabled: 1
+    path: Assets/Scenes/Large Room/Large Room 2.unity
+    guid: 67916c8513b93b74b95727a8336fd676
+  - enabled: 1
+    path: Assets/Scenes/Large Room/Large Room 3.unity
+    guid: 04d96a70e8d385e40bb0cee9ffa85532
+  - enabled: 1
+    path: Assets/Scenes/Large Room/Large Room 4.unity
+    guid: b827ca786b3acf84eb9ef84f62a6b8e8
+  - enabled: 1
+    path: Assets/Scenes/Boss Room/Boss Physics Room.unity
+    guid: a178f7d3a55c37149adda1bda5af9189
+  - enabled: 1
+    path: Assets/Scenes/Boss Room/Boss Chem Room.unity
+    guid: d7b9cdcdb904ef143ad85fe5f7711f9a
+  - enabled: 1
+    path: Assets/Scenes/Boss Room/Boss PE Room.unity
+    guid: 664178dfe3379d142b034e2038e570f5
+  - enabled: 1
+    path: Assets/Scenes/Boss Room/Boss LNG Room.unity
+    guid: 4d1debae9ddaa4547843b798dc1e66c1
+  - enabled: 1
+    path: Assets/Scenes/Boss Room/Final Boss Room.unity
+    guid: 52e8f04f6dbfb3e42b545d15c6d6bf2b
   m_configObjects: {}

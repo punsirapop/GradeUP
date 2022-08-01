@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _ClassName: Art
   _HP: 80
-  _Actack: 50
-  _ActackSpeed: 14
+  _Attack: 50
+  _AttackSpeed: 7
   _Speed: 7

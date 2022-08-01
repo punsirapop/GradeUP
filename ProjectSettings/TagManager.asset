@@ -5,17 +5,28 @@ TagManager:
   serializedVersion: 2
   tags:
   - Wall
-  - Enemy
+  - Marker
+  - BossPE
   - Hit
+  - Knock
+  - PlayerPoison
+  - PlayerFire
+  - Art
+  - NoHit
+  - NPC
+  - Enemy
+  - Item
+  - EnemyAttack
+  - EnemyPoison
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Player
+  - 
   - Water
   - UI
-  - Bullet
-  - Enemy
+  - 
+  - 
   - 
   - 
   - 
@@ -43,4 +54,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Laser
+    uniqueID: 175811761
     locked: 0
