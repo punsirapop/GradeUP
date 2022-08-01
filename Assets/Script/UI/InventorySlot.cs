@@ -6,12 +6,9 @@ using TMPro;
 
 public class InventorySlot : MonoBehaviour
 {
-    [SerializeField] private Image _itemSprite;
-    public Image ItemSprite => _itemSprite;
-    [SerializeField] private TextMeshProUGUI _itemName;
-    public TextMeshProUGUI ItemName => _itemName;
-    [SerializeField] private TextMeshProUGUI _itemDescription;
-    public TextMeshProUGUI ItemDescription => _itemDescription;
+    [SerializeField] private Image itemSprite;
+    [SerializeField] private TextMeshProUGUI itemName;
+    [SerializeField] private TextMeshProUGUI itemDescription;
 
     public void Setup()
     {
@@ -20,22 +17,41 @@ public class InventorySlot : MonoBehaviour
 
     public void Setup(itemSO item)
     {
-        Setup(item.ItemObject?.GetComponent<SpriteRenderer>().sprite, item.ItemName, item.HP.ToString());
+        List<string> description = new List<string>();
+        
+        if (item.HP != 0)
+        {
+            description.Add($"+ {item.HP} HP");
+        }
+        if (item.Attack != 0)
+        {
+            description.Add($"+ {item.Attack} Attack");
+        }
+        if (item.AttackSpeed != 0)
+        {
+            description.Add($"+ {item.AttackSpeed} AtkSpeed");
+        }
+        if (item.Speed != 0)
+        {
+            description.Add($"+ {item.Speed} Speed");
+        }
+
+        Setup(item.ItemObject?.GetComponent<SpriteRenderer>().sprite, item.ItemName, string.Join(", ", description));
     }
 
     public void Setup(Sprite sprite, string name, string description)
     {
         if (sprite == null)
         {
-            _itemSprite.sprite = null;
-            _itemSprite.color = Color.clear;
+            itemSprite.sprite = null;
+            itemSprite.color = Color.clear;
         }
         else
         {
-            _itemSprite.sprite = sprite;
-            _itemSprite.color = Color.white;
+            itemSprite.sprite = sprite;
+            itemSprite.color = Color.white;
         }
-        _itemName.text = name;
-        _itemDescription.text = description;
+        itemName.text = name;
+        itemDescription.text = description;
     }
 }

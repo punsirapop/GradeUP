@@ -38,7 +38,7 @@ public class PlayerDescriptionUI : MonoBehaviour
     private Sprite classSprite;
     private Sprite subClassSprite;
 
-    private void OnEnable() {
+    private void Start() {
         Debug.Log("Pause UI Enable!");
         UpdateUI();
     }

@@ -83,6 +83,14 @@ public class UIManager : MonoBehaviour
                 if (menuCanvas != null)
                 MenuUI();
                 return;
+            case UIType.SubClass:
+                if (subClassCanvas != null)
+                SubclassUI();
+                return;
+            case UIType.Trait:
+                if (traitCanvas != null)
+                traitCanvas.SetActive(true);
+                return;
             default:
                 return;
         }
@@ -108,16 +116,36 @@ public class UIManager : MonoBehaviour
                 if (menuCanvas != null)
                 menuCanvas.SetActive(false);
                 return;
+            case UIType.SubClass:
+                if (subClassCanvas != null)
+                subClassCanvas.SetActive(false);
+                return;
+            case UIType.Trait:
+                if (traitCanvas != null)
+                traitCanvas.SetActive(false);
+                return;
             default:
                 return;
         }
     }
 
+    public void PauseGame()
+    {
+        Time.timeScale = 0f;
+    }
+
+    public void ResumeGame()
+    {
+        Time.timeScale = 1f;
+    }
+
     public void PlayUI()
     {
+        ResetCanvas();
+
         nowCanvas = UIType.Player;
 
-        Time.timeScale = 1f;
+        ResumeGame();
         CloseCanvas(UIType.Menu);
         CloseCanvas(UIType.Pause);
         OpenCanvas(UIType.Player);
@@ -125,7 +153,8 @@ public class UIManager : MonoBehaviour
 
     public void PauseUI()
     {
-        Time.timeScale = 0f;
+        PauseGame();
+
         CloseCanvas(UIType.Player);
         CloseCanvas(UIType.Setting);
         OpenCanvas(UIType.Pause);
@@ -140,10 +169,26 @@ public class UIManager : MonoBehaviour
     public void MenuUI()
     {
         nowCanvas = UIType.Menu;
-        Time.timeScale = 0f;
+        PauseGame();
         
         ResetCanvas();
         menuCanvas.SetActive(true);
+    }
+
+    public void SubclassUI()
+    {
+        ResetCanvas();
+
+        PauseGame();
+        subClassCanvas.SetActive(true);
+    }
+
+    public void TraitUI()
+    {
+        ResetCanvas();
+
+        PauseGame();
+        OpenCanvas(UIType.Trait);
     }
 
     public void NextScene(int nextSceneIndex)
