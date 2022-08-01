@@ -162,7 +162,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -233,7 +233,7 @@ MonoBehaviour:
   Atk_Speed: 0
   MoveSpeed: 0
   Art: 0
-  activeSubClass: 3
+  activeSubClass: 0
   moveable: {fileID: 0}
   rb: {fileID: 0}
   firepoint: {fileID: 5446525841694112701}
@@ -241,13 +241,9 @@ MonoBehaviour:
   fireRange: {fileID: 739778088}
   fireMaxRange: {fileID: 0}
   _bullet:
-  - {fileID: 728747090168759146, guid: 98ddc358dbcacea42a7a9c8bd30a78b1, type: 3}
-  - {fileID: 728747090168759146, guid: ba1912f6fbabc7e4e87e12c8d49df3bf, type: 3}
-  _bulletSprite:
-  - {fileID: 21300000, guid: 5b5b354378630da4fa6251a307e65296, type: 3}
-  - {fileID: 21300000, guid: aa4cb31d46581064e9e37335818a099b, type: 3}
-  - {fileID: 21300000, guid: 5e39d7b7d4320a44385be5368f7003b2, type: 3}
-  - {fileID: 21300000, guid: 5b5b354378630da4fa6251a307e65296, type: 3}
+  - {fileID: 728747090168759146, guid: 8fcebc2969634c146803345a7df69c5d, type: 3}
+  - {fileID: 728747090168759146, guid: 150915e48f7369f4895009990995e058, type: 3}
+  _bulletSprite: []
 --- !u!114 &-3406692714826512319
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -261,7 +257,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statusManager: {fileID: 5446525841424581749}
-  statDisplay: {fileID: 8832621727577751613, guid: 1919f382887720f43afc66fca172dc9f, type: 3}
   deadDisplay: {fileID: 7046757227277481802, guid: d02a7ff1177361d47828c84943515833, type: 3}
 --- !u!58 &2123619582
 CircleCollider2D:

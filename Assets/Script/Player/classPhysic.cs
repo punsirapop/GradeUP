@@ -22,6 +22,7 @@ public class ClassPhysic : CharacterCon
         if (Input.GetButtonDown("Fire1") && !isAttacking)
         {
             SpawnBullet();
+            Debug.Log("Att");
         }
     }
 
@@ -37,23 +38,23 @@ public class ClassPhysic : CharacterCon
             _selectBullet = _bullet[0];
         }
 
-        _selectSprite = _bulletSprite[ActiveSubClass];
+        //_selectSprite = _bulletSprite[ActiveSubClass];
 
         if (ActiveSubClass == 1)
         {
             GameObject bullleft = Instantiate(_selectBullet, fireRange.position, fireRange.rotation, fireRange.transform);
-            bullleft.GetComponent<SpriteRenderer>().sprite = _selectSprite;
+            //bullleft.GetComponent<SpriteRenderer>().sprite = _selectSprite;
             Rigidbody2D rbleft = bullleft.GetComponent<Rigidbody2D>();
             rbleft.AddForce((Quaternion.Euler(0, 0, 15.5f) * fireRange.up) * _Bulletforce, ForceMode2D.Impulse);
 
             GameObject bullright = Instantiate(_selectBullet, fireRange.position, fireRange.rotation, fireRange.transform);
-            bullright.GetComponent<SpriteRenderer>().sprite = _selectSprite;
+            //bullright.GetComponent<SpriteRenderer>().sprite = _selectSprite;
             Rigidbody2D rbright = bullright.GetComponent<Rigidbody2D>();
             rbright.AddForce((Quaternion.Euler(0, 0, -15.5f) * fireRange.up) * _Bulletforce, ForceMode2D.Impulse);
         }
 
         GameObject bull = Instantiate(_selectBullet, fireRange.position, fireRange.rotation, fireRange.transform);
-        bull.GetComponent<SpriteRenderer>().sprite = _selectSprite;
+        //bull.GetComponent<SpriteRenderer>().sprite = _selectSprite;
         Rigidbody2D rb = bull.GetComponent<Rigidbody2D>();
         rb.AddForce(fireRange.up * _Bulletforce, ForceMode2D.Impulse);
 
