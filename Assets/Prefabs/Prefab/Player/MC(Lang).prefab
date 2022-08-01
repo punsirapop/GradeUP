@@ -119,7 +119,7 @@ GameObject:
   - component: {fileID: -1489031138300869997}
   - component: {fileID: 7687370562997240069}
   - component: {fileID: 5281294130668656111}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: MC(Lang)
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -233,7 +233,7 @@ MonoBehaviour:
   Atk_Speed: 0
   MoveSpeed: 0
   Art: 0
-  activeSubClass: 2
+  activeSubClass: 0
   moveable: {fileID: 0}
   rb: {fileID: 0}
   firepoint: {fileID: 3557058661614215023}
@@ -272,7 +272,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statusManager: {fileID: 3557058661428746441}
-  statDisplay: {fileID: 8832621727577751613, guid: 1919f382887720f43afc66fca172dc9f, type: 3}
   deadDisplay: {fileID: 7046757227277481802, guid: d02a7ff1177361d47828c84943515833, type: 3}
 --- !u!61 &7687370562997240069
 BoxCollider2D:

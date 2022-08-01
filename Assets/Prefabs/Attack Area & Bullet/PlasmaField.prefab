@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6544350038388568054}
   - component: {fileID: 2471537340194490132}
   - component: {fileID: -3675754705579911347}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: PlasmaField
   m_TagString: Untagged
   m_Icon: {fileID: 0}

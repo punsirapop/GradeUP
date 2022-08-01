@@ -101,7 +101,7 @@ GameObject:
   - component: {fileID: -5005009746118090021}
   - component: {fileID: 3430794492131191213}
   - component: {fileID: -1826336362709237140}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Chalk
   m_TagString: Enemy
   m_Icon: {fileID: 0}

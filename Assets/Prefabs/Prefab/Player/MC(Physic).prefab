@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 739778088}
   - component: {fileID: 739778090}
   - component: {fileID: 739778089}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: fireRange
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53,7 +53,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -100,10 +100,10 @@ MonoBehaviour:
   statusManager: {fileID: 5446525841424581749}
   spriteRenderer: {fileID: 739778090}
   weaponList:
-  - {fileID: 21300000, guid: 5b5b354378630da4fa6251a307e65296, type: 3}
-  - {fileID: 21300000, guid: aa4cb31d46581064e9e37335818a099b, type: 3}
-  - {fileID: 21300000, guid: 5e39d7b7d4320a44385be5368f7003b2, type: 3}
-  - {fileID: 21300000, guid: 5b5b354378630da4fa6251a307e65296, type: 3}
+  - {fileID: 21300000, guid: 31d95dee2dcba9f478593bb08d324914, type: 3}
+  - {fileID: 21300000, guid: cf4afe46dea7be242801a9d21148a682, type: 3}
+  - {fileID: 21300000, guid: b9367257988cea94d90dea75d3820893, type: 3}
+  - {fileID: 21300000, guid: 956f2c96873e9d740958699241588069, type: 3}
 --- !u!1 &5446525841424581711
 GameObject:
   m_ObjectHideFlags: 0
@@ -119,7 +119,7 @@ GameObject:
   - component: {fileID: -3406692714826512319}
   - component: {fileID: 2123619582}
   - component: {fileID: 2123619583}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: MC(Physic)
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -134,7 +134,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5446525841424581711}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -1.9698906, y: -0.55143434, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -162,7 +162,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -183,12 +183,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: 21300000, guid: 3c1e1e98eeae2794384af089c5f1b8df, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 155e9b381e8071a4398b1a1c1cb6d2b9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 2.56, y: 2.56}
+  m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -241,9 +241,13 @@ MonoBehaviour:
   fireRange: {fileID: 739778088}
   fireMaxRange: {fileID: 0}
   _bullet:
-  - {fileID: 728747090168759146, guid: 8fcebc2969634c146803345a7df69c5d, type: 3}
-  - {fileID: 728747090168759146, guid: 150915e48f7369f4895009990995e058, type: 3}
-  _bulletSprite: []
+  - {fileID: 728747090168759146, guid: 98ddc358dbcacea42a7a9c8bd30a78b1, type: 3}
+  - {fileID: 728747090168759146, guid: ba1912f6fbabc7e4e87e12c8d49df3bf, type: 3}
+  _bulletSprite:
+  - {fileID: 21300000, guid: 31d95dee2dcba9f478593bb08d324914, type: 3}
+  - {fileID: 21300000, guid: cf4afe46dea7be242801a9d21148a682, type: 3}
+  - {fileID: 21300000, guid: b9367257988cea94d90dea75d3820893, type: 3}
+  - {fileID: 21300000, guid: 956f2c96873e9d740958699241588069, type: 3}
 --- !u!114 &-3406692714826512319
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -257,7 +261,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statusManager: {fileID: 5446525841424581749}
-  deadDisplay: {fileID: 7046757227277481802, guid: d02a7ff1177361d47828c84943515833, type: 3}
+  deadDisplay: {fileID: 0}
 --- !u!58 &2123619582
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -292,7 +296,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 2.56, y: 2.56}
-    newSize: {x: 2.56, y: 2.56}
+    newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -310,7 +314,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5446525841694112700}
   - component: {fileID: 5446525841694112701}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: firepoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}

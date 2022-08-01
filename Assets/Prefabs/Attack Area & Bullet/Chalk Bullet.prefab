@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2663777222918650124}
   - component: {fileID: -2708591573979755817}
   - component: {fileID: 7163041402586259582}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Chalk Bullet
   m_TagString: EnemyAttack
   m_Icon: {fileID: 0}
