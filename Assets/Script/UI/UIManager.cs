@@ -13,7 +13,8 @@ public enum UIType
     Player,
     Pause,
     Setting,
-    Death,
+    Win,
+    Lose,
     Reward,
     Menu
 }
@@ -30,7 +31,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject playerCanvas;
     [SerializeField] GameObject pauseCanvas;
     [SerializeField] GameObject settingCanvas;
-    [SerializeField] GameObject dealthCanvas;
+    [SerializeField] GameObject resultCanvas;
     [SerializeField] GameObject rewardCanvas;
     [SerializeField] GameObject menuCanvas;
 
@@ -51,6 +52,25 @@ public class UIManager : MonoBehaviour
             else
             {
                 CloseCanvas(type);
+            }
+        }
+    }
+
+    private void Update()
+    {
+        if (nowCanvas == UIType.Player)
+        {
+            if (Input.GetKeyDown(KeyCode.V))
+            {
+                WinResultUI();
+            }
+            else if (Input.GetKeyDown(KeyCode.B))
+            {
+                LoseResultUI();
+            }
+            else if (Input.GetKeyDown(KeyCode.Z))
+            {
+                PlayUI();
             }
         }
     }
@@ -91,6 +111,14 @@ public class UIManager : MonoBehaviour
                 if (traitCanvas != null)
                 traitCanvas.SetActive(true);
                 return;
+            case UIType.Win:
+                if (resultCanvas != null)
+                WinResultUI();
+                return;
+            case UIType.Lose:
+                if (resultCanvas != null)
+                LoseResultUI();
+                return;
             default:
                 return;
         }
@@ -123,6 +151,14 @@ public class UIManager : MonoBehaviour
             case UIType.Trait:
                 if (traitCanvas != null)
                 traitCanvas.SetActive(false);
+                return;
+            case UIType.Win:
+                if (resultCanvas != null)
+                resultCanvas.SetActive(false);
+                return;
+            case UIType.Lose:
+                if (resultCanvas != null)
+                resultCanvas.SetActive(false);
                 return;
             default:
                 return;
@@ -189,6 +225,26 @@ public class UIManager : MonoBehaviour
 
         PauseGame();
         OpenCanvas(UIType.Trait);
+    }
+
+    public void WinResultUI()
+    {
+        ResetCanvas();
+        PauseGame();
+
+        resultCanvas.SetActive(true);
+
+        resultCanvas.GetComponent<ResultDescriptionUI>().Setup(true);
+    }
+
+    public void LoseResultUI()
+    {
+        ResetCanvas();
+        PauseGame();
+
+        resultCanvas.SetActive(true);
+
+        resultCanvas.GetComponent<ResultDescriptionUI>().Setup(false);
     }
 
     public void NextScene(int nextSceneIndex)

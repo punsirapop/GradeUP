@@ -39,7 +39,7 @@ public class PlayerHealth : HealthSystem
         {
             OnPlayerDeath?.Invoke();
             // hpDisplay.enabled = false;
-            deadDisplay.SetActive(true);
+            FindObjectOfType<UIManager>().LoseResultUI();
             gameObject.SetActive(false);
         }
     }
