@@ -25,9 +25,9 @@ public class SelectSubclassTrait : MonoBehaviour
 
         foreach (string subclass in items)
         {
-            SubclassTraitSlot subClassSlot = Instantiate(slotPrefab, transform).GetComponent<SubclassTraitSlot>();
+            GameObject subClassSlot = Instantiate(slotPrefab, transform);
             
-            subClassSlot.Setup(type.ToString(), null, subclass);
+            subClassSlot.GetComponent<SubclassTraitSlot>().Setup(type.ToString(), null, subclass);
         }
     }
 
