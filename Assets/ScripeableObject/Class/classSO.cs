@@ -20,4 +20,5 @@ public class classSO : ScriptableObject
 
     [SerializeField] private float _Speed;
     public float Speed => _Speed;
+
 }
