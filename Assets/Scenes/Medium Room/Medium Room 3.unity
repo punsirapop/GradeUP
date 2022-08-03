@@ -252,6 +252,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerController: {fileID: 0}
   spawnPlayer: {fileID: 1668271743}
+  enemySet: {fileID: 1992029624}
+  reward: {fileID: 0}
+  door: {fileID: 1626461233}
 --- !u!4 &173865038
 Transform:
   m_ObjectHideFlags: 0
@@ -786,6 +789,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Change Room
       objectReference: {fileID: 0}
+    - target: {fileID: 6992092531685043115, guid: 1b2a6058e6e945a4295f7508a4ed64ae, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6992092531685043116, guid: 1b2a6058e6e945a4295f7508a4ed64ae, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -832,6 +839,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1b2a6058e6e945a4295f7508a4ed64ae, type: 3}
+--- !u!1 &1626461233 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6992092531685043115, guid: 1b2a6058e6e945a4295f7508a4ed64ae, type: 3}
+  m_PrefabInstance: {fileID: 1626461232}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1668271742
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -911,6 +923,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemySet6
       objectReference: {fileID: 0}
+    - target: {fileID: 1280370363096033077, guid: bad830aa3ffa6cf48b88adbe7296d11f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1280370363096033083, guid: bad830aa3ffa6cf48b88adbe7296d11f, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -957,3 +973,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bad830aa3ffa6cf48b88adbe7296d11f, type: 3}
+--- !u!1 &1992029624 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1280370363096033077, guid: bad830aa3ffa6cf48b88adbe7296d11f, type: 3}
+  m_PrefabInstance: {fileID: 1992029623}
+  m_PrefabAsset: {fileID: 0}

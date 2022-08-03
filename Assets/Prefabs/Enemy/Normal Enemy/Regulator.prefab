@@ -101,7 +101,7 @@ GameObject:
   - component: {fileID: -7194376522938505494}
   - component: {fileID: -9121275496017309978}
   - component: {fileID: -5519918486381485924}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Regulator
   m_TagString: Enemy
   m_Icon: {fileID: 0}

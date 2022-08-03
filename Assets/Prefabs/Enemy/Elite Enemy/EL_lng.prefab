@@ -101,7 +101,7 @@ GameObject:
   - component: {fileID: -7803182606975541540}
   - component: {fileID: 8778070106707835835}
   - component: {fileID: 316766431228625428}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: EL_lng
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -272,8 +272,16 @@ PrefabInstance:
     m_TransformParent: {fileID: 6661400662668759101}
     m_Modifications:
     - target: {fileID: 2423036542240682526, guid: b3b3871795cef734bb2fb353c671cbca, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2423036542240682526, guid: b3b3871795cef734bb2fb353c671cbca, type: 3}
       propertyPath: m_TagString
       value: EnemyAttack
+      objectReference: {fileID: 0}
+    - target: {fileID: 2520747051425668054, guid: b3b3871795cef734bb2fb353c671cbca, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 2520747051425668054, guid: b3b3871795cef734bb2fb353c671cbca, type: 3}
       propertyPath: m_TagString
@@ -282,6 +290,10 @@ PrefabInstance:
     - target: {fileID: 3163483682653499335, guid: b3b3871795cef734bb2fb353c671cbca, type: 3}
       propertyPath: m_Name
       value: Language Ring
+      objectReference: {fileID: 0}
+    - target: {fileID: 3163483682653499335, guid: b3b3871795cef734bb2fb353c671cbca, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 5608738540417231253, guid: b3b3871795cef734bb2fb353c671cbca, type: 3}
       propertyPath: m_RootOrder
@@ -328,8 +340,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6876678624803065951, guid: b3b3871795cef734bb2fb353c671cbca, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6876678624803065951, guid: b3b3871795cef734bb2fb353c671cbca, type: 3}
       propertyPath: m_TagString
       value: EnemyAttack
+      objectReference: {fileID: 0}
+    - target: {fileID: 7170235464905141742, guid: b3b3871795cef734bb2fb353c671cbca, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 7170235464905141742, guid: b3b3871795cef734bb2fb353c671cbca, type: 3}
       propertyPath: m_TagString

@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 8848529435652252071}
   - component: {fileID: -9211740544698207055}
   - component: {fileID: 3985415202985770787}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Big Guy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
