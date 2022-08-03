@@ -510,6 +510,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemySet4
       objectReference: {fileID: 0}
+    - target: {fileID: 207104234111531092, guid: e7beb111cfbfd5444857c89dae429f0f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 207104234111531098, guid: e7beb111cfbfd5444857c89dae429f0f, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -556,6 +560,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e7beb111cfbfd5444857c89dae429f0f, type: 3}
+--- !u!1 &532520578 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 207104234111531092, guid: e7beb111cfbfd5444857c89dae429f0f, type: 3}
+  m_PrefabInstance: {fileID: 532520577}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &618006202
 GameObject:
   m_ObjectHideFlags: 0
@@ -694,6 +703,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Change Room
       objectReference: {fileID: 0}
+    - target: {fileID: 6992092531685043115, guid: 1b2a6058e6e945a4295f7508a4ed64ae, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6992092531685043116, guid: 1b2a6058e6e945a4295f7508a4ed64ae, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -740,6 +753,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1b2a6058e6e945a4295f7508a4ed64ae, type: 3}
+--- !u!1 &1003564137 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6992092531685043115, guid: 1b2a6058e6e945a4295f7508a4ed64ae, type: 3}
+  m_PrefabInstance: {fileID: 1003564136}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1295475875
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -849,6 +867,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerController: {fileID: 0}
   spawnPlayer: {fileID: 144501703}
+  enemySet: {fileID: 532520578}
+  reward: {fileID: 0}
+  door: {fileID: 1003564137}
 --- !u!4 &1622319139
 Transform:
   m_ObjectHideFlags: 0

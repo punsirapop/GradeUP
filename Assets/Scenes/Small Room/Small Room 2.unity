@@ -134,6 +134,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemySet2
       objectReference: {fileID: 0}
+    - target: {fileID: 6718826852946031440, guid: 1c91071e8e0492a42adcc09127bc70f9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6718826852946031442, guid: 1c91071e8e0492a42adcc09127bc70f9, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -180,6 +184,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1c91071e8e0492a42adcc09127bc70f9, type: 3}
+--- !u!1 &444928491 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6718826852946031440, guid: 1c91071e8e0492a42adcc09127bc70f9, type: 3}
+  m_PrefabInstance: {fileID: 444928490}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &584292618
 GameObject:
   m_ObjectHideFlags: 0
@@ -893,6 +902,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerController: {fileID: 0}
   spawnPlayer: {fileID: 1475872153}
+  enemySet: {fileID: 444928491}
+  reward: {fileID: 0}
+  door: {fileID: 2051349847}
 --- !u!4 &1890485734
 Transform:
   m_ObjectHideFlags: 0
@@ -926,6 +938,10 @@ PrefabInstance:
     - target: {fileID: 6992092531685043115, guid: 1b2a6058e6e945a4295f7508a4ed64ae, type: 3}
       propertyPath: m_Name
       value: Change Room
+      objectReference: {fileID: 0}
+    - target: {fileID: 6992092531685043115, guid: 1b2a6058e6e945a4295f7508a4ed64ae, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6992092531685043116, guid: 1b2a6058e6e945a4295f7508a4ed64ae, type: 3}
       propertyPath: m_RootOrder

@@ -7,27 +7,31 @@ public class MainGame : MonoBehaviour
     public static MainGame instance;
     public CharacterCon playerController;
     public SpawnPlayer spawnPlayer;
+
+    [SerializeField] GameObject enemySet;
+    [SerializeField] GameObject reward;
+    [SerializeField] GameObject door;
+
     //public SaveManager saveManager;
-    private void Awake()
+    void Awake()
     {
         if(instance != null) Destroy(this);
         else instance = this;
         spawnPlayer.SpawnPlayerClass();
         playerController = FindObjectOfType<CharacterCon>();
+
+        enemySet.SetActive(true);
+        enemySet.GetComponent<CheckChildrenObjectNumber>().OnRoomCleared += RoomCleared;
     }
 
-    // Start is called before the first frame update
-    void Start()
+    private void OnDisable()
     {
-        
-        //saveManager.Init();
-        
+        enemySet.GetComponent<CheckChildrenObjectNumber>().OnRoomCleared -= RoomCleared;
     }
 
-    // Update is called once per frame
-    void Update()
+    void RoomCleared()
     {
-        
+        Debug.Log("Room Cleared!");
+        door.SetActive(true);
     }
-
 }
