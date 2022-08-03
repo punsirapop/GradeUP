@@ -16,6 +16,11 @@ public class StatusManager : MonoBehaviour
     [SerializeField] protected int activeSubClass = 0;
     public int ActiveSubClass => activeSubClass;
 
+    public void SetActiveSubClass(int index)
+    {
+        activeSubClass = index + 1;
+    }
+
     protected void InitializeStats()
     {
         this.HP = ClassStatus.HP;

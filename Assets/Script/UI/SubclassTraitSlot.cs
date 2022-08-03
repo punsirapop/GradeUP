@@ -7,20 +7,29 @@ using TMPro;
 
 public class SubclassTraitSlot : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
 {
-
     [SerializeField] string slotType;
 
     [SerializeField] Image iconImage;
-    [SerializeField] TextMeshProUGUI text;
+    [SerializeField] TextMeshProUGUI headerText;
+    [SerializeField] TextMeshProUGUI descriptionText;
 
     UIManager uIManager;
+    int subclassIndex;
 
-    public void Setup(string type, Sprite image, string text)
+    public void Setup(string type, Sprite image, string description)
     {
+        Setup(type, "", image, description, 0);
+    }
+
+    public void Setup(string type, string name, Sprite image, string description, int activeSubclass)
+    {
+        subclassIndex = activeSubclass;
+
         if (image != null) iconImage.sprite = image;
         
         slotType = type;
-        this.text.text = text;
+        this.headerText.text = name;
+        this.descriptionText.text = description;
 
         uIManager = FindObjectOfType<UIManager>();
     }
@@ -29,13 +38,14 @@ public class SubclassTraitSlot : MonoBehaviour, IPointerClickHandler, IPointerEn
     {
         if (slotType == "Subclass")
         {
-            Debug.Log($"You choose subclass : {text.text}!");
+            Debug.Log($"You choose subclass : {headerText.text}!");
 
+            MainGame.instance.playerController.SetActiveSubClass(subclassIndex);
             uIManager.TraitUI();
         }
         else
         {
-            Debug.Log($"You choose trait : {text.text}!");
+            Debug.Log($"You choose trait : {headerText.text}!");
 
             uIManager.PlayUI();
         }

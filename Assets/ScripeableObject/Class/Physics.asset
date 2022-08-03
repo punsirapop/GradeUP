@@ -17,3 +17,4 @@ MonoBehaviour:
   _Attack: 25
   _AttackSpeed: 5
   _Speed: 5
+  _Subclass: {fileID: 11400000, guid: d0403290a4a3247429d8114e8d6a98e8, type: 2}

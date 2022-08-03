@@ -12,8 +12,12 @@ public class SelectSubclassTrait : MonoBehaviour
 
     [SerializeField] SlotType type;
     [SerializeField] GameObject slotPrefab;
+    [SerializeField] int numberOfSlot = 2;
 
-    [SerializeField] List<string> items = new List<string>();
+    [SerializeField] List<string> itemsTest = new List<string>();
+    
+    List<int> rdmSlots = new List<int>();
+    SubclassInfoSO subclassInfoSO;
     
     private void Start() {
         CreateSubclass();
@@ -23,11 +27,41 @@ public class SelectSubclassTrait : MonoBehaviour
     {
         ResetUI();
 
-        foreach (string subclass in items)
+        if (SlotType.Subclass == type)
         {
-            GameObject subClassSlot = Instantiate(slotPrefab, transform);
-            
-            subClassSlot.GetComponent<SubclassTraitSlot>().Setup(type.ToString(), null, subclass);
+            subclassInfoSO = MainGame.instance.statusManager.ClassStatus.Subclass;
+            RandomSubClass();
+
+            foreach (int subclassIndex in rdmSlots)
+            {
+                GameObject subClassSlot = Instantiate(slotPrefab, transform);
+                
+                subClassSlot.GetComponent<SubclassTraitSlot>().Setup(type.ToString(), subclassInfoSO.getName(subclassIndex), subclassInfoSO.getPic(subclassIndex),  subclassInfoSO.getDesc(subclassIndex), subclassIndex);
+            }
+        }
+        else
+        {
+            foreach (string subclass in itemsTest)
+            {
+                GameObject subClassSlot = Instantiate(slotPrefab, transform);
+                
+                subClassSlot.GetComponent<SubclassTraitSlot>().Setup(type.ToString(), null, subclass);
+            }
+        }
+
+    }
+
+    private void RandomSubClass()
+    {
+        System.Random rdm = new System.Random();
+
+        while (rdmSlots.Count < numberOfSlot)
+        {
+            int rdmIndex = rdm.Next(3);
+            if (!rdmSlots.Contains(rdmIndex))
+            {
+                rdmSlots.Add(rdmIndex);
+            }
         }
     }
 

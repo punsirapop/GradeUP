@@ -5,6 +5,12 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "SubclassInfo")]
 public class SubclassInfoSO : ScriptableObject
 {
+    [SerializeField] private string[] subclassName;
+    public string getName(int index)
+    {
+        return subclassName[index];
+    }
+
     [SerializeField] private string[] subclassDesc;
     public string getDesc(int index)
     {

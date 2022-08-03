@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2da69749b994f7546961e373db5ef292, type: 3}
+  m_Name: Chemistry
+  m_EditorClassIdentifier: 
+  subclassName:
+  - Explosion
+  - Poison
+  - Burn
+  subclassDesc:
+  - Attack and take enemy knockback
+  - Take DoT (Damage over Time) to enemy
+  - Deal continuously damage to enemy when hit it
+  subclassPic:
+  - {fileID: 21300000, guid: b1b777e03fe300b44812d8a1e34e062c, type: 3}
+  - {fileID: 21300000, guid: 7d3f93e8907f55640b0486bc69339e56, type: 3}
+  - {fileID: 21300000, guid: 817a9a7e8a4a774478cbb28b506f918e, type: 3}
