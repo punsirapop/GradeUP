@@ -12,10 +12,12 @@ public class PlayerHealth : HealthSystem
     SpriteRenderer sr;
 
     [SerializeField] StatusManager statusManager;
-    GameObject statDisplay;
-    [SerializeField] GameObject deadDisplay;
+    
+    [SerializeField] HealthBar healthBar;
+    // GameObject statDisplay;
+    // [SerializeField] GameObject deadDisplay;
 
-    TextMeshProUGUI[] Display;
+    // TextMeshProUGUI[] Display;
 
     int poisonStack = 0;
 
@@ -38,18 +40,18 @@ public class PlayerHealth : HealthSystem
         */
 
         Debug.Log("Start HP: " + Current_HP + " / " + max_HP);
+        // statDisplay = GameObject.Find("statDisplay");
+        // Display = statDisplay.GetComponentsInChildren<TextMeshProUGUI>();
+        // deadDisplay = GameObject.Find("DeadScreen");
+        // deadDisplay.SetActive(false);
 
-        statDisplay = GameObject.Find("statDisplay");
-        Display = statDisplay.GetComponentsInChildren<TextMeshProUGUI>();
-        deadDisplay = GameObject.Find("DeadScreen");
-        deadDisplay.SetActive(false);
     }
 
     void OnEnable()
     {
         sr = gameObject.GetComponent<SpriteRenderer>();
-        statDisplay = GameObject.Find("statDisplay");
-        Display = statDisplay.GetComponentsInChildren<TextMeshProUGUI>();
+        // statDisplay = GameObject.Find("statDisplay");
+        // Display = statDisplay.GetComponentsInChildren<TextMeshProUGUI>();
         //deadDisplay = GameObject.Find("DeadScreen");
     }
 
@@ -68,19 +70,22 @@ public class PlayerHealth : HealthSystem
         if (Current_HP <= 0)
         {
             // OnPlayerDeath?.Invoke();
-            if(statDisplay == null)
-                statDisplay = GameObject.Find("statDisplay");
-            statDisplay.SetActive(false);
+            // if(statDisplay == null)
+            //     statDisplay = GameObject.Find("statDisplay");
+            // statDisplay.SetActive(false);
             /*
             foreach (TextMeshProUGUI display in Display)
             {
                 display.enabled = false;
             }
             */
-            if (deadDisplay == null)
-                deadDisplay = GameObject.Find("DeadScreen");
-            deadDisplay.SetActive(true);
-            gameObject.SetActive(false);
+            // if (deadDisplay == null)
+            //     deadDisplay = GameObject.Find("DeadScreen");
+            // deadDisplay.SetActive(true);
+            // gameObject.SetActive(false);
+
+            // [UI] ADD!
+            FindObjectOfType<UIManager>().LoseResultUI();
         }
     }
 
@@ -95,10 +100,21 @@ public class PlayerHealth : HealthSystem
         }
         */
 
-        Display[0].text = (Current_HP + " / " + max_HP);
-        Display[1].text = ("ATK: " + statusManager.Atk);
-        Display[2].text = ("SPD: " + statusManager.MoveSpeed);
-        Display[3].text = ("ASPD: " + statusManager.Atk_Speed);
+        // Display[0].text = (Current_HP + " / " + max_HP);
+        // Display[1].text = ("ATK: " + statusManager.Atk);
+        // Display[2].text = ("SPD: " + statusManager.MoveSpeed);
+        // Display[3].text = ("ASPD: " + statusManager.Atk_Speed);
+
+        // [UI] ADD
+        if (healthBar == null)
+        {
+            healthBar = FindObjectOfType<HealthBar>();
+            healthBar?.SetMaxHealthBar(max_HP);
+        }
+        else
+        {
+            healthBar.SetHealth(Current_HP);
+        }
     }
 
     void IsHit(GameObject enemyAttack)

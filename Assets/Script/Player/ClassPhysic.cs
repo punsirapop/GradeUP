@@ -13,7 +13,6 @@ public class ClassPhysic : CharacterCon
     private void OnEnable()
     {
         InitializeStats();
-        // FindObjectOfType<DebugUI>().ChangeSubClass += ChangeSubClass;
     }
     protected override void Update()
     {
@@ -76,5 +75,11 @@ public class ClassPhysic : CharacterCon
             Atk_Speed += 2;
         }
         //FindObjectOfType<DebugUI>().ChangeSubClass -= ChangeSubClass; //when debug finish remove plz comment  
+    }
+
+    public void SubscribeChangeSubClass()
+    {
+        FindObjectOfType<SelectSubclassTrait>().ChangeSubClass += ChangeSubClass;
+        Debug.Log("Subscribe in Physics!");
     }
 }

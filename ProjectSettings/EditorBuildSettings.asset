@@ -62,4 +62,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Boss Room/Final Boss Room.unity
     guid: 52e8f04f6dbfb3e42b545d15c6d6bf2b
+  - enabled: 1
+    path: Assets/Scenes/TestUINew.unity
+    guid: a5b8dc30174fe414bbc2e4b667fbefd9
+  - enabled: 1
+    path: Assets/Scenes/TestMenu.unity
+    guid: b4a5f8bfa8d764f41b3b232f6166bc51
   m_configObjects: {}

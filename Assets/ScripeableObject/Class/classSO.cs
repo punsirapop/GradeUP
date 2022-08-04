@@ -21,4 +21,7 @@ public class classSO : ScriptableObject
     [SerializeField] private float _Speed;
     public float Speed => _Speed;
 
+    [SerializeField] private SubclassInfoSO _Subclass;
+    public SubclassInfoSO Subclass => _Subclass;
+
 }
