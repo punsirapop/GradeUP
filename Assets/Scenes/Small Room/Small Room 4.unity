@@ -232,6 +232,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerController: {fileID: 0}
   spawnPlayer: {fileID: 0}
+  enemySet: {fileID: 0}
+  reward: {fileID: 0}
+  door: {fileID: 0}
 --- !u!4 &596796737
 Transform:
   m_ObjectHideFlags: 0
@@ -710,6 +713,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7998298256697988252, guid: 2187a163d36f2d749aa49b98daf6d8fa, type: 3}
+      propertyPath: playerLng
+      value: 
+      objectReference: {fileID: 3557058661428746436, guid: 57bc0f60848d10b48818430c95bcbd42, type: 3}
+    - target: {fileID: 7998298256697988252, guid: 2187a163d36f2d749aa49b98daf6d8fa, type: 3}
+      propertyPath: playerArts
+      value: 
+      objectReference: {fileID: 4621294064056916071, guid: cefedf57542a5774dbba880e8f420967, type: 3}
     - target: {fileID: 7998298256697988253, guid: 2187a163d36f2d749aa49b98daf6d8fa, type: 3}
       propertyPath: m_Name
       value: Spawn Player
