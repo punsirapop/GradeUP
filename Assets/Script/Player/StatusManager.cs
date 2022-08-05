@@ -22,6 +22,11 @@ public class StatusManager : MonoBehaviour
         this.Atk = ClassStatus.Attack;
         this.Atk_Speed = ClassStatus.AttackSpeed;
         this.MoveSpeed = ClassStatus.Speed;
+
+        this.HP_base = (int)ClassStatus.HP;
+        this.Atk_base = (int)ClassStatus.Attack;
+        this.Atk_Speed_base = (int)ClassStatus.AttackSpeed;
+        this.MoveSpeed_base = (int)ClassStatus.Speed;
         //Art = ClassStatus.Speed;
     }
 
@@ -34,8 +39,9 @@ public class StatusManager : MonoBehaviour
         UpdateStat();
     }
 
-     private void AddFlatBonus(int hp, int atk, int atk_speed, int speed) //Add bonus flat 
+     public void AddFlatBonus(int hp, int atk, int atk_speed, int speed) //Add bonus flat 
     {
+        Debug.Log("Add stat");
         HP_f += hp;
         Atk_f += atk;
         Atk_Speed_f += atk_speed;
@@ -45,10 +51,10 @@ public class StatusManager : MonoBehaviour
 
     private void UpdateStat() //Calculate&Update Final Stat
     {
-        HP = (HP_base + HP_f) * HP_p / 100;
-        Atk = (Atk_base + Atk_f) * Atk_p / 100;
-        Atk_Speed = (Atk_Speed_base + Atk_Speed_f) * Atk_Speed_p / 100;
-        MoveSpeed = (MoveSpeed_base + MoveSpeed_f) * MoveSpeed_p / 100;
+        HP = (HP_base + HP_f);
+        Atk = (Atk_base + Atk_f);
+        Atk_Speed = (Atk_Speed_base + Atk_Speed_f);
+        MoveSpeed = (MoveSpeed_base + MoveSpeed_f);
     }
 
     protected virtual void ChangeSubClass(int ID) //for Change Sub-Class 
