@@ -21,7 +21,7 @@ public class ClassPE : CharacterCon
             hitBox.Add(newHitBox);
         }
 
-        hitBox[0].transform.rotation *= Quaternion.AngleAxis(90f, Vector3.forward);
+        // hitBox[0].transform.rotation *= Quaternion.AngleAxis(90f, Vector3.forward);
     }
     protected override void Update()
     {

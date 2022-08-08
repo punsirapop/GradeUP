@@ -47,10 +47,11 @@ public class FootballController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.CompareTag("BossPE"))
+        if(other.name == "Boss_PE")
         {
             target = MainGame.instance.playerController.transform.position;
             direction = (target - transform.position).normalized;
+            gameObject.layer = 9;
             SetIsShoot(true);
         }
         

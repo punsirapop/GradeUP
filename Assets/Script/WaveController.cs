@@ -9,14 +9,14 @@ public class WaveController : MonoBehaviour
     {
         //player = GameObject.FindGameObjectWithTag("Player");
         //angle = Mathf.Atan2(player.transform.position.y - transform.position.y,player.transform.position.x - transform.position.x) * Mathf.Rad2Deg;
-        playerStatusManager = GameObject.FindGameObjectWithTag("Player").GetComponent<StatusManager>();
+        //playerStatusManager = GameObject.FindGameObjectWithTag("Player").GetComponent<StatusManager>();
     }
 
     void FixedUpdate()
     {
         float scale = 1.03f;
         float i = 0f;
-        if(playerStatusManager.ActiveSubClass == 1)
+        if(MainGame.instance.playerController.ActiveSubClass == 1)
         {
             i = 0.01f;
         }

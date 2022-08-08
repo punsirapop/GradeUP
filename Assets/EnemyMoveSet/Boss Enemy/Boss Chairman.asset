@@ -29,11 +29,11 @@ MonoBehaviour:
   description: 
   drawGizmos: 0
   bulletPrefab: {fileID: 2211216140542991120, guid: 57205e83336351f4aa660a1c0d5e7dd0, type: 3}
+  attackOwnerStat: {fileID: 0}
   attackDuration: 0.5
   bulletDuration: 1.5
   bulletForce: 20
   isAttackManyDirection: 0
-  isBulletDestroyed: 1
   maxDirection: 4
 --- !u!114 &-8380493683917055225
 MonoBehaviour:
@@ -245,11 +245,11 @@ MonoBehaviour:
   description: 
   drawGizmos: 0
   bulletPrefab: {fileID: 2211216140542991120, guid: 57205e83336351f4aa660a1c0d5e7dd0, type: 3}
+  attackOwnerStat: {fileID: 0}
   attackDuration: 1
   bulletDuration: 1.5
   bulletForce: 20
   isAttackManyDirection: 0
-  isBulletDestroyed: 1
   maxDirection: 4
 --- !u!114 &-6133456334662634873
 MonoBehaviour:
@@ -1132,11 +1132,11 @@ MonoBehaviour:
   description: 
   drawGizmos: 0
   bulletPrefab: {fileID: 0}
+  attackOwnerStat: {fileID: 0}
   attackDuration: 1
   bulletDuration: 1.5
   bulletForce: 20
   isAttackManyDirection: 0
-  isBulletDestroyed: 1
   maxDirection: 4
 --- !u!114 &3998535840221759389
 MonoBehaviour:
@@ -1200,8 +1200,8 @@ MonoBehaviour:
     positions: []
   description: 
   drawGizmos: 0
-  normalAttackNumber: 1
-  numberOfSkill: 2
+  normalAttackNumber: 2
+  numberOfSkill: 4
 --- !u!114 &4560140014068601321
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1447,11 +1447,11 @@ MonoBehaviour:
   description: 
   drawGizmos: 0
   bulletPrefab: {fileID: 0}
+  attackOwnerStat: {fileID: 0}
   attackDuration: 1
   bulletDuration: 1.5
   bulletForce: 20
   isAttackManyDirection: 0
-  isBulletDestroyed: 1
   maxDirection: 4
 --- !u!114 &6625832093915623087
 MonoBehaviour:

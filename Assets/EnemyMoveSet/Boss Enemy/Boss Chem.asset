@@ -408,8 +408,8 @@ MonoBehaviour:
     positions: []
   description: 
   drawGizmos: 0
-  normalAttackNumber: 0
-  numberOfSkill: 0
+  normalAttackNumber: 2
+  numberOfSkill: 4
 --- !u!114 &3149232960632867839
 MonoBehaviour:
   m_ObjectHideFlags: 0

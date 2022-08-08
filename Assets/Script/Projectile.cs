@@ -21,18 +21,20 @@ public class Projectile : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
-
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject == Target)
         {
-            Instantiate(areaDamage, this.gameObject.transform.position, Quaternion.identity);
+            //Instantiate(areaDamage, this.gameObject.transform.position, Quaternion.identity);
             //Instantiate(areaDamage, this.gameObject.transform.position + new Vector3(-1.5f, 0, 0), Quaternion.identity);
             //Instantiate(areaDamage, this.gameObject.transform.position + new Vector3(1.5f, 0, 0), Quaternion.identity);
             Destroy(this.Target);
             Destroy(this.gameObject);
         }
-
+    }
+    private void OnDisable()
+    {
+        Instantiate(areaDamage, this.gameObject.transform.position, Quaternion.identity);
     }
 }

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 920248016503305763}
   - component: {fileID: 2914666466232398603}
   - component: {fileID: 2426975149447373098}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: hole2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 4
+  m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: 58f18d5b18b19ec4185e3aac11fb05ee, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

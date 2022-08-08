@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3596596858848542422}
   - component: {fileID: 5235203604652633296}
   - component: {fileID: 176126009869078342}
+  - component: {fileID: 525190736160800398}
   m_Layer: 9
   m_Name: MarkerV2
   m_TagString: Marker
@@ -74,7 +75,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: cf47d2c5e0930554f8eaa14ebc481ce7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -120,3 +121,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackOwner: {fileID: 0}
+--- !u!58 &525190736160800398
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4022209479341428055}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.057332575, y: 0.012740612}
+  serializedVersion: 2
+  m_Radius: 0.62495

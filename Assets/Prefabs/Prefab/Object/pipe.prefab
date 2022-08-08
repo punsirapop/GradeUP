@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2002888668621775425}
   - component: {fileID: 7564786438293218978}
   - component: {fileID: 6355438710523692414}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: pipeTail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73,7 +73,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 4
+  m_SortingOrder: 5
   m_Sprite: {fileID: -895118395, guid: 86b678bcf0eb2064b9d90a7334a90182, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -111,7 +111,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2337106295700968400}
   - component: {fileID: 1662934464336699154}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: pipe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -174,7 +174,7 @@ GameObject:
   - component: {fileID: 9011426662879556540}
   - component: {fileID: 1792316240733300957}
   - component: {fileID: 4199134711391724996}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: pipeBody
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -236,7 +236,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 4
+  m_SortingOrder: 5
   m_Sprite: {fileID: 1941679018, guid: 86b678bcf0eb2064b9d90a7334a90182, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -291,7 +291,7 @@ GameObject:
   - component: {fileID: 6677638230024573485}
   - component: {fileID: 3964496008057285602}
   - component: {fileID: 6086463075146920009}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: pipeHead
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -353,7 +353,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 4
+  m_SortingOrder: 5
   m_Sprite: {fileID: -238292368, guid: 86b678bcf0eb2064b9d90a7334a90182, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

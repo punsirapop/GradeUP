@@ -37,22 +37,26 @@ public class LaserGun : AttackHandler
         lr.SetPosition(1, new Vector3(0, 100, -1f));
 
         Debug.Log("Shooting laser");
-        if (hits[1].collider.CompareTag("Player"))
+        foreach (RaycastHit2D hit in hits)
         {
-            Debug.Log("Hit Player");
-            playerDistance = hits[1].distance;
-            // lr.SetPosition(1, Vector3.up * playerDistance);
-            //***********************************************************************
-            if (string.Equals(name, "LaserGun(Clone)") && !CharacterCon.isIFramed)
+            if (hit.collider.CompareTag("Player"))
             {
-                OnLaserHit?.Invoke(gameObject);
+                Debug.Log("Hit Player");
+                playerDistance = hit.distance;
+                // lr.SetPosition(1, Vector3.up * playerDistance);
+                //***********************************************************************
+                if (string.Equals(name, "LaserGun(Clone)") && !CharacterCon.isIFramed)
+                {
+                    OnLaserHit?.Invoke(gameObject);
+                }
+                //***********************************************************************
             }
-            //***********************************************************************
+            else if (hit.collider.CompareTag("Wall"))
+            {
+                wallDistance = hit.distance;
+                lr.SetPosition(1, Vector3.up * wallDistance);
+            }
         }
-        else if (hits[1].collider.CompareTag("Wall"))
-        {
-            wallDistance = hits[1].distance;
-            // lr.SetPosition(1, Vector3.up * wallDistance);
-        }
+        
     }
 }

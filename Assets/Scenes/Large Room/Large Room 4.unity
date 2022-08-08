@@ -868,7 +868,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6992092531685043114, guid: 1b2a6058e6e945a4295f7508a4ed64ae, type: 3}
       propertyPath: nextRoomIndex
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6992092531685043115, guid: 1b2a6058e6e945a4295f7508a4ed64ae, type: 3}
       propertyPath: m_Name

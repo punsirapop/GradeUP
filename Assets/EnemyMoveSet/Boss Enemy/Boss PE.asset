@@ -15,7 +15,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: a96c57c215f2fc94eaf5d9c1545bbf60
-  position: {x: 1755.5226, y: 375.2}
+  position: {x: 1754.4791, y: 375.00003}
   blackboard:
     moveToPosition: {x: 0, y: 0}
     index: 0
@@ -29,7 +29,7 @@ MonoBehaviour:
   description: 
   drawGizmos: 0
   speed: 5
-  stoppingDistance: 2
+  stoppingDistance: 3
   acceleration: 40
 --- !u!114 &-8731035733822073527
 MonoBehaviour:
@@ -219,6 +219,7 @@ MonoBehaviour:
   description: 
   drawGizmos: 0
   attackAreaPrefab: {fileID: 2211216140542991120, guid: 57205e83336351f4aa660a1c0d5e7dd0, type: 3}
+  attackOwnerStat: {fileID: 11400000, guid: 7c0032594ab1668439ef425457a416c9, type: 2}
   attackDuration: 1
   delayAttack: 0.5
   extraRange: 2
@@ -289,6 +290,7 @@ MonoBehaviour:
   description: 
   drawGizmos: 0
   attackAreaPrefab: {fileID: 2211216140542991120, guid: 57205e83336351f4aa660a1c0d5e7dd0, type: 3}
+  attackOwnerStat: {fileID: 11400000, guid: 7c0032594ab1668439ef425457a416c9, type: 2}
   attackDuration: 1
   delayAttack: 0.5
   extraRange: 2
@@ -732,8 +734,8 @@ MonoBehaviour:
     positions: []
   description: 
   drawGizmos: 0
-  normalAttackNumber: 1
-  numberOfSkill: 1
+  normalAttackNumber: 2
+  numberOfSkill: 4
 --- !u!114 &-2681699363283380194
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -781,7 +783,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: e0bd6449913e7394594d2870e7d4f5a8
-  position: {x: -792.501, y: -148}
+  position: {x: -792.0001, y: -148.00008}
   blackboard:
     moveToPosition: {x: 0, y: 0}
     index: 0
@@ -875,7 +877,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 211faaeedfe4b9c489b472559b7f2010
-  position: {x: -792.501, y: 116.00005}
+  position: {x: -792.0001, y: 116}
   blackboard:
     moveToPosition: {x: 0, y: 0}
     index: 0
@@ -889,11 +891,11 @@ MonoBehaviour:
   description: 
   drawGizmos: 0
   bulletPrefab: {fileID: 2211216140542991120, guid: 666a6bc52356d154694f7de399bfbbca, type: 3}
+  attackOwnerStat: {fileID: 11400000, guid: 7c0032594ab1668439ef425457a416c9, type: 2}
   attackDuration: 1
   bulletDuration: 2
   bulletForce: 8
   isAttackManyDirection: 0
-  isBulletDestroyed: 1
   maxDirection: 4
 --- !u!114 &-593355635391256792
 MonoBehaviour:

@@ -14,5 +14,4 @@ public class AreaDestroy : MonoBehaviour
         yield return new WaitForSeconds(duration);
         Destroy(this.gameObject);
     }
-
 }
