@@ -79,7 +79,7 @@ public class ClassPhysic : CharacterCon
 
     public void SubscribeChangeSubClass()
     {
-        FindObjectOfType<SelectSubclassTrait>().ChangeSubClass += ChangeSubClass;
+        FindObjectOfType<SelectSubclass>().ChangeSubClass += ChangeSubClass;
         Debug.Log("Subscribe in Physics!");
     }
 }

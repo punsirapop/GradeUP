@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using TMPro;
-using System;
 
 public class UseSkillButton : MonoBehaviour, IPointerClickHandler
 {
@@ -14,23 +13,44 @@ public class UseSkillButton : MonoBehaviour, IPointerClickHandler
 
     bool isCooldown;
     [SerializeField] int cooldownDelay = 5;
+    [SerializeField] int nowCooldownDelay = 5;
+
+    Coroutine countdownSkill;
+
+    public void OnEnable()
+    {
+        if (isCooldown)
+        {
+            countdownSkill = StartCoroutine(CountdownSkill(nowCooldownDelay));
+        }
+    }
+
+    private void OnDisable() {
+        if (countdownSkill != null)
+        {
+            StopCoroutine(countdownSkill);
+        }
+    }
 
     public void OnPointerClick(PointerEventData eventData)
     {
         if (!isCooldown)
         {
-            StartCoroutine(CountdownSkill());
+            countdownSkill = StartCoroutine(CountdownSkill(cooldownDelay));
         }
     }
 
-    IEnumerator CountdownSkill()
+    IEnumerator CountdownSkill(int cooldownDelay)
     {
         SetIsCooldown(true);
+        nowCooldownDelay = cooldownDelay;
         for (int i = cooldownDelay; i > 0; i--)
         {
             countdownText.text = i.ToString();
+            nowCooldownDelay = i;
             yield return new WaitForSeconds(1f);
         }
+        countdownSkill = null;
         SetIsCooldown(false);
     }
 

@@ -38,8 +38,12 @@ public class PlayerDescriptionUI : MonoBehaviour
     private Sprite classSprite;
     private Sprite subClassSprite;
 
+    UIManager uIManager;
+
     private void Start() {
-        Debug.Log("Pause UI Enable!");
+        // Debug.Log("Pause UI Enable!");
+
+        uIManager = FindObjectOfType<UIManager>();
         UpdateUI();
     }
 
@@ -65,6 +69,7 @@ public class PlayerDescriptionUI : MonoBehaviour
     {
         CharacterCon player = MainGame.instance.playerController;
 
+        roomNoText.text = uIManager.roomName;
         classNameText.text =  player.ClassStatus.ClassName;
 
         subClassNameText.text =  GetSubClassName(player.ActiveSubClass);
@@ -88,8 +93,10 @@ public class PlayerDescriptionUI : MonoBehaviour
             return "None";
         }
 
-        subClassSprite = MainGame.instance.playerController.ClassStatus.Subclass.getPic(activeSubClass - 1);
-        return MainGame.instance.playerController.ClassStatus.Subclass.getName(activeSubClass - 1);
+        SubclassInfoSO subclassInfo = MainGame.instance.playerController.ClassStatus.Subclass;
+
+        subClassSprite = subclassInfo.getPic(activeSubClass - 1);
+        return subclassInfo.getName(activeSubClass - 1);
     }
 
     // Debug

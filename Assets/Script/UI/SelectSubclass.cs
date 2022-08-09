@@ -3,14 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SelectSubclassTrait : MonoBehaviour
+public class SelectSubclass : MonoBehaviour
 {
-    private enum SlotType {
-        Subclass,
-        Trait
-    }
-
-    [SerializeField] SlotType type;
     [SerializeField] GameObject slotPrefab;
     [SerializeField] int numberOfSlot = 2;
 
@@ -30,28 +24,15 @@ public class SelectSubclassTrait : MonoBehaviour
     {
         ResetUI();
 
-        if (SlotType.Subclass == type)
-        {
-            subclassInfoSO = MainGame.instance.playerController.ClassStatus.Subclass;
-            RandomSubClass();
+        subclassInfoSO = MainGame.instance.playerController.ClassStatus.Subclass;
+        RandomSubClass();
 
-            foreach (int subclassIndex in rdmSlots)
-            {
-                GameObject subClassSlot = Instantiate(slotPrefab, transform);
-                
-                subClassSlot.GetComponent<SubclassTraitSlot>().Setup(type.ToString(), subclassInfoSO.getName(subclassIndex), subclassInfoSO.getPic(subclassIndex),  subclassInfoSO.getDesc(subclassIndex), subclassIndex + 1);
-            }
-        }
-        else
+        foreach (int subclassIndex in rdmSlots)
         {
-            foreach (string subclass in itemsTest)
-            {
-                GameObject subClassSlot = Instantiate(slotPrefab, transform);
-                
-                subClassSlot.GetComponent<SubclassTraitSlot>().Setup(type.ToString(), null, subclass);
-            }
+            GameObject subClassSlot = Instantiate(slotPrefab, transform);
+            
+            subClassSlot.GetComponent<SelectSubclassSlot>().Setup(subclassInfoSO.getName(subclassIndex), subclassInfoSO.getPic(subclassIndex),  subclassInfoSO.getDesc(subclassIndex), subclassIndex + 1);
         }
-
     }
 
     private void RandomSubClass()

@@ -23,8 +23,9 @@ public class UIManager : MonoBehaviour
 {
     [Tooltip("Choose your default canvas when start this scene")]
     [SerializeField] UIType defaultStartCanvas;
+    [SerializeField] public string roomName = "0-0";
 
-    [Header("Canvas")]
+    [Header("Canvas GameObject")]
     [SerializeField] GameObject classCanvas;
     [SerializeField] GameObject subClassCanvas;
     [SerializeField] GameObject traitCanvas;
@@ -46,6 +47,7 @@ public class UIManager : MonoBehaviour
     private void Start()
     {
         nowSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        Time.timeScale = 1f;
         foreach (UIType type in System.Enum.GetValues(typeof(UIType)))
         {
             if (type == defaultStartCanvas)
@@ -61,9 +63,18 @@ public class UIManager : MonoBehaviour
 
     private void Update()
     {
+        InputHandle();
+    }
+
+    private void InputHandle()
+    {
         if (nowCanvas == UIType.Player)
         {
-            if (Input.GetKeyDown(KeyCode.V))
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                PauseUI();
+            }
+            else if (Input.GetKeyDown(KeyCode.V))
             {
                 WinResultUI();
             }
@@ -88,6 +99,7 @@ public class UIManager : MonoBehaviour
 
     public void OpenCanvas(UIType type)
     {
+        nowCanvas = type;
         switch (type)
         {
             case UIType.Player:
@@ -185,8 +197,6 @@ public class UIManager : MonoBehaviour
         nowCanvas = UIType.Player;
 
         ResumeGame();
-        CloseCanvas(UIType.Menu);
-        CloseCanvas(UIType.Pause);
         OpenCanvas(UIType.Player);
     }
 
@@ -255,6 +265,11 @@ public class UIManager : MonoBehaviour
         SceneManager.LoadScene(nextSceneIndex);
     }
 
+    public void ResetLevel()
+    {
+        SceneManager.LoadScene(nowSceneIndex);
+    }
+
     public void HoverButton(TextMeshProUGUI text, bool isEnter)
     {
         if (text == null) return;
@@ -297,7 +312,4 @@ public class UIManager : MonoBehaviour
     {
         if (hoverText != null) Destroy(hoverText);
     }
-
-
-
 }

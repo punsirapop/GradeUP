@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 6109669947815987282}
   - component: {fileID: 7469541658301422839}
   - component: {fileID: 114892079922087109}
-  - component: {fileID: 4999049020368925350}
+  - component: {fileID: 6486095803396496565}
   m_Layer: 0
-  m_Name: SubclassTraitSlot
+  m_Name: TraitSlot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -82,7 +82,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_HorizontalFit: 2
   m_VerticalFit: 2
---- !u!114 &4999049020368925350
+--- !u!114 &6486095803396496565
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -91,10 +91,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 3982521161309544747}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 920af548320f67247b6fbbe67bb41cf6, type: 3}
+  m_Script: {fileID: 11500000, guid: 79084a3566304894ba376afb0485aee4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slotType: 
   iconImage: {fileID: 3462756133850049198}
   headerText: {fileID: 2695342806965076171}
   descriptionText: {fileID: 4226250523627227535}
@@ -187,7 +186,7 @@ GameObject:
   - component: {fileID: 4226250523627227535}
   - component: {fileID: 8529199506101930021}
   m_Layer: 0
-  m_Name: SubclassText
+  m_Name: TraitText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -338,7 +337,7 @@ GameObject:
   - component: {fileID: 1105447512612531310}
   - component: {fileID: 5436480716664030373}
   m_Layer: 0
-  m_Name: SubclassIconImage
+  m_Name: TraitIconImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -493,7 +492,7 @@ GameObject:
   - component: {fileID: 2695342806965076171}
   - component: {fileID: 1887103910249046132}
   m_Layer: 0
-  m_Name: SubclassHeader
+  m_Name: TraitHeader
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

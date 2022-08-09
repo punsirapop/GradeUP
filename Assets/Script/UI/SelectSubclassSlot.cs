@@ -5,10 +5,8 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using TMPro;
 
-public class SubclassTraitSlot : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
+public class SelectSubclassSlot : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
 {
-    [SerializeField] string slotType;
-
     [SerializeField] Image iconImage;
     [SerializeField] TextMeshProUGUI headerText;
     [SerializeField] TextMeshProUGUI descriptionText;
@@ -23,18 +21,17 @@ public class SubclassTraitSlot : MonoBehaviour, IPointerClickHandler, IPointerEn
         
     }
 
-    public void Setup(string type, Sprite image, string description)
+    public void Setup(Sprite image, string description)
     {
-        Setup(type, "", image, description, 0);
+        Setup("", image, description, 0);
     }
 
-    public void Setup(string type, string name, Sprite image, string description, int activeSubclass)
+    public void Setup(string name, Sprite image, string description, int activeSubclass)
     {
         subclassIndex = activeSubclass;
 
         if (image != null) iconImage.sprite = image;
         
-        slotType = type;
         this.headerText.text = name;
         this.descriptionText.text = description;
 
@@ -43,16 +40,8 @@ public class SubclassTraitSlot : MonoBehaviour, IPointerClickHandler, IPointerEn
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        if (slotType == "Subclass")
-        {
-            GetComponentInParent<SelectSubclassTrait>().OnChooseSubclass(subclassIndex);
-            uIManager.TraitUI();
-        }
-        else
-        {
-            Debug.Log($"You choose trait : {headerText.text}!");
-            uIManager.PlayUI();
-        }
+        GetComponentInParent<SelectSubclass>().OnChooseSubclass(subclassIndex);
+        uIManager.TraitUI();
     }
 
     public void OnPointerEnter(PointerEventData eventData)

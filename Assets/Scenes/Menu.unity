@@ -132,7 +132,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1327034596, guid: c9a6bf7095a1c854a915b249e00c0fd3, type: 3}
       propertyPath: nextSceneIndex
-      value: 19
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5570606930122033976, guid: c9a6bf7095a1c854a915b249e00c0fd3, type: 3}
       propertyPath: m_Name
@@ -391,6 +391,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultStartCanvas: 9
+  roomName: 0-0
   classCanvas: {fileID: 0}
   subClassCanvas: {fileID: 0}
   traitCanvas: {fileID: 0}
@@ -402,6 +403,7 @@ MonoBehaviour:
   menuCanvas: {fileID: 526739446}
   hoverTextPanel: {fileID: 858768904053730029, guid: ca922040fee2b7244a70e5a51fb628a6, type: 3}
   nowCanvas: 0
+  nowSceneIndex: 0
 --- !u!4 &732427787
 Transform:
   m_ObjectHideFlags: 0
@@ -510,6 +512,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 732427787}
     m_Modifications:
+    - target: {fileID: 618943276, guid: 877c4e2f84d3cd643a6a91501ef08521, type: 3}
+      propertyPath: type
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 447035266024649602, guid: 877c4e2f84d3cd643a6a91501ef08521, type: 3}
       propertyPath: m_Name
       value: SettingCanvas

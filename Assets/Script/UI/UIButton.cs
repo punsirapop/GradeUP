@@ -15,7 +15,8 @@ public enum ButtonType
     Menu,
     Pause,
     Exit,
-    NextScene
+    NextScene,
+    ResetLevel
 }
 
 public class UIButton : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
@@ -54,8 +55,11 @@ public class UIButton : MonoBehaviour, IPointerClickHandler, IPointerEnterHandle
                 uIManager.OpenCanvas(openCanvas);
                 return;
             case ButtonType.Close:
-                if (uIManager.nowCanvas == UIType.Player) {uIManager.PauseUI();}
-                else {uIManager.CloseCanvas(closeCanvas);}
+                uIManager.CloseCanvas(closeCanvas);
+                return;
+            case ButtonType.OpenAndClose:
+                uIManager.CloseCanvas(closeCanvas);
+                uIManager.OpenCanvas(openCanvas);
                 return;
             case ButtonType.Pause:
                 uIManager.PauseUI();
@@ -71,6 +75,9 @@ public class UIButton : MonoBehaviour, IPointerClickHandler, IPointerEnterHandle
                 return;
             case ButtonType.NextScene:
                 uIManager.NextScene(nextSceneIndex);
+                return;
+            case ButtonType.ResetLevel:
+                uIManager.ResetLevel();
                 return;
             case ButtonType.Exit:
                 Application.Quit();
