@@ -206,6 +206,7 @@ GameObject:
   - component: {fileID: 5975591755021458268}
   - component: {fileID: 4710802484436546579}
   - component: {fileID: 1982891458}
+  - component: {fileID: 1716952935325944941}
   m_Layer: 6
   m_Name: MC(Art)
   m_TagString: Player
@@ -327,6 +328,7 @@ MonoBehaviour:
   cam: {fileID: 0}
   fireRange: {fileID: 4621294063399071058}
   fireMaxRange: {fileID: 207062963}
+  animator: {fileID: 1716952935325944941}
   _hitSwing:
   - {fileID: 622666229397312050, guid: 77285197bb869104cb56dee1f5f76b30, type: 3}
   - {fileID: 622666229397312050, guid: c4b13ca92604aee4eb98caa13161644f, type: 3}
@@ -354,7 +356,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statusManager: {fileID: 4621294064056916064}
-  deadDisplay: {fileID: 0}
+  healthBar: {fileID: 0}
 --- !u!61 &5975591755021458268
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -496,3 +498,23 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 1
   m_Loop: 0
+--- !u!95 &1716952935325944941
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4621294064056916071}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ff045c5d1bc53fc498889dbde1ca40dd, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

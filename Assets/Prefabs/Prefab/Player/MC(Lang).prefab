@@ -119,6 +119,7 @@ GameObject:
   - component: {fileID: -1489031138300869997}
   - component: {fileID: 7687370562997240069}
   - component: {fileID: 5281294130668656111}
+  - component: {fileID: 6139159862710543181}
   m_Layer: 6
   m_Name: MC(Lang)
   m_TagString: Player
@@ -240,6 +241,7 @@ MonoBehaviour:
   cam: {fileID: 0}
   fireRange: {fileID: 3557058661064618180}
   fireMaxRange: {fileID: 0}
+  animator: {fileID: 6139159862710543181}
   hitWave: {fileID: 622666229397312050, guid: bbbbc9a8581eb4141b937b1db00970fa, type: 3}
   hitSwing: {fileID: 711672648239661606, guid: d7d9d3cc5dd76284d8008ddacb76b39a, type: 3}
   waveSprite:
@@ -272,7 +274,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statusManager: {fileID: 3557058661428746441}
-  deadDisplay: {fileID: 7046757227277481802, guid: d02a7ff1177361d47828c84943515833, type: 3}
+  healthBar: {fileID: 0}
 --- !u!61 &7687370562997240069
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -315,6 +317,26 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0.46365952}
   serializedVersion: 2
   m_Radius: 0.64400697
+--- !u!95 &6139159862710543181
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3557058661428746436}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2da3cf29033a48f46b16b6edc015456a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &3557058661614215017
 GameObject:
   m_ObjectHideFlags: 0

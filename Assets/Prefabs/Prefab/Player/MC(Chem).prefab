@@ -173,6 +173,7 @@ GameObject:
   - component: {fileID: -4905953190601364352}
   - component: {fileID: 6305999630059080607}
   - component: {fileID: 3620692417312656371}
+  - component: {fileID: 5915407006633679124}
   m_Layer: 6
   m_Name: MC(Chem)
   m_TagString: Player
@@ -294,6 +295,7 @@ MonoBehaviour:
   cam: {fileID: 0}
   fireRange: {fileID: 1964328982}
   fireMaxRange: {fileID: 0}
+  animator: {fileID: 5915407006633679124}
   _bullet:
   - {fileID: 728747090168759146, guid: bc6cd18080126744791cc085b66c5d4e, type: 3}
   - {fileID: 728747090168759146, guid: 1e212f729e2765840ba39e2e6b9732fb, type: 3}
@@ -312,7 +314,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statusManager: {fileID: 4983925195361858555}
-  deadDisplay: {fileID: 0}
+  healthBar: {fileID: 0}
 --- !u!61 &6305999630059080607
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -355,3 +357,23 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0.46365952}
   serializedVersion: 2
   m_Radius: 0.64400697
+--- !u!95 &5915407006633679124
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4983925195361858548}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8aca9873940d8c446960d51f27a85e5f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

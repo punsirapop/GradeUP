@@ -20,6 +20,8 @@ public class CharacterCon : StatusManager
     [SerializeField] protected Transform fireRange;
     [SerializeField] protected Transform fireMaxRange;
 
+    [SerializeField] Animator animator;
+
     protected Vector2 _movement;
     protected Vector2 _mousepos;
 
@@ -50,6 +52,10 @@ public class CharacterCon : StatusManager
         _movement.x = Input.GetAxisRaw("Horizontal");
         _movement.y = Input.GetAxisRaw("Vertical");
         _mousepos = cam.ScreenToWorldPoint(Input.mousePosition);
+
+        animator.SetFloat("Horizontal", _movement.x);
+        animator.SetFloat("Vertical", _movement.y);
+        animator.SetFloat("Speed", _movement.sqrMagnitude);
     }
 
     protected void UpdatePosition()
