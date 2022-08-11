@@ -157,4 +157,10 @@ public class ClassLng : CharacterCon
             rb.velocity = Vector2.zero;
         }
     }
+
+    public void SubscribeChangeSubClass()
+    {
+        FindObjectOfType<SelectSubclass>().ChangeSubClass += ChangeSubClass;
+        // Debug.Log("Subscribe in LNG!");
+    }
 }

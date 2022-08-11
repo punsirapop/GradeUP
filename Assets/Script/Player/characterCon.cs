@@ -20,7 +20,7 @@ public class CharacterCon : StatusManager
     [SerializeField] protected Transform fireRange;
     [SerializeField] protected Transform fireMaxRange;
 
-    [SerializeField] Animator animator;
+    [SerializeField] protected Animator animator;
 
     protected Vector2 _movement;
     protected Vector2 _mousepos;

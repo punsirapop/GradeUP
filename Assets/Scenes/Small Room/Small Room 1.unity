@@ -1614,7 +1614,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4718682ff6ef3b2459d3590bf5e807b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultStartCanvas: 3
+  defaultStartCanvas: 0
   roomName: 1-1
   classCanvas: {fileID: 0}
   subClassCanvas: {fileID: 225905843}

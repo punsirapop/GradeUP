@@ -7,7 +7,6 @@ using TMPro;
 
 public enum UIType
 {
-    Class,
     SubClass,
     Trait,
     Player,

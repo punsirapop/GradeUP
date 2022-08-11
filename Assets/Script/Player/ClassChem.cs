@@ -71,4 +71,10 @@ public class ClassChem : CharacterCon
         }
         //FindObjectOfType<DebugUI>().ChangeSubClass -= ChangeSubClass; //when debug finish remove plz comment  
     }
+
+    public void SubscribeChangeSubClass()
+    {
+        FindObjectOfType<SelectSubclass>().ChangeSubClass += ChangeSubClass;
+        // Debug.Log("Subscribe in Physics!");
+    }
 }

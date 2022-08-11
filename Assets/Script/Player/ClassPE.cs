@@ -63,6 +63,12 @@ public class ClassPE : CharacterCon
             if(activeSubClass == 3)
             {
                 hitboxUse = 2;
+                animator.SetTrigger("isBaseballAttack");
+            }
+            else
+            {
+                animator.SetBool("isAttack", true);
+                animator.SetTrigger("isAttackT");
             }
             // Generate hitbox
             hitBox[hitboxUse].SetActive(true);
@@ -81,6 +87,7 @@ public class ClassPE : CharacterCon
         {
             // Initiate charging sequence
             isCharging = true;
+            animator.SetBool("isGuard", true);
             // Generate charge destination indicator
             GameObject hitMaxRange = Instantiate(_hitBox[0], fireRange.position,
                 Quaternion.AngleAxis(90f, Vector3.forward) * fireRange.rotation, firepoint.transform);
@@ -99,6 +106,8 @@ public class ClassPE : CharacterCon
 
             // End charging sequence
             isCharging = false;
+            animator.SetBool("isAttack", true);
+            animator.SetBool("isGuard", false);
             isIFramed = true;
             isDashing = true;
             // Set dash speed
@@ -153,6 +162,7 @@ public class ClassPE : CharacterCon
         float Cooldown = 5 / (2 * Atk_Speed);
         yield return new WaitForSeconds(Cooldown);
         isAttacking = false;
+        animator.SetBool("isAttack", false);
     }
 
     protected override void FixedUpdate()
@@ -170,5 +180,11 @@ public class ClassPE : CharacterCon
             }
             rb.velocity = Vector2.zero;
         }
+    }
+
+    public void SubscribeChangeSubClass()
+    {
+        FindObjectOfType<SelectSubclass>().ChangeSubClass += ChangeSubClass;
+        // Debug.Log("Subscribe in PE!");
     }
 }

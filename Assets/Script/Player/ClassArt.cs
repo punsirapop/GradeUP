@@ -87,6 +87,7 @@ public class ClassArt : CharacterCon
     IEnumerator NormalAttack()
     {
         // Randomize color of attack
+        animator.SetTrigger("isAttack");
         RandomColor();
         hitSwing[playerColor].SetActive(true);
         /*
@@ -125,6 +126,8 @@ public class ClassArt : CharacterCon
     }
     IEnumerator DashAttack()
     {
+        animator.SetTrigger("isAttack");
+        
         GameObject hitMaxRange = new GameObject("hitMaxRange");
         hitMaxRange.transform.position = fireMaxRange.transform.position;
         lineRenderer.enabled = true;
@@ -187,5 +190,11 @@ public class ClassArt : CharacterCon
         {
             rb.velocity = Vector2.zero;
         }
+    }
+
+    public void SubscribeChangeSubClass()
+    {
+        FindObjectOfType<SelectSubclass>().ChangeSubClass += ChangeSubClass;
+        // Debug.Log("Subscribe in Art!");
     }
 }
