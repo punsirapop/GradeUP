@@ -5,7 +5,7 @@ using UnityEngine.Audio;
 
 public class SettingMenu : MonoBehaviour
 {
-    [SerializeField] AudioMixer audioMixer;
+    // [SerializeField] AudioMixer audioMixer;
     
     UIManager uIManager;
 
@@ -16,7 +16,7 @@ public class SettingMenu : MonoBehaviour
     public void OnVolumeChange(float value)
     {
         Debug.Log(value);
-        audioMixer.SetFloat("mainVolume", value);
+        // audioMixer.SetFloat("mainVolume", value);
     }
 
     public void OnResolutionChange(float value)

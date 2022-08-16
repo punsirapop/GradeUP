@@ -52,10 +52,42 @@ public class CharacterCon : StatusManager
         _movement.x = Input.GetAxisRaw("Horizontal");
         _movement.y = Input.GetAxisRaw("Vertical");
         _mousepos = cam.ScreenToWorldPoint(Input.mousePosition);
+        
+        PlayAnimationMovement();
+    }
 
+    private void PlayAnimationMovement()
+    {
         animator.SetFloat("Horizontal", _movement.x);
         animator.SetFloat("Vertical", _movement.y);
         animator.SetFloat("Speed", _movement.sqrMagnitude);
+
+        if (Input.GetButton("Horizontal"))
+        {
+            if (_movement.x > 0)
+            {
+                animator.SetFloat("isRight", 1);
+                animator.SetFloat("isBack", 0);
+            }
+            else if (_movement.x < 0)
+            {
+                animator.SetFloat("isRight", -1);
+                animator.SetFloat("isBack", 0);
+            }
+        }
+        if (Input.GetButton("Vertical"))
+        {
+            if (_movement.y > 0)
+            {
+                animator.SetFloat("isRight", 0);
+                animator.SetFloat("isBack", 1);
+            }
+            else if (_movement.y < 0)
+            {
+                animator.SetFloat("isRight", 0);
+                animator.SetFloat("isBack", -1);
+            }
+        }
     }
 
     protected void UpdatePosition()
