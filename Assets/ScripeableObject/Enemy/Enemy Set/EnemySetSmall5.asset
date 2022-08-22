@@ -12,4 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: becc9d3766d4def4baebd43272d7ca27, type: 3}
   m_Name: EnemySetSmall5
   m_EditorClassIdentifier: 
-  enemySets: []
+  enemySets:
+  - {fileID: 972663374477879706, guid: c1d9724bd75c98941992453b402a1306, type: 3}
+  - {fileID: 3120034171492634762, guid: 0d59cde1d0f466740ba8f32e1a615f05, type: 3}

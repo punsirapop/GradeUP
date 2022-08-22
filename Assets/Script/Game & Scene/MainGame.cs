@@ -14,6 +14,7 @@ public class MainGame : MonoBehaviour
     [SerializeField] GameObject reward;
     [SerializeField] GameObject door;
     [SerializeField] NavMeshSurface2d surface;
+    [SerializeField] GameObject EnemyHolder;
 
     int roomLayoutIndex, enemyLayoutIndex;
     SpawnerManager spawnerManager;
@@ -29,9 +30,10 @@ public class MainGame : MonoBehaviour
         // get room&enemy layout
         roomLayoutIndex = Random.Range(0, rooms.Count);
         enemyLayoutIndex = Random.Range(0, enemies.enemySetSOs.Count);
+        Debug.Log("RoomLayout: " + roomLayoutIndex + "\nEnemyLayout: " + enemyLayoutIndex);
         spawnerManager = rooms[roomLayoutIndex].GetComponent<SpawnerManager>();
-        enemySet = enemies.enemySetSOs[enemyLayoutIndex].EnemySets;
-        enemyPos = spawnerManager.EnemySpawners;
+        enemySet = new List<GameObject>(enemies.enemySetSOs[enemyLayoutIndex].EnemySets);
+        enemyPos = new List<Transform>(spawnerManager.EnemySpawners);
         
         // spawn player
         rooms[roomLayoutIndex].SetActive(true);
@@ -49,6 +51,8 @@ public class MainGame : MonoBehaviour
             enemyPos.RemoveAt(i);
             enemySet.RemoveAt(i);
         }
+        Debug.Log("Enemy spawned: " + enemySetObject.transform.childCount);
+        enemySetObject.AddComponent<CheckChildrenObjectNumber>();
         enemySetObject.GetComponent<CheckChildrenObjectNumber>().OnRoomCleared += RoomCleared;
     }
 

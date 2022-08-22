@@ -63,7 +63,7 @@ public class CharacterCon : StatusManager
 
     protected void OnTriggerStay2D(Collider2D collision)
     {
-        Debug.Log("collide with - " + collision.tag);
+        // Debug.Log("collide with - " + collision.tag);
         if (collision.CompareTag("Item"))
         {
             Debug.Log("Got Item");

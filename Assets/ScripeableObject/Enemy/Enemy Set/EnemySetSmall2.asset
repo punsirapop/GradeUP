@@ -12,4 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: becc9d3766d4def4baebd43272d7ca27, type: 3}
   m_Name: EnemySetSmall2
   m_EditorClassIdentifier: 
-  enemySets: []
+  enemySets:
+  - {fileID: 2698141629128264872, guid: 83e87e7858092af4782e827163383fab, type: 3}
+  - {fileID: 2698141629128264872, guid: 83e87e7858092af4782e827163383fab, type: 3}
+  - {fileID: 2698141629128264872, guid: 83e87e7858092af4782e827163383fab, type: 3}
+  - {fileID: 2698141629128264872, guid: 83e87e7858092af4782e827163383fab, type: 3}
+  - {fileID: 4024509275364800862, guid: 8cbe33b877d76354a8d51a211a700e3d, type: 3}
