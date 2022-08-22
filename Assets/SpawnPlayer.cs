@@ -23,7 +23,7 @@ public class SpawnPlayer : MonoBehaviour
     }
 
     // Update is called once per frame
-    public void SpawnPlayerClass()
+    public void SpawnPlayerClass(Vector3 SpawnPosition)
     {
         playerClassIndex = PlayerPrefs.GetInt("playerClass", 0);
         playerCurrentHp = PlayerPrefs.GetFloat("playerCurrentHp", 50);
@@ -31,19 +31,19 @@ public class SpawnPlayer : MonoBehaviour
         switch (playerClassIndex)
         {
             case 0:
-                _ = Instantiate(playerPhysics, transform.position, Quaternion.identity);
+                _ = Instantiate(playerPhysics, SpawnPosition, Quaternion.identity);
                 break;
             case 1:
-                _ = Instantiate(playerChem, transform.position, Quaternion.identity);
+                _ = Instantiate(playerChem, SpawnPosition, Quaternion.identity);
                 break;
             case 2:
-                _ = Instantiate(playerPE, transform.position, Quaternion.identity);
+                _ = Instantiate(playerPE, SpawnPosition, Quaternion.identity);
                 break;
             case 3:
-                _ = Instantiate(playerLng, transform.position, Quaternion.identity);
+                _ = Instantiate(playerLng, SpawnPosition, Quaternion.identity);
                 break;
             case 4:
-                _ = Instantiate(playerArts, transform.position, Quaternion.identity);
+                _ = Instantiate(playerArts, SpawnPosition, Quaternion.identity);
                 break;
             default:
                 break;
