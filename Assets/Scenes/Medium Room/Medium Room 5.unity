@@ -434,6 +434,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerController: {fileID: 0}
   spawnPlayer: {fileID: 0}
+  rooms:
+  - {fileID: 6802100304397021196, guid: 8c4e869c44ab25f46981cd88b6314978, type: 3}
+  - {fileID: 6962729232585056141, guid: b4e2a4e055b3ec642b86cc453bf02d53, type: 3}
+  - {fileID: 6800780070613385793, guid: a0abaafefc792ef40a26d2261dec2986, type: 3}
+  - {fileID: 6865495545356793450, guid: 946f8d84e8ee1634ea85c0e7a77ed3ff, type: 3}
+  - {fileID: 3746360041242750985, guid: 974b676b455eb1f438aaedccb36524dc, type: 3}
+  enemies: {fileID: 0}
+  reward: {fileID: 0}
+  door: {fileID: 0}
+  surface: {fileID: 0}
+  EnemyHolder: {fileID: 0}
 --- !u!4 &931832197
 Transform:
   m_ObjectHideFlags: 0

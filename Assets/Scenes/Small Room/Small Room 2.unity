@@ -123,72 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1001 &444928490
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 6718826852946031440, guid: 1c91071e8e0492a42adcc09127bc70f9, type: 3}
-      propertyPath: m_Name
-      value: EnemySet2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6718826852946031440, guid: 1c91071e8e0492a42adcc09127bc70f9, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6718826852946031442, guid: 1c91071e8e0492a42adcc09127bc70f9, type: 3}
-      propertyPath: m_RootOrder
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 6718826852946031442, guid: 1c91071e8e0492a42adcc09127bc70f9, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6718826852946031442, guid: 1c91071e8e0492a42adcc09127bc70f9, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6718826852946031442, guid: 1c91071e8e0492a42adcc09127bc70f9, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6718826852946031442, guid: 1c91071e8e0492a42adcc09127bc70f9, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6718826852946031442, guid: 1c91071e8e0492a42adcc09127bc70f9, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6718826852946031442, guid: 1c91071e8e0492a42adcc09127bc70f9, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6718826852946031442, guid: 1c91071e8e0492a42adcc09127bc70f9, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6718826852946031442, guid: 1c91071e8e0492a42adcc09127bc70f9, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6718826852946031442, guid: 1c91071e8e0492a42adcc09127bc70f9, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6718826852946031442, guid: 1c91071e8e0492a42adcc09127bc70f9, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 1c91071e8e0492a42adcc09127bc70f9, type: 3}
---- !u!1 &444928491 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6718826852946031440, guid: 1c91071e8e0492a42adcc09127bc70f9, type: 3}
-  m_PrefabInstance: {fileID: 444928490}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &584292618
 GameObject:
   m_ObjectHideFlags: 0
@@ -795,7 +729,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3456650561793971850, guid: 6703ce6d4691b124a8d782f69d7fde1d, type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 3456650561793971850, guid: 6703ce6d4691b124a8d782f69d7fde1d, type: 3}
       propertyPath: m_AnchorMax.x
@@ -902,9 +836,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerController: {fileID: 0}
   spawnPlayer: {fileID: 1475872153}
-  enemySet: {fileID: 444928491}
+  rooms:
+  - {fileID: 5568405748170299739, guid: 695e79a1c766b8340af845ee6cb06584, type: 3}
+  - {fileID: 932660547089694015, guid: a89001fd6475eb24f990659e2708727c, type: 3}
+  - {fileID: 2748360883345213078, guid: 3a1f5601ed2fe4449a8af15cf4a41377, type: 3}
+  - {fileID: 6288420122701526076, guid: 6d8751d95a32bf8499b770a3fcbe3eb5, type: 3}
+  - {fileID: 3925119699581879705, guid: c031c38ba2ccf5749b2317c6d942e0f3, type: 3}
+  enemies: {fileID: 7264003414917772623, guid: 25b4926951e5c6547b43d71e713e0581, type: 3}
   reward: {fileID: 0}
   door: {fileID: 2051349847}
+  surface: {fileID: 1254248848}
+  EnemyHolder: {fileID: 0}
 --- !u!4 &1890485734
 Transform:
   m_ObjectHideFlags: 0
