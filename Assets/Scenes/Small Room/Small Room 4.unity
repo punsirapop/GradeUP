@@ -231,7 +231,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerController: {fileID: 0}
-  spawnPlayer: {fileID: 0}
+  spawnPlayer: {fileID: 1654883468}
+  rooms:
+  - {fileID: 5568405748170299739, guid: 695e79a1c766b8340af845ee6cb06584, type: 3}
+  - {fileID: 932660547089694015, guid: a89001fd6475eb24f990659e2708727c, type: 3}
+  - {fileID: 2748360883345213078, guid: 3a1f5601ed2fe4449a8af15cf4a41377, type: 3}
+  - {fileID: 6288420122701526076, guid: 6d8751d95a32bf8499b770a3fcbe3eb5, type: 3}
+  - {fileID: 3925119699581879705, guid: c031c38ba2ccf5749b2317c6d942e0f3, type: 3}
+  enemies: {fileID: 7264003414917772623, guid: 25b4926951e5c6547b43d71e713e0581, type: 3}
+  reward: {fileID: 0}
+  door: {fileID: 1496709973}
+  surface: {fileID: 1963542633}
+  EnemyHolder: {fileID: 0}
 --- !u!4 &596796737
 Transform:
   m_ObjectHideFlags: 0
@@ -600,6 +611,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Change Room
       objectReference: {fileID: 0}
+    - target: {fileID: 6992092531685043115, guid: 1b2a6058e6e945a4295f7508a4ed64ae, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6992092531685043116, guid: 1b2a6058e6e945a4295f7508a4ed64ae, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -646,6 +661,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1b2a6058e6e945a4295f7508a4ed64ae, type: 3}
+--- !u!1 &1496709973 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6992092531685043115, guid: 1b2a6058e6e945a4295f7508a4ed64ae, type: 3}
+  m_PrefabInstance: {fileID: 1496709972}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1576455892
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -710,6 +730,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7998298256697988252, guid: 2187a163d36f2d749aa49b98daf6d8fa, type: 3}
+      propertyPath: playerLng
+      value: 
+      objectReference: {fileID: 3557058661428746436, guid: 57bc0f60848d10b48818430c95bcbd42, type: 3}
+    - target: {fileID: 7998298256697988252, guid: 2187a163d36f2d749aa49b98daf6d8fa, type: 3}
+      propertyPath: playerArts
+      value: 
+      objectReference: {fileID: 4621294064056916071, guid: cefedf57542a5774dbba880e8f420967, type: 3}
     - target: {fileID: 7998298256697988253, guid: 2187a163d36f2d749aa49b98daf6d8fa, type: 3}
       propertyPath: m_Name
       value: Spawn Player
@@ -760,6 +788,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2187a163d36f2d749aa49b98daf6d8fa, type: 3}
+--- !u!114 &1654883468 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7998298256697988252, guid: 2187a163d36f2d749aa49b98daf6d8fa, type: 3}
+  m_PrefabInstance: {fileID: 1654883467}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad7172e7abe97c048a767934b3bc12bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1963542632
 GameObject:
   m_ObjectHideFlags: 0

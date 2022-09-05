@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2176146301627252370}
   - component: {fileID: 7062781981166389383}
   - component: {fileID: 6879868735830523619}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: ChemBullet 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -75,13 +75,13 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
-  m_Sprite: {fileID: 21300000, guid: 3a393343edeb47542bc8b8adce9c2189, type: 3}
+  m_SortingOrder: 7
+  m_Sprite: {fileID: 21300000, guid: f964a7e0fccde544ba8bb6cd6978565c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 2.56, y: 2.56}
+  m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -136,6 +136,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4a13961d7dc75f48a655ebfd53a0989, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  areaDamage: {fileID: 3092292300859954781, guid: a33ff7e18893b2245b7b8c3399e149f6, type: 3}
+  areaDamage: {fileID: 3092292300859954781, guid: 9b7805ac8e2c43b4fbd8e327abc65acf, type: 3}
   Hitarea: {fileID: 301867632180063515, guid: e2a3128a3b980964fa51b9664b08bf26, type: 3}
   Target: {fileID: 0}

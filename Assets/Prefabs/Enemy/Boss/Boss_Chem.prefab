@@ -99,9 +99,11 @@ GameObject:
   - component: {fileID: 3762000618285647421}
   - component: {fileID: 3762000618285647422}
   - component: {fileID: 8026249671722375220}
-  m_Layer: 0
+  - component: {fileID: 5910358982613531080}
+  - component: {fileID: 5373292069705941551}
+  m_Layer: 7
   m_Name: Boss_Chem
-  m_TagString: BossPE
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -181,7 +183,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58c6f9b140a52a14881ec09eaebb66eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tree: {fileID: 11400000, guid: b67272d448ec7d14b97d65b94a902a23, type: 2}
+  tree: {fileID: 11400000, guid: d1b1f4f86a1b18a4aaadf4f6ea648bc2, type: 2}
 --- !u!50 &3762000618285647422
 Rigidbody2D:
   serializedVersion: 4
@@ -216,7 +218,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.016450375, y: -0.7534286}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -227,5 +229,37 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.2566264, y: 1.2829468}
   m_EdgeRadius: 0
+--- !u!58 &5910358982613531080
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3762000618285647423}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.50124747}
+  serializedVersion: 2
+  m_Radius: 0.8545409
+--- !u!114 &5373292069705941551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3762000618285647423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8403d23affb5dd5428acdaf286f1d161, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyStat: {fileID: 11400000, guid: 8d3cf25e2cc017b47b28fbeb2c8de90c, type: 2}
+  spriteRenderer: {fileID: 3762000618256570123}
+  rigidBody: {fileID: 3762000618285647422}
+  agent: {fileID: 3762000618285647420}

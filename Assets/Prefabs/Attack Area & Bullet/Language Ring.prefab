@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5608738540417231253}
   - component: {fileID: 8033049010417526268}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Language Ring
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -79,6 +79,10 @@ PrefabInstance:
     - target: {fileID: 5674531708224811644, guid: 4b8264c7fd7d97049ad5f54cba296094, type: 3}
       propertyPath: m_Name
       value: ' Boss_Lng_Word 1'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5674531708224811644, guid: 4b8264c7fd7d97049ad5f54cba296094, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7762289802903481724, guid: 4b8264c7fd7d97049ad5f54cba296094, type: 3}
       propertyPath: m_RootOrder
@@ -149,11 +153,15 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: cda26c16e437efe4caec390b66736250, type: 3}
     - target: {fileID: 4096159102204072885, guid: 4b8264c7fd7d97049ad5f54cba296094, type: 3}
       propertyPath: m_SortingOrder
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5674531708224811644, guid: 4b8264c7fd7d97049ad5f54cba296094, type: 3}
       propertyPath: m_Name
       value: ' Boss_Lng_Word 3'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5674531708224811644, guid: 4b8264c7fd7d97049ad5f54cba296094, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7762289802903481724, guid: 4b8264c7fd7d97049ad5f54cba296094, type: 3}
       propertyPath: m_RootOrder
@@ -225,6 +233,10 @@ PrefabInstance:
     - target: {fileID: 5674531708224811644, guid: 4b8264c7fd7d97049ad5f54cba296094, type: 3}
       propertyPath: m_Name
       value: ' Boss_Lng_Word 4'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5674531708224811644, guid: 4b8264c7fd7d97049ad5f54cba296094, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7762289802903481724, guid: 4b8264c7fd7d97049ad5f54cba296094, type: 3}
       propertyPath: m_RootOrder
@@ -311,11 +323,15 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 434c0f24d47ebb24293d722de8a6462a, type: 3}
     - target: {fileID: 4096159102204072885, guid: 4b8264c7fd7d97049ad5f54cba296094, type: 3}
       propertyPath: m_SortingOrder
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5674531708224811644, guid: 4b8264c7fd7d97049ad5f54cba296094, type: 3}
       propertyPath: m_Name
       value: ' Boss_Lng_Word 2'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5674531708224811644, guid: 4b8264c7fd7d97049ad5f54cba296094, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7762289802903481724, guid: 4b8264c7fd7d97049ad5f54cba296094, type: 3}
       propertyPath: m_RootOrder

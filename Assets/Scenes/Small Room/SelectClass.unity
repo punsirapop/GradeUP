@@ -1805,6 +1805,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 6992092531685043114, guid: 1b2a6058e6e945a4295f7508a4ed64ae, type: 3}
+      propertyPath: roomType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6992092531685043114, guid: 1b2a6058e6e945a4295f7508a4ed64ae, type: 3}
       propertyPath: nextRoomIndex
       value: 1
       objectReference: {fileID: 0}
@@ -2064,6 +2068,7 @@ GameObject:
   - component: {fileID: 1882757802}
   - component: {fileID: 1882757801}
   - component: {fileID: 1882757800}
+  - component: {fileID: 1882757803}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2137,6 +2142,39 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1882757803
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1882757799}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
 --- !u!1001 &1985866548
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2254,6 +2292,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerController: {fileID: 0}
   spawnPlayer: {fileID: 0}
+  enemySet: {fileID: 0}
+  reward: {fileID: 0}
+  door: {fileID: 0}
 --- !u!4 &1990890789
 Transform:
   m_ObjectHideFlags: 0
@@ -2277,6 +2318,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 675658570}
     m_Modifications:
     - target: {fileID: -8662787188382627661, guid: d60a2a6545ec306479b7f6e2b67aaf01, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8512001128624566167, guid: d60a2a6545ec306479b7f6e2b67aaf01, type: 3}
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
@@ -2338,6 +2383,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2500779849898784215, guid: d60a2a6545ec306479b7f6e2b67aaf01, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7588234229082525611, guid: d60a2a6545ec306479b7f6e2b67aaf01, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7685707155377946783, guid: d60a2a6545ec306479b7f6e2b67aaf01, type: 3}

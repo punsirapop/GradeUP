@@ -15,9 +15,11 @@ GameObject:
   - component: {fileID: 6581931880781600110}
   - component: {fileID: 6581931880781600109}
   - component: {fileID: 4768235264513589194}
-  m_Layer: 0
+  - component: {fileID: 3136195221096056612}
+  - component: {fileID: 6994693801446095869}
+  m_Layer: 7
   m_Name: Boss_Physics
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -118,7 +120,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &4768235264513589194
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -129,10 +131,10 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.10539389, y: -0.26577592}
+  m_Offset: {x: -0.0560441, y: -1.0374277}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -143,8 +145,50 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.9806216, y: 2.7596202}
+  m_Size: {x: 1.2705705, y: 1.2163166}
   m_EdgeRadius: 0
+--- !u!61 &3136195221096056612
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6581931880781600108}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.09421337, y: 0.22431737}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.057464, y: 1.8075427}
+  m_EdgeRadius: 0
+--- !u!114 &6994693801446095869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6581931880781600108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8403d23affb5dd5428acdaf286f1d161, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyStat: {fileID: 11400000, guid: 00ff2eea92a23684db2b1ecef6435711, type: 2}
+  spriteRenderer: {fileID: 6581931881548383320}
+  rigidBody: {fileID: 6581931880781600109}
+  agent: {fileID: 6581931880781600111}
 --- !u!1 &6581931881548383326
 GameObject:
   m_ObjectHideFlags: 0

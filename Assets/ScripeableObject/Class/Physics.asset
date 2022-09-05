@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Physics
   m_EditorClassIdentifier: 
   _ClassName: Physics
-  _HP: 999
-  _Attack: 25
+  _HP: 1000
+  _Attack: 250
   _AttackSpeed: 5
-  _Speed: 10
+  _Speed: 5

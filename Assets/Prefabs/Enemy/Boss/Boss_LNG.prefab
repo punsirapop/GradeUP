@@ -99,9 +99,11 @@ GameObject:
   - component: {fileID: 7109038433514107448}
   - component: {fileID: 7109038433514107451}
   - component: {fileID: 4179297463390825521}
-  m_Layer: 0
+  - component: {fileID: 8920291706697468139}
+  - component: {fileID: -4005666388072006065}
+  m_Layer: 7
   m_Name: Boss_LNG
-  m_TagString: BossPE
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -114,7 +116,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7109038433514107450}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.022, y: 0.519, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -181,7 +183,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58c6f9b140a52a14881ec09eaebb66eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tree: {fileID: 11400000, guid: b67272d448ec7d14b97d65b94a902a23, type: 2}
+  tree: {fileID: 11400000, guid: 0255780dfd112da4eb321ea413ebdf46, type: 2}
 --- !u!50 &7109038433514107451
 Rigidbody2D:
   serializedVersion: 4
@@ -216,7 +218,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.7562882}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -227,5 +229,37 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.3671966, y: 1.3601372}
   m_EdgeRadius: 0
+--- !u!70 &8920291706697468139
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7109038433514107450}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.03937483, y: 0.26130626}
+  m_Size: {x: 1.8244293, y: 2.36136}
+  m_Direction: 0
+--- !u!114 &-4005666388072006065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7109038433514107450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8403d23affb5dd5428acdaf286f1d161, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyStat: {fileID: 11400000, guid: 133f711e407da1b4bbe95e099278ffbb, type: 2}
+  spriteRenderer: {fileID: 7109038432545530638}
+  rigidBody: {fileID: 7109038433514107451}
+  agent: {fileID: 7109038433514107449}

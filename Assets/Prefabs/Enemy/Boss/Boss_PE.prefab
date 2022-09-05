@@ -15,9 +15,11 @@ GameObject:
   - component: {fileID: 5380991189348594905}
   - component: {fileID: 5380991189348594906}
   - component: {fileID: 1295531282160020176}
-  m_Layer: 0
+  - component: {fileID: 7677881787405245301}
+  - component: {fileID: -3116236755320078351}
+  m_Layer: 7
   m_Name: Boss_PE
-  m_TagString: BossPE
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -132,7 +134,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.14563543, y: -0.86634415}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -143,8 +145,40 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.8887495, y: 1.6572264}
   m_EdgeRadius: 0
+--- !u!58 &7677881787405245301
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5380991189348594907}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.13816634, y: 0.36595505}
+  serializedVersion: 2
+  m_Radius: 0.9443754
+--- !u!114 &-3116236755320078351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5380991189348594907}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8403d23affb5dd5428acdaf286f1d161, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyStat: {fileID: 11400000, guid: 7c0032594ab1668439ef425457a416c9, type: 2}
+  spriteRenderer: {fileID: 5380991189454284271}
+  rigidBody: {fileID: 5380991189348594906}
+  agent: {fileID: 5380991189348594904}
 --- !u!1 &5380991189454284265
 GameObject:
   m_ObjectHideFlags: 0

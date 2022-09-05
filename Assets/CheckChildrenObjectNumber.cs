@@ -1,28 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class CheckChildrenObjectNumber : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+    public event Action OnRoomCleared;
 
-    }
-
-    // Update is called once per frame
     void Update()
     {
-        
-    }
-
-    public void CheckAllEnemyDead()
-    {
         int childCount = transform.childCount;
-        Debug.Log("ChildCount = " + childCount);
+        // Debug.Log("ChildCount = " + childCount);
         if (childCount == 0)
         {
+            OnRoomCleared?.Invoke();
             Destroy(this.gameObject);
         }
     }

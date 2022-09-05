@@ -721,6 +721,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Change Room
       objectReference: {fileID: 0}
+    - target: {fileID: 6992092531685043115, guid: 1b2a6058e6e945a4295f7508a4ed64ae, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6992092531685043116, guid: 1b2a6058e6e945a4295f7508a4ed64ae, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -943,6 +947,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerController: {fileID: 0}
   spawnPlayer: {fileID: 0}
+  rooms:
+  - {fileID: 5568405748170299739, guid: 695e79a1c766b8340af845ee6cb06584, type: 3}
+  - {fileID: 932660547089694015, guid: a89001fd6475eb24f990659e2708727c, type: 3}
+  - {fileID: 2748360883345213078, guid: 3a1f5601ed2fe4449a8af15cf4a41377, type: 3}
+  - {fileID: 6288420122701526076, guid: 6d8751d95a32bf8499b770a3fcbe3eb5, type: 3}
+  - {fileID: 3925119699581879705, guid: c031c38ba2ccf5749b2317c6d942e0f3, type: 3}
+  enemies: {fileID: 0}
+  reward: {fileID: 0}
+  door: {fileID: 733420983}
+  surface: {fileID: 1385761295}
+  EnemyHolder: {fileID: 0}
 --- !u!4 &1990890789
 Transform:
   m_ObjectHideFlags: 0

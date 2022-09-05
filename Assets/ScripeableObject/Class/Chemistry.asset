@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _ClassName: Chemistry
   _HP: 100
-  _Attack: 80
+  _Attack: 999
   _AttackSpeed: 3
-  _Speed: 6
+  _Speed: 10
